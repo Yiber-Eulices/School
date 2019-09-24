@@ -2,10 +2,14 @@
     include "template/header.php";
     include "template/menu.php";
 ?>
-
 <section class="content">
         <div class="container-fluid">
-          
+            <div class="block-header">
+                <h2>
+                    
+                    <small>SCHOOL ADMIN</small>
+                </h2>
+            </div>
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -28,13 +32,13 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#miModal">
+                            <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
                                 <span>A&ntilde;adir Profesor</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableProfesor table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -64,45 +68,22 @@
                                             <th>Telefono</th>
                                             <th>Acciones</th>
                                         </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td><img src="images/user.png" width="48" height="48" alt="User" /></td>
-                                            <td>Mario</td>
-                                            <td>Lopez Lemus</td>
-                                            <td>Cedula de Ciudadania</td>
-                                            <td>1002772343</td>
-                                            <td>24/03/1965</td>
-                                            <td>A+</td>
-                                            <td>MarioLopez@gmail.com</td>
-                                            <td>3105730264</td>
-                                            
-                                            <td>
-                                                <button type="button" class="btn bg-amber waves-effect" onclick="location.href='#'">
-                                                    <i class="material-icons">edit</i>
-                                                    <span>Editar</span>
-                                                </button>
-                                                <button type="button" class="btn bg-deep-orange waves-effect" onclick="location.href='#'">
-                                                    <i class="material-icons">delete_forever</i>
-                                                    <span>Eliminar</span>
-                                                </button>
-                                                <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorCurso.php'">
-                                                    <i class="material-icons">visibility</i>
-                                                    <span>Ver Cursos</span>
-                                                </button>
-                                                <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorMateria.php'">
-                                                    <i class="material-icons">visibility</i>
-                                                    <span>Ver Materias</span>
-                                                </button>
-                                                <button type="button" class="btn bg-success waves-effect" onclick="location.href='Mensaje.php'">
-                                                    <i class="material-icons">message</i>
-                                                    <span>Mensaje</span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    </tfoot>                                    
                                 </table>
+                                <style>
+                                    .imgProfile{
+                                        height : 100px;
+                                        width : 100px;
+                                        border-radius : 50px;
+                                    }
+                                    .imgProfileEdit{
+                                        height : 200px;
+                                        width : 200px;
+                                        border-radius : 100px;
+                                        margin:auto;
+		                                display:block;
+                                    }
+                                </style>
                             </div>
                         </div>
                     </div>
@@ -113,89 +94,107 @@
         </div>
     </section>
     <!--Modal Create -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="miModal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="ModalCreate">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">A&ntilde;adir Profesores</h5>
+            <h5 class="modal-title">A&ntilde;adir Profesor</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-        <form id="form_advanced_validation" action="OrdenProduccion.aga?a=create" method="POST">
+            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtSerie">
+                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" >
                         <label class="form-label">Nombre</label>
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtVin">
+                        <input type="text" class="form-control" name="TxtApellido" id="TxtApellido" >
                         <label class="form-label">Apellido</label>
                     </div>
                     <div class="help-info">Apellido</div>
-                </div> 
-                <div class="form-group form-float"> 
-                    <label class="form-label">Tipo de Documento</label>
-                    <select class="form-control show-tick selectpicker form-control" data-container="body" data-live-search="true" title="Select a number" data-hide-disabled="true" name ="TxtAutobus" requiere>
-                        <option value="">-- Por Favor Seleccione --</option>
-                        <option value="<1>">Cedula de Ciudadania</option>
-                        <option value="<1>">Targeta de Identidad</option> 
-                        <option value="<1>">Cedula Extranjera</option>                        
-                    </select>
-                    <div class="help-info">Tipo de Documento</div>
-                </div>               
+                </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtFechaIngreso">
+                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
+                        <label class="form-label">Foto</label>
+                    </div>
+                    <div class="help-info">Foto</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="date" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
+                        <label class="form-label">Fecha de Nacimiento</label>
+                    </div>
+                    <div class="help-info">Fecha de Nacimiento</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select class="form-control show-tick" name = "TxtTipoDocumento" id = "TxtTipoDocumento">
+                            <option value="">-- Por favor seleccione su Tipo de Documento --</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="RC">Registro Civil</option>
+                        </select>
+                        <label class="form-label">Tipo de Documento</label>
+                    </div>
+                    <div class="help-info">Tipo de Documento</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="number" class="form-control" name="TxtDocumento" id="TxtDocumento" >
                         <label class="form-label">Documento</label>
                     </div>
                     <div class="help-info">Documento</div>
                 </div>
                 <div class="form-group form-float">
-                    <div class="form-line " id="bs_datepicker_container">
-                        <input type="text"  class="form-control" name="TxtFechaSalida">
-                        <label class="form-label">Fecha de Nacimiento</label>
+                    <div class="form-line">
+                        <select class="form-control show-tick" name = "TxtRh" id = "TxtRh">
+                            <option value="">-- Por favor seleccione su Rh --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                        <label class="form-label">Rh</label>
                     </div>
-                    <div class="help-info">Fecha de Nacimiento</div>
-                </div>
-                <div class="form-group form-float"> 
-                    <label class="form-label">Rh</label>
-                    <select class="form-control show-tick selectpicker form-control" data-container="body" data-live-search="true" title="Select a number" data-hide-disabled="true" name ="TxtAutobus" requiere>
-                        <option value="">-- Por Favor Seleccione --</option>
-                        <option value="<1>">AB+</option>
-                        <option value="<1>">AB-</option> 
-                        <option value="<1>">A+</option>
-                        <option value="<1>">A-</option>
-                        <option value="<1>">B+</option>
-                        <option value="<1>">B-</option>
-                        <option value="<1>">O+</option>
-                        <option value="<1>">O-</option>
-                    </select>
                     <div class="help-info">Rh</div>
-                </div> 
+                </div>
                 <div class="form-group form-float">
-                    <div class="form-line ">
-                        <input type="text"  class="form-control" name="TxtFechaSalida">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" >
                         <label class="form-label">Correo</label>
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text"  class="form-control" name="TxtFechaSalida">
+                        <input type="password" class="form-control" name="TxtPassword" id="TxtPassword" >
+                        <label class="form-label">Contrase&ntilde;a</label>
+                    </div>
+                    <div class="help-info">Contrase&ntilde;a</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="number" class="form-control" name="TxtTelefono" id="TxtTelefono" >
                         <label class="form-label">Telefono</label>
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>
-                
             </div>
             <div class="modal-footer">
-              <input type="submit" name="Enviar" class="btn btn-primary">
-              <input type="reset" name="Reset"  class="btn btn-danger">
+              <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
+              <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </form>
@@ -203,7 +202,119 @@
       </div>
     </div>
     <!--End Modal Create -->
-   
+    <!--Modal Edit -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="ModalEdit">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Administrador</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <div class="modal-body">
+                <div class="form-group form-float">
+                    <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
+                        <label class="form-label">Nombre</label>
+                    </div>
+                    <div class="help-info">Nombre</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtApellidoEdit" id="TxtApellidoEdit" >
+                        <label class="form-label">Apellido</label>
+                    </div>
+                    <div class="help-info">Apellido</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
+                        <label class="form-label">Foto</label>
+                    </div>
+                    <div class="help-info">Foto</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="date" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" >
+                        <label class="form-label">Fecha de Nacimiento</label>
+                    </div>
+                    <div class="help-info">Fecha de Nacimiento</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select class="form-control show-tick" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit">
+                            <option value="">-- Por favor seleccione su Tipo de Documento --</option>
+                            <option value="CC">Cédula de Ciudadanía</option>
+                            <option value="TI">Tarjeta de Identidad</option>
+                            <option value="CE">Cédula de Extranjería</option>
+                            <option value="RC">Registro Civil</option>
+                        </select>
+                        <label class="form-label">Tipo de Documento</label>
+                    </div>
+                    <div class="help-info">Tipo de Documento</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="number" class="form-control" name="TxtDocumentoEdit" id="TxtDocumentoEdit" >
+                        <label class="form-label">Documento</label>
+                    </div>
+                    <div class="help-info">Documento</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select class="form-control show-tick" name = "TxtRhEdit" id = "TxtRhEdit">
+                            <option value="">-- Por favor seleccione su Rh --</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                        <label class="form-label">Rh</label>
+                    </div>
+                    <div class="help-info">Rh</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
+                        <label class="form-label">Correo</label>
+                    </div>
+                    <div class="help-info">Correo</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="password" class="form-control" name="TxtPasswordEdit" id="TxtPasswordEdit" >
+                        <label class="form-label">Contrase&ntilde;a</label>
+                    </div>
+                    <div class="help-info">Contrase&ntilde;a</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
+                        <label class="form-label">Telefono</label>
+                    </div>
+                    <div class="help-info">Telefono</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" IdAdministrador name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="reset"  name="Reset"  class="btn btn-danger">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End Modal Edit -->
+    <script src="js/Administrador.js"></script>
 <?php
     include "template/footer.php";
 ?>

@@ -123,7 +123,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdPeriodo" id = "TxtIdPeriodo">
+                        <select class="form-control show-tick" name = "TxtPeriodo" id = "TxtPeriodo">
                             <option value="">-- Por favor seleccione el Periodo --</option>
                         </select>
                         <label class="form-label">Periodo</label>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdPeriodoEdit" id = "TxtIdPeriodoEdit">
+                        <select class="form-control show-tick" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
                             <option value="">-- Por favor seleccione el Periodo --</option>
                         </select>
                         <label class="form-label">Periodo</label>

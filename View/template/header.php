@@ -5,7 +5,7 @@ if(!isset($_SESSION['UserRol'])){
 
 ?>
 
-<!DOCTYPE html>Hola
+<!DOCTYPE html>
 <html>
 
 <head>

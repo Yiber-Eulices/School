@@ -1,7 +1,7 @@
 <?php
-    require_once "../Controller/ControladorAdministrador.php";
-    require_once "../Model/ModeloAdministrador.php";
-    class AjaxAdministrador{
+    require_once "../Controller/ControladorAcudiente.php";
+    require_once "../Model/ModeloAcudiente.php";
+    class AjaxAcudiente{
         public $id;
         public $nombre;
         public $apellido;
@@ -15,34 +15,34 @@
         public $fechaNacimiento;
 
         public function AjxCrear(){
-            $objADMIN = ControladorAdministrador::CtrlCrear( $this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
-            echo json_encode($objADMIN);
+            $objACUDI = ControladorAcudiente::CtrlCrear( $this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
+            echo json_encode($objACUDI);
         }
         public function AjxEditar(){
-            $objADMIN = ControladorAdministrador::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
-            echo json_encode($objADMIN);  
+            $objACUDI = ControladorAcudiente::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
+            echo json_encode($objACUDI);  
         }
         public function AjxListar(){
-            $objADMIN = ControladorAdministrador::CtrlListar();
+            $objACUDI = ControladorAcudiente::CtrlListar();
             $oBJEC_JSON = '{
                 "data": [';
-                    if (count($objADMIN) >= 1){
-                        for ($i=0; $i < count($objADMIN); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAdministrador = '".$objADMIN[$i]["IdAdministrador"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
-                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAdministrador = '".$objADMIN[$i]["IdAdministrador"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
-                            $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
+                    if (count($objACUDI) >= 1){
+                        for ($i=0; $i < count($objACUDI); $i++) {
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAdministrador = '".$objACUDI[$i]["IdAdministrador"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAdministrador = '".$objACUDI[$i]["IdAdministrador"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
+                            $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdAdministrador"].'",
+                                "'.$objACUDI[$i]["IdAdministrador"].'",
                                 "'.$img.'",
-                                "'.$objADMIN[$i]["Nombre"].'",
-                                "'.$objADMIN[$i]["Apellido"].'",
-                                "'.$objADMIN[$i]["TipoDocumento"].'",
-                                "'.$objADMIN[$i]["Documento"].'",
-                                "'.$objADMIN[$i]["FechaNacimiento"].'",
-                                "'.$objADMIN[$i]["Rh"].'",
-                                "'.$objADMIN[$i]["Correo"].'",
-                                "'.$objADMIN[$i]["Telefono"].'",
+                                "'.$objACUDI[$i]["Nombre"].'",
+                                "'.$objACUDI[$i]["Apellido"].'",
+                                "'.$objACUDI[$i]["TipoDocumento"].'",
+                                "'.$objACUDI[$i]["Documento"].'",
+                                "'.$objACUDI[$i]["FechaNacimiento"].'",
+                                "'.$objACUDI[$i]["Rh"].'",
+                                "'.$objACUDI[$i]["Correo"].'",
+                                "'.$objACUDI[$i]["Telefono"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }
@@ -69,12 +69,12 @@
 
         }
         public function AjxBuscar(){
-            $objADMIN = ControladorAdministrador::CtrlBuscar($this->id);
-            echo json_encode($objADMIN);
+            $objACUDI = ControladorAcudiente::CtrlBuscar($this->id);
+            echo json_encode($objACUDI);
         }
         public function AjxEliminar(){
-            $objADMIN = ControladorAdministrador::CtrlEliminar($this->id);
-            echo json_encode($objADMIN);
+            $objACUDI = ControladorAcudiente::CtrlEliminar($this->id);
+            echo json_encode($objACUDI);
         }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
@@ -99,7 +99,7 @@
 		  //var_dump($_FILES["image"]);
           //die();
         }
-        $oBJEC_AJAX = new AjaxAdministrador();
+        $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> apellido = $_POST["Apellido"];
         $oBJEC_AJAX -> tipoDocumento = $_POST["TipoDocumento"];
@@ -136,7 +136,7 @@
         }else{
             $image = $_POST["FotoSrc"];
         }
-        $oBJEC_AJAX = new AjaxAdministrador();
+        $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> apellido = $_POST["Apellido"];
@@ -151,16 +151,16 @@
         $oBJEC_AJAX -> AjxEditar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
-        $oBJEC_AJAX = new AjaxAdministrador();
+        $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> AjxListar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
-        $oBJEC_AJAX = new AjaxAdministrador();
+        $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxBuscar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'eliminar'){
-        $oBJEC_AJAX = new AjaxAdministrador();
+        $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxEliminar();
     }

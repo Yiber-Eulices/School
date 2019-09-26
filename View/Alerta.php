@@ -114,9 +114,10 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdPersona" id = "TxtIdPersona">
+                        <input type="number" class="form-control" name="TxtIdPersona" id="TxtIdPersona" >
+                        <!--select class="form-control show-tick" name = "TxtIdPersona" id = "TxtIdPersona">
                             <option value="">-- Por favor seleccione la Persona --</option>
-                        </select>
+                        </select-->
                         <label class="form-label">Persona</label>
                     </div>
                     <div class="help-info">Persona</div>
@@ -191,9 +192,10 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit">
+                        <input type="number" class="form-control" name="TxtIdPersonaEdit" id="TxtIdPersonaEdit" >
+                        <!--select class="form-control show-tick" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit">
                             <option value="">-- Por favor seleccione la Persona --</option>
-                        </select>
+                        </select-->
                         <label class="form-label">Persona</label>
                     </div>
                     <div class="help-info">Persona</div>

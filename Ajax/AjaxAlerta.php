@@ -1,4 +1,6 @@
 <?php
+    require_once "../Controller/ControladorAlerta.php";
+    require_once "../Model/ModeloAlerta.php";
     class AjaxAlerta{
         public $id;
         public $rolPersona;
@@ -8,15 +10,15 @@
         public $mensaje;
         public $estado;
 
-        public static function AjxCrear(){
+        public function AjxCrear(){
             $objADMIN = ControladorAlerta::CtrlCrear( $this->rolPersona,$this->idPersona,$this->fecha,$this->titulo,$this->mensaje,$this->estado);
             echo json_encode($objADMIN);
         }
-        public static function AjxEditar(){
+        public function AjxEditar(){
             $objADMIN = ControladorAlerta::CtrlEditar( $this->id,$this->rolPersona,$this->idPersona,$this->fecha,$this->titulo,$this->mensaje,$this->estado);
             echo json_encode($objADMIN);  
         }
-        public static function AjxListar(){
+        public function AjxListar(){
             $objADMIN = ControladorAlerta::CtrlListar();
             $oBJEC_JSON = '{
                 "data": [';
@@ -25,7 +27,7 @@
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAlerta = '".$objADMIN[$i]["IdAlerta"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAlerta = '".$objADMIN[$i]["IdAlerta"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             
-                            $objADMIN .= '[
+                            $oBJEC_JSON .= '[
                                 "'.$objADMIN[$i]["IdAlerta"].'",
                                 "'.$objADMIN[$i]["RolPersona"].'",
                                 "'.$objADMIN[$i]["IdPersona"].'",
@@ -55,11 +57,11 @@
                 echo $oBJEC_JSON;
 
         }
-        public static function AjxBuscar(){
+        public function AjxBuscar(){
             $objADMIN = ControladorAlerta::CtrlBuscar($this->id);
             echo json_encode($objADMIN);
         }
-        public static function AjxEliminar(){
+        public function AjxEliminar(){
             $objADMIN = ControladorAlerta::CtrlEliminar($this->id);
             echo json_encode($objADMIN);
         }

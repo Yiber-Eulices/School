@@ -28,12 +28,12 @@
                 "data": [';
                     if (count($objACUDI) >= 1){
                         for ($i=0; $i < count($objACUDI); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAdministrador = '".$objACUDI[$i]["IdAdministrador"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
-                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAdministrador = '".$objACUDI[$i]["IdAdministrador"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objACUDI[$i]["IdAdministrador"].'",
+                                "'.$objACUDI[$i]["IdAcudiente"].'",
                                 "'.$img.'",
                                 "'.$objACUDI[$i]["Nombre"].'",
                                 "'.$objACUDI[$i]["Apellido"].'",

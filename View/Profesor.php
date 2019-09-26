@@ -119,18 +119,14 @@
                     </div>
                     <div class="help-info">Apellido</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
-                        <label class="form-label">Foto</label>
-                    </div>
+                <div class="form-group">
+                    <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
+                    <label class="form-label">Foto</label>
                     <div class="help-info">Foto</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
-                        <label class="form-label">Fecha de Nacimiento</label>
-                    </div>
+                <div class="form-group">
+                    <input type="date" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
+                    <label class="form-label">Fecha de Nacimiento</label>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
@@ -195,7 +191,7 @@
             <div class="modal-footer">
               <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
               <input type="reset"  name="Reset"  class="btn btn-danger">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
           </form>
         </div>
@@ -207,42 +203,34 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Administrador</h5>
+            <h5 class="modal-title">Editar Profesor</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-                <div class="form-group form-float">
+                <div class="form-group">
                     <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        <label class="form-label">Nombre</label>
-                    </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
+                    <label class="form-label">Nombre</label>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
-                    <div class="form-line">
                         <input type="text" class="form-control" name="TxtApellidoEdit" id="TxtApellidoEdit" >
                         <label class="form-label">Apellido</label>
-                    </div>
                     <div class="help-info">Apellido</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
+                <div class="form-group">
                         <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
                         <label class="form-label">Foto</label>
-                    </div>
                     <div class="help-info">Foto</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
+                <div class="form-group">
                         <input type="date" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" >
                         <label class="form-label">Fecha de Nacimiento</label>
-                    </div>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
@@ -258,11 +246,9 @@
                     </div>
                     <div class="help-info">Tipo de Documento</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
+                <div class="form-group">
                         <input type="number" class="form-control" name="TxtDocumentoEdit" id="TxtDocumentoEdit" >
                         <label class="form-label">Documento</label>
-                    </div>
                     <div class="help-info">Documento</div>
                 </div>
                 <div class="form-group form-float">
@@ -282,11 +268,9 @@
                     </div>
                     <div class="help-info">Rh</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
+                <div class="form-group">
                         <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
                         <label class="form-label">Correo</label>
-                    </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
@@ -296,25 +280,23 @@
                     </div>
                     <div class="help-info">Contrase&ntilde;a</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
+                <div class="form-group">
                         <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
                         <label class="form-label">Telefono</label>
-                    </div>
                     <div class="help-info">Telefono</div>
                 </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" IdAdministrador name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdProfesor name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
               <input type="reset"  name="Reset"  class="btn btn-danger">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="js/Administrador.js"></script>
+    <script src="js/Profesor.js"></script>
 <?php
     include "template/footer.php";
 ?>

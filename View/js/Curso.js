@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableMateria").DataTable({
-        "ajax":"../Ajax/AjaxMateria.php?a=lista",
+    $(".dataTableCurso").DataTable({
+        "ajax":"../Ajax/AjaxCurso.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -34,25 +34,34 @@ function SubmitFunction(){
     return false;
 }
 $(".formCreate").on("click",".botonCreate",function(){
-    var fileName = "";
-    var ext = "";
     if($('#TxtNombre').val().length == 0){
-        var m = "Por favor ingrese el Nombre de la Materia.";
+        var m = "Por favor ingrese el Nombre del Curso.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtDescripcion').val().length == 0){
-        var m = "Por favor ingrese la Descripcion de la Materia.";
+    }else if($('#TxtAnio').val().length == 0){
+        var m = "Por favor ingrese la Descripcion del Año.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtGrado').val().length == 0){
+        var m = "Por favor ingrese la Descripcion del Grado.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtProfesor').val().length == 0){
+        var m = "Por favor ingrese la Descripcion del Profesor.";
         ValidateCreateUpdate(m);
         return false;
     }else{
         var Nombre = $('#TxtNombre').val();
-        var Descripcion = $('#TxtDescripcion').val();
+        var Anio = $('#TxtAnio').val();
+        var Grado = $('#TxtGrado').val();
+        var Profesor = $('#TxtProfesor').val();
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Nombre", Nombre); 
-        oBJEC_ADMIN.append("Descripcion", Descripcion); 
-        
+        oBJEC_ADMIN.append("Anio", Anio); 
+        oBJEC_ADMIN.append("Grado", Grado); 
+        oBJEC_ADMIN.append("Profesor", Profesor); 
         $.ajax({
-            url:"../Ajax/AjaxMateria.php?a=crear",
+            url:"../Ajax/AjaxCurso.php?a=crear",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -63,7 +72,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                 if(respuesta = true){
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Materia.php";
+                    window.location = "Curso.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -73,12 +82,12 @@ $(".formCreate").on("click",".botonCreate",function(){
         });
     }
 });
-$(".dataTableMateria").on("click",".btnDelete",function(){
-    var id = $(this).attr("IdMateria");
+$(".dataTableCurso").on("click",".btnDelete",function(){
+    var id = $(this).attr("IdCurso");
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     Swal.fire({
-        title: 'Estas Seguro de Eliminar la Materia?',
+        title: 'Estas Seguro de Eliminar el Curso?',
         text: "No podras revertir los cambios!",
         type: 'warning',
         showCancelButton: true,
@@ -89,7 +98,7 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxMateria.php?a=eliminar",
+                url:"../Ajax/AjaxCurso.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ADMIN,
                 cache:false,
@@ -100,7 +109,7 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Materia.php";
+                        window.location = "Curso.php";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -110,12 +119,12 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
         }
     });
 });
-$(".dataTableMateria").on("click",".btnUpdate",function(){
-    var id = $(this).attr("IdMateria");
+$(".dataTableCurso").on("click",".btnUpdate",function(){
+    var id = $(this).attr("IdCurso");
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxMateria.php?a=buscar",
+        url:"../Ajax/AjaxCurso.php?a=buscar",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -123,10 +132,14 @@ $(".dataTableMateria").on("click",".btnUpdate",function(){
         processData:false,
         dataType:"json",
         success : function(respuesta){
-            $("#botonEdit").attr("IdMateria",id);
+            $("#botonEdit").attr("IdCurso",id);
             $('#TxtNombreEdit').val(respuesta["Nombre"]);
-            $('#TxtDescripcionEdit').val(respuesta["Descripcion"]);
-            $("#TxtDescripcionEdit").focus();
+            $('#TxtAnioEdit').val(respuesta["Anio"]);
+            $('#TxtGradoEdit').val(respuesta["Grado"]);
+            $('#TxtProfesorEdit').val(respuesta["Profesor"]);
+            $("#TxtProfesorEdit").focus();
+            $("#TxtGradoEdit").focus();
+            $("#TxtAnioEdit").focus();
             $("#TxtNombreEdit").focus();
             $("#ModalEdit").modal();
         }
@@ -137,24 +150,36 @@ $(".formEdit").on("click",".botonEdit",function(){
     var ext = "";
     
     if($('#TxtNombreEdit').val().length == 0){
-        var m = "Por favor ingrese el Nombre de la Materia."
+        var m = "Por favor ingrese el Nombre del Curso."
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtDescripcionEdit').val().length == 0){
-        var m = "Por favor ingrese el Descripcion de la Materia.";
+    }else if($('#TxtAnioEdit').val().length == 0){
+        var m = "Por favor ingrese el Año.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtGradoEdit').val().length == 0){
+        var m = "Por favor ingrese el Grado.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtProfesorEdit').val().length == 0){
+        var m = "Por favor ingrese el profesor.";
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Id = $("#botonEdit").attr("IdMateria");
+        var Id = $("#botonEdit").attr("IdCurso");
         var Nombre = $('#TxtNombreEdit').val();
-        var Descripcion = $('#TxtDescripcionEdit').val();
+        var Anio = $('#TxtAnioEdit').val();
+        var Grado = $('#TxtGradoEdit').val();
+        var Profesor = $('#TxtProfesorEdit').val();
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", Id); 
         oBJEC_ADMIN.append("Nombre", Nombre); 
-        oBJEC_ADMIN.append("Descripcion", Descripcion); 
+        oBJEC_ADMIN.append("Anio", Anio); 
+        oBJEC_ADMIN.append("Grado", Grado); 
+        oBJEC_ADMIN.append("Profesor", Profesor); 
        
         $.ajax({
-            url:"../Ajax/AjaxMateria.php?a=editar",
+            url:"../Ajax/AjaxCurso.php?a=editar",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -165,7 +190,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 if(respuesta = true){
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Materia.php";
+                    window.location = "Curso.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

@@ -1,24 +1,23 @@
 <?php
     class ControladorMateria{
-	
-        public static function CrtInsertarMateria($nombre,$descripcion){
-            $oBJECT_RESP=ModeloMateria::MdlInsertarMateria($nombre,$descripcion);
-            return $oBJECT_RESP;
-            }
-        public static function CrtEliminarMateria($id){
-            $oBJECT_RESP = ModeloMateria::MdlEliminarMateria($id);
-            return $oBJECT_RESP;	
-            }
-        public static function CrtBuscarMateria($id){
-            $oBJECT_RESP = ModeloMateria::MdlBuscarMateria($id);	
-            return $oBJECT_RESP;
+        public static function CtrlCrear($nombre,$descripcion){
+            $objCREARM = ModeloMateria::CrearMateria($nombre,$descripcion);
+            return $objCREARM;
         }
-        public static function CrtActualizarMateria($id,$nombre,$descripcion)	{
-            $oBJECT_RESP=ModeloMateria::MdlActualizarMateria($id,$nombre,$descripcion);
-            return $oBJECT_RESP;
+        public static function CtrlEditar($id,$nombre,$descripcion){
+            $objEDITM = ModeloMateria::EditarMateria($id,$nombre,$descripcion);
+            return $objEDITM; 
         }
-        public static function CtrListarMateria(){
-            $oBJECT_RESP=ModeloMateria::MdlListarMateria();
-            return $oBJECT_RESP;
+        public static function CtrlListar(){
+            $objLISTM = ModeloMateria::ListarMateria();
+            return $objLISTM;
+        }
+        public static function CtrlBuscar($id){
+            $objBUSCM = ModeloMateria::BuscarMateria($id);
+            return $objBUSCM;
+        }
+        public static function CtrlEliminar($id){
+            $objELIM = ModeloMateria::EliminarMateria($id);
+            return $objELIM;
         }
     }

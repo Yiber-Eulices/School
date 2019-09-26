@@ -1,46 +1,37 @@
 <?php
-
-require_once "conexion.php";
-
+    require_once "Conexion.php";
     class ModeloMateria{
-        //modelo recibe lo que envia el controlador(dato1,dato2).
-        public static function MdlInsertarMateria($nombre,$descripcion){
-            $oBJEC_INSE = Conexion::conectar()->prepare("INSERT INTO materia(Nombre,Descripcion) VALUES (:Nombre,:Descripcion)");
-            $oBJEC_INSE->bindParam(":Nombre",$nombre, PDO::PARAM_STR);
-            $oBJEC_INSE->bindParam(":Descripcion",$descripcion, PDO::PARAM_STR);          
-            return ($oBJEC_INSE->execute());
-            //se retorna a AJAX un booleano (true o false)
+        public static function CrearMateria($nombre,$descripcion){
+            $oBJEC_DATA_INSERT = Conexion::conectar()->prepare("INSERT INTO Materia (Nombre,Descripcion) VALUES (:nombre,:descripcion)");
+            $oBJEC_DATA_INSERT  -> bindParam(":nombre",$nombre, PDO::PARAM_STR);
+            $oBJEC_DATA_INSERT  -> bindParam(":descripcion",$descripcion, PDO::PARAM_STR);
+           
+            return ($oBJEC_DATA_INSERT -> execute());
         }
-        //modelo recibe lo que envia el controlador(dato1,dato2,dato3).
-        public static function MdlActualizarMateria($id,$nombre,$descripcion){
-            $oBJEC_ACT = Conexion::conectar()->prepare("UPDATE  materia SET Nombre = :Nombre,Descripcion = :Descripcion WHERE IdMateria = :id");
-            $oBJEC_ACT->bindParam(":id",$id, PDO::PARAM_INT);
-            $oBJEC_ACT->bindParam(":Nombre",$nombre, PDO::PARAM_STR);
-            $oBJEC_ACT->bindParam(":Descripcion",$descripcion, PDO::PARAM_STR);          
-            return ($oBJEC_ACT->execute());
-            //se retorna a AJAX un booleano (true o false)
+        public static function EditarMateria($id,$nombre,$descripcion){
+            $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE materia  SET Nombre = :nombre,Descripcion = :descripcion WHERE IdMateria = :id");
+            $oBJEC_DATA_UPDATE  -> bindParam(":id",$id, PDO::PARAM_INT);
+            $oBJEC_DATA_UPDATE  -> bindParam(":nombre",$nombre, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":descripcion",$descripcion, PDO::PARAM_STR);
+            
+            return ($oBJEC_DATA_UPDATE -> execute());
         }
-        public static function MdlListarMateria(){
-            $oBJEM_LIST = Conexion::conectar()->prepare("SELECT * FROM materia");
-            $oBJEM_LIST->execute();
-            $oBJEM_LISTARRAY = $oBJEM_LIST -> fetchAll();
-            return $oBJEM_LISTARRAY;
-            //se retorna a AJAX un array con toda la tabla
+        public static function ListarMateria(){
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM Materia");
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
+            return $oBJEC_DATA_ARRAY;            
         }
-        //modelo recibe lo que envia el controlador(id).
-        public static function MdlBuscarMateria($id){
-            $oBJEM_BUSCAR = Conexion::conectar()->prepare("SELECT * FROM materia WHERE IdMateria = :id");
-            $oBJEM_BUSCAR->bindParam(":id",$id, PDO::PARAM_INT);
-            $oBJEM_BUSCAR->execute();
-            $oBJEM_BUSCARARRAY = $oBJEM_BUSCAR -> fetchAll();
-            return $oBJEM_BUSCARARRAY;
-            //se retorna a AJAX un booleano (true o false)
+        public static function BuscarMateria($id){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Materia WHERE IdMateria = :id");
+            $oBJEC_DATA_SEARCH  -> bindParam(":id",$id, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
         }
-        //modelo recibe lo que envia el controlador(id).
-        public static function MdlEliminarMateria($id){
-            $oBJEC_ELIM = Conexion::conectar()->prepare("DELETE FROM materia WHERE IdMateria = :id");
-            $oBJEC_ELIM->bindParam(":id",$id, PDO::PARAM_STR);
-            return ($oBJEC_ELIM->execute());
-            //se retorna a AJAX un booleano (true o false)
+        public static function EliminarMateria($id){
+            $oBJEC_DATA_DELETE = Conexion::conectar()->prepare("DELETE FROM Materia WHERE IdMateria = :id");
+            $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);
+            return $oBJEC_DATA_DELETE -> execute();
         }
     }

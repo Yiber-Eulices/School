@@ -52,55 +52,11 @@
         }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
-        /*$image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nivel de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
-		  //var_dump($_FILES["image"]);
-          //die();
-        }*/
         $oBJEC_AJAX = new AjaxGrado();
         $oBJEC_AJAX -> nivel = $_POST["Nivel"];
         $oBJEC_AJAX -> AjxCrear();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
-        /*$image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nivel de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
-		  //var_dump($_FILES["image"]);
-          //die();
-        }else{
-            $image = $_POST["FotoSrc"];
-        }*/
         $oBJEC_AJAX = new AjaxGrado();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> nivel = $_POST["Nivel"];

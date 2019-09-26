@@ -192,8 +192,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);
-                }
-                
+                }                
             }
         });
     }

@@ -49,8 +49,8 @@ if(!isset($_SESSION['UserRol'])){
     <!-- Wait Me Css -->
     <link href="plugins/waitme/waitMe.css" rel="stylesheet" />
 
-    <!-- Bootstrap Select Css -->
-    <link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <!-- Bootstrap Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="css/style.css" rel="stylesheet">

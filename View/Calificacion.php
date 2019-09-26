@@ -105,18 +105,20 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
+                        <input type="number" class="form-control" name="TxtIdEstudiante" id="TxtIdEstudiante" >
+                        <!--select class="form-control show-tick" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
-                        </select>
+                        </select-->
                         <label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdMateria" id = "TxtIdMateria">
+                        <input type="number" class="form-control" name="TxtIdMateria" id="TxtIdMateria" >
+                        <!--select class="form-control show-tick" name = "TxtIdMateria" id = "TxtIdMateria">
                             <option value="">-- Por favor seleccione la Materia --</option>
-                        </select>
+                        </select-->
                         <label class="form-label">Materia</label>
                     </div>
                     <div class="help-info">Materia</div>
@@ -125,6 +127,10 @@
                     <div class="form-line">
                         <select class="form-control show-tick" name = "TxtPeriodo" id = "TxtPeriodo">
                             <option value="">-- Por favor seleccione el Periodo --</option>
+                            <option value="1">1er Periodo</option>
+                            <option value="2">2do Periodo</option>
+                            <option value="3">3er Periodo</option>
+                            <option value="4">4to Periodo</option>
                         </select>
                         <label class="form-label">Periodo</label>
                     </div>
@@ -184,18 +190,20 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
+                        <input type="number" class="form-control" name="TxtIdEstudianteEdit" id="TxtIdEstudianteEdit" >
+                        <!--select class="form-control show-tick" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
-                        </select>
+                        </select-->
                         <label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
+                        <input type="number" class="form-control" name="TxtIdMateriaEdit" id="TxtIdMateriaEdit" >
+                        <!--select class="form-control show-tick" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
                             <option value="">-- Por favor seleccione la Materia --</option>
-                        </select>
+                        </select-->
                         <label class="form-label">Materia</label>
                     </div>
                     <div class="help-info">Materia</div>
@@ -204,6 +212,10 @@
                     <div class="form-line">
                         <select class="form-control show-tick" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
                             <option value="">-- Por favor seleccione el Periodo --</option>
+                            <option value="1">1er Periodo</option>
+                            <option value="2">2do Periodo</option>
+                            <option value="3">3er Periodo</option>
+                            <option value="4">4to Periodo</option>
                         </select>
                         <label class="form-label">Periodo</label>
                     </div>

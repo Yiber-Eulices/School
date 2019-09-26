@@ -1,4 +1,6 @@
 <?php
+    require_once "../Controller/ControladorCalificacion.php";
+    require_once "../Model/ModeloCalificacion.php";
     class AjaxCalificacion{
         public $id;
         public $periodo;
@@ -9,15 +11,15 @@
         public $materiaIdMateria;
         public $estudianteIdEstudiante;
 
-        public static function AjxCrear(){
+        public function AjxCrear(){
             $objADMIN = ControladorCalificacion::CtrlCrear( $this->periodo,$this->notaAcumulativa,$this->notaComportamental,$this->evaluacion,$this->autoevaluacion,$this->materiaIdMateria,$this->estudianteIdEstudiante);
             echo json_encode($objADMIN);
         }
-        public static function AjxEditar(){
+        public function AjxEditar(){
             $objADMIN = ControladorCalificacion::CtrlEditar( $this->id,$this->periodo,$this->notaAcumulativa,$this->notaComportamental,$this->evaluacion,$this->autoevaluacion,$this->materiaIdMateria,$this->estudianteIdEstudiante);
             echo json_encode($objADMIN);  
         }
-        public static function AjxListar(){
+        public function AjxListar(){
             $objADMIN = ControladorCalificacion::CtrlListar();
             $oBJEC_JSON = '{
                 "data": [';
@@ -26,13 +28,13 @@
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdCalificacion = '".$objADMIN[$i]["IdCalificacion"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdCalificacion = '".$objADMIN[$i]["IdCalificacion"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             
-                            $objADMIN .= '[
+                            $oBJEC_JSON .= '[
                                 "'.$objADMIN[$i]["IdCalificacion"].'",
                                 "'.$objADMIN[$i]["Periodo"].'",
                                 "'.$objADMIN[$i]["NotaAcumulativa"].'",
                                 "'.$objADMIN[$i]["NotaComportamental"].'",
                                 "'.$objADMIN[$i]["Evaluacion"].'",
-                                "'.$objADMIN[$i]["Autoevaluacion"].'",
+                                "'.$objADMIN[$i]["AutoEvaluacion"].'",
                                 "'.$objADMIN[$i]["MateriaIdMateria"].'",
                                 "'.$objADMIN[$i]["EstudianteIdEstudiante"].'",
                                 "'.$btnUpdate.$btnDelete.'"
@@ -59,11 +61,11 @@
                 echo $oBJEC_JSON;
 
         }
-        public static function AjxBuscar(){
+        public function AjxBuscar(){
             $objADMIN = ControladorCalificacion::CtrlBuscar($this->id);
             echo json_encode($objADMIN);
         }
-        public static function AjxEliminar(){
+        public function AjxEliminar(){
             $objADMIN = ControladorCalificacion::CtrlEliminar($this->id);
             echo json_encode($objADMIN);
         }
@@ -74,9 +76,10 @@
         $oBJEC_AJAX -> notaAcumulativa = $_POST["NotaAcumulativa"];
         $oBJEC_AJAX -> notaComportamental = $_POST["NotaComportamental"];
         $oBJEC_AJAX -> evaluacion = $_POST["Evaluacion"];
-        $oBJEC_AJAX -> autoevaluacion = $_POST["Autoevaluacion"];
-        $oBJEC_AJAX -> materiaIdMateria = $_POST["MateriaIdMateria"];
-        $oBJEC_AJAX -> estudianteIdEstudiante = $_POST["EstudianteIdEstudiante"];
+        $oBJEC_AJAX -> autoevaluacion = $_POST["AutoEvaluacion"];
+        $oBJEC_AJAX -> materiaIdMateria = $_POST["IdMateria"];
+        $oBJEC_AJAX -> estudianteIdEstudiante = $_POST["IdEstudiante"];
+        $oBJEC_AJAX -> AjxCrear();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
         $oBJEC_AJAX = new AjaxCalificacion();
@@ -85,9 +88,9 @@
         $oBJEC_AJAX -> notaAcumulativa = $_POST["NotaAcumulativa"];
         $oBJEC_AJAX -> notaComportamental = $_POST["NotaComportamental"];
         $oBJEC_AJAX -> evaluacion = $_POST["Evaluacion"];
-        $oBJEC_AJAX -> autoevaluacion = $_POST["Autoevaluacion"];
-        $oBJEC_AJAX -> materiaIdMateria = $_POST["MateriaIdMateria"];
-        $oBJEC_AJAX -> estudianteIdEstudiante = $_POST["EstudianteIdEstudiante"];
+        $oBJEC_AJAX -> autoevaluacion = $_POST["AutoEvaluacion"];
+        $oBJEC_AJAX -> materiaIdMateria = $_POST["IdMateria"];
+        $oBJEC_AJAX -> estudianteIdEstudiante = $_POST["IdEstudiante"];
         $oBJEC_AJAX -> AjxEditar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){

@@ -40,7 +40,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtIdPersona').val().length == 0){
-        var m = "Por favor seleccione el "+$('#TxtRolPersona')+".";
+        var m = "Por favor seleccione el "+$('#TxtRolPersona').val()+".";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtFecha').val().length == 0){
@@ -163,7 +163,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtIdPersonaEdit').val().length == 0){
-        var m = "Por favor seleccione el "+$('#TxtRolPersona')+".";
+        var m = "Por favor seleccione el "+$('#TxtRolPersona').val()+".";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtFechaEdit').val().length == 0){

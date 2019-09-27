@@ -29,6 +29,48 @@ $(document).ready(function(){
             }
         }
     });
+    $.ajax({
+        url:"../Ajax/AjaxGrado.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtGrado').empty();
+            $('#TxtGradoEdit').empty();
+            $("#TxtGrado").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtGradoEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                    $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                }                
+            }
+            $('#TxtGrado').change();
+            $('#TxtGradoEdit').change();
+            $("#TxtGrado").select2();
+            $("#TxtGradoEdit").select2();
+        }
+    });
+    $.ajax({
+        url:"../Ajax/AjaxEstudiante.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtEstuidiante').empty();
+            $('#TxtEstuidianteEdit').empty();
+            $("#TxtEstuidiante").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtEstuidianteEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtEstuidiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                    $("#TxtEstuidianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                }                
+            }
+            $('#TxtEstuidiante').change();
+            $('#TxtEstuidianteEdit').change();
+            $("#TxtEstuidiante").select2();
+            $("#TxtEstuidianteEdit").select2();
+        }
+    });
 });
 function SubmitFunction(){
     return false;

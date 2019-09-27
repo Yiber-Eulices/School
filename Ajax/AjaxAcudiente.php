@@ -96,7 +96,7 @@
 			  $error["image"]= "La imagen no se ha subido";
 			}
 		  }
-		  //var_dump($_FILES["image"]);
+		  //var_dump($_FILES["image"]); 
           //die();
         }
         $oBJEC_AJAX = new AjaxAcudiente();

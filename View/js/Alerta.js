@@ -29,6 +29,15 @@ $(document).ready(function(){
             }
         }
     });
+    $('#TxtRolPersona').select2();
+    $('#TxtRolPersonaEdit').select2();
+    $('#TxtIdPersona').select2();
+    $('#TxtIdPersonaEdit').select2();
+    $('#TxtEstado').select2();
+    $('#TxtEstadoEdit').select2();
+    $('#TxtRolPersona').change(function(){
+        SearchPersona();
+    });
 });
 function SubmitFunction(){
     return false;
@@ -148,15 +157,21 @@ $(".dataTableAlerta").on("click",".btnUpdate",function(){
         success : function(respuesta){
             $("#botonEdit").attr("IdAlerta",id);
             $("#TxtRolPersonaEdit option[value='"+respuesta["RolPersona"]+"']").attr("selected",true);
+            $('#TxtRolPersonaEdit').select2();
+            SearchPersona();
             $("#TxtIdPersonaEdit option[value='"+respuesta["IdPersona"]+"']").attr("selected",true);
+            $('#TxtIdPersonaEdit').select2();
             $('#TxtFechaEdit').val(respuesta["Fecha"]);
             $('#TxtTituloEdit').val(respuesta["Titulo"]);
             $('#TxtMensajeEdit').val(respuesta["Mensaje"]);
             $("#TxtEstadoEdit option[value='"+respuesta["Estado"]+"']").attr("selected",true);
+            $('#TxtEstadoEdit').select2();
             $("#ModalEdit").modal();
         }
     });
 });
+
+
 $(".formEdit").on("click",".botonEdit",function(){
     if($('#TxtRolPersonaEdit').val().length == 0){
         var m = "Por favor seleccione el Rol de la Persona.";
@@ -221,3 +236,29 @@ $(".formEdit").on("click",".botonEdit",function(){
         });
     }
 }); 
+
+function SearchPersona(){
+    if($("#TxtRolPersona").val().length>0){
+        $.ajax({
+            url:"../Ajax/Ajax"+$("#TxtRolPersona").val()+".php?a=lista",
+            method:"GET",
+            dataType: "JSON",
+            success : function(respuesta){
+                $('#TxtIdPersona').empty();
+                $("#TxtIdPersona").append("<option value=''>-- Por favor seleccione la Persona --</option>");
+                for(var i = 0;i<respuesta.data.length;i++){
+                    if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                        $("#TxtIdPersona").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                    }                
+                }
+                $('#TxtIdPersona').change();
+                $('#TxtIdPersona').Select2(); 
+            }
+        });
+    }else{
+        $('#TxtIdPersona').empty();
+        $("#TxtIdPersona").append("<option value=''>-- Por favor seleccione la Persona --</option>");
+        $('#TxtIdPersona').change();
+        $('#TxtIdPersona').Select2(); 
+    }
+}

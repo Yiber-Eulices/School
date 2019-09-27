@@ -175,15 +175,13 @@ $(".dataTableMatricula").on("click",".btnUpdate",function(){
         processData:false,
         dataType:"json",
         success : function(respuesta){
+            $('#TxtGradoEdit option[value="'+respuesta["GradoIdGrado"]+'"]').attr("selected", true);
+            $("#TxtGradoEdit").select2();
+            $('#TxtEstudianteEdit option[value="'+respuesta["EstudianteIdEstudiante"]+'"]').attr("selected", true);
+            $("#TxtEstudianteEdit").select2();
             $("#botonEdit").attr("IdMatricula",id);
             $('#TxtFechaMatriculaEdit').val(respuesta["Fecha"]);
             $('#TxtCostoEdit').val(respuesta["Costo"]);
-            $('#TxtGradoEdit').val(respuesta["Grado"]);
-            $('#TxtEstudianteEdit').val(respuesta["Estudiante"]);
-            $("#TxtEstudianteEdit").focus();
-            $("#TxtGradoEdit").focus();
-            $("#TxtCostoEdit").focus();
-            $("#TxtFechaMatriculaEdit").focus();
             $("#ModalEdit").modal();
         }
     });

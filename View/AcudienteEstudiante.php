@@ -80,7 +80,7 @@
         </div>
     </section>
     <!--Modal Create -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="ModalCreate">
+    <div class="modal fade" role="dialog" id="ModalCreate">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -93,7 +93,7 @@
                 <div class="modal-body">
                     <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" >
+                            
                            <select name="TxtEstudiante" id="TxtEstudiante" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
@@ -104,7 +104,9 @@
                 
                 <div class="form-group form-float">
                         <div class="form-line">
-                            <input type="text" class="form-control" name="TxtAcudiente" id="TxtAcudiente" >
+                        <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
                             <label class="form-label">Acudiente</label>
                         </div>
                         <div class="help-info">Acudiente</div>
@@ -123,7 +125,7 @@
     </div>
     <!--End Modal Create -->
     <!--Modal Edit -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="ModalEdit">
+    <div class="modal fade"  role="dialog" id="ModalEdit">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -137,14 +139,18 @@
                 
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtEstudianteEdit" id="TxtEstudianteEdit" >
-                        <label class="form-label">Estudiante</label>
+                          
+                    <select name="TxtEstudianteEdit" id="TxtEstudianteEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select><label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxAcudienteEdit" id="TxtAcudienteEdit" >
+                    <select name="TxtAcudienteEdit" id="TxtAcudienteEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select><label class="form-label">Acudiente</label>
                         <label class="form-label">Acudiente</label>
                     </div>
                     <div class="help-info">Acudiente</div>

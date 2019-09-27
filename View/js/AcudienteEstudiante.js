@@ -29,6 +29,48 @@ $(document).ready(function(){
             }
         }
     });
+    $.ajax({
+        url:"../Ajax/AjaxAdministrador.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtEstudiante').empty();
+            $('#TxtEstudianteEdit').empty();
+            $("#TxtEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtEstudianteEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                    $("#TxtEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                }                
+            }
+            $('#TxtEstudiante').change();
+            $('#TxtEstudianteEdit').change();
+            $("#TxtEstudiante").select2();
+            $("#TxtEstudianteEdit").select2();
+        }
+    });
+    $.ajax({
+        url:"../Ajax/AjaxAdministrador.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtAcudiente').empty();
+            $('#TxtAcudienteEdit').empty();
+            $("#TxtAcudiente").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtAcudienteEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                }                
+            }
+            $('#TxtAcudiente').change();
+            $('#TxtAcudienteEdit').change();
+            $("#TxtAcudiente").select2();
+            $("#TxtAcudienteEdit").select2();
+        }
+    });
 });
 function SubmitFunction(){
     return false;
@@ -125,8 +167,10 @@ $(".dataTableAcudienteEstudiante").on("click",".btnUpdate",function(){
         dataType:"json",
         success : function(respuesta){
             $("#botonEdit").attr("IdAcudienteEstudiante",id);
-            $("#TxtEstudiante").val(respuesta["EstudianteIdEstudiante"]);
-            $('#TxtAcudiente').val(respuesta["ACUESenteIdAcudiente"]);
+            $('#TxtEstudiante option[value="'+respuesta["EstudianteIdEstudiante"]+'"]').attr("selected", true);
+            $("#TxtEstudiante").select2();
+            $('#TxtAcudiente option[value="'+respuesta["AcudienteIdAcudiente"]+'"]').attr("selected", true);
+            $("#TxtAcudiente").select2();
             $("#TxtEstudienteEdit").focus();
             $("#TxtAcudienteEdit").focus();
             $("#ModalEdit").modal();

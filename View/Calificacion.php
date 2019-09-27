@@ -92,7 +92,7 @@
         </div>
     </section>
     <!--Modal Create -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="ModalCreate">
+    <div class="modal fade" role="dialog" id="ModalCreate">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -105,27 +105,25 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtIdEstudiante" id="TxtIdEstudiante" >
-                        <!--select class="form-control show-tick" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
-                        </select-->
+                        </select>
                         <label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtIdMateria" id="TxtIdMateria" >
-                        <!--select class="form-control show-tick" name = "TxtIdMateria" id = "TxtIdMateria">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateria" id = "TxtIdMateria">
                             <option value="">-- Por favor seleccione la Materia --</option>
-                        </select-->
+                        </select>
                         <label class="form-label">Materia</label>
                     </div>
                     <div class="help-info">Materia</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtPeriodo" id = "TxtPeriodo">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo">
                             <option value="">-- Por favor seleccione el Periodo --</option>
                             <option value="1">1er Periodo</option>
                             <option value="2">2do Periodo</option>
@@ -177,7 +175,7 @@
     </div>
     <!--End Modal Create -->
     <!--Modal Edit -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="ModalEdit">
+    <div class="modal fade" role="dialog" id="ModalEdit">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -190,27 +188,25 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtIdEstudianteEdit" id="TxtIdEstudianteEdit" >
-                        <!--select class="form-control show-tick" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
-                        </select-->
+                        </select>
                         <label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtIdMateriaEdit" id="TxtIdMateriaEdit" >
-                        <!--select class="form-control show-tick" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
                             <option value="">-- Por favor seleccione la Materia --</option>
-                        </select-->
+                        </select>
                         <label class="form-label">Materia</label>
                     </div>
                     <div class="help-info">Materia</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
                             <option value="">-- Por favor seleccione el Periodo --</option>
                             <option value="1">1er Periodo</option>
                             <option value="2">2do Periodo</option>

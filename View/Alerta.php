@@ -88,7 +88,7 @@
         </div>
     </section>
     <!--Modal Create -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="ModalCreate">
+    <div class="modal fade" role="dialog" id="ModalCreate">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -101,7 +101,7 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtRolPersona" id = "TxtRolPersona">
+                        <select class="form-control show-tick TxtRolPersona" style ="width:100%" name = "TxtRolPersona" id = "TxtRolPersona">
                             <option value="">-- Por favor seleccione el Rol --</option>
                             <option value="Estudiante">Estudiante</option>
                             <option value="Profesor">Profesor</option>
@@ -114,10 +114,9 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtIdPersona" id="TxtIdPersona" >
-                        <!--select class="form-control show-tick" name = "TxtIdPersona" id = "TxtIdPersona">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersona" id = "TxtIdPersona">
                             <option value="">-- Por favor seleccione la Persona --</option>
-                        </select-->
+                        </select>
                         <label class="form-label">Persona</label>
                     </div>
                     <div class="help-info">Persona</div>
@@ -145,7 +144,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtEstado" id = "TxtEstado">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtEstado" id = "TxtEstado">
                             <option value="">-- Por favor seleccione el Estado --</option>
                             <option value="Visto">Visto</option>
                             <option value="Sin Ver">Sin Ver</option>
@@ -179,7 +178,7 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtRolPersonaEdit" id = "TxtRolPersonaEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtRolPersonaEdit" id = "TxtRolPersonaEdit">
                             <option value="">-- Por favor seleccione el Rol --</option>
                             <option value="Estudiante">Estudiante</option>
                             <option value="Profesor">Profesor</option>
@@ -192,10 +191,9 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtIdPersonaEdit" id="TxtIdPersonaEdit" >
-                        <!--select class="form-control show-tick" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit">
                             <option value="">-- Por favor seleccione la Persona --</option>
-                        </select-->
+                        </select>
                         <label class="form-label">Persona</label>
                     </div>
                     <div class="help-info">Persona</div>
@@ -223,7 +221,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtEstadoEdit" id = "TxtEstadoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtEstadoEdit" id = "TxtEstadoEdit">
                             <option value="">-- Por favor seleccione el Estado --</option>
                             <option value="Visto">Visto</option>
                             <option value="Sin Ver">Sin Ver</option>

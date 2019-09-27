@@ -154,8 +154,7 @@
                         <label class="form-label">Acudiente</label>
                     </div>
                     <div class="help-info">Acudiente</div>
-                </div>
-            
+                </div>            
             </div>
             <div class="modal-footer">
               <input type="submit" IdEstudianteAcudiente name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">

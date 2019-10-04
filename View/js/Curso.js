@@ -42,8 +42,8 @@ $.ajax({
         $("#TxtGradoEdit").append("<option value=''>-- Por favor seleccione --</option>");
         for(var i = 0;i<respuesta.data.length;i++){
             if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
-                $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
             }                
         }
         $('#TxtGrado').change();

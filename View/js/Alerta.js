@@ -252,13 +252,13 @@ function SearchPersona(){
                     }                
                 }
                 $('#TxtIdPersona').change();
-                $('#TxtIdPersona').Select2(); 
+                $('#TxtIdPersona').select2(); 
             }
         });
     }else{
         $('#TxtIdPersona').empty();
         $("#TxtIdPersona").append("<option value=''>-- Por favor seleccione la Persona --</option>");
         $('#TxtIdPersona').change();
-        $('#TxtIdPersona').Select2(); 
+        $('#TxtIdPersona').select2(); 
     }
 }

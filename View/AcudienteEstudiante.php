@@ -2,17 +2,21 @@
     include "template/header.php";
     include "template/menu.php";
 ?>
-   <section class="content">
+<section class="content">
         <div class="container-fluid">
-            
-            <div class="row clearfix">
-                <!-- Basic Examples -->
+            <div class="block-header">
+                <h2>
+                    SCHOOL ADMIN
+                   
+                </h2>
+            </div>
+            <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                               ACUDIENTES DE YIBER EULICES
+                                Acudiente-Estudiente
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -28,109 +32,141 @@
                             </ul>
                         </div>
                         <div class="body">
+                            <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
+                                <i class="material-icons">add</i>
+                                <span>A&ntilde;adir Acudiente-Estudiante</span>
+                            </button>
+                            <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ventana2"><i class="material-icons">add</i>Agregar Acudiente</button><br><br>
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableAcudienteEstudiante table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Telefono</th>
-                                            <th>Direccion</th>
-                                            <th>E-mail</th>
+                                            <th>#</th>
+                                            <th>Estudiante</th>
+                                            <th>Acudiente</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Telefono</th>
-                                            <th>Direccion</th>
-                                            <th>E-mail</th>
+                                        <th>#</th>
+                                            <th>Estudiente</th>
+                                            <th>Acudiente</th>
                                             <th>Acciones</th>
                                         </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>soila</td>
-                                            <td>Perez</td>
-                                            <td>3123434567</td>
-                                            <td>cl 12-23</td>
-                                            <td>soila@gmail.com</td>
-                                            <td><button type="button" class="btn bg-success waves-effect" onclick="location.href='Mensaje.php'">
-                                                    <i class="material-icons">message</i>
-                                                    <span>Mensaje</span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Maria Julia</td>
-                                            <td>Martinez</td>
-                                            <td>3212367890</td>
-                                            <td>Cr 45-32</td>
-                                            <td>maria@gmail.com</td>
-                                            <td><button type="button" class="btn bg-success waves-effect" onclick="location.href='Mensaje.php'">
-                                                    <i class="material-icons">message</i>
-                                                    <span>Mensaje</span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Benedilce</td>
-                                            <td>Julio</td>
-                                            <td>3104235431</td>
-                                            <td>Cl 65-11</td>
-                                            <td>benedilce@gmail.com</td>
-                                            <td><button type="button" class="btn bg-success waves-effect" onclick="location.href='Mensaje.php'">
-                                                    <i class="material-icons">message</i>
-                                                    <span>Mensaje</span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                       
-                                    </tbody>
+                                    </tfoot>                                    
                                 </table>
+                                <style>
+                                    .imgProfile{
+                                        height : 100px;
+                                        width : 100px;
+                                        border-radius : 50px;
+                                    }
+                                    .imgProfileEdit{
+                                        height : 200px;
+                                        width : 200px;
+                                        border-radius : 100px;
+                                        margin:auto;
+		                                display:block;
+                                    }
+                                </style>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- #END# Basic Examples -->
-            </div>
+            
         </div>
     </section>
-    <div class="modal fade" id="ventana2">
-    <div class="modal-dialog">
+    <!--Modal Create -->
+    <div class="modal fade" role="dialog" id="ModalCreate">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Acudiente</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h5 class="modal-title">A&ntilde;adir Acudiente-Estudiante</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="modal-body">
-                <form action="" method="POST" class="ModificarDatos">
-                <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                            <div class="col-md-3">
-                                    <select class="form-control show-tick" data-live-search="true">
-                                        <option>--Seleccione--</option>
-                                        <option>Soila Perez</option>
-                                        <option>Maria Julia Martinez</option>
-                                        <option>Benedilce Julio</option>
-                                    </select>
-                                </div>
-                </form>
+            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+                <div class="modal-body">
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            
+                           <select name="TxtEstudiante" id="TxtEstudiante" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
+                            <label class="form-label">Estudiante</label>
+                        </div>
+                        <div class="help-info">Estudiante</div>
+                    </div>
                 
+                <div class="form-group form-float">
+                        <div class="form-line">
+                        <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
+                            <label class="form-label">Acudiente</label>
+                        </div>
+                        <div class="help-info">Acudiente</div>
+                    </div>
+                </div>
+               
+                <div class="modal-footer">
+                <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
+                <input type="reset"  name="Reset"  class="btn btn-danger">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+    <!--End Modal Create -->
+    <!--Modal Edit -->
+    <div class="modal fade"  role="dialog" id="ModalEdit">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Acudiente-Estudiante</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <div class="modal-body">
+                
+                <div class="form-group form-float">
+                    <div class="form-line">
+                          
+                    <select name="TxtEstudianteEdit" id="TxtEstudianteEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select><label class="form-label">Estudiante</label>
+                    </div>
+                    <div class="help-info">Estudiante</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                    <select name="TxtAcudienteEdit" id="TxtAcudienteEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select><label class="form-label">Acudiente</label>
+                        <label class="form-label">Acudiente</label>
+                    </div>
+                    <div class="help-info">Acudiente</div>
+                </div>            
             </div>
             <div class="modal-footer">
-                <input type="submit" value="Guardar" name="actualizar" class="btn btn-primary btnModificaDatos" id="btnModificar" idUsuario="">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+              <input type="submit" IdEstudianteAcudiente name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="reset"  name="Reset"  class="btn btn-danger">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
-
+    <!--End Modal Edit -->
+    <script src="js/AcudienteEstudiante.js"></script>
 <?php
     include "template/footer.php";
 ?>

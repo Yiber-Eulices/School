@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableMateria").DataTable({
-        "ajax":"../Ajax/AjaxMateria.php?a=lista",
+    $(".dataTableGrado").DataTable({
+        "ajax":"../Ajax/AjaxGrado.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -36,25 +36,19 @@ function SubmitFunction(){
 $(".formCreate").on("click",".botonCreate",function(){
     var fileName = "";
     var ext = "";
-    if($('#TxtNombre').val().length == 0){
-        var m = "Por favor ingrese el Nombre de la Materia.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtDescripcion').val().length == 0){
-        var m = "Por favor ingrese la Descripcion de la Materia.";
+     if($('#TxtNivel').val().length == 0){
+        var m = "Por favor ingrese el Grado.";
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Nombre = $('#TxtNombre').val();
-        var Descripcion = $('#TxtDescripcion').val();
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Nombre", Nombre); 
-        oBJEC_ADMIN.append("Descripcion", Descripcion); 
-        
+        var Nivel = $('#TxtNivel').val();
+        var oBJEC_GRADO = new FormData();
+        oBJEC_GRADO.append("Nivel", Nivel); 
+    
         $.ajax({
-            url:"../Ajax/AjaxMateria.php?a=crear",
+            url:"../Ajax/AjaxGrado.php?a=crear",
             method:"POST",
-            data:oBJEC_ADMIN,
+            data:oBJEC_GRADO,
             cache:false,
             contentType:false,
             processData:false,
@@ -63,7 +57,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                 if(respuesta = true){
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Materia.php";
+                    window.location = "Grado.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -73,12 +67,12 @@ $(".formCreate").on("click",".botonCreate",function(){
         });
     }
 });
-$(".dataTableMateria").on("click",".btnDelete",function(){
-    var id = $(this).attr("IdMateria");
-    var oBJEC_ADMIN = new FormData();
-    oBJEC_ADMIN.append("Id", id); 
+$(".dataTableGrado").on("click",".btnDelete",function(){
+    var id = $(this).attr("IdGrado");
+    var oBJEC_GRADO= new FormData();
+    oBJEC_GRADO.append("Id", id); 
     Swal.fire({
-        title: 'Estas Seguro de Eliminar la Materia?',
+        title: 'Estas Seguro de Eliminar el Grado?',
         text: "No podras revertir los cambios!",
         type: 'warning',
         showCancelButton: true,
@@ -89,9 +83,9 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxMateria.php?a=eliminar",
+                url:"../Ajax/AjaxGrado.php?a=eliminar",
                 method:"POST",
-                data:oBJEC_ADMIN,
+                data:oBJEC_GRADO,
                 cache:false,
                 contentType:false,
                 processData:false,
@@ -100,7 +94,7 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Materia.php";
+                        window.location = "Grado.php";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -110,24 +104,22 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
         }
     });
 });
-$(".dataTableMateria").on("click",".btnUpdate",function(){
-    var id = $(this).attr("IdMateria");
-    var oBJEC_ADMIN = new FormData();
-    oBJEC_ADMIN.append("Id", id); 
+$(".dataTableGrado").on("click",".btnUpdate",function(){
+    var id = $(this).attr("IdGrado");
+    var oBJEC_GRADO = new FormData();
+    oBJEC_GRADO.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxMateria.php?a=buscar",
+        url:"../Ajax/AjaxGrado.php?a=buscar",
         method:"POST",
-        data:oBJEC_ADMIN,
+        data:oBJEC_GRADO,
         cache:false,
         contentType:false,
         processData:false,
         dataType:"json",
         success : function(respuesta){
-            $("#botonEdit").attr("IdMateria",id);
-            $('#TxtNombreEdit').val(respuesta["Nombre"]);
-            $('#TxtDescripcionEdit').val(respuesta["Descripcion"]);
-            $("#TxtDescripcionEdit").focus();
-            $("#TxtNombreEdit").focus();
+            $("#botonEdit").attr("IdGrado",id);
+            $('#TxtNivelEdit').val(respuesta["Nivel"]);
+            $("#TxtNivelEdit").focus();
             $("#ModalEdit").modal();
         }
     });
@@ -135,28 +127,21 @@ $(".dataTableMateria").on("click",".btnUpdate",function(){
 $(".formEdit").on("click",".botonEdit",function(){
     var fileName = "";
     var ext = "";
-    
-    if($('#TxtNombreEdit').val().length == 0){
-        var m = "Por favor ingrese el Nombre de la Materia."
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtDescripcionEdit').val().length == 0){
-        var m = "Por favor ingrese el Descripcion de la Materia.";
+    if($('#TxtNivelEdit').val().length == 0){
+        var m = "Por favor ingrese  el Grado."
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Id = $("#botonEdit").attr("IdMateria");
-        var Nombre = $('#TxtNombreEdit').val();
-        var Descripcion = $('#TxtDescripcionEdit').val();
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Id", Id); 
-        oBJEC_ADMIN.append("Nombre", Nombre); 
-        oBJEC_ADMIN.append("Descripcion", Descripcion); 
-       
+        var Id = $("#botonEdit").attr("IdGrado");
+        var Nivel = $('#TxtNivelEdit').val();
+        var oBJEC_GRADO = new FormData();
+        oBJEC_GRADO.append("Id", Id); 
+        oBJEC_GRADO.append("Nivel", Nivel); 
+    
         $.ajax({
-            url:"../Ajax/AjaxMateria.php?a=editar",
+            url:"../Ajax/AjaxGrado.php?a=editar",
             method:"POST",
-            data:oBJEC_ADMIN,
+            data:oBJEC_GRADO,
             cache:false,
             contentType:false,
             processData:false,
@@ -165,7 +150,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 if(respuesta = true){
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Materia.php";
+                    window.location = "Grado.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

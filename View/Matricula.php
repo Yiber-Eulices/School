@@ -5,8 +5,7 @@
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>
-                    
+                <h2>                    
                     <small>SCHOOL ADMIN</small>
                 </h2>
             </div>
@@ -109,14 +108,18 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtGrado" id="TxtGrado" >
+                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
                         <label class="form-label">Grado</label>
                     </div>
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtEstuidiante" id="TxtEstuidiante" >
+                        <select name="TxtEstuidiante" id="TxtEstuidiante" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                        </select>
                         <label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
@@ -154,12 +157,16 @@
                     <div class="help-info">Costo</div>
                 </div>
                 <div class="form-group">
-                        <input type="number" class="form-control" name="TxtGradoEdit" id="TxtGradoEdit" >
+                <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                        </select>
                         <label class="form-label">Grado</label>
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group">
-                        <input type="number" class="form-control" name="TxtEstuidianteEdit" id="TxtEstuidianteEdit" >
+                <select name="TxtEstuidianteEdit" id="TxtEstuidianteEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                        </select>
                         <label class="form-label">Estudiante</label>
                     <div class="help-info">Estudiante</div>
                 </div>

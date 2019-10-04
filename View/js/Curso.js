@@ -30,6 +30,51 @@ $(document).ready(function(){
         }
     });
 });
+
+$.ajax({
+    url:"../Ajax/AjaxGrado.php?a=lista",
+    method:"GET",
+    dataType: "JSON",
+    success : function(respuesta){
+        $('#TxtGrado').empty();
+        $('#TxtGradoEdit').empty();
+        $("#TxtGrado").append("<option value=''>-- Por favor seleccione --</option>");
+        $("#TxtGradoEdit").append("<option value=''>-- Por favor seleccione --</option>");
+        for(var i = 0;i<respuesta.data.length;i++){
+            if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+            }                
+        }
+        $('#TxtGrado').change();
+        $('#TxtGradoEdit').change();
+        $("#TxtGrado").select2();
+        $("#TxtGradoEdit").select2();
+    }
+});
+
+$.ajax({
+    url:"../Ajax/AjaxProfesor.php?a=lista",
+    method:"GET",
+    dataType: "JSON",
+    success : function(respuesta){
+        $('#TxtProfesor').empty();
+        $('#TxtProfesorEdit').empty();
+        $("#TxtProfesor").append("<option value=''>-- Por favor seleccione --</option>");
+        $("#TxtProfesorEdit").append("<option value=''>-- Por favor seleccione --</option>");
+        for(var i = 0;i<respuesta.data.length;i++){
+            if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+            }                
+        }
+        $('#TxtProfesor').change();
+        $('#TxtProfesorEdit').change();
+        $("#TxtProfesor").select2();
+        $("#TxtProfesorEdit").select2();
+    }
+});
+
 function SubmitFunction(){
     return false;
 }
@@ -39,11 +84,11 @@ $(".formCreate").on("click",".botonCreate",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtAnio').val().length == 0){
-        var m = "Por favor ingrese la Descripcion del Año.";
+        var m = "Por favor ingrese el Año.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtGrado').val().length == 0){
-        var m = "Por favor ingrese la Descripcion del Grado.";
+        var m = "Por favor ingrese el Grado.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtProfesor').val().length == 0){
@@ -58,8 +103,8 @@ $(".formCreate").on("click",".botonCreate",function(){
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Nombre", Nombre); 
         oBJEC_ADMIN.append("Anio", Anio); 
-        oBJEC_ADMIN.append("Grado", Grado); 
-        oBJEC_ADMIN.append("Profesor", Profesor); 
+        oBJEC_ADMIN.append("GradoIdGrado", Grado); 
+        oBJEC_ADMIN.append("ProfesorIdProfesor", Profesor); 
         $.ajax({
             url:"../Ajax/AjaxCurso.php?a=crear",
             method:"POST",
@@ -132,15 +177,13 @@ $(".dataTableCurso").on("click",".btnUpdate",function(){
         processData:false,
         dataType:"json",
         success : function(respuesta){
+            $('#TxtGradoEdit option[value="'+respuesta["GradoIdGrado"]+'"]').attr("selected", true);
+            $("#TxtGradoEdit").select2();
+            $('#TxtProfesorEdit option[value="'+respuesta["ProfesorIdProfesor"]+'"]').attr("selected", true);
+            $("#TxtProfesorEdit").select2();
             $("#botonEdit").attr("IdCurso",id);
             $('#TxtNombreEdit').val(respuesta["Nombre"]);
             $('#TxtAnioEdit').val(respuesta["Anio"]);
-            $('#TxtGradoEdit').val(respuesta["Grado"]);
-            $('#TxtProfesorEdit').val(respuesta["Profesor"]);
-            $("#TxtProfesorEdit").focus();
-            $("#TxtGradoEdit").focus();
-            $("#TxtAnioEdit").focus();
-            $("#TxtNombreEdit").focus();
             $("#ModalEdit").modal();
         }
     });

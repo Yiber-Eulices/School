@@ -111,14 +111,18 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtGrado" id="TxtGrado" >
+                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
                         <label class="form-label">Grado</label>
                     </div>
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtProfesor" id="TxtProfesor" >
+                    <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
                         <label class="form-label">Profesor</label>
                     </div>
                     <div class="help-info">Profesor</div>
@@ -160,23 +164,23 @@
                     </div>
                     <div class="help-info">Año</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="TxtGradoEdit" id="TxtGradoEdit" >
+                <div class="form-group">
+                <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                        </select>
                         <label class="form-label">Grado</label>
-                    </div>
                     <div class="help-info">Grado</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="TxtProfesorEdit" id="TxtProfesorEdit" >
+                <div class="form-group">
+                <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                        </select>
                         <label class="form-label">Profesor</label>
-                    </div>
                     <div class="help-info">Profesor</div>
                 </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" IdEstudiante name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdCurso name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>

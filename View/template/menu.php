@@ -178,6 +178,9 @@
                             <li>
                                 <a href="Acudiente.php">Acudientes</a>
                             </li>
+                            <li>
+                                <a href="AcudienteEstudiante.php">Acudientes-Estudiante</a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -203,7 +206,8 @@
                             <i class="material-icons">home</i>
                             <span>Matriculas</span>
                         </a>
-                    </li>                   
+                    </li>  
+
                 </ul>
             </div>
             <!-- #Menu -->

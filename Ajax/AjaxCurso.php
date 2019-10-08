@@ -63,8 +63,8 @@
         $oBJEC_AJAX = new AjaxCurso();
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> anio = $_POST["Anio"];
-        $oBJEC_AJAX -> grado = $_POST["Grado"];
-        $oBJEC_AJAX -> profesor = $_POST["Profesor"];
+        $oBJEC_AJAX -> grado = $_POST["GradoIdGrado"];
+        $oBJEC_AJAX -> profesor = $_POST["ProfesorIdProfesor"];
         $oBJEC_AJAX -> AjxCrear();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){

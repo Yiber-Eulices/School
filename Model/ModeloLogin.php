@@ -15,10 +15,11 @@ require_once "Conexion.php";
             $correoDB = $oBJEC_LOGIN["Correo"];
             $passwordDB = $oBJEC_LOGIN["Password"];
             $fotoDB = $oBJEC_LOGIN["Foto"];
+            
+
 
             if ($user == $correoDB){
-                //if (password_verify($password,$passwordDB) ){
-                if ($password==$passwordDB){
+                if (password_verify($password, $passwordDB)) {
                     unset($password);
                     unset($passwordDB);
                     $_SESSION['UserId'] = $idDB;

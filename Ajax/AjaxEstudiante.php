@@ -1,7 +1,7 @@
 <?php
-    require_once "../Controller/ControladorAcudiente.php";
-    require_once "../Model/ModeloAcudiente.php";
-    class AjaxAcudiente{
+    require_once "../Controller/ControladorEstudiante.php";
+    require_once "../Model/ModeloEstudiante.php";
+    class AjaxEstudiante{
         public $id;
         public $nombre;
         public $apellido;
@@ -13,41 +13,44 @@
         public $telefono;
         public $foto;
         public $fechaNacimiento;
+        public $Curso;
 
         public function AjxCrear(){
-            $objACUDI = ControladorAcudiente::CtrlCrear( $this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
-            echo json_encode($objACUDI);
+            $objADMIN = ControladorEstudiante::CtrlCrear( $this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento,$this->Curso);
+            echo json_encode($objADMIN);
         }
         public function AjxEditar(){
-            $objACUDI = ControladorAcudiente::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
-            echo json_encode($objACUDI);  
+            $objADMIN = ControladorEstudiante::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento,$this->Curso);
+            echo json_encode($objADMIN);  //lo esta retornando en false.
         }
         public function AjxListar(){
-            $objACUDI = ControladorAcudiente::CtrlListar();
+            $objADMIN = ControladorEstudiante::CtrlListar();
             $oBJEC_JSON = '{
                 "data": [';
-                    if (count($objACUDI) >= 1){
-                        for ($i=0; $i < count($objACUDI); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
-                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
-                            $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
+                            $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objACUDI[$i]["IdAcudiente"].'",
+                                "'.$objADMIN[$i]["IdEstudiante"].'",
                                 "'.$img.'",
-                                "'.$objACUDI[$i]["Nombre"].'",
-                                "'.$objACUDI[$i]["Apellido"].'",
-                                "'.$objACUDI[$i]["TipoDocumento"].'",
-                                "'.$objACUDI[$i]["Documento"].'",
-                                "'.$objACUDI[$i]["FechaNacimiento"].'",
-                                "'.$objACUDI[$i]["Rh"].'",
-                                "'.$objACUDI[$i]["Correo"].'",
-                                "'.$objACUDI[$i]["Telefono"].'",
+                                "'.$objADMIN[$i]["Nombre"].'",
+                                "'.$objADMIN[$i]["Apellido"].'",
+                                "'.$objADMIN[$i]["TipoDocumento"].'",
+                                "'.$objADMIN[$i]["Documento"].'",
+                                "'.$objADMIN[$i]["FechaNacimiento"].'",
+                                "'.$objADMIN[$i]["Rh"].'",
+                                "'.$objADMIN[$i]["Correo"].'",
+                                "'.$objADMIN[$i]["Telefono"].'",
+                                "'.$objADMIN[$i]["CursoIdCurso"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
                         $oBJEC_JSON .= '[
+                            "",
                             "",
                             "",
                             "",
@@ -69,12 +72,12 @@
 
         }
         public function AjxBuscar(){
-            $objACUDI = ControladorAcudiente::CtrlBuscar($this->id);
-            echo json_encode($objACUDI);
+            $objADMIN = ControladorEstudiante::CtrlBuscar($this->id);
+            echo json_encode($objADMIN);
         }
         public function AjxEliminar(){
-            $objACUDI = ControladorAcudiente::CtrlEliminar($this->id);
-            echo json_encode($objACUDI);
+            $objADMIN = ControladorEstudiante::CtrlEliminar($this->id);
+            echo json_encode($objADMIN);
         }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
@@ -96,10 +99,10 @@
 			  $error["image"]= "La imagen no se ha subido";
 			}
 		  }
-		  //var_dump($_FILES["image"]); 
+		  //var_dump($_FILES["image"]);
           //die();
         }
-        $oBJEC_AJAX = new AjaxAcudiente();
+        $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> apellido = $_POST["Apellido"];
         $oBJEC_AJAX -> tipoDocumento = $_POST["TipoDocumento"];
@@ -110,6 +113,7 @@
         $oBJEC_AJAX -> telefono = $_POST["Telefono"];
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
+        $oBJEC_AJAX -> Curso = $_POST["Curso"];
         $oBJEC_AJAX -> AjxCrear();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
@@ -136,7 +140,7 @@
         }else{
             $image = $_POST["FotoSrc"];
         }
-        $oBJEC_AJAX = new AjaxAcudiente();
+        $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> apellido = $_POST["Apellido"];
@@ -145,22 +149,23 @@
         $oBJEC_AJAX -> rh = $_POST["Rh"];
         $oBJEC_AJAX -> correo = $_POST["Correo"];
         $oBJEC_AJAX -> password = $_POST["Password"];
-        $oBJEC_AJAX -> telefono = $_POST["Id"];
+        $oBJEC_AJAX -> telefono = $_POST["Telefono"];
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
+        $oBJEC_AJAX -> Curso = $_POST["Curso"];
         $oBJEC_AJAX -> AjxEditar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
-        $oBJEC_AJAX = new AjaxAcudiente();
+        $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> AjxListar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
-        $oBJEC_AJAX = new AjaxAcudiente();
+        $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxBuscar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'eliminar'){
-        $oBJEC_AJAX = new AjaxAcudiente();
+        $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxEliminar();
     }

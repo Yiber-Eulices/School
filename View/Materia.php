@@ -4,15 +4,19 @@
 ?>
 <section class="content">
         <div class="container-fluid">
-            
-          
+            <div class="block-header">
+                <h2>
+                    
+                    <small>Mas informacion en <a href="https:/www.autobusesaga.com/" target="_blank">www.autobusesaga.com</a></small>
+                </h2>
+            </div>
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                MATERIAS
+                                Materias
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -28,74 +32,44 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#miModal">
+                            <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
                                 <span>A&ntilde;adir Materia</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                <thead>
-                                    <tr>
-                                        <th>Materia</th>
-                                        <th>Descripción</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Materia</th>
-                                        <th>Descripción</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>Matematicas</td>
-                                        <td>estudia las propiedades de los números y las relaciones que se establecen entre ellos.</td>
-                                        <td>
-                                        <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorCurso.php'">
-                                            <i class="material-icons">visibility</i>
-                                            <span>Ver Cursos</span>
-                                        </button>
-                                        <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorMateria.php'">
-                                            <i class="material-icons">visibility</i>
-                                            <span>Ver Profesores</span>
-                                        </button>
-                                    </td> 
-                                        
-                                    <tr>
-                                        <td>Ingles</td>
-                                        <td>actualmente el idioma más importante a nivel mundial, ya sea para aquellos que lo hablan como primera lengua o aquellos que lo hablan como segunda lengua</td>
-                                        <td>
-                                        <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorCurso.php'">
-                                            <i class="material-icons">visibility</i>
-                                            <span>Ver Cursos</span>
-                                        </button>
-                                        <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorMateria.php'">
-                                            <i class="material-icons">visibility</i>
-                                            <span>Ver Profesores</span>
-                                        </button>
-                                    </td> 
-                                    </tr>
-                                    <tr>
-                                        <td>Fisica</td>
-                                        <td>e encarga de analizar las características de la energía, el tiempo y la materia, así como también los vínculos que se establecen entre ellos</td>
-                                        <td>
-                                        <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorCurso.php'">
-                                            <i class="material-icons">visibility</i>
-                                            <span>Ver Cursos</span>
-                                        </button>
-                                        <button type="button" class="btn bg-success waves-effect" onclick="location.href='ProfesorMateria.php'">
-                                            <i class="material-icons">visibility</i>
-                                            <span>Ver Profesores</span>
-                                        </button>
-                                    </td> 
-                                    </tr>                                                                
-                                   
-                                   
-                                </tbody>
+                                <table class="table table-bordered dataTableMateria table-striped dt-responsive table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Descripcion</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Descripcion</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </tfoot>                                    
                                 </table>
+                                <style>
+                                    .imgProfile{
+                                        height : 100px;
+                                        width : 100px;
+                                        border-radius : 50px;
+                                    }
+                                    .imgProfileEdit{
+                                        height : 200px;
+                                        width : 200px;
+                                        border-radius : 100px;
+                                        margin:auto;
+		                                display:block;
+                                    }
+                                </style>
                             </div>
                         </div>
                     </div>
@@ -106,39 +80,80 @@
         </div>
     </section>
     <!--Modal Create -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="miModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="defaultModalLabel">Materias</h4>
-            </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="ModalCreate">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">A&ntilde;adir Materia</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-                <h2 class="card-inside-title">Materias</h2>
-                    <div class="col-sm-12">
-                        <div class="form-group form-float form-group-lg">
-                            <div class="form-line">
-                            <input type="text" class="form-control" name="TxtSerie">
-                                <label class="form-label">Nombre Materia</label>
-                            </div>
-                        </div>
-                        <div class="form-group form-float form-group-lg">
-                            <div class="form-line">
-                            <input type="text" class="form-control" name="TxtSerie">
-                        <label class="form-label">Descripcion</label>
-                            </div>
-                        </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" >
+                        <label class="form-label">Nombre</label>
                     </div>
+                    <div class="help-info">Nombre</div>
                 </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtDescripcion" id="TxtDescripcion" >
+                        <label class="form-label">Descripcion</label>
+                    </div>
+                    <div class="help-info">Descripcion</div>
+                </div>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-link waves-effect">GUARDAR</button>
-                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CERRAR</button>
+              <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
+              <input type="reset"  name="Reset"  class="btn btn-danger">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
-                </div>
-            </div>
+          </form>
+        </div>
       </div>
     </div>
     <!--End Modal Create -->
-     
+    <!--Modal Edit -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="ModalEdit">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Materias</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <div class="modal-body">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
+                        <label class="form-label">Nombre</label>
+                    </div>
+                    <div class="help-info">Nombre</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
+                        <label class="form-label">Descripcion</label>
+                    </div>
+                    <div class="help-info">Descripcion</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" IdEstudiante name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="reset"  name="Reset"  class="btn btn-danger">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End Modal Edit -->
+    <script src="js/materia.js"></script>
 <?php
     include "template/footer.php";
 ?>

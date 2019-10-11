@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxEstudiante.php?a=lista",
+    $(".dataTableAcudiente").DataTable({
+        "ajax":"../Ajax/AjaxAcudiente.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -41,15 +41,15 @@ $(".formCreate").on("click",".botonCreate",function(){
         var ext = fileName.split('.').pop();
     }
     if($('#TxtNombre').val().length == 0){
-        var m = "Por favor ingrese el Nombre de el Estudiante.";
+        var m = "Por favor ingrese el Nombre de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtApellido').val().length == 0){
-        var m = "Por favor ingrese el Apellido de el Estudiante.";
+        var m = "Por favor ingrese el Apellido de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if(document.getElementById("TxtFoto").files.length == 0){
-        var m = "Por favor seleccione la Foto de el Estudiante.";
+        var m = "Por favor seleccione la Foto de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if(ext!='png' && ext!='jpg' && ext!='gif'){
@@ -57,35 +57,31 @@ $(".formCreate").on("click",".botonCreate",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtFechaNacimiento').val().length == 0){
-        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante.";
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTipoDocumento').val().length == 0){
-        var m = "Por favor seleccione el Tipo de Documento de el Estudiante.";
+        var m = "Por favor seleccione el Tipo de Documento de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtDocumento').val().length == 0){
-        var m = "Por favor ingrese el Documento de Identificacion de el Estudiante.";
+        var m = "Por favor ingrese el Documento de Identificacion de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtRh').val().length == 0){
-        var m = "Por favor seleccione el Rh de el Estudiante.";
+        var m = "Por favor seleccione el Rh de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtCorreo').val().length == 0){
-        var m = "Por favor ingrese el Correo de el Estudiante.";
+        var m = "Por favor ingrese el Correo de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtPassword').val().length == 0){
-        var m = "Por favor ingrese la Contrasena de el Estudiante.";
+        var m = "Por favor ingrese la Contrasena de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTelefono').val().length == 0){
-        var m = "Por favor ingrese el Telefono de Contacto de el Estudiante.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtCurso').val().length == 0){
-        var m = "Por favor ingrese el Curso de el Estudiante.";
+        var m = "Por favor ingrese el Telefono de Contacto de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else{
@@ -99,24 +95,22 @@ $(".formCreate").on("click",".botonCreate",function(){
         var Correo = $('#TxtCorreo').val();
         var Password = $('#TxtPassword').val();
         var Telefono = $('#TxtTelefono').val();
-        var Curso = $('#TxtCurso').val();
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Nombre", Nombre); 
-        oBJEC_ADMIN.append("Apellido", Apellido); 
-        oBJEC_ADMIN.append("Foto", Foto);
-        oBJEC_ADMIN.append("FechaNacimiento", FechaNacimiento); 
-        oBJEC_ADMIN.append("TipoDocumento", TipoDocumento); 
-        oBJEC_ADMIN.append("Documento", Documento); 
-        oBJEC_ADMIN.append("Rh", Rh); 
-        oBJEC_ADMIN.append("Correo", Correo); 
-        oBJEC_ADMIN.append("Password", Password); 
-        oBJEC_ADMIN.append("Telefono", Telefono); 
-        oBJEC_ADMIN.append("Curso", Curso); 
+        var oBJEC_ACUDI = new FormData();
+        oBJEC_ACUDI.append("Nombre", Nombre); 
+        oBJEC_ACUDI.append("Apellido", Apellido); 
+        oBJEC_ACUDI.append("Foto", Foto);
+        oBJEC_ACUDI.append("FechaNacimiento", FechaNacimiento); 
+        oBJEC_ACUDI.append("TipoDocumento", TipoDocumento); 
+        oBJEC_ACUDI.append("Documento", Documento); 
+        oBJEC_ACUDI.append("Rh", Rh); 
+        oBJEC_ACUDI.append("Correo", Correo); 
+        oBJEC_ACUDI.append("Password", Password); 
+        oBJEC_ACUDI.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=crear",
+            url:"../Ajax/AjaxAcudiente.php?a=crear",
             method:"POST",
-            data:oBJEC_ADMIN,
+            data:oBJEC_ACUDI,
             cache:false,
             contentType:false,
             processData:false,
@@ -125,7 +119,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                 if(respuesta = true){
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "estudiante.php";
+                    window.location = "Acudiente.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -135,12 +129,12 @@ $(".formCreate").on("click",".botonCreate",function(){
         });
     }
 });
-$(".dataTableEstudiante").on("click",".btnDelete",function(){
-    var id = $(this).attr("IdEstudiante");
-    var oBJEC_ADMIN = new FormData();
-    oBJEC_ADMIN.append("Id", id); 
+$(".dataTableAcudiente").on("click",".btnDelete",function(){
+    var id = $(this).attr("IdAcudiente");
+    var oBJEC_ACUDI= new FormData();
+    oBJEC_ACUDI.append("Id", id); 
     Swal.fire({
-        title: 'Estas Seguro de Eliminar el Estudiante?',
+        title: 'Estas Seguro de Eliminar el Acudiente?',
         text: "No podras revertir los cambios!",
         type: 'warning',
         showCancelButton: true,
@@ -151,9 +145,9 @@ $(".dataTableEstudiante").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxEstudiante.php?a=eliminar",
+                url:"../Ajax/AjaxAcudiente.php?a=eliminar",
                 method:"POST",
-                data:oBJEC_ADMIN,
+                data:oBJEC_ACUDI,
                 cache:false,
                 contentType:false,
                 processData:false,
@@ -162,7 +156,7 @@ $(".dataTableEstudiante").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Estudiante.php";
+                        window.location = "Acudiente.php";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -172,20 +166,20 @@ $(".dataTableEstudiante").on("click",".btnDelete",function(){
         }
     });
 });
-$(".dataTableEstudiante").on("click",".btnUpdate",function(){
-    var id = $(this).attr("IdEstudiante");
-    var oBJEC_ADMIN = new FormData();
-    oBJEC_ADMIN.append("Id", id); 
+$(".dataTableAcudiente").on("click",".btnUpdate",function(){
+    var id = $(this).attr("IdAcudiente");
+    var oBJEC_ACUDI = new FormData();
+    oBJEC_ACUDI.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxEstudiante.php?a=buscar",
+        url:"../Ajax/AjaxAcudiente.php?a=buscar",
         method:"POST",
-        data:oBJEC_ADMIN,
+        data:oBJEC_ACUDI,
         cache:false,
         contentType:false,
         processData:false,
         dataType:"json",
         success : function(respuesta){
-            $("#botonEdit").attr("IdEstudiante",id);
+            $("#botonEdit").attr("IdAcudiente",id);
             $("#imgProfileEdit").attr("src",respuesta["Foto"]);
             $('#TxtNombreEdit').val(respuesta["Nombre"]);
             $('#TxtApellidoEdit').val(respuesta["Apellido"]);
@@ -195,8 +189,6 @@ $(".dataTableEstudiante").on("click",".btnUpdate",function(){
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
-            $('#TxtCursoEdit').val(respuesta["Curso"]);
-            $("#TxtCursoEdit").focus();
             $("#TxtTelefonoEdit").focus();
             $("#TxtCorreoEdit").focus();
             $("#TxtDocumentoEdit").focus();
@@ -216,11 +208,11 @@ $(".formEdit").on("click",".botonEdit",function(){
         var ext = fileName.split('.').pop();
     }
     if($('#TxtNombreEdit').val().length == 0){
-        var m = "Por favor ingrese el Nombre de el Estudiante."
+        var m = "Por favor ingrese el Apellido de el Acudiente."
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtApellidoEdit').val().length == 0){
-        var m = "Por favor ingrese el Apellido de el Estudiante.";
+        var m = "Por favor ingrese el Apellido de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if(document.getElementById("TxtFotoEdit").files.length > 0 && ext!='png' && ext!='jpg' && ext!='gif'){
@@ -228,39 +220,35 @@ $(".formEdit").on("click",".botonEdit",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtFechaNacimientoEdit').val().length == 0){
-        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante.";
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTipoDocumentoEdit').val().length == 0){
-        var m = "Por favor seleccione el Tipo de Documento de el Estudiante.";
+        var m = "Por favor seleccione el Tipo de Documento de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtDocumentoEdit').val().length == 0){
-        var m = "Por favor ingrese el Documento de Identificacion de el Estudiante.";
+        var m = "Por favor ingrese el Documento de Identificacion de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtRhEdit').val().length == 0){
-        var m = "Por favor seleccione el Rh de el Estudiante.";
+        var m = "Por favor seleccione el Rh de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtCorreoEdit').val().length == 0){
-        var m = "Por favor ingrese el Correo de el Estudiante.";
+        var m = "Por favor ingrese el Correo de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtPasswordEdit').val().length == 0){
-        var m = "Por favor ingrese la Contrasena de el Estudiante.";
+        var m = "Por favor ingrese la Contrasena de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTelefonoEdit').val().length == 0){
-        var m = "Por favor ingrese el Telefono de Contacto de el Estudiante.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtCursoEdit').val().length == 0){
-        var m = "Por favor ingrese el Curso de Contacto de el Estudiante.";
+        var m = "Por favor ingrese el Telefono de Contacto de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Id = $("#botonEdit").attr("IdEstudiante");
+        var Id = $("#botonEdit").attr("IdAcudiente");
         var Nombre = $('#TxtNombreEdit').val();
         var Apellido = $('#TxtApellidoEdit').val();
         var Foto = "";
@@ -277,26 +265,24 @@ $(".formEdit").on("click",".botonEdit",function(){
         var Correo = $('#TxtCorreoEdit').val();
         var Password = $('#TxtPasswordEdit').val();
         var Telefono = $('#TxtTelefonoEdit').val();
-        var Curso = $('#TxtCursoEdit').val();
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Id", Id); 
-        oBJEC_ADMIN.append("Nombre", Nombre); 
-        oBJEC_ADMIN.append("Apellido", Apellido); 
-        oBJEC_ADMIN.append("Foto", Foto);
-        oBJEC_ADMIN.append("FotoSrc", FotoSrc);
-        oBJEC_ADMIN.append("FechaNacimiento", FechaNacimiento); 
-        oBJEC_ADMIN.append("TipoDocumento", TipoDocumento); 
-        oBJEC_ADMIN.append("Documento", Documento); 
-        oBJEC_ADMIN.append("Rh", Rh); 
-        oBJEC_ADMIN.append("Correo", Correo); 
-        oBJEC_ADMIN.append("Password", Password); 
-        oBJEC_ADMIN.append("Telefono", Telefono); 
-        oBJEC_ADMIN.append("Curso", Curso); 
+        var oBJEC_ACUDI = new FormData();
+        oBJEC_ACUDI.append("Id", Id); 
+        oBJEC_ACUDI.append("Nombre", Nombre); 
+        oBJEC_ACUDI.append("Apellido", Apellido); 
+        oBJEC_ACUDI.append("Foto", Foto);
+        oBJEC_ACUDI.append("FotoSrc", FotoSrc);
+        oBJEC_ACUDI.append("FechaNacimiento", FechaNacimiento); 
+        oBJEC_ACUDI.append("TipoDocumento", TipoDocumento); 
+        oBJEC_ACUDI.append("Documento", Documento); 
+        oBJEC_ACUDI.append("Rh", Rh); 
+        oBJEC_ACUDI.append("Correo", Correo); 
+        oBJEC_ACUDI.append("Password", Password); 
+        oBJEC_ACUDI.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=editar",
+            url:"../Ajax/AjaxAcudiente.php?a=editar",
             method:"POST",
-            data:oBJEC_ADMIN,
+            data:oBJEC_ACUDI,
             cache:false,
             contentType:false,
             processData:false,
@@ -305,7 +291,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 if(respuesta = true){
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Estudiante.php";
+                    window.location = "Acudiente.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

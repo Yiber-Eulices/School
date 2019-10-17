@@ -47,7 +47,7 @@
 <script src="DataTable/dataTables.responsive.min.js"></script>
 <script src="DataTable/responsive.bootstrap4.min.js"></script>
 
-<script src="js/pages/tables/jquery-datatable.js"></script>
+<!--script src="js/pages/tables/jquery-datatable.js"></script-->
 
 <!--sweetalert-->
 <script src="sweetalert/sweetalert.min.js"></script>

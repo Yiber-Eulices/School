@@ -52,6 +52,10 @@
 <!--sweetalert-->
 <script src="sweetalert/sweetalert.min.js"></script>
 <script src="sweetalert/mensajesweetalert.js"></script>
+
+<script src="js/Header.js"></script>
+
+
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">
 var _smartsupp = _smartsupp || {};

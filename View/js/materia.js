@@ -1,17 +1,16 @@
-$(document).ready(function (){
-    $(".table-materia").DataTable({
-        "ajax": "../ajax/AjaxMateria.php?a=lista",
-        "deferRender": true,
-        "retrieve": true,
-        "processing": true,
-        "language": {
+$(document).ready(function(){
+    $(".dataTableMateria").DataTable({
+        "ajax":"../Ajax/AjaxMateria.php?a=lista",
+        "deferRender":true,
+        "retrieve":true,
+        "processing":true,
+        "language":{
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
             "sZeroRecords":    "No se encontraron resultados",
             "sEmptyTable":     "Ningún dato disponible en esta tabla",
-            //"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_",
-            "sInfo":           "Mostrando registros del _START_ al _END_ ",
-            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0",
+            "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
             "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
             "sInfoPostFix":    "",
             "sSearch":         "Buscar:",
@@ -19,134 +18,160 @@ $(document).ready(function (){
             "sInfoThousands":  ",",
             "sLoadingRecords": "Cargando...",
             "oPaginate": {
-            "sFirst":    "Primero",
-            "sLast":     "Último",
-            "sNext":     "Siguiente",
-            "sPrevious": "Anterior"
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
             },
             "oAria": {
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         }
-
     });
 });
-$(".btnInsertar").click(function(){
-    var nombre = $("#TxtNombre").val();    
-    var descripcion = $("#TxtDescripcion").val();
-    
-    oBJEC_DATA = new FormData();
-    oBJEC_DATA.append("Nombre",nombre);
-    oBJEC_DATA.append("Descripcion",descripcion);
-    
-    $.ajax({
-        url:"../ajax/AjaxMateria.php?a=crear",
-        method:"POST",
-        data:oBJEC_DATA,
-        cache:false,
-        contentType:false,
-        processData:false,
-        dataType:"json",
-        success:function(respuesta){
-            if(respuesta){
-               // alert("Guardo");
-                window.location ="materia.php";
-            }else{
-                alert("¡¡¡Error!!");
-            }
-        }
-
-    })
-
-})
-$(".table-materia").on("click",".btnDelete",function(){
-var id = $(this).attr("IdMateria");
-alert(id);
-Swal.fire({
-    title: 'Estas Seguro de eliminar el usuario?',
-    text: "No podras revertir los cambios!",
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Si, borrarlo!',
-    cancelButtonText: 'Cancelar'
-}).then((result) => {
-    if (result.value) {
-        oBJEC_DATA = new FormData();
-        oBJEC_DATA.append("id",id);
+function SubmitFunction(){
+    return false;
+}
+$(".formCreate").on("click",".botonCreate",function(){
+    var fileName = "";
+    var ext = "";
+    if($('#TxtNombre').val().length == 0){
+        var m = "Por favor ingrese el Nombre de la Materia.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtDescripcion').val().length == 0){
+        var m = "Por favor ingrese la Descripcion de la Materia.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else{
+        var Nombre = $('#TxtNombre').val();
+        var Descripcion = $('#TxtDescripcion').val();
+        var oBJEC_ADMIN = new FormData();
+        oBJEC_ADMIN.append("Nombre", Nombre); 
+        oBJEC_ADMIN.append("Descripcion", Descripcion); 
+        
         $.ajax({
-            url:"../ajax/AjaxMateria.php?a=eliminar",
+            url:"../Ajax/AjaxMateria.php?a=crear",
             method:"POST",
-            data:oBJEC_DATA,
+            data:oBJEC_ADMIN,
             cache:false,
             contentType:false,
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta){
-                    //alert("eliminado");
-                    window.location ="materia.php";
-                }else{
-                    alert("¡¡¡Error!!");
+                if(respuesta = true){
+                    var m = "Datos Almacenados.";
+                    ValidateCreateUpdate(m);
+                    window.location = "Materia.php";
+                }else if(respuesta = false){
+                    var m = "¡¡¡Datos No Almacenados.!!!";
+                    ValidateCreateUpdate(m);
                 }
+                
             }
-
         });
     }
-});         
 });
-$(".table-materia").on("click",".btnUpdate",function(){
+$(".dataTableMateria").on("click",".btnDelete",function(){
     var id = $(this).attr("IdMateria");
-    alert(id);
-    oBJEC_DATA = new FormData();
-    oBJEC_DATA.append("id",id);
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    Swal.fire({
+        title: 'Estas Seguro de Eliminar la Materia?',
+        text: "No podras revertir los cambios!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, borrarlo!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url:"../Ajax/AjaxMateria.php?a=eliminar",
+                method:"POST",
+                data:oBJEC_ADMIN,
+                cache:false,
+                contentType:false,
+                processData:false,
+                dataType:"json",
+                success : function(respuesta){
+                    if(respuesta = true){
+                        var m = "Datos Eliminados.";
+                        ValidateCreateUpdate(m);
+                        window.location = "Materia.php";
+                    }else if(respuesta = false){
+                        var m = "¡¡¡Datos No Eliminados.!!!";
+                        ValidateCreateUpdate(m);
+                    }		
+                }
+            });
+        }
+    });
+});
+$(".dataTableMateria").on("click",".btnUpdate",function(){
+    var id = $(this).attr("IdMateria");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../ajax/AjaxMateria.php?a=buscar",
+        url:"../Ajax/AjaxMateria.php?a=buscar",
         method:"POST",
-        data:oBJEC_DATA,
+        data:oBJEC_ADMIN,
         cache:false,
         contentType:false,
         processData:false,
         dataType:"json",
-        success:function(respuesta){
-            
+        success : function(respuesta){
+            $("#botonEdit").attr("IdMateria",id);
+            $('#TxtNombreEdit').val(respuesta["Nombre"]);
+            $('#TxtDescripcionEdit').val(respuesta["Descripcion"]);
+            $("#TxtDescripcionEdit").focus();
+            $("#TxtNombreEdit").focus();
             $("#ModalEdit").modal();
         }
     });
-
-
-
 });
-$(".ModificarDatos").on("click",".btnModificaDatos",function(){
-    var id= $(this).attr("id");
-    var nombres=$("#txt_mod_nomb").val(); 
-    var apellidos=$("#txt_mod_apel").val(); 
-    var direccion=$("#txt_mod_dire").val(); 
-    var telefono=$("#txt_mod_tele").val();
-
-    var oBJEC_DATA = new FormData();
-    oBJEC_DATA.append("id",id);
-    oBJEC_DATA.append("nombre",nombres);
-    oBJEC_DATA.append("apellido",apellidos);
-    oBJEC_DATA.append("direccio",direccion);
-    oBJEC_DATA.append("telefon",telefono);
-
-
-    $.ajax({
-        url:"../ajax/usuarios.ajax.php",
-        method:"POST",
-        data: oBJEC_DATA,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: "json",
-        success : function(respuesta){
-            window.location = "tablas.php";      
-        }
-    });
-});
-function FunctionCreate(){
-    return false;
-}
+$(".formEdit").on("click",".botonEdit",function(){
+    var fileName = "";
+    var ext = "";
+    
+    if($('#TxtNombreEdit').val().length == 0){
+        var m = "Por favor ingrese el Nombre de la Materia."
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtDescripcionEdit').val().length == 0){
+        var m = "Por favor ingrese el Descripcion de la Materia.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else{
+        var Id = $("#botonEdit").attr("IdMateria");
+        var Nombre = $('#TxtNombreEdit').val();
+        var Descripcion = $('#TxtDescripcionEdit').val();
+        var oBJEC_ADMIN = new FormData();
+        oBJEC_ADMIN.append("Id", Id); 
+        oBJEC_ADMIN.append("Nombre", Nombre); 
+        oBJEC_ADMIN.append("Descripcion", Descripcion); 
+       
+        $.ajax({
+            url:"../Ajax/AjaxMateria.php?a=editar",
+            method:"POST",
+            data:oBJEC_ADMIN,
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success:function(respuesta){
+                if(respuesta = true){
+                    var m = "Datos Editados.";
+                    ValidateCreateUpdate(m);
+                    window.location = "Materia.php";
+                }else if(respuesta = false){
+                    var m = "¡¡¡Datos No Editados.!!!";
+                    ValidateCreateUpdate(m);
+                }
+                
+            }
+        });
+    }
+}); 

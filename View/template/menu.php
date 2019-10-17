@@ -34,77 +34,12 @@
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
-                            <span class="label-count">5</span>
+                            <span class="label-count">0</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">NOTIFICACIONES</li>
                             <li class="body">
                                 <ul class="menu">
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-light-green">
-                                                <i class="material-icons">Añadir persona</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Reunion padres de Familia</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i>hace 14 min
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-cyan">
-                                                <i class="material-icons">add_shopping_cart</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4>Entrada a clase demasiado tarde</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> hace 22 min
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-red">
-                                                <i class="material-icons">delete_forever</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><!--b>Nancy Perez </b-->Debe una nota en Matematicas</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> hace 3 horas
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-orange">
-                                                <i class="material-icons"></i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><!--b>Nancy</b--> Hoy no hay Educacion Fisica</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i>hace 2 horas
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);">
-                                            <div class="icon-circle bg-blue-grey">
-                                                <i class="material-icons">comment</i>
-                                            </div>
-                                            <div class="menu-info">
-                                                <h4><b>John</b> esta muy desjuiciado</h4>
-                                                <p>
-                                                    <i class="material-icons">access_time</i> hace 4 horas
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                             <li class="footer">
@@ -205,6 +140,18 @@
                         <a href="Matricula.php">
                             <i class="material-icons">home</i>
                             <span>Matriculas</span>
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="Evento.php">
+                            <i class="material-icons">home</i>
+                            <span>Eventos</span>
+                        </a>
+                    </li>  
+                    <li>
+                        <a href="Directivo.php">
+                            <i class="material-icons">home</i>
+                            <span>Directivos</span>
                         </a>
                     </li>  
 

@@ -8,8 +8,19 @@
             $objEDITM = ModeloAlerta::EditarAlerta($id,$rolPersona,$idPersona,$fecha,$titulo,$mensaje,$estado);
             return $objEDITM;
         }
+        public static function CtrlEditarEstado($id,$estado){
+            $objEDITM = ModeloAlerta::EditarAlertaEstado($id,$estado);
+            return $objEDITM;
+        }
         public static function CtrlListar(){
             $objLISTM = ModeloAlerta::ListarAlerta();
+            return $objLISTM;
+        }
+        public static function CtrlMiLista(){
+            session_start();
+            $idPersona = $_SESSION['UserId'];
+            $rolPersona = $_SESSION['UserRol'];
+            $objLISTM = ModeloAlerta::ListarMisAlertas($idPersona,$rolPersona);
             return $objLISTM;
         }
         public static function CtrlBuscar($id){

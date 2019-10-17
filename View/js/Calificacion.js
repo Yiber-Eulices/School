@@ -29,6 +29,48 @@ $(document).ready(function(){
             }
         }
     });
+    $.ajax({
+        url:"../Ajax/AjaxAdministrador.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtIdEstudiante').empty();
+            $('#TxtIdEstudianteEdit').empty();
+            $("#TxtIdEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtIdEstudianteEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                }                
+            }
+            $('#TxtIdEstudiante').change();
+            $('#TxtIdEstudianteEdit').change();
+            $("#TxtIdEstudiante").select2();
+            $("#TxtIdEstudianteEdit").select2();
+        }
+    });
+    $.ajax({
+        url:"../Ajax/AjaxAdministrador.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtIdMateria').empty();
+            $('#TxtIdMateriaEdit').empty();
+            $("#TxtIdMateria").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtIdMateriaEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtIdMateria").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                    $("#TxtIdMateriaEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                }                
+            }
+            $('#TxtIdMateria').change();
+            $('#TxtIdMateriaEdit').change();
+            $("#TxtIdMateria").select2();
+            $("#TxtIdMateriaEdit").select2();
+        }
+    });
 });
 function SubmitFunction(){
     return false;
@@ -153,8 +195,11 @@ $(".dataTableCalificacion").on("click",".btnUpdate",function(){
         success : function(respuesta){
             $("#botonEdit").attr("IdCalificacion",id);
             $("#TxtIdEstudianteEdit option[value='"+respuesta["EstudianteIdEstudiante"]+"']").attr("selected",true);
+            $("#TxtIdEstudianteEdit").select2();
             $("#TxtIdMateriaEdit option[value='"+respuesta["MateriaIdMateria"]+"']").attr("selected",true);
+            $("#TxtIdMateriaEdit").select2();
             $("#TxtPeriodoEdit option[value='"+respuesta["Periodo"]+"']").attr("selected",true);
+            $("#TxtPeriodoEdit").select2();
             $('#TxtNotaAcumulativaEdit').val(respuesta["NotaAcumulativa"]);
             $('#TxtNotaComportamentalEdit').val(respuesta["NotaComportamental"]);
             $('#TxtEvaluacionEdit').val(respuesta["Evaluacion"]);

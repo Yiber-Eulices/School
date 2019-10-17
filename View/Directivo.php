@@ -6,8 +6,8 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    
-                    <small>Mas informacion en <a href="https:/www.autobusesaga.com/" target="_blank">www.autobusesaga.com</a></small>
+                    SCHOOL ADMIN
+                   
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Cursos
+                                Directivo
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -34,18 +34,17 @@
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
-                                <span>A&ntilde;adir Curso</span>
+                                <span>A&ntilde;adir Directivo</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableCurso table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableDirectivo table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
                                             <th>Nombre</th>
-                                            <th>Año</th>
-                                            <th>Grado</th>
-                                            <th>Profesor</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -53,9 +52,8 @@
                                         <tr>
                                         <th>#</th>
                                             <th>Nombre</th>
-                                            <th>Año</th>
-                                            <th>Grado</th>
-                                            <th>Profesor</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
@@ -88,7 +86,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">A&ntilde;adir Curso</h5>
+            <h5 class="modal-title">A&ntilde;adir Directivo</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -102,30 +100,21 @@
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
+                
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAnio" id="TxtAnio" >
-                        <label class="form-label">Año</label>
+                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" >
+                        <label class="form-label">Correo</label>
                     </div>
-                    <div class="help-info">Año</div>
+                    <div class="help-info">Correo</div>
                 </div>
+              
                 <div class="form-group form-float">
                     <div class="form-line">
-                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                        <label class="form-label">Grado</label>
+                        <input type="number" class="form-control" name="TxtTelefono" id="TxtTelefono" >
+                        <label class="form-label">Telefono</label>
                     </div>
-                    <div class="help-info">Grado</div>
-                </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                    <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                        <label class="form-label">Profesor</label>
-                    </div>
-                    <div class="help-info">Profesor</div>
+                    <div class="help-info">Telefono</div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -143,44 +132,40 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Curso</h5>
+            <h5 class="modal-title">Editar Directivo</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-            <div class="form-group form-float">
+                
+                <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
                         <label class="form-label">Nombre</label>
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
+                
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtAnioEdit" id="TxtAnioEdit" >
-                        <label class="form-label">Año</label>
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
+                        <label class="form-label">Correo</label>
                     </div>
-                    <div class="help-info">Año</div>
+                    <div class="help-info">Correo</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                        </select>
-                        <label class="form-label">Grado</label>
-                    <div class="help-info">Grado</div>
-                </div>
-                <div class="form-group">
-                <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                        </select>
-                        <label class="form-label">Profesor</label>
-                    <div class="help-info">Profesor</div>
+               
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
+                        <label class="form-label">Telefono</label>
+                    </div>
+                    <div class="help-info">Telefono</div>
                 </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" IdCurso name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdDirectivo name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -189,7 +174,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="js/Curso.js"></script>
+    <script src="js/Directivo.js"></script>
 <?php
     include "template/footer.php";
 ?>

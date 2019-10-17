@@ -141,6 +141,18 @@
                             <i class="material-icons">home</i>
                             <span>Matriculas</span>
                         </a>
+                    </li> 
+                    <li>
+                        <a href="Evento.php">
+                            <i class="material-icons">home</i>
+                            <span>Eventos</span>
+                        </a>
+                    </li>  
+                    <li>
+                        <a href="Directivo.php">
+                            <i class="material-icons">home</i>
+                            <span>Directivos</span>
+                        </a>
                     </li>  
 
                 </ul>

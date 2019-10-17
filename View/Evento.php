@@ -6,8 +6,8 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    
-                    <small>Mas informacion en <a href="https:/www.autobusesaga.com/" target="_blank">www.autobusesaga.com</a></small>
+                    SCHOOL ADMIN
+                   
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Cursos
+                                Evento
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -34,28 +34,28 @@
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
-                                <span>A&ntilde;adir Curso</span>
+                                <span>A&ntilde;adir Evento</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableCurso table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableEvento table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Nombre</th>
-                                            <th>Año</th>
-                                            <th>Grado</th>
-                                            <th>Profesor</th>
+                                            <th>Foto</th>
+                                            <th>Fecha</th>
+                                            <th>Titulo</th>
+                                            <th>Descripcion</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                         <th>#</th>
-                                            <th>Nombre</th>
-                                            <th>Año</th>
-                                            <th>Grado</th>
-                                            <th>Profesor</th>
+                                        <th>Foto</th>
+                                            <th>Fecha</th>
+                                            <th>Titulo</th>
+                                            <th>Descripcion</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
@@ -88,7 +88,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">A&ntilde;adir Curso</h5>
+            <h5 class="modal-title">A&ntilde;adir Evento</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -97,37 +97,33 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" >
-                        <label class="form-label">Nombre</label>
+                        <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >
+                        <label class="form-label">Fecha</label>
                     </div>
-                    <div class="help-info">Nombre</div>
+                    <div class="help-info">Fecha</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAnio" id="TxtAnio" >
-                        <label class="form-label">Año</label>
+                        <input type="text" class="form-control" name="TxtTitulo" id="TxtTitulo" >
+                        <label class="form-label">Titulo</label>
                     </div>
-                    <div class="help-info">Año</div>
+                    <div class="help-info">Titulo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                        <label class="form-label">Grado</label>
+                        <input type="text" class="form-control" name="TxtDescripcion" id="TxtDescripcion" >
+                        <label class="form-label">Descripcion</label>
                     </div>
-                    <div class="help-info">Grado</div>
+                    <div class="help-info">Descripcion</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                    <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                        <label class="form-label">Profesor</label>
+                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
+                        <label class="form-label">Foto</label>
                     </div>
-                    <div class="help-info">Profesor</div>
+                    <div class="help-info">Foto</div>
                 </div>
-            </div>
+            </div> 
             <div class="modal-footer">
               <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
               <input type="reset"  name="Reset"  class="btn btn-danger">
@@ -143,44 +139,48 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Curso</h5>
+            <h5 class="modal-title">Editar Evento</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-            <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        <label class="form-label">Nombre</label>
-                    </div>
-                    <div class="help-info">Nombre</div>
+                <div class="form-group form-float">
+                    <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtAnioEdit" id="TxtAnioEdit" >
-                        <label class="form-label">Año</label>
+                        <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >
+                        <label class="form-label">Fecha</label>
                     </div>
-                    <div class="help-info">Año</div>
+                    <div class="help-info">Fecha</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                        </select>
-                        <label class="form-label">Grado</label>
-                    <div class="help-info">Grado</div>
+                
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >
+                        <label class="form-label">Titulo</label>
+                    </div>
+                    <div class="help-info">Titulo</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                        </select>
-                        <label class="form-label">Profesor</label>
-                    <div class="help-info">Profesor</div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
+                        <label class="form-label">Descripcion</label>
+                    </div>
+                    <div class="help-info">Descripcion</div>
+                </div>
+               <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
+                        <label class="form-label">Foto</label>
+                    </div>
+                    <div class="help-info">Foto</div>
                 </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" IdCurso name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdEvento name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -189,7 +189,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="js/Curso.js"></script>
+    <script src="js/Evento.js"></script>
 <?php
     include "template/footer.php";
 ?>

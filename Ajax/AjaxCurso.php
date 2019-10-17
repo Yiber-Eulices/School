@@ -26,10 +26,10 @@
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdCurso = '".$objADMIN[$i]["IdCurso"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$objADMIN[$i]["IdCurso"].'",
-                                "'.$objADMIN[$i]["Nombre"].'",
+                                "'.$objADMIN[$i]["NombreCurso"].'",
                                 "'.$objADMIN[$i]["Anio"].'",
-                                "'.$objADMIN[$i]["GradoIdGrado"].'",
-                                "'.$objADMIN[$i]["ProfesorIdProfesor"].'",
+                                "'.$objADMIN[$i]["Nivel"].'",
+                                "'.$objADMIN[$i]["NombreProfesor"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

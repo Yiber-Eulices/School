@@ -1,11 +1,13 @@
 <?php
     class ControladorProfesor{
         public static function CtrlCrear($nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento){
-            $objCREARM = ModeloProfesor::CrearProfesor($nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento);
+            $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
+            $objCREARM = ModeloProfesor::CrearProfesor($nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$passwordHash,$telefono,$foto,$fechaNacimiento);
             return $objCREARM;
         }
         public static function CtrlEditar($id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento){
-            $objEDITM = ModeloProfesor::EditarProfesor($id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento);
+            $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
+            $objEDITM = ModeloProfesor::EditarProfesor($id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$passwordHash,$telefono,$foto,$fechaNacimiento);
             return $objEDITM;
         }
         public static function CtrlListar(){

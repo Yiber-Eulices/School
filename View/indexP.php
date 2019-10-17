@@ -17,79 +17,9 @@
 <body>
 
 <div class="super_container">
-
-	<!-- Header -->
-
-	<header class="header d-flex flex-row">
-		<div class="header_content d-flex flex-row align-items-center">
-			<!-- Logo -->
-			<div class="logo_container">
-				<div class="logo">
-					<img src="images/logo.png" alt="">
-					<span>School Admin</span>
-				</div>
-			</div>
-
-			<!-- Main Navigation -->
-			<nav class="main_nav_container">
-				<div class="main_nav">
-					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="#">Inicio</a></li>
-						<li class="main_nav_item"><a href="contact.html">Contacto</a></li>
-						<li class="main_nav_item"><a href="http://localhost/school/Login.php">Iniciar Sesión</a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-		<div class="header_side d-flex flex-row justify-content-center align-items-center">
-			<img src="images/phone-call.svg" alt="">
-			<span>+57 3203289787</span>
-		</div>
-
-		<!-- Hamburger -->
-		<div class="hamburger_container">
-			<i class="fas fa-bars trans_200"></i>
-		</div>
-
-	</header>
-	
-	<!-- Menu -->
-	<div class="menu_container menu_mm">
-
-		<!-- Menu Close Button -->
-		<div class="menu_close_container">
-			<div class="menu_close"></div>
-		</div>
-
-		<!-- Menu Items -->
-		<div class="menu_inner menu_mm">
-			<div class="menu menu_mm">
-				<ul class="menu_list menu_mm">
-					<li class="menu_item menu_mm"><a href="#">Inicio</a></li>
-					<li class="menu_item menu_mm"><a href="#">Acerca de nosotros</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">Noticias</a></li>
-					<li class="menu_item menu_mm"><a href="contact.html">Contactenos</a></li>
-				</ul>
-
-				<!-- Menu Social -->
-				
-				<div class="menu_social_container menu_mm">
-					<ul class="menu_social menu_mm">
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
-
-				<div class="menu_copyright menu_mm">Colorlib All rights reserved</div>
-			</div>
-
-		</div>
-
-	</div>
-	
+<?php
+    include "template/headerP.php";
+?>
 	<!-- Home -->
 
 	<div class="home">
@@ -137,7 +67,7 @@
 							<img src="images/books.svg" class="svg" alt="">
 							<div class="hero_box_content">
 								<h2 class="hero_box_title">Iniciar Sesión</h2>
-								<a href="http://localhost/school/Login.php" class="hero_box_link">Click aquí para iniciar sesión</a>
+								<a href="Login.php" class="hero_box_link">Click aquí para iniciar sesión</a>
 							</div>
 						</div>
 					</div>
@@ -304,102 +234,9 @@
 				
 		</div>
 	</div>
-
-	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="container">
-			
-			<!-- Newsletter -->
-
-			<!-- Footer Content -->
-
-			<div class="footer_content">
-				<div class="row">
-
-					<!-- Footer Column - About -->
-					<div class="col-lg-3 footer_col">
-
-						<!-- Logo -->
-						<div class="logo_container">
-							<div class="logo">
-								<img src="images/logo.png" alt="">
-								<span>School Admin</span>
-							</div>
-						</div>
-
-						<p class="footer_about_text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, accusamus consequuntur ipsam velit excepturi explicabo numquam dolore officiis, atque rerum fugit! Labore voluptas, minima et magnam dicta consequatur nemo aliquid?</p>
-
-					</div>
-
-					<!-- Footer Column - Menu -->
-
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Menu</div>
-						<div class="footer_column_content">
-							<ul>
-								<li class="footer_list_item"><a href="#">Inicio</a></li>
-								<li class="footer_list_item"><a href="contact.html">Contactos</a></li>
-								<li class="footer_list_item"><a href="#">Iniciar sesion</a></li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Footer Column - Usefull Links -->
-
-
-					<!-- Footer Column - Contact -->
-
-					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Contactos</div>
-						<div class="footer_column_content">
-							<ul>
-								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									Sogamoso-Boyaca, Cr 56 Nº 3-13
-								</li>
-								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									57+ 3203289787
-								</li>
-								<li class="footer_contact_item">
-									<div class="footer_contact_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>SchoolAdmin@Gmail.com
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<!-- Footer Copyright -->
-
-			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
-				<div class="footer_copyright">
-					<span>
-SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="index.html" target="_blank">School Admin</a>
-</span>
-				</div>
-				<div class="footer_social ml-sm-auto">
-					<ul class="menu_social">
-						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-
+	<?php
+    include "template/footerP.php";
+	?>
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>

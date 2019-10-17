@@ -62,28 +62,6 @@
             </div>
         </div>
     </section>
-<!-- Default Size -->
-<div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="defaultModalLabel">Reunion Padres de Familia</h4>
-            </div>
-            <div class="modal-body">
-                La reunion se realizara en la aula multifuncional el dia 23 de mayo del 2019</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-link waves-effect">Aceptar</button>
-                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <?php
     include "template/footer.php";
 ?>
-<script type="text/javascript">
-        $(document).ready(function() {
-            $("#defaultModal").modal();                  
-        });
-</script>

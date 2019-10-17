@@ -18,6 +18,10 @@
             $objADMIN = ControladorAlerta::CtrlEditar( $this->id,$this->rolPersona,$this->idPersona,$this->fecha,$this->titulo,$this->mensaje,$this->estado);
             echo json_encode($objADMIN);  
         }
+        public function AjxEditarEstado(){
+            $objADMIN = ControladorAlerta::CtrlEditarEstado( $this->id,$this->estado);
+            echo json_encode($objADMIN);  
+        }
         public function AjxListar(){
             $objADMIN = ControladorAlerta::CtrlListar();
             $oBJEC_JSON = '{
@@ -41,6 +45,40 @@
                     }else{
                         $oBJEC_JSON .= '[
                             "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
+        public function AjxMiLista(){
+            $objADMIN = ControladorAlerta::CtrlMiLista();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {                           
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdAlerta"].'",
+                                "'.$objADMIN[$i]["RolPersona"].'",
+                                "'.$objADMIN[$i]["IdPersona"].'",
+                                "'.$objADMIN[$i]["Fecha"].'",
+                                "'.$objADMIN[$i]["Titulo"].'",
+                                "'.$objADMIN[$i]["Mensaje"].'",
+                                "'.$objADMIN[$i]["Estado"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
                             "",
                             "",
                             "",
@@ -87,9 +125,19 @@
         $oBJEC_AJAX -> estado = $_POST["Estado"];
         $oBJEC_AJAX -> AjxEditar();
     }
+    if(isset($_GET["a"]) && $_GET["a"] == 'editarEstado'){
+        $oBJEC_AJAX = new AjaxAlerta();
+        $oBJEC_AJAX -> id = $_POST["Id"];
+        $oBJEC_AJAX -> estado = $_POST["Estado"];
+        $oBJEC_AJAX -> AjxEditarEstado();
+    }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxAlerta();
         $oBJEC_AJAX -> AjxListar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'milista'){
+        $oBJEC_AJAX = new AjaxAlerta();
+        $oBJEC_AJAX -> AjxMiLista();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxAlerta();

@@ -24,8 +24,22 @@
 
             return ($oBJEC_DATA_UPDATE -> execute());
         }
+        public static function EditarAlertaEstado($id,$estado){
+            $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE Alerta  SET Estado = :Estado WHERE IdAlerta = :id");
+            $oBJEC_DATA_UPDATE  -> bindParam(":id",$id, PDO::PARAM_INT);
+            $oBJEC_DATA_UPDATE  -> bindParam(":Estado",$estado, PDO::PARAM_STR);
+            return ($oBJEC_DATA_UPDATE -> execute());
+        }
         public static function ListarAlerta(){
             $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM Alerta");
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST->fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
+        public static function ListarMisAlertas($idPersona,$rolPersona){
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM Alerta WHERE IdPersona = :IdPersona AND RolPersona = :RolPersona ORDER BY Fecha DESC");
+            $oBJEC_DATA_LIST  -> bindParam(":IdPersona",$idPersona, PDO::PARAM_STR);
+            $oBJEC_DATA_LIST  -> bindParam(":RolPersona",$rolPersona, PDO::PARAM_STR);
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST->fetchAll();
             return $oBJEC_DATA_ARRAY;            

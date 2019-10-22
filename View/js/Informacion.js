@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableEmpresa").DataTable({
-        "ajax":"../Ajax/AjaxEmpresa.php?a=lista",
+    $(".dataTableInformacion").DataTable({
+        "ajax":"../Ajax/AjaxInformacion.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -34,31 +34,37 @@ function SubmitFunction(){
     return false;
 }
 $(".formCreate").on("click",".botonCreate",function(){
-    if($('#TxtMision').val().length == 0){
-        var m = "Por favor ingrese la misión del colegio.";
+    if($('#TxtDescripcion').val().length == 0){
+        var m = "Por favor ingrese la descripción de la información.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtVision').val().length == 0){
-        var m = "Por favor ingrese la visión del colegio.";
+    }else if($('#TxtUbicacion').val().length == 0){
+        var m = "Por favor ingrese la ubicación del colegio.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtSomos').val().length == 0){
-        var m = "Por favor ingrese el campo quienes somos.";
+    }else if($('#TxtCorreo').val().length == 0){
+        var m = "Por favor ingrese el campo Correo.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtTelefono').val().length == 0){
+        var m = "Por favor ingrese el campo telefono.";
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Mision = $('#TxtMision').val();
-        var Vision = $('#TxtVision').val();
-        var Somos = $('#TxtSomos').val();
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Mision", Mision); 
-        oBJEC_ADMIN.append("Vision", Vision); 
-        oBJEC_ADMIN.append("Somos", Somos); 
+        var Descripcion = $('#TxtDescripcion').val();
+        var Ubicacion = $('#TxtUbicacion').val();
+        var Correo = $('#TxtCorreo').val();
+        var Telefono = $('#TxtTelefono').val();
+        var oBJEC_INFO = new FormData();
+        oBJEC_INFO.append("Descripcion", Descripcion); 
+        oBJEC_INFO.append("Ubicacion", Ubicacion); 
+        oBJEC_INFO.append("Correo", Correo); 
+        oBJEC_INFO.append("Telefono", Telefono); 
         
         $.ajax({
-            url:"../Ajax/AjaxEmpresa.php?a=crear",
+            url:"../Ajax/AjaxInformacion.php?a=crear",
             method:"POST",
-            data:oBJEC_ADMIN,
+            data:oBJEC_INFO,
             cache:false,
             contentType:false,
             processData:false,
@@ -67,7 +73,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                 if(respuesta = true){
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Empresa.php";
+                    window.location = "Informacion.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -77,10 +83,10 @@ $(".formCreate").on("click",".botonCreate",function(){
         });
     }
 });
-$(".dataTableEmpresa").on("click",".btnDelete",function(){
-    var id = $(this).attr("IdEmpresa");
-    var oBJEC_ADMIN = new FormData();
-    oBJEC_ADMIN.append("Id", id); 
+$(".dataTableInformacion").on("click",".btnDelete",function(){
+    var id = $(this).attr("IdInformacion");
+    var oBJEC_INFO = new FormData();
+    oBJEC_INFO.append("Id", id); 
     Swal.fire({
         title: 'Estas Seguro de Eliminar el objetivo estrategico?',
         text: "No podras revertir los cambios!",
@@ -93,9 +99,9 @@ $(".dataTableEmpresa").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxEmpresa.php?a=eliminar",
+                url:"../Ajax/AjaxInformacion.php?a=eliminar",
                 method:"POST",
-                data:oBJEC_ADMIN,
+                data:oBJEC_INFO,
                 cache:false,
                 contentType:false,
                 processData:false,
@@ -104,7 +110,7 @@ $(".dataTableEmpresa").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Empresa.php";
+                        window.location = "Informacion.php";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -114,56 +120,57 @@ $(".dataTableEmpresa").on("click",".btnDelete",function(){
         }
     });
 });
-$(".dataTableEmpresa").on("click",".btnUpdate",function(){
-    var id = $(this).attr("IdEmpresa");
-    var oBJEC_ADMIN = new FormData();
-    oBJEC_ADMIN.append("Id", id); 
+$(".dataTableInformacion").on("click",".btnUpdate",function(){
+    var id = $(this).attr("IdInformacion");
+    var oBJEC_INFO = new FormData();
+    oBJEC_INFO.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxEmpresa.php?a=buscar",
+        url:"../Ajax/AjaxInformacion.php?a=buscar",
         method:"POST",
-        data:oBJEC_ADMIN,
+        data:oBJEC_INFO,
         cache:false,
         contentType:false,
         processData:false,
         dataType:"json",
         success : function(respuesta){
-            $("#botonEdit").attr("IdEmpresa",id);
-            $('#TxtMisionEdit').val(respuesta["Mision"]);
-            $('#TxtVisionEdit').val(respuesta["Vision"]);
-            $('#TxtSomosEdit').val(respuesta["QuienesSomos"]);
+            $("#botonEdit").attr("IdInformacion",id);
+            $('#TxtDescripcionEdit').val(respuesta["Descripcion"]);
+            $('#TxtUbicacionEdit').val(respuesta["Ubicacion"]);
+            $('#TxtCorreoEdit').val(respuesta["Correo"]);
+            $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
             $("#ModalEdit").modal();
         }
     });
 });
 $(".formEdit").on("click",".botonEdit",function(){
     
-    if($('#TxtMisionEdit').val().length == 0){
+    if($('#TxtDescripcionEdit').val().length == 0){
         var m = "Por favor ingrese la misión del colegio."
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtVisionEdit').val().length == 0){
+    }else if($('#TxtUbicacionEdit').val().length == 0){
         var m = "Por favor ingrese la visión del colegio.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtSomosEdit').val().length == 0){
-        var m = "Por favor rellene el campo ¿quienes somos?.";
+    }else if($('#TxtCorreoEdit').val().length == 0){
+        var m = "Por favor rellene el campo ¿quienes Correo?.";
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Id = $("#botonEdit").attr("IdEmpresa");
-        var Mision = $('#TxtMisionEdit').val();
-        var Vision = $('#TxtVisionEdit').val();
-        var Somos = $('#TxtSomosEdit').val();
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Id", Id); 
-        oBJEC_ADMIN.append("Mision", Mision); 
-        oBJEC_ADMIN.append("Vision", Vision); 
-        oBJEC_ADMIN.append("Somos", Somos); 
+        var Id = $("#botonEdit").attr("IdInformacion");
+        var Descripcion = $('#TxtDescripcionEdit').val();
+        var Ubicacion = $('#TxtUbicacionEdit').val();
+        var Correo = $('#TxtCorreoEdit').val();
+        var oBJEC_INFO = new FormData();
+        oBJEC_INFO.append("Id", Id); 
+        oBJEC_INFO.append("Descripcion", Descripcion); 
+        oBJEC_INFO.append("Ubicacion", Ubicacion); 
+        oBJEC_INFO.append("Correo", Correo); 
        
         $.ajax({
-            url:"../Ajax/AjaxEmpresa.php?a=editar",
+            url:"../Ajax/AjaxInformacion.php?a=editar",
             method:"POST",
-            data:oBJEC_ADMIN,
+            data:oBJEC_INFO,
             cache:false,
             contentType:false,
             processData:false,
@@ -172,7 +179,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 if(respuesta = true){
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Empresa.php";
+                    window.location = "Informacion.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

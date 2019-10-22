@@ -154,7 +154,19 @@
                             <span>Directivos</span>
                         </a>
                     </li>  
-
+                    <li>
+                        <a href="Empresa.php">
+                            <i class="material-icons">home</i>
+                            <span>Objetivos Estrategicos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Informacion.php">
+                            <i class="material-icons">home</i>
+                            <span>Información</span>
+                        </a>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- #Menu -->

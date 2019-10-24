@@ -4,12 +4,7 @@
 ?>
 <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>
-                    
-                    <small>Mas informacion en <a href="https:/www.autobusesaga.com/" target="_blank">www.autobusesaga.com</a></small>
-                </h2>
-            </div>
+            
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

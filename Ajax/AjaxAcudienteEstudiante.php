@@ -25,8 +25,8 @@
 
                             $oBJEC_JSON .= '[
                                 "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
-                                "'.$objAcudienteEstudiante[$i]["EstudianteIdEstudiante"].'",
-                                "'.$objAcudienteEstudiante[$i]["AcudienteIdAcudiente"].'",
+                                "'.$objAcudienteEstudiante[$i]["Nombre"].'",
+                                "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

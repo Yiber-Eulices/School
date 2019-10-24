@@ -27,7 +27,7 @@
             return $oBJEC_DATA_ARRAY;            
         }
         public static function BuscarInformacion($id){
-            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Informacion WHERE IdInformacion = :id");
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM informacion WHERE IdInformacion = :id");
             $oBJEC_DATA_SEARCH  -> bindParam(":id",$id, PDO::PARAM_INT);
             $oBJEC_DATA_SEARCH -> execute();
             $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();

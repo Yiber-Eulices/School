@@ -145,15 +145,19 @@ $(".dataTableInformacion").on("click",".btnUpdate",function(){
 $(".formEdit").on("click",".botonEdit",function(){
     
     if($('#TxtDescripcionEdit').val().length == 0){
-        var m = "Por favor ingrese la misión del colegio."
+        var m = "Por favor ingrese la descripcion de la información."
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtUbicacionEdit').val().length == 0){
-        var m = "Por favor ingrese la visión del colegio.";
+        var m = "Por favor ingrese la ubicación del colegio.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtCorreoEdit').val().length == 0){
-        var m = "Por favor rellene el campo ¿quienes Correo?.";
+        var m = "Por favor rellene el campo correo.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtTelefonoEdit').val().length == 0){
+        var m = "Por favor rellene el campo telefono.";
         ValidateCreateUpdate(m);
         return false;
     }else{
@@ -161,14 +165,16 @@ $(".formEdit").on("click",".botonEdit",function(){
         var Descripcion = $('#TxtDescripcionEdit').val();
         var Ubicacion = $('#TxtUbicacionEdit').val();
         var Correo = $('#TxtCorreoEdit').val();
+        var Correo = $('#TxtTelelfonoEdit').val();
         var oBJEC_INFO = new FormData();
         oBJEC_INFO.append("Id", Id); 
         oBJEC_INFO.append("Descripcion", Descripcion); 
         oBJEC_INFO.append("Ubicacion", Ubicacion); 
         oBJEC_INFO.append("Correo", Correo); 
+        oBJEC_INFO.append("Telefono", Telefono); 
        
         $.ajax({
-            url:"../Ajax/AjaxInformacion.php?a=editar",
+            url:"../Ajax/AjaxInformaccvcion.php?a=editar",
             method:"POST",
             data:oBJEC_INFO,
             cache:false,

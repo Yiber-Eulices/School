@@ -17,7 +17,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarProfesorMateria(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM profesormateria");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdProfesorMateria,c.ProfesorIdProfesor,c.MateriaIdMateria,g.IdMateria,g.Nombre,p.IdProfesor,p.Nombre AS NombreProfesor FROM profesorMateria c INNER JOIN materia g ON c.MateriaIdMateria=g.IdMateria INNER JOIN profesor p ON c.ProfesorIdProfesor=p.IdProfesor");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            

@@ -7,7 +7,7 @@
             <div class="block-header">
                 <h2>
                     
-                    <small>Mas informacion en <a href="https:/www.autobusesaga.com/" target="_blank">www.autobusesaga.com</a></small>
+                SCHOOL ADMIN
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -131,14 +131,14 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        <label class="form-label">Nombre</label>
+                        
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                        <label class="form-label">Descripcion</label>
+                       
                     </div>
                     <div class="help-info">Descripcion</div>
                 </div>

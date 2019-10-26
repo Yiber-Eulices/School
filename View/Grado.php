@@ -123,7 +123,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtNivelEdit" id="TxtNivelEdit" >
-                        <label class="form-label">Nivel</label>
+                        
                     </div>
                     <div class="help-info">Nivel</div>
                 </div>

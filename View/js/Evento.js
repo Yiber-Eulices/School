@@ -60,16 +60,22 @@ $(".formCreate").on("click",".botonCreate",function(){
         var m = "El archivo seleccionado no es un archivo de Imagen.";
         ValidateCreateUpdate(m);
         return false;
+    }else if($('#TxtLugar').val().length == 0){
+        var m = "Por favor ingrese el lugar del Evento.";
+        ValidateCreateUpdate(m);
+        return false;
     }else{
         var Fecha = $('#TxtFecha').val();
         var Titulo = $('#TxtTitulo').val();
         var Descripcion = $('#TxtDescripcion').val();
         var Foto = document.getElementById("TxtFoto").files[0];
+        var Lugar = $('#TxtLugar').val();
         var oBJEC_EVEN = new FormData();
         oBJEC_EVEN.append("Fecha", Fecha); 
         oBJEC_EVEN.append("Titulo", Titulo);
         oBJEC_EVEN.append("Descripcion", Descripcion);   
         oBJEC_EVEN.append("Foto", Foto);
+        oBJEC_EVEN.append("Lugar", Lugar);
     
         $.ajax({
             url:"../Ajax/AjaxEvento.php?a=crear",
@@ -147,8 +153,10 @@ $(".dataTableEvento").on("click",".btnUpdate",function(){
             $("#imgProfileEdit").attr("src",respuesta["Foto"]);
             $('#TxtFechaEdit').val(respuesta["Fecha"]);
             $('#TxtTituloEdit').val(respuesta["Titulo"]);
+            $('#TxtLugarEdit').val(respuesta["Lugar"]);
             $('#TxtDescripcionEdit').val(respuesta["Descripcion"]);
             $("#TxtDescripcionEdit").focus();
+            $("#TxtLugarEdit").focus();
             $("#TxtTituloEdit").focus();
             $("#TxtFechaEdit").focus();
             $("#ModalEdit").modal();
@@ -178,6 +186,10 @@ $(".formEdit").on("click",".botonEdit",function(){
         var m = "Por favor ingrese la descripcion del Evento.";
         ValidateCreateUpdate(m);
         return false;
+    }else if($('#TxtLugarEdit').val().length == 0){
+        var m = "Por favor ingrese el lugar del Evento.";
+        ValidateCreateUpdate(m);
+        return false;
     }else{
         var Id = $("#botonEdit").attr("IdEvento");
         var Fecha = $('#TxtFechaEdit').val();
@@ -190,6 +202,7 @@ $(".formEdit").on("click",".botonEdit",function(){
             var FotoSrc = $("#imgProfileEdit").attr("src");
         }
         var Descripcion = $('#TxtDescripcionEdit').val();
+        var Lugar = $('#TxtLugarEdit').val();
         var oBJEC_EVEN = new FormData();
         oBJEC_EVEN.append("Id", Id); 
         oBJEC_EVEN.append("Fecha", Fecha); 
@@ -197,6 +210,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_EVEN.append("Foto", Foto);
         oBJEC_EVEN.append("FotoSrc", FotoSrc);
         oBJEC_EVEN.append("Descripcion", Descripcion); 
+        oBJEC_EVEN.append("Lugar", Lugar); 
     
         $.ajax({
             url:"../Ajax/AjaxEvento.php?a=editar",

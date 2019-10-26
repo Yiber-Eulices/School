@@ -1,11 +1,11 @@
 <?php
     class ControladorEvento{
-        public static function CtrlCrear($fecha,$titulo,$descripcion,$foto){
-            $objCREARM = ModeloEvento::CrearEvento($fecha,$titulo, $descripcion,$foto);
+        public static function CtrlCrear($fecha,$titulo,$descripcion,$foto,$lugar){
+            $objCREARM = ModeloEvento::CrearEvento($fecha,$titulo, $descripcion,$foto,$lugar);
             return $objCREARM;
         }
-        public static function CtrlEditar($id,$fecha,$titulo,$descripcion,$foto){
-            $objEDITM = ModeloEvento::EditarEvento($id,$fecha,$titulo,$descripcion,$foto);
+        public static function CtrlEditar($id,$fecha,$titulo,$descripcion,$foto,$lugar){
+            $objEDITM = ModeloEvento::EditarEvento($id,$fecha,$titulo,$descripcion,$foto,$lugar);
             return $objEDITM;
         }
         public static function CtrlListar(){

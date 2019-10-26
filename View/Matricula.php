@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>                    
-                    <small>SCHOOL ADMIN</small>
+                    SCHOOL ADMIN
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -94,9 +94,11 @@
           </div>
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-                <div class="form-group">
+            <div class="form-group form-float">
+                    <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaMatricula" id="TxtFechaMatricula" >
-                        <label class="form-label">Fecha de Matricula</label>
+                        
+                    </div>
                     <div class="help-info">Fecha de Matricula</div>
                 </div>
                 <div class="form-group form-float">
@@ -111,7 +113,6 @@
                     <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
-                        <label class="form-label">Grado</label>
                     </div>
                     <div class="help-info">Grado</div>
                 </div>
@@ -120,7 +121,6 @@
                         <select name="TxtEstuidiante" id="TxtEstuidiante" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Estudiante</label>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
@@ -146,28 +146,32 @@
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-                <div class="form-group">
+                < <div class="form-group form-float">
+                    <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaMatriculaEdit" id="TxtFechaMatriculaEdit" >
-                        <label class="form-label">Fecha de Matricula</label>
+                </div>       
                     <div class="help-info">Fecha de Matricula</div>
                 </div>
-                <div class="form-group">
+                <div class="form-group form-float">
+                    <div class="form-line">
                         <input type="number" class="form-control" name="TxtCostoEdit" id="TxtCostoEdit" >
-                        <label class="form-label">Costo</label>
+                    </div>
                     <div class="help-info">Costo</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Grado</label>
+                    </div>
                     <div class="help-info">Grado</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtEstuidianteEdit" id="TxtEstuidianteEdit" style ="width: 100%">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <select name="TxtEstuidianteEdit" id="TxtEstuidianteEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Estudiante</label>
+                    </div>
                     <div class="help-info">Estudiante</div>
                 </div>
             </div>

@@ -17,7 +17,7 @@
             echo json_encode($objINFO);  //lo esta retornando en false.
         }
         public function AjxListar(){
-            $objINFO = ControladorINformacion::CtrlListar();
+            $objINFO = ControladorInformacion::CtrlListar();
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objINFO) >= 1){
@@ -43,7 +43,7 @@
                     }
                     $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
                     $oBJEC_JSON .=']
-                }'
+                }';
 
                 echo $oBJEC_JSON;
         

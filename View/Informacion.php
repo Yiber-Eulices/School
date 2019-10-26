@@ -4,6 +4,11 @@
 ?>
 <section class="content">
         <div class="container-fluid">
+        <div class="block-header">
+                <h2>                    
+                    SCHOOL ADMIN
+                </h2>
+            </div>
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -133,22 +138,44 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
+<<<<<<< Updated upstream
                         <input type="text" class="form-control" name="TxtMisionEdit" id="TxtMisionEdit" >
                         <label class="form-label">Misión</label>
+=======
+                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
+                        
+                    </div>
+                    <div class="help-info">Descripción</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" >
+                      
+>>>>>>> Stashed changes
                     </div>
                     <div class="help-info">Misión</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
+<<<<<<< Updated upstream
                         <input type="text" class="form-control" name="TxtVisionEdit" id="TxtVisionEdit" >
                         <label class="form-label">Visión</label>
+=======
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
+                        
+>>>>>>> Stashed changes
                     </div>
                     <div class="help-info">Visión</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
+<<<<<<< Updated upstream
                         <input type="text" class="form-control" name="TxtSomosEdit" id="TxtSomosEdit" >
                         <label class="form-label">¿Quienes somos?</label>
+=======
+                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
+                        
+>>>>>>> Stashed changes
                     </div>
                     <div class="help-info">¿Quienes somos?</div>
                 </div>

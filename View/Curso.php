@@ -4,7 +4,12 @@
 ?>
 <section class="content">
         <div class="container-fluid">
-            
+          <div class="block-header">
+                <h2>
+                    
+                SCHOOL ADMIN
+                </h2>
+            </div>
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -109,7 +114,7 @@
                     <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
-                        <label class="form-label">Grado</label>
+                       
                     </div>
                     <div class="help-info">Grado</div>
                 </div>
@@ -118,7 +123,7 @@
                     <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
-                        <label class="form-label">Profesor</label>
+                       
                     </div>
                     <div class="help-info">Profesor</div>
                 </div>
@@ -148,29 +153,31 @@
             <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        <label class="form-label">Nombre</label>
+                        
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtAnioEdit" id="TxtAnioEdit" >
-                        <label class="form-label">Año</label>
+                      
                     </div>
                     <div class="help-info">Año</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                         <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Grado</label>
+                    </div>   
                     <div class="help-info">Grado</div>
                 </div>
-                <div class="form-group">
-                <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
+                <div class="form-group form-float">
+                    <div class="form-line">
+                         <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Profesor</label>
+                    </div>   
                     <div class="help-info">Profesor</div>
                 </div>
             </div>

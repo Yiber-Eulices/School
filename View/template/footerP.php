@@ -73,7 +73,7 @@
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
 				<div class="footer_copyright">
 					<span>
-SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="index.html" target="_blank">School Admin</a>
+SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="indexP.php" target="_blank">School Admin</a>
 </span>
 				</div>
 				<div class="footer_social ml-sm-auto">

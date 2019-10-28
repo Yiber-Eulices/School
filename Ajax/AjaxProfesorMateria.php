@@ -25,8 +25,8 @@
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdProfesorMateria = '".$objPROFCU[$i]["IdProfesorMateria"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$objPROFCU[$i]["IdProfesorMateria"].'",
-                                "'.$objPROFCU[$i]["ProfesorIdProfesor"].'",
-                                "'.$objPROFCU[$i]["MateriaIdMateria"].'",
+                                "'.$objPROFCU[$i]["NombreProfesor"].'",
+                                "'.$objPROFCU[$i]["Nombre"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                OBJETIVOS ESTRATEGÍCOS
+                                Informacion Institucional
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -33,26 +33,28 @@
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
-                                <span>A&ntilde;adir Empresa</span>
+                                <span>A&ntilde;adir Informacion</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableEmpresa table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableInformacion table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Misión</th>
-                                            <th>Visión</th>
-                                            <th>¿Quienes somos?</th>
+                                            <th>Descripcion</th>
+                                            <th>Ubicacion</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
-                                        <tr>
+                                    <tr>
                                             <th>#</th>
-                                            <th>Misión</th>
-                                            <th>Visión</th>
-                                            <th>¿Quienes somos?</th>
+                                            <th>Descripcion</th>
+                                            <th>Ubicacion</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
@@ -85,7 +87,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">A&ntilde;adir Objetivo estrategíco</h5>
+            <h5 class="modal-title">A&ntilde;adir Informacion</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -94,24 +96,31 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtMision" id="TxtMision" >
-                        <label class="form-label">Misión</label>
+                        <input type="text" class="form-control" name="TxtDescripcion" id="TxtDescripcion" >
+                        <label class="form-label">Descripción</label>
                     </div>
-                    <div class="help-info">Misión</div>
+                    <div class="help-info">Descripción</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtVision" id="TxtVision" >
-                        <label class="form-label">Visión</label>
+                        <input type="text" class="form-control" name="TxtUbicacion" id="TxtUbicacion" >
+                        <label class="form-label">Ubicación</label>
                     </div>
-                    <div class="help-info">Visión</div>
+                    <div class="help-info">Ubicación</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtSomos" id="TxtSomos" >
-                        <label class="form-label">¿Quienes somos?</label>
+                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" >
+                        <label class="form-label">Correo</label>
                     </div>
-                    <div class="help-info">¿Quienes somos?</div>
+                    <div class="help-info">Correo</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtTelefono" id="TxtTelefono" >
+                        <label class="form-label">Telefono</label>
+                    </div>
+                    <div class="help-info">Telefono</div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -129,7 +138,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Objetivo estrategíco</h5>
+            <h5 class="modal-title">Editar Información</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -138,46 +147,37 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-<<<<<<< Updated upstream
+                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
+                        <label class="form-label">Descripción</label>
                         <input type="text" class="form-control" name="TxtMisionEdit" id="TxtMisionEdit" >
                         <label class="form-label">Misión</label>
-=======
-                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                        
                     </div>
                     <div class="help-info">Descripción</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" >
-                      
->>>>>>> Stashed changes
+                        <label class="form-label">Ubicación</label>
                     </div>
-                    <div class="help-info">Misión</div>
+                    <div class="help-info">Ubicación</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-<<<<<<< Updated upstream
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
+                        <label class="form-label">Correo</label>
                         <input type="text" class="form-control" name="TxtVisionEdit" id="TxtVisionEdit" >
                         <label class="form-label">Visión</label>
-=======
-                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
-                        
->>>>>>> Stashed changes
                     </div>
-                    <div class="help-info">Visión</div>
+                    <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-<<<<<<< Updated upstream
+                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
+                        <label class="form-label">Telefono</label>
                         <input type="text" class="form-control" name="TxtSomosEdit" id="TxtSomosEdit" >
                         <label class="form-label">¿Quienes somos?</label>
-=======
-                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
-                        
->>>>>>> Stashed changes
                     </div>
-                    <div class="help-info">¿Quienes somos?</div>
+                    <div class="help-info">Telefono</div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -190,7 +190,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="js/Empresa.js"></script>
+    <script src="js/Informacion.js"></script>
 <?php
     include "template/footer.php";
 ?>

@@ -154,9 +154,6 @@
                             <span>Directivos</span>
                         </a>
                     </li>  
-<<<<<<< Updated upstream
-
-=======
                     <li>
                         <a href="Empresa.php">
                             <i class="material-icons">local_library</i>
@@ -165,7 +162,7 @@
                     </li>
                     <li>
                         <a href="Informacion.php">
-                            <i class="material-icons">edit</i>
+                          <i class="material-icons">edit</i>
                             <span>Información</span>
                         </a>
                     </li>
@@ -176,7 +173,6 @@
                         </a>
                     </li>
                     
->>>>>>> Stashed changes
                 </ul>
             </div>
             <!-- #Menu -->

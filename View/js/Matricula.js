@@ -178,8 +178,8 @@ $(".dataTableMatricula").on("click",".btnUpdate",function(){
             $("#botonEdit").attr("IdMatricula",id);
             $('#TxtFechaMatriculaEdit').val(respuesta["Fecha"]);
             $('#TxtCostoEdit').val(respuesta["Costo"]);
-            $('#TxtGradoEdit').val(respuesta["Grado"]);
-            $('#TxtEstuidianteEdit').val(respuesta["Estudiante"]);
+            $('#TxtGradoEdit').val(respuesta["GradoIdGrado"]);
+            $('#TxtEstuidianteEdit').val(respuesta["EstudianteIdEstudiante"]);
             $("#ModalEdit").modal();
         }
     });

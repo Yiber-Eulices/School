@@ -189,13 +189,6 @@ $(".dataTableAdministrador").on("click",".btnUpdate",function(){
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
-            $("#TxtTelefonoEdit").focus();
-            $("#TxtCorreoEdit").focus();
-            $("#TxtDocumentoEdit").focus();
-            $("#TxtTipoDocumentoEdit").focus();
-            $("#TxtFechaNacimientoEdit").focus();
-            $("#TxtApellidoEdit").focus();
-            $("#TxtNombreEdit").focus();
             $("#ModalEdit").modal();
         }
     });

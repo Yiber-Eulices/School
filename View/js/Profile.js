@@ -1,5 +1,8 @@
 $(document).ready(function(){
-    var inputBox = document.getElementById("TxtCedulaCiudadaniaEdit");
+    function SubmitFunctionProfile(){
+        return false;
+    } 
+    var inputBox = document.getElementById("TxtDocumentoEdit");
     var invalidChars = [ "-", "+", "e", ];
     inputBox.addEventListener("keydown", function(e) {
         if (invalidChars.includes(e.key)) {
@@ -14,110 +17,124 @@ $(document).ready(function(){
         } 
     });
     $.ajax({
-        url:"Login.aga?a=select",
+        url:"../Ajax/AjaxLogin.php?a=profile",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
-            $("#TxtIdPersonaEdit").val(respuesta.IdPersona);
-            $("#fotoEdit").attr("src",respuesta.Foto);
-            $("#TxtNombreEdit").val(respuesta.Nombre);
-            $("#h3Nombre").html(respuesta.Nombre);
-            $("#TxtApellidoEdit").val(respuesta.Apellido);
-            $("#pApellido").html(respuesta.Apellido);
-            $("#TxtCedulaCiudadaniaEdit").val(respuesta.CedulaCiudadania);
-            $("#TxtRolEdit").val(respuesta.Rol);
-            $("#pRol").html(respuesta.Rol);
-            $("#TxtCorreoEdit").val(respuesta.Correo);
-            $("#TxtTelefonoEdit").val(respuesta.Telefono);
-            $("#TxtDireccionEdit").val(respuesta.Direccion);
-            ValidateUniqueEdit($('#TxtIdPersonaEdit').val(),$('#TxtCedulaCiudadaniaEdit').val(),$('#TxtCorreoEdit').val());
+            //$("#botonEdit").attr("IdAdministrador",id);
+            $("#fotoEdit").attr("src",respuesta["Foto"]);
+            $('#TxtNombreEdit').val(respuesta["Nombre"]);
+            $("#h3Nombre").html(respuesta["Nombre"]);
+            $('#TxtApellidoEdit').val(respuesta["Apellido"]);
+            $("#pApellido").html(respuesta["Apellido"]);
+            $('#TxtFechaNacimientoEdit').val(respuesta["FechaNacimiento"]);
+            $("#TxtTipoDocumentoEdit option[value='"+respuesta["TipoDocumento"]+"']").attr("selected",true);
+            $("#TxtTipoDocumentoEdit").select2();
+            $('#TxtDocumentoEdit').val(respuesta["Documento"]);
+            $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
+            $("#TxtRhEdit").select2();
+            $('#TxtCorreoEdit').val(respuesta["Correo"]);
+            $('#TxtTelefonoEdit').val(respuesta["Telefono"]);        
         }
     });
-    $('#TxtCedulaCiudadaniaEdit').change(function () { 
-        ValidateUniqueEdit($('#TxtIdPersonaEdit').val(),$('#TxtCedulaCiudadaniaEdit').val(),$('#TxtCorreoEdit').val());
-    });
-    $('#TxtCorreoEdit').change(function () { 
-        ValidateUniqueEdit($('#TxtIdPersonaEdit').val(),$('#TxtCedulaCiudadaniaEdit').val(),$('#TxtCorreoEdit').val());
-    });
-});
-var errorBooleanoEdit=false;
-var errorEditUnique="Espera";
-function ValidateUniqueEdit(id,cedulaCiudadania,correo){
-    errorBooleanoEdit=false;
-    errorEditUnique="Espera";
-    $.ajax({
-        url:"Persona.aga?a=unique&TxtCedulaCiudadaniaUnique="+cedulaCiudadania+"&TxtCorreoUnique="+correo,
-        method:"GET",
-        dataType: "JSON",
-        success : function(respuesta){
-            if(respuesta.idCedulaCiudadania!=null && respuesta.errorCedulaCiudadania!=null && respuesta.idCedulaCiudadania!=id){
-                errorEditUnique = respuesta.errorCedulaCiudadania;
-                errorBooleanoEdit = false;
-            }else if(respuesta.idCorreo!=null && respuesta.errorCorreo!=null && respuesta.idCorreo!=id ){
-                errorEditUnique = respuesta.errorCorreo;
-                errorBooleanoEdit = false;
-            }else{
-                errorBooleanoEdit = true;
-            }
+    $(".formEdit").on("click",".botonEdit",function(){
+        var fileName = "";
+        var ext = "";
+        if(document.getElementById("TxtFotoEdit").files.length > 0){
+            var fileName = document.getElementById("TxtFotoEdit").files[0].name;
+            var ext = fileName.split('.').pop();
         }
-    });
-}
-function SubmitFunctionEdit(){
-    var fileName = "";
-    var ext = "";
-    if(document.getElementById("TxtFotoEdit").files.length > 0){
-        fileName = document.getElementById("TxtFotoEdit").files[0].name;
-        ext = fileName.split('.').pop();
-    }
-    if($('#TxtNombreEdit').val().length == 0){
-        var m = "Por favor ingrese el Nombre de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtApellidoEdit').val().length == 0){
-        var m = "Por favor ingrese el Apellido de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if(document.getElementById("TxtFotoEdit").files.length > 0 && ext!='png' && ext!='jpg' && ext!='gif'){
-        var m = "El archivo seleccionado no es un archivo de Imagen.";
-        ValidateError(m);
-        return false;
-    }else if($('#TxtCedulaCiudadaniaEdit').val().length == 0){
-        var m = "Por favor ingrese la C&eacute;dula de Ciudadan&iacute;a de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtRolEdit').val().length == 0){
-        var m = "Por favor seleccione el Rol de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtCorreoEdit').val().length == 0){
-        var m = "Por favor ingrese el Correo de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtContrasenaEdit').val().length == 0){
-        var m = "Por favor ingrese la Contrase&ntilde;a de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtTelefonoEdit').val().length == 0){
-        var m = "Por favor ingrese el Tel&eacute;fono de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtDireccionEdit').val().length == 0){
-        var m = "Por favor ingrese el Direcci&oacute;n de Recidencia de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if($('#TxtIdPersonaEdit').val().length == 0){
-        var m = "Por favor ingrese el Id de la Persona.";
-        ValidateCreateUpdate(m);
-        return false;
-    }else if(!errorBooleanoEdit){
-        if (errorEditUnique!="Espera"){
-            ValidateError(errorEditUnique);
-            return false;            
-        }else{
-            EsperaSwalFire();
+        if($('#TxtNombreEdit').val().length == 0){
+            var m = "Por favor ingrese el Nombre."
+            ValidateCreateUpdate(m);
             return false;
+        }else if($('#TxtApellidoEdit').val().length == 0){
+            var m = "Por favor ingrese el Apellido.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if(document.getElementById("TxtFotoEdit").files.length > 0 && ext!='png' && ext!='jpg' && ext!='gif'){
+            var m = "El archivo seleccionado no es un archivo de Imagen.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtFechaNacimientoEdit').val().length == 0){
+            var m = "Por favor ingrese la Fecha de Nacimiento.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtTipoDocumentoEdit').val().length == 0){
+            var m = "Por favor seleccione el Tipo de Documento.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtDocumentoEdit').val().length == 0){
+            var m = "Por favor ingrese el Documento de Identificacion.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtRhEdit').val().length == 0){
+            var m = "Por favor seleccione el Rh.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtCorreoEdit').val().length == 0){
+            var m = "Por favor ingrese el Correo.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtPasswordEdit').val().length == 0){
+            var m = "Por favor ingrese la Contrasena.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($('#TxtTelefonoEdit').val().length == 0){
+            var m = "Por favor ingrese el Telefono de Contacto.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else{
+            var Nombre = $('#TxtNombreEdit').val();
+            var Apellido = $('#TxtApellidoEdit').val();
+            var Foto = "";
+            var FotoSrc = "";
+            if(document.getElementById("TxtFotoEdit").files.length > 0){
+                var Foto = document.getElementById("TxtFotoEdit").files[0];
+            }else{
+                var FotoSrc = $("#fotoEdit").attr("src");
+            }
+            var FechaNacimiento = $('#TxtFechaNacimientoEdit').val();
+            var TipoDocumento = $('#TxtTipoDocumentoEdit').val();
+            var Documento = $('#TxtDocumentoEdit').val();
+            var Rh = $('#TxtRhEdit').val();
+            var Correo = $('#TxtCorreoEdit').val();
+            var Password = $('#TxtPasswordEdit').val();
+            var Telefono = $('#TxtTelefonoEdit').val();
+            var oBJEC_ADMIN = new FormData();
+            oBJEC_ADMIN.append("Nombre", Nombre); 
+            oBJEC_ADMIN.append("Apellido", Apellido); 
+            oBJEC_ADMIN.append("Foto", Foto);
+            oBJEC_ADMIN.append("FotoSrc", FotoSrc);
+            oBJEC_ADMIN.append("FechaNacimiento", FechaNacimiento); 
+            oBJEC_ADMIN.append("TipoDocumento", TipoDocumento); 
+            oBJEC_ADMIN.append("Documento", Documento); 
+            oBJEC_ADMIN.append("Rh", Rh); 
+            oBJEC_ADMIN.append("Correo", Correo); 
+            oBJEC_ADMIN.append("Password", Password); 
+            oBJEC_ADMIN.append("Telefono", Telefono); 
+        
+            $.ajax({
+                url:"../Ajax/AjaxLogin.php?a=edit",
+                method:"POST",
+                data:oBJEC_ADMIN,
+                cache:false,
+                contentType:false,
+                processData:false,
+                dataType:"json",
+                success:function(respuesta){
+                    if(respuesta = true){
+                        var m = "Datos Editados.";
+                        ValidateCreateUpdate(m);
+                        window.location = "Perfil.php";
+                    }else if(respuesta = false){
+                        var m = "¡¡¡Datos No Editados.!!!";
+                        ValidateCreateUpdate(m);
+                    }
+                    
+                }
+            });
         }
-    }else{
-        return true; 
-    }
-}
+    });
+    
+});

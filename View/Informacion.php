@@ -148,34 +148,28 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                        <label class="form-label">Descripción</label>
-                        <input type="text" class="form-control" name="TxtMisionEdit" id="TxtMisionEdit" >
-                        <label class="form-label">Misión</label>
+                        <label class="form-label"></label>
                     </div>
                     <div class="help-info">Descripción</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" >
-                        <label class="form-label">Ubicación</label>
+                        <label class="form-label"></label>
                     </div>
                     <div class="help-info">Ubicación</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
-                        <label class="form-label">Correo</label>
-                        <input type="text" class="form-control" name="TxtVisionEdit" id="TxtVisionEdit" >
-                        <label class="form-label">Visión</label>
+                        <label class="form-label"></label>
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
-                        <label class="form-label">Telefono</label>
-                        <input type="text" class="form-control" name="TxtSomosEdit" id="TxtSomosEdit" >
-                        <label class="form-label">¿Quienes somos?</label>
+                        <label class="form-label"></label>
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>

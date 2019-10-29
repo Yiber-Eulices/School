@@ -7,13 +7,14 @@
         public $titulo;
         public $descripcion;
         public $foto;
+        public $lugar;
 
         public function AjxCrear(){
-            $objEVEN = ControladorEvento::CtrlCrear( $this->fecha,$this->titulo,$this->descripcion,$this->foto);
+            $objEVEN = ControladorEvento::CtrlCrear( $this->fecha,$this->titulo,$this->descripcion,$this->foto,$this->lugar);
             echo json_encode($objEVEN);
         }
         public function AjxEditar(){
-            $objEVEN = ControladorEvento::CtrlEditar( $this->id,$this->fecha,$this->titulo,$this->descripcion,$this->foto);
+            $objEVEN = ControladorEvento::CtrlEditar( $this->id,$this->fecha,$this->titulo,$this->descripcion,$this->foto,$this->lugar);
             echo json_encode($objEVEN);  
         }
         public function AjxListar(){
@@ -32,11 +33,13 @@
                                 "'.$objEVEN[$i]["Fecha"].'",
                                 "'.$objEVEN[$i]["Titulo"].'",
                                 "'.$objEVEN[$i]["Descripcion"].'",
+                                "'.$objEVEN[$i]["Lugar"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
                         $oBJEC_JSON .= '[
+                            "",
                             "",
                             "",
                             "",
@@ -88,6 +91,7 @@
         $oBJEC_AJAX -> fecha = $_POST["Fecha"];
         $oBJEC_AJAX -> titulo = $_POST["Titulo"];
         $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
+        $oBJEC_AJAX -> lugar = $_POST["Lugar"];
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> AjxCrear();
     }
@@ -120,6 +124,7 @@
         $oBJEC_AJAX -> fecha = $_POST["Fecha"];
         $oBJEC_AJAX -> titulo = $_POST["Titulo"];
         $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
+        $oBJEC_AJAX -> lugar = $_POST["Lugar"];
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> AjxEditar();
     }

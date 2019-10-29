@@ -97,7 +97,7 @@
                            <select name="TxtEstudiante" id="TxtEstudiante" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
-                            <label class="form-label">Estudiante</label>
+                           
                         </div>
                         <div class="help-info">Estudiante</div>
                     </div>
@@ -107,7 +107,7 @@
                         <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
-                            <label class="form-label">Acudiente</label>
+                           
                         </div>
                         <div class="help-info">Acudiente</div>
                     </div>
@@ -142,7 +142,7 @@
                           
                     <select name="TxtEstudianteEdit" id="TxtEstudianteEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
-                           </select><label class="form-label">Estudiante</label>
+                           </select>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
@@ -150,8 +150,8 @@
                     <div class="form-line">
                     <select name="TxtAcudienteEdit" id="TxtAcudienteEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
-                           </select><label class="form-label">Acudiente</label>
-                        <label class="form-label">Acudiente</label>
+                           </select>
+                        
                     </div>
                     <div class="help-info">Acudiente</div>
                 </div>            

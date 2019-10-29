@@ -1,22 +1,24 @@
 <?php
     require_once "Conexion.php";
     class ModeloEvento{
-        public static function CrearEvento($fecha,$titulo,$descripcion,$foto){
-            $oBJEC_DATA_INSERT = Conexion::conectar()->prepare("INSERT INTO Evento (Fecha,Titulo,Descripcion,Foto) VALUES (:fecha,:titulo,:descripcion,:foto)");
+        public static function CrearEvento($fecha,$titulo,$descripcion,$foto,$lugar){
+            $oBJEC_DATA_INSERT = Conexion::conectar()->prepare("INSERT INTO Evento (Fecha,Titulo,Descripcion,Foto,Lugar) VALUES (:fecha,:titulo,:descripcion,:foto,:lugar)");
             $oBJEC_DATA_INSERT  -> bindParam(":fecha",$fecha, PDO::PARAM_STR);
             $oBJEC_DATA_INSERT  -> bindParam(":titulo",$titulo, PDO::PARAM_STR);
             $oBJEC_DATA_INSERT  -> bindParam(":descripcion",$descripcion, PDO::PARAM_STR);
             $oBJEC_DATA_INSERT  -> bindParam(":foto",$foto, PDO::PARAM_STR);
+            $oBJEC_DATA_INSERT  -> bindParam(":lugar",$lugar, PDO::PARAM_STR);
 
             return ($oBJEC_DATA_INSERT -> execute());
         }
-        public static function EditarEvento($id,$fecha,$titulo,$descripcion,$foto){
-            $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE Evento  SET Fecha = :fecha,Titulo = :titulo,Descripcion = :descripcion,Foto = :foto WHERE IdEvento = :id");
+        public static function EditarEvento($id,$fecha,$titulo,$descripcion,$foto,$lugar){
+            $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE Evento  SET Fecha = :fecha,Titulo = :titulo,Descripcion = :descripcion,Foto = :foto,Lugar = :lugar WHERE IdEvento = :id");
             $oBJEC_DATA_UPDATE  -> bindParam(":id",$id, PDO::PARAM_INT);
             $oBJEC_DATA_UPDATE  -> bindParam(":fecha",$fecha, PDO::PARAM_STR);
             $oBJEC_DATA_UPDATE  -> bindParam(":titulo",$titulo, PDO::PARAM_STR);
             $oBJEC_DATA_UPDATE  -> bindParam(":descripcion",$descripcion, PDO::PARAM_STR);
             $oBJEC_DATA_UPDATE  -> bindParam(":foto",$foto, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":lugar",$lugar, PDO::PARAM_STR);
 
             return ($oBJEC_DATA_UPDATE -> execute());
         }

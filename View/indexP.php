@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css"> 
 </head>
 <body>
 
@@ -64,7 +64,7 @@
 
 					<div class="col-lg-4 hero_box_col" style="margin: auto;">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
-							<img src="images/books.svg" class="svg" alt="">
+							<img src="images/books.svg"  alt="">
 							<div class="hero_box_content">
 								<h2 class="hero_box_title">Iniciar Sesión</h2>
 								<a href="Login.php" class="hero_box_link">Click aquí para iniciar sesión</a>

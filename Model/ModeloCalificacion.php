@@ -27,7 +27,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarCalificacion(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM Calificacion");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdCalificacion,e.Nombre AS NombreEstudiante,e.Apellido,m.Nombre AS NombreMateria,c.Periodo,c.NotaAcumulativa,c.NotaComportamental,c.Evaluacion,c.AutoEvaluacion FROM Calificacion c INNER JOIN Materia m ON c.MateriaIdMateria=m.IdMateria INNER JOIN Estudiante e ON c.EstudianteIdEstudiante=e.IdEstudiante");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST->fetchAll();
             return $oBJEC_DATA_ARRAY;            

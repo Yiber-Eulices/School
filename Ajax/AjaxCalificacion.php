@@ -30,13 +30,13 @@
                             
                             $oBJEC_JSON .= '[
                                 "'.$objADMIN[$i]["IdCalificacion"].'",
-                                "'.$objADMIN[$i]["Periodo"].'",
+                                "'.$objADMIN[$i]["NombreEstudiante"].$objADMIN[$i]["Apellido "].'",
+                                "'.$objADMIN[$i]["NombreMateria"].'",
+                                "'.$objADMIN[$i]["Periodo"].'",                                
                                 "'.$objADMIN[$i]["NotaAcumulativa"].'",
                                 "'.$objADMIN[$i]["NotaComportamental"].'",
                                 "'.$objADMIN[$i]["Evaluacion"].'",
                                 "'.$objADMIN[$i]["AutoEvaluacion"].'",
-                                "'.$objADMIN[$i]["MateriaIdMateria"].'",
-                                "'.$objADMIN[$i]["EstudianteIdEstudiante"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

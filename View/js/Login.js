@@ -7,7 +7,7 @@ $(".btnLogin").click(function(){
     objeto.append("User",user);
     objeto.append("Paswword",password);
     $.ajax({
-        url:"../Ajax/AjaxLogin.php",
+        url:"../Ajax/AjaxLogin.php?a=login",
         method:"POST",
         data:objeto,
         cache:false,

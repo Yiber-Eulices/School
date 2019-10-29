@@ -38,4 +38,33 @@ require_once "Conexion.php";
             }
 
         }
+        public static function Profile($rol,$id){
+            $sql = "SELECT * FROM ".$rol." WHERE Id".$rol." = :id";
+            $oBJEC_DATA = Conexion::conectar()->prepare($sql);
+            $oBJEC_DATA  -> bindParam(":id",$id, PDO::PARAM_STR);
+            $oBJEC_DATA -> execute();
+            $oBJEC_LOGIN =  $oBJEC_DATA -> fetch();
+            return $oBJEC_LOGIN;
+        }
+        public static function EditProfile($rol,$id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento){
+            $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE ".$rol."  SET Nombre = :nombre,Apellido = :apellido,TipoDocumento = :tipoDocumento,Documento = :documento,Rh = :rh,Correo = :correo,Password = :password,Telefono = :telefono,Foto = :foto,FechaNacimiento = :fechaNacimiento WHERE Id".$rol."  = :id");
+            $oBJEC_DATA_UPDATE  -> bindParam(":id",$id, PDO::PARAM_INT);
+            $oBJEC_DATA_UPDATE  -> bindParam(":nombre",$nombre, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":apellido",$apellido, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":tipoDocumento",$tipoDocumento, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":documento",$documento, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":rh",$rh, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":correo",$correo, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":password",$password, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":telefono",$telefono, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":foto",$foto, PDO::PARAM_STR);
+            $oBJEC_DATA_UPDATE  -> bindParam(":fechaNacimiento",$fechaNacimiento, PDO::PARAM_STR);
+            $_SESSION['UserId'] = $id;
+            $_SESSION['UserRol'] = $rol;
+            $_SESSION['UserNombre'] = $nombre;
+            $_SESSION['UserApellido'] = $apellido;
+            $_SESSION['UserCorreo'] = $correo;
+            $_SESSION['UserFoto'] = $foto;
+            return ($oBJEC_DATA_UPDATE -> execute());
+        }
     }

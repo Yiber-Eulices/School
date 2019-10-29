@@ -116,20 +116,20 @@
         $image=null;
 		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
 		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
+			  $dir = mkdir("../View/profilePhoto", 0777, true);
 		  }else{
-			$dir=true;
+			  $dir=true;
 		  }
 		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
+        $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
+        $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
+        $image='../View/profilePhoto/'.$filename;
+        if($muf){
+          $image_upload=true;
+        }else{
+          $image_upload=false;
+          $error["image"]= "La imagen no se ha subido";
+        }
 		  }
 		  //var_dump($_FILES["image"]);
           //die();
@@ -145,7 +145,7 @@
         $oBJEC_AJAX -> rh = $_POST["Rh"];
         $oBJEC_AJAX -> correo = $_POST["Correo"];
         $oBJEC_AJAX -> password = $_POST["Password"];
-        $oBJEC_AJAX -> telefono = $_POST["Id"];
+        $oBJEC_AJAX -> telefono = $_POST["Telefono"];
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
         $oBJEC_AJAX -> AjxEditar();

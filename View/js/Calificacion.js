@@ -51,7 +51,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxAdministrador.php?a=lista",
+        url:"../Ajax/AjaxMateria.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){

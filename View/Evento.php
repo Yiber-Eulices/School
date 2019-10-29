@@ -45,7 +45,8 @@
                                             <th>Foto</th>
                                             <th>Fecha</th>
                                             <th>Titulo</th>
-                                            <th>Descripcion</th>
+                                            <th>Titulo</th>
+                                            <th>Lugar</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -55,6 +56,7 @@
                                         <th>Foto</th>
                                             <th>Fecha</th>
                                             <th>Titulo</th>
+                                            <th>Lugar</th>
                                             <th>Descripcion</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -98,7 +100,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >
-                        <label class="form-label">Fecha</label>
+                        
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
@@ -119,9 +121,16 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
-                        <label class="form-label">Foto</label>
+                        
                     </div>
                     <div class="help-info">Foto</div>
+                </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtLugar" id="TxtLugar" >
+                        <label class="form-label">Lugar</label>
+                    </div>
+                    <div class="help-info">Lugar</div>
                 </div>
             </div> 
             <div class="modal-footer">
@@ -152,7 +161,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >
-                        <label class="form-label">Fecha</label>
+                        
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
@@ -160,24 +169,30 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >
-                        <label class="form-label">Titulo</label>
+                        
                     </div>
                     <div class="help-info">Titulo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                        <label class="form-label">Descripcion</label>
+                        
                     </div>
                     <div class="help-info">Descripcion</div>
                 </div>
                <div class="form-group form-float">
                     <div class="form-line">
                         <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
-                        <label class="form-label">Foto</label>
+                       
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
+                <div class="form-group form-float">
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="TxtLugarEdit" id="TxtLugarEdit" >
+                       
+                    </div>
+                    <div class="help-info">Lugar</div>
             </div>
             <div class="modal-footer">
               <input type="submit" IdEvento name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">

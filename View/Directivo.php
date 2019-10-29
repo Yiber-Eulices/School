@@ -143,7 +143,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        <label class="form-label">Nombre</label>
+                       
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
@@ -151,7 +151,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
-                        <label class="form-label">Correo</label>
+                      
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
@@ -159,7 +159,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
-                        <label class="form-label">Telefono</label>
+                        
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>
@@ -171,6 +171,7 @@
             </div>
           </form>
         </div>
+        
       </div>
     </div>
     <!--End Modal Edit -->

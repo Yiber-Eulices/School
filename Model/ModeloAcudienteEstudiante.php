@@ -17,7 +17,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarAcudienteEstudiante(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM acudienteestudiante");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdAcudienteEstudiante,c.EstudianteIdEstudiante,c.AcudienteIdAcudiente,g.IdEstudiante,g.Nombre,p.IdAcudiente,p.Nombre AS NombreAcudiente FROM acudienteestudiante c INNER JOIN estudiante g ON c.EstudianteIdEstudiante=g.IdEstudiante INNER JOIN acudiente p ON c.AcudienteIdAcudiente=p.IdAcudiente");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            

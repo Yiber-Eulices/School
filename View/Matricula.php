@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" IdMatricula name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdMatricula name="Enviar" class="btn btn-primary botonEdit" id ="botonEdit">
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>

@@ -55,20 +55,20 @@ $(document).ready(function(){
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
-            $('#TxtEstudiante').empty();
-            $('#TxtEstudianteEdit').empty();
-            $("#TxtEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
-            $("#TxtEstudianteEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            $('#TxtIdEstudiante').empty();
+            $('#TxtIdEstudianteEdit').empty();
+            $("#TxtIdEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtIdEstudianteEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
+                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
                 }                
             }
-            $('#TxtEstudiante').change();
-            $('#TxtEstudianteEdit').change();
-            $("#TxtEstudiante").select2();
-            $("#TxtEstudianteEdit").select2();
+            $('#TxtIdEstudiante').change();
+            $('#TxtIdEstudianteEdit').change();
+            $("#TxtIdEstudiante").select2();
+            $("#TxtIdEstudianteEdit").select2();
         }
     });
 });
@@ -88,7 +88,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         var m = "Por favor ingrese el grado de la matricula.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtEstuidiante').val().length == 0){
+    }else if($('#TxtIdEstudiante').val().length == 0){
         var m = "Por favor ingrese el estudiante de la matricula.";
         ValidateCreateUpdate(m);
         return false;
@@ -96,7 +96,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         var Fecha = $('#TxtFechaMatricula').val();
         var Costo = $('#TxtCosto').val();
         var Grado = $('#TxtGrado').val();
-        var Estudiante = $('#TxtEstuidiante').val();
+        var Estudiante = $('#TxtIdEstudiante').val();
         var oBJEC_Matricula = new FormData();
         oBJEC_Matricula.append("Fecha", Fecha); 
         oBJEC_Matricula.append("Costo", Costo); 
@@ -179,7 +179,7 @@ $(".dataTableMatricula").on("click",".btnUpdate",function(){
             $('#TxtFechaMatriculaEdit').val(respuesta["Fecha"]);
             $('#TxtCostoEdit').val(respuesta["Costo"]);
             $('#TxtGradoEdit').val(respuesta["GradoIdGrado"]);
-            $('#TxtEstuidianteEdit').val(respuesta["EstudianteIdEstudiante"]);
+            $('#TxtIdEstudianteEdit').val(respuesta["EstudianteIdEstudiante"]);
             $("#ModalEdit").modal();
         }
     });
@@ -198,7 +198,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         var m = "Por favor ingrese el grado de la matricula.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtEstuidianteEdit').val().length == 0){
+    }else if($('#TxtIdEstudianteEdit').val().length == 0){
         var m = "Por favor ingrese el estudiante de la matricula.";
         ValidateCreateUpdate(m);
         return false;
@@ -207,7 +207,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         var Fecha = $('#TxtFechaMatriculaEdit').val();
         var Costo = $('#TxtCostoEdit').val();
         var Grado = $('#TxtGradoEdit').val();
-        var Estudiante = $('#TxtEstuidianteEdit').val();
+        var Estudiante = $('#TxtIdEstudianteEdit').val();
         var oBJEC_Matricula = new FormData();
         oBJEC_Matricula.append("Id", Id); 
         oBJEC_Matricula.append("Fecha", Fecha); 

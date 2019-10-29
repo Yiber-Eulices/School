@@ -118,7 +118,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select name="TxtEstuidiante" id="TxtEstuidiante" style ="width: 100%">
+                        <select name="TxtIdEstudiante" id="TxtIdEstudiante" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -168,7 +168,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select name="TxtEstuidianteEdit" id="TxtEstuidianteEdit" style ="width: 100%">
+                        <select name="TxtIdEstudianteEdit" id="TxtIdEstudianteEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>

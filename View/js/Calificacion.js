@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxAdministrador.php?a=lista",
+        url:"../Ajax/AjaxEstudiante.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -71,6 +71,8 @@ $(document).ready(function(){
             $("#TxtIdMateriaEdit").select2();
         }
     });
+    $("#TxtPeriodo").select2();
+    $("#TxtPeriodoEdit").select2();
 });
 function SubmitFunction(){
     return false;

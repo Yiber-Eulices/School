@@ -69,8 +69,8 @@
                                 </table>
                                 <style>
                                     .imgProfile{
-                                        height : 100px;
-                                        width : 100px;
+                                        height : 50px;
+                                        width : 50px;
                                         border-radius : 50px;
                                     }
                                     .imgProfileEdit{

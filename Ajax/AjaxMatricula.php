@@ -2,7 +2,6 @@
     require_once "../Controller/ControladorMatricula.php";
     require_once "../Model/ModeloMatricula.php";
     class AjaxMatricula{
-        
         public $id;
         public $fecha;
         public $costo;
@@ -23,12 +22,12 @@
                 "data": [';
                     if (count($objMATR) >= 1){
                         for ($i=0; $i < count($objMATR); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdMatricula = '".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdMatricula ='".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdMatricula = '".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$objMATR[$i]["IdMatricula"].'",
-                                "'.$objMATR[$i]["Nombre"].'",
-                                "'.$objMATR[$i]["costo"].'",
+                                "'.$objMATR[$i]["Fecha"].'",
+                                "'.$objMATR[$i]["Costo"].'",
                                 "'.$objMATR[$i]["GradoIdGrado"].'",
                                 "'.$objMATR[$i]["EstudianteIdEstudiante"].'",
                                 "'.$btnUpdate.$btnDelete.'"
@@ -62,7 +61,7 @@
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){              
         $oBJEC_AJAX = new AjaxMatricula();
-        $oBJEC_AJAX -> fecha = $_POST["Nombre"];
+        $oBJEC_AJAX -> fecha = $_POST["Fecha"];
         $oBJEC_AJAX -> costo = $_POST["Costo"];
         $oBJEC_AJAX -> grado = $_POST["Grado"];
         $oBJEC_AJAX -> estudiante = $_POST["Estudiante"];
@@ -72,7 +71,7 @@
        
         $oBJEC_AJAX = new AjaxMatricula();
         $oBJEC_AJAX -> id = $_POST["Id"];
-        $oBJEC_AJAX -> fecha = $_POST["Nombre"];
+        $oBJEC_AJAX -> fecha = $_POST["Fecha"];
         $oBJEC_AJAX -> costo = $_POST["Costo"];
         $oBJEC_AJAX -> grado = $_POST["Grado"];
         $oBJEC_AJAX -> estudiante = $_POST["Estudiante"];

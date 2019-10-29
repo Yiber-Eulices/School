@@ -4,12 +4,6 @@
 ?>
 <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>
-                    
-                    <small>Mas informacion en <a href="https:/www.autobusesaga.com/" target="_blank">www.autobusesaga.com</a></small>
-                </h2>
-            </div>
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -108,7 +102,7 @@
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
                         </select>
-                        <label class="form-label">Estudiante</label>
+                       
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
@@ -117,7 +111,7 @@
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateria" id = "TxtIdMateria">
                             <option value="">-- Por favor seleccione la Materia --</option>
                         </select>
-                        <label class="form-label">Materia</label>
+                        
                     </div>
                     <div class="help-info">Materia</div>
                 </div>
@@ -130,7 +124,7 @@
                             <option value="3">3er Periodo</option>
                             <option value="4">4to Periodo</option>
                         </select>
-                        <label class="form-label">Periodo</label>
+                        
                     </div>
                     <div class="help-info">Periodo</div>
                 </div>
@@ -191,7 +185,7 @@
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
                         </select>
-                        <label class="form-label">Estudiante</label>
+                       
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
@@ -200,7 +194,7 @@
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
                             <option value="">-- Por favor seleccione la Materia --</option>
                         </select>
-                        <label class="form-label">Materia</label>
+                       
                     </div>
                     <div class="help-info">Materia</div>
                 </div>
@@ -213,35 +207,35 @@
                             <option value="3">3er Periodo</option>
                             <option value="4">4to Periodo</option>
                         </select>
-                        <label class="form-label">Periodo</label>
+                        
                     </div>
                     <div class="help-info">Periodo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtNotaAcumulativaEdit" id="TxtNotaAcumulativaEdit" >
-                        <label class="form-label">Nota Acumulativa</label>
+                        
                     </div>
                     <div class="help-info">Nota Acumulativa</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtNotaComportamentalEdit" id="TxtNotaComportamentalEdit" >
-                        <label class="form-label">Nota Comportamental</label>
+                       
                     </div>
                     <div class="help-info">Nota Comportamental</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtEvaluacionEdit" id="TxtEvaluacionEdit" >
-                        <label class="form-label">Evaluacion</label>
+                       
                     </div>
                     <div class="help-info">Evaluacion</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtAutoEvaluacionEdit" id="TxtAutoEvaluacionEdit" >
-                        <label class="form-label">Auto Evaluacion</label>
+                      
                     </div>
                     <div class="help-info">Auto Evaluacion</div>
                 </div>

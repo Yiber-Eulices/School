@@ -68,7 +68,7 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
+                            <li><a href="Perfil.php"><i class="material-icons">person</i>Perfil</a></li>
                             
                             <li><a href="Login.php"><i class="material-icons">input</i>Cerrar Sesión</a></li>
                         </ul>
@@ -120,53 +120,71 @@
                     </li>
                     <li>
                         <a href="Materia.php">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">rate_review</i>
                             <span>Materias</span>
                         </a>
                     </li>
                     <li>
                         <a href="Grado.php">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">filter_9_plus</i>
                             <span>Grados</span>
                         </a>
                     </li>
                     <li>
                         <a href="Curso.php">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">domain</i>
                             <span>Cursos</span>
                         </a>
                     </li>
                     <li>
                         <a href="Matricula.php">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">assignment</i>
                             <span>Matriculas</span>
                         </a>
                     </li> 
                     <li>
                         <a href="Evento.php">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">date_range</i>
                             <span>Eventos</span>
                         </a>
                     </li>  
                     <li>
                         <a href="Directivo.php">
-                            <i class="material-icons">home</i>
+                            <i class="material-icons">supervisor_account</i>
                             <span>Directivos</span>
                         </a>
                     </li>  
-
+                    <li>
+                        <a href="Empresa.php">
+                            <i class="material-icons">local_library</i>
+                            <span>Objetivos Estrategicos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Informacion.php">
+                          <i class="material-icons">edit</i>
+                            <span>Información</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Calificacion.php">
+                            <i class="material-icons">description</i>
+                            <span>Clificaciones</span>
+                        </a>
+                    </li>
+                    
                 </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
-            <div class="legal">
+            <!--<div class="legal">
                 <div class="copyright">
                     &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.5
                 </div>
-            </div>
+            </div>-->
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->

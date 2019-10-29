@@ -39,9 +39,9 @@ $(document).ready(function(){
             $("#TxtIdEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtIdEstudianteEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
-                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
+                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
                 }                
             }
             $('#TxtIdEstudiante').change();
@@ -60,9 +60,9 @@ $(document).ready(function(){
             $("#TxtIdMateria").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtIdMateriaEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $("#TxtIdMateria").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
-                    $("#TxtIdMateriaEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>");
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
+                    $("#TxtIdMateria").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>");
+                    $("#TxtIdMateriaEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>");
                 }                
             }
             $('#TxtIdMateria').change();

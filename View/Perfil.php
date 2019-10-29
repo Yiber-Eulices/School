@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="profile-footer">
-                                <button onclick="location.href='Login.jsp'" class="btn btn-primary btn-lg waves-effect btn-block">Cerrar Sesi&oacute;n</button>
+                                <button onclick="location.href='Login.php'" class="btn btn-primary btn-lg waves-effect btn-block">Cerrar Sesi&oacute;n</button>
                             </div>
                         </div>
                     </div>

@@ -143,7 +143,7 @@ $(".dataTableInformacion").on("click",".btnUpdate",function(){
     });
 });
 $(".formEdit").on("click",".botonEdit",function(){
-    
+
     if($('#TxtDescripcionEdit').val().length == 0){
         var m = "Por favor ingrese la descripcion de la información."
         ValidateCreateUpdate(m);
@@ -165,7 +165,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         var Descripcion = $('#TxtDescripcionEdit').val();
         var Ubicacion = $('#TxtUbicacionEdit').val();
         var Correo = $('#TxtCorreoEdit').val();
-        var Correo = $('#TxtTelelfonoEdit').val();
+        var Correo = $('#TxtTelefonoEdit').val();
         var oBJEC_INFO = new FormData();
         oBJEC_INFO.append("Id", Id); 
         oBJEC_INFO.append("Descripcion", Descripcion); 
@@ -174,7 +174,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_INFO.append("Telefono", Telefono); 
        
         $.ajax({
-            url:"../Ajax/AjaxInformaccvcion.php?a=editar",
+            url:"../Ajax/AjaxInformacion.php?a=editar",
             method:"POST",
             data:oBJEC_INFO,
             cache:false,

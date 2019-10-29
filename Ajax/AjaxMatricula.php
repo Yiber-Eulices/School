@@ -28,8 +28,8 @@
                                 "'.$objMATR[$i]["IdMatricula"].'",
                                 "'.$objMATR[$i]["Fecha"].'",
                                 "'.$objMATR[$i]["Costo"].'",
-                                "'.$objMATR[$i]["GradoIdGrado"].'",
-                                "'.$objMATR[$i]["EstudianteIdEstudiante"].'",
+                                "'.$objMATR[$i]["Nivel"].'",
+                                "'.$objMATR[$i]["NombreEstudiante"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

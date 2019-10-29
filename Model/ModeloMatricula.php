@@ -21,7 +21,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarMatricula(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM matricula");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdMatricula,c.Fecha,c.Costo,c.GradoIdGrado,c.EstudianteIdEstudiante,g.IdGrado,g.Nivel,p.IdEstudiante,p.Nombre AS NombreEstudiante,p.Apellido FROM Matricula c INNER JOIN Grado g ON c.GradoIdGrado=g.IdGrado INNER JOIN Estudiante p ON c.EstudianteIdEstudiante=p.IdEstudiante");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            

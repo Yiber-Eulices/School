@@ -29,6 +29,10 @@ $(document).ready(function(){
             }
         }
     });
+    $('#TxtTipoDocumento').select2();
+    $('#TxtRh').select2();
+    $('#TxtTipoDocumentoEdit').select2();
+    $('#TxtRhEdit').select2();
 });
 function SubmitFunction(){
     return false;
@@ -189,6 +193,8 @@ $(".dataTableAdministrador").on("click",".btnUpdate",function(){
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
+            $('#TxtTipoDocumentoEdit').select2();
+            $('#TxtRhEdit').select2();
             $("#ModalEdit").modal();
         }
     });

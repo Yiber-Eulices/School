@@ -98,9 +98,9 @@
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha</label>
                     <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >
-                        
+                        <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >                        
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
@@ -119,9 +119,9 @@
                     <div class="help-info">Descripcion</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Foto</label>
                     <div class="form-line">
-                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
-                        
+                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >                        
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
@@ -159,38 +159,38 @@
                     <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha</label>
                     <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >
-                        
+                        <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >                        
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
                 
                 <div class="form-group form-float">
+                    <label class="form-label">Titulo</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >
-                        
+                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >                        
                     </div>
                     <div class="help-info">Titulo</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Descripcion</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                        
                     </div>
                     <div class="help-info">Descripcion</div>
                 </div>
                <div class="form-group form-float">
+                    <label class="form-label">Foto</label>                    
                     <div class="form-line">
                         <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
-                       
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Lugar</label>   
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtLugarEdit" id="TxtLugarEdit" >
-                       
+                        <input type="text" class="form-control" name="TxtLugarEdit" id="TxtLugarEdit" >                       
                     </div>
                     <div class="help-info">Lugar</div>
             </div>

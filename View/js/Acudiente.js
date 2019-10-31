@@ -29,6 +29,10 @@ $(document).ready(function(){
             }
         }
     });
+    $('#TxtTipoDocumento').select2();
+    $('#TxtRh').select2();
+    $('#TxtTipoDocumentoEdit').select2();
+    $('#TxtRhEdit').select2();
 });
 function SubmitFunction(){
     return false;
@@ -196,6 +200,8 @@ $(".dataTableAcudiente").on("click",".btnUpdate",function(){
             $("#TxtFechaNacimientoEdit").focus();
             $("#TxtApellidoEdit").focus();
             $("#TxtNombreEdit").focus();
+            $('#TxtTipoDocumentoEdit').select2();
+            $('#TxtRhEdit').select2();
             $("#ModalEdit").modal();
         }
     });

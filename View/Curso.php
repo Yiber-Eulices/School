@@ -110,20 +110,20 @@
                     <div class="help-info">Año</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Grado</label>
                     <div class="form-line">
-                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                       
+                        <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
+                            <option value=''>-- Por favor seleccione --</option>
+                        </select>
                     </div>
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Profesor</label>
                     <div class="form-line">
-                    <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                       
+                        <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
+                            <option value=''>-- Por favor seleccione --</option>
+                        </select>
                     </div>
                     <div class="help-info">Profesor</div>
                 </div>
@@ -150,21 +150,22 @@
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-            <div class="form-group form-float">
+                <div class="form-group form-float">
+                    <label class="form-label">Nombre</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >                        
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Año</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtAnioEdit" id="TxtAnioEdit" >
-                      
                     </div>
                     <div class="help-info">Año</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Grado</label>
                     <div class="form-line">
                          <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
@@ -173,6 +174,7 @@
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Profesor</label>
                     <div class="form-line">
                          <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>

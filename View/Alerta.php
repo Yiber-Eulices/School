@@ -94,6 +94,7 @@
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Rol</label>
                     <div class="form-line">
                         <select class="form-control show-tick TxtRolPersona" style ="width:100%" name = "TxtRolPersona" id = "TxtRolPersona">
                             <option value="">-- Por favor seleccione el Rol --</option>
@@ -102,23 +103,22 @@
                             <option value="Acudiente">Acudiente</option>
                             <option value="Administrador">Administrador</option>
                         </select>
-                        <label class="form-label">Rol</label>
                     </div>
                     <div class="help-info">Rol</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Persona</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersona" id = "TxtIdPersona">
                             <option value="">-- Por favor seleccione la Persona --</option>
                         </select>
-                        <label class="form-label">Persona</label>
                     </div>
                     <div class="help-info">Persona</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha</label>
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >
-                        <label class="form-label">Fecha</label>
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
@@ -171,6 +171,7 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Rol</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtRolPersonaEdit" id = "TxtRolPersonaEdit">
                             <option value="">-- Por favor seleccione el Rol --</option>
@@ -179,48 +180,47 @@
                             <option value="Acudiente">Acudiente</option>
                             <option value="Administrador">Administrador</option>
                         </select>
-                        <label class="form-label">Rol</label>
                     </div>
                     <div class="help-info">Rol</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Persona</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit">
                             <option value="">-- Por favor seleccione la Persona --</option>
                         </select>
-                        <label class="form-label">Persona</label>
                     </div>
                     <div class="help-info">Persona</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha</label>
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >
-                        <label class="form-label">Fecha</label>
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Titulo</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >
-                        <label class="form-label">Titulo</label>
                     </div>
                     <div class="help-info">Titulo</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Mensaje</label>
                     <div class="form-line">
                         <textarea name="TxtMensajeEdit" id="TxtMensajeEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
-                        <label class="form-label">Mensaje</label>
                     </div>
                     <div class="help-info">Mensaje</div>
                 </div>
-                <div class="form-group form-float">
+                <div class="form-group form-float">                    
+                    <label class="form-label">Estado</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtEstadoEdit" id = "TxtEstadoEdit">
                             <option value="">-- Por favor seleccione el Estado --</option>
                             <option value="Visto">Visto</option>
                             <option value="Sin Ver">Sin Ver</option>
                         </select>
-                        <label class="form-label">Estado</label>
                     </div>
                     <div class="help-info">Estado</div>
                 </div>

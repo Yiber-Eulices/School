@@ -91,20 +91,20 @@
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Profesor</label>
                     <div class="form-line">
-                    <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
+                        <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                        <label class="form-label">Profesor</label>
+                        </select>
                     </div>
                     <div class="help-info">Profesor</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Materia</label>
                     <div class="form-line">
                         <select name="TxtMateria" id="TxtMateria" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Materia</label>
                     </div>
                     <div class="help-info">Materia</div>
                 </div>
@@ -131,17 +131,21 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group">
-                <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
+                    <label class="form-label">Profesor</label>
+                    <div class="form-line">
+                        <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
+                            <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Profesor</label>
+                    </div>
                     <div class="help-info">Profesor</div>
                 </div>
                 <div class="form-group">
-                <select name="TxtMateriaEdit" id="TxtMateriaEdit" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
+                    <label class="form-label">Materia</label>
+                    <div class="form-line">
+                        <select name="TxtMateriaEdit" id="TxtMateriaEdit" style ="width: 100%">
+                            <option value=''>-- Por favor seleccione --</option>
                         </select>
-                        <label class="form-label">Materia</label>
+                    </div>
                     <div class="help-info">Materia</div>
                 </div>
             </div>

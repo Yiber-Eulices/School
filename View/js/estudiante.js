@@ -29,6 +29,10 @@ $(document).ready(function(){
             }
         }
     });
+    $('#TxtTipoDocumento').select2();
+    $('#TxtRh').select2();
+    $('#TxtTipoDocumentoEdit').select2();
+    $('#TxtRhEdit').select2();
 });
 function SubmitFunction(){
     return false;
@@ -196,14 +200,8 @@ $(".dataTableEstudiante").on("click",".btnUpdate",function(){
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
             $('#TxtCursoEdit').val(respuesta["Curso"]);
-            $("#TxtCursoEdit").focus();
-            $("#TxtTelefonoEdit").focus();
-            $("#TxtCorreoEdit").focus();
-            $("#TxtDocumentoEdit").focus();
-            $("#TxtTipoDocumentoEdit").focus();
-            $("#TxtFechaNacimientoEdit").focus();
-            $("#TxtApellidoEdit").focus();
-            $("#TxtNombreEdit").focus();
+            $('#TxtTipoDocumentoEdit').select2();
+            $('#TxtRhEdit').select2();
             $("#ModalEdit").modal();
         }
     });

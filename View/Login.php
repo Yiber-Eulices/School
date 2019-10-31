@@ -9,6 +9,10 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Login</title>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -31,6 +35,9 @@
 
     <!--sweetalert-->
     <link href="sweetalert/sweetalert.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body class="login-page">
@@ -48,7 +55,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <select class="form-control show-tick" name = "TxtRol" id = "TxtRol">
+                            <select class="form-control show-tick" style ="width:100%"  name = "TxtRol" id = "TxtRol">
                                 <option value="">-- Por favor seleccione su Rol --</option>
                                 <option value="Estudiante">Estudiante</option>
                                 <option value="Profesor">Profesor</option>
@@ -90,9 +97,8 @@
             </div>
         </div>
     </div>
-
-    <!-- Jquery Core Js -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Select2 Plugin Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="plugins/bootstrap/js/bootstrap.js"></script>

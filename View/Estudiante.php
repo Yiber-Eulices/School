@@ -331,14 +331,23 @@
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>
-                <div class="form-group form-float">
+                <div class="form-group">
+                    <label class="form-label">Curso</label>
+                    <div class="form-line">
+                        <select name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%">
+                            <option value=''>-- Por favor seleccione --</option>
+                        </select>
+                    </div>
+                    <div class="help-info">Curso</div>
+                </div>
+                <!--div class="form-group form-float">
                     <label class="form-label">Curso</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtCursoEdit" id="TxtCursoEdit" >
                       
                     </div>
                     <div class="help-info">Curso</div>
-                </div>
+                </div-->
             </div>
             <div class="modal-footer">
               <input type="submit" IdEstudiante name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">

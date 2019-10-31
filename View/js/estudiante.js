@@ -29,6 +29,33 @@ $(document).ready(function(){
             }
         }
     });
+    $.ajax({
+        url:"../Ajax/AjaxCurso.php?a=lista",
+        method:"GET",
+        dataType: "JSON",
+        success : function(respuesta){
+            $('#TxtCurso').empty();
+            $('#TxtCursoEdit').empty();
+            $("#TxtCurso").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtCursoEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            for(var i = 0;i<respuesta.data.length;i++){
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
+                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
+                }                
+            }
+            $('#TxtCurso').change();
+            $('#TxtCursoEdit').change();
+            $("#TxtCurso").select2();
+            $("#TxtCursoEdit").select2();
+        }
+    });
+
+
+    $('#TxtTipoDocumento').select2();
+    $('#TxtRh').select2();
+    $('#TxtTipoDocumentoEdit').select2();
+    $('#TxtRhEdit').select2();
 });
 function SubmitFunction(){
     return false;
@@ -196,14 +223,8 @@ $(".dataTableEstudiante").on("click",".btnUpdate",function(){
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
             $('#TxtCursoEdit').val(respuesta["Curso"]);
-            $("#TxtCursoEdit").focus();
-            $("#TxtTelefonoEdit").focus();
-            $("#TxtCorreoEdit").focus();
-            $("#TxtDocumentoEdit").focus();
-            $("#TxtTipoDocumentoEdit").focus();
-            $("#TxtFechaNacimientoEdit").focus();
-            $("#TxtApellidoEdit").focus();
-            $("#TxtNombreEdit").focus();
+            $('#TxtTipoDocumentoEdit').select2();
+            $('#TxtRhEdit').select2();
             $("#ModalEdit").modal();
         }
     });

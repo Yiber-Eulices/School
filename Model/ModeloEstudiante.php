@@ -35,7 +35,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarEstudiante(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM Estudiante");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT e.*,g.*,c.Nombre AS NombreCurso FROM Estudiante AS e INNER JOIN  curso AS c ON E.CursoIdCurso=c.IdCurso INNER JOIN grado AS g ON g.IdGrado=c.GradoIdGrado");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            

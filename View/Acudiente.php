@@ -72,8 +72,8 @@
                                 </table>
                                 <style>
                                     .imgProfile{
-                                        height : 100px;
-                                        width : 100px;
+                                        height : 50px;
+                                        width : 50px;
                                         border-radius : 50px;
                                     }
                                     .imgProfileEdit{
@@ -120,42 +120,44 @@
                     <div class="help-info">Apellido</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Foto</label>
                     <div class="form-line">
                         <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
-                       
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha de Nacimiento</label>
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
-                        
+                       
                     </div>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Tipo de Documento</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtTipoDocumento" id = "TxtTipoDocumento">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumento" id = "TxtTipoDocumento">
                             <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                             <option value="CC">Cédula de Ciudadanía</option>
                             <option value="TI">Tarjeta de Identidad</option>
                             <option value="CE">Cédula de Extranjería</option>
                             <option value="RC">Registro Civil</option>
                         </select>
-                        
                     </div>
                     <div class="help-info">Tipo de Documento</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtDocumento" id="TxtDocumento" >
-                        <label class="form-label">Tipo de Documento</label>
+                        <label class="form-label">Documento</label>
                     </div>
                     <div class="help-info">Documento</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Rh</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtRh" id = "TxtRh">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtRh" id = "TxtRh">
                             <option value="">-- Por favor seleccione su Rh --</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -165,8 +167,7 @@
                             <option value="O-">O-</option>
                             <option value="AB+">AB+</option>
                             <option value="AB-">AB-</option>
-                        </select>
-                     
+                        </select>                       
                     </div>
                     <div class="help-info">Rh</div>
                 </div>
@@ -214,60 +215,62 @@
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-                <div class="form-group form-float">
+                <div class="form-group">
                     <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Nombre</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                       
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Apellido</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtApellidoEdit" id="TxtApellidoEdit" >
-                        
-                    </div>
+                    </div>    
                     <div class="help-info">Apellido</div>
                 </div>
+
                 <div class="form-group form-float">
+                    <label class="form-label">Foto</label>
                     <div class="form-line">
                         <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
-                        
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha de Nacimiento</label>
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" >
-                       
                     </div>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Tipo de Documento</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit">
                             <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                             <option value="CC">Cédula de Ciudadanía</option>
                             <option value="TI">Tarjeta de Identidad</option>
                             <option value="CE">Cédula de Extranjería</option>
                             <option value="RC">Registro Civil</option>
                         </select>
-                        
                     </div>
                     <div class="help-info">Tipo de Documento</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Documento</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtDocumentoEdit" id="TxtDocumentoEdit" >
-                        
                     </div>
                     <div class="help-info">Documento</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Rh</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" name = "TxtRhEdit" id = "TxtRhEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtRhEdit" id = "TxtRhEdit">
                             <option value="">-- Por favor seleccione su Rh --</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -278,28 +281,27 @@
                             <option value="AB+">AB+</option>
                             <option value="AB-">AB-</option>
                         </select>
-                       
                     </div>
                     <div class="help-info">Rh</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Correo</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
-                        
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Contrase&ntilde;a</label>
                     <div class="form-line">
                         <input type="password" class="form-control" name="TxtPasswordEdit" id="TxtPasswordEdit" >
-                        
                     </div>
                     <div class="help-info">Contrase&ntilde;a</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Telefono</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
-                        
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>

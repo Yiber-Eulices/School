@@ -58,8 +58,8 @@
                                 </table>
                                 <style>
                                     .imgProfile{
-                                        height : 100px;
-                                        width : 100px;
+                                        height : 50px;
+                                        width : 50px;
                                         border-radius : 50px;
                                     }
                                     .imgProfileEdit{
@@ -92,22 +92,21 @@
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
                 <div class="modal-body">
                     <div class="form-group form-float">
+                        <label class="form-label">Estudiante</label>
                         <div class="form-line">
-                            
                            <select name="TxtEstudiante" id="TxtEstudiante" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
-                           
                         </div>
                         <div class="help-info">Estudiante</div>
                     </div>
                 
-                <div class="form-group form-float">
+                    <div class="form-group form-float">
+                        <label class="form-label">Acudiente</label>
                         <div class="form-line">
-                        <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%">
-                                <option value=''>-- Por favor seleccione --</option>
-                           </select>
-                           
+                            <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%">
+                                    <option value=''>-- Por favor seleccione --</option>
+                            </select>                           
                         </div>
                         <div class="help-info">Acudiente</div>
                     </div>

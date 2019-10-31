@@ -29,6 +29,10 @@ $(document).ready(function(){
             }
         }
     });
+    $('#TxtTipoDocumento').select2();
+    $('#TxtRh').select2();
+    $('#TxtTipoDocumentoEdit').select2();
+    $('#TxtRhEdit').select2();
 });
 function SubmitFunction(){
     return false;
@@ -105,8 +109,8 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_PROF.append("Rh", Rh); 
         oBJEC_PROF.append("Correo", Correo); 
         oBJEC_PROF.append("Password", Password); 
-        oBJEC_PROF.append("Telefono", Telefono); 
-    
+        oBJEC_PROF.append("Telefono", Telefono);
+        
         $.ajax({
             url:"../Ajax/AjaxProfesor.php?a=crear",
             method:"POST",
@@ -189,13 +193,8 @@ $(".dataTableProfesor").on("click",".btnUpdate",function(){
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
-            $("#TxtTelefonoEdit").focus();
-            $("#TxtCorreoEdit").focus();
-            $("#TxtDocumentoEdit").focus();
-            $("#TxtTipoDocumentoEdit").focus();
-            $("#TxtFechaNacimientoEdit").focus();
-            $("#TxtApellidoEdit").focus();
-            $("#TxtNombreEdit").focus();
+            $('#TxtTipoDocumentoEdit').select2();
+            $('#TxtRhEdit').select2();
             $("#ModalEdit").modal();
         }
     });

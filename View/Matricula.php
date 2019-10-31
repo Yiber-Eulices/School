@@ -94,7 +94,7 @@
           </div>
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-            <div class="form-group form-float">
+                <div class="form-group form-float">
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaMatricula" id="TxtFechaMatricula" >
                         
@@ -118,12 +118,13 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select name="TxtEstuidiante" id="TxtEstuidiante" style ="width: 100%">
+                        <select name="TxtIdEstudiante" id="TxtIdEstudiante" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
+            </div>
             <div class="modal-footer">
               <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
               <input type="reset"  name="Reset"  class="btn btn-danger">
@@ -146,7 +147,7 @@
           </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
-                < <div class="form-group form-float">
+                <div class="form-group form-float">
                     <div class="form-line">
                         <input type="date" class="form-control" name="TxtFechaMatriculaEdit" id="TxtFechaMatriculaEdit" >
                 </div>       
@@ -168,7 +169,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <select name="TxtEstuidianteEdit" id="TxtEstuidianteEdit" style ="width: 100%">
+                        <select name="TxtIdEstudianteEdit" id="TxtIdEstudianteEdit" style ="width: 100%">
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>

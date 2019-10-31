@@ -46,6 +46,7 @@
                                             <th>Rh</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
+                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -62,6 +63,7 @@
                                             <th>Rh</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
+                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -195,7 +197,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Curso</label>
                     <div class="form-line">
-                        <select type="number" name="TxtCurso" id="TxtCurso" style ="width: 100%">
+                        <select  class="form-control show-tick" name="TxtCurso" id="TxtCurso" style ="width: 100%">
                             <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -334,7 +336,7 @@
                 <div class="form-group">
                     <label class="form-label">Curso</label>
                     <div class="form-line">
-                        <select name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%">
+                        <select  class="form-control show-tick" name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%">
                             <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>

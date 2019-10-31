@@ -137,23 +137,23 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Misión</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtMisionEdit" id="TxtMisionEdit" >
-                        <label class="form-label">Misión</label>
                     </div>
                     <div class="help-info">Misión</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Visión</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtVisionEdit" id="TxtVisionEdit" >
-                        <label class="form-label">Visión</label>
                     </div>
                     <div class="help-info">Visión</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">¿Quienes somos?</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtSomosEdit" id="TxtSomosEdit" >
-                        <label class="form-label">¿Quienes somos?</label>
                     </div>
                     <div class="help-info">¿Quienes somos?</div>
                 </div>

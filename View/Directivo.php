@@ -141,25 +141,25 @@
             <div class="modal-body">
                 
                 <div class="form-group form-float">
+                    <label class="form-label">Nombre</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                       
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >                       
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 
                 <div class="form-group form-float">
+                    <label class="form-label">Correo</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
-                      
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >                      
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                
                 <div class="form-group form-float">
+                    <label class="form-label">Telefono</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
-                        
+                        <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >                        
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>

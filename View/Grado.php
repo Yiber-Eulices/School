@@ -6,8 +6,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    SCHOOL ADMIN
-                   
+                    SCHOOL ADMIN                   
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -121,9 +120,9 @@
             <div class="modal-body">
                 
                 <div class="form-group form-float">
+                    <label class="form-label">Nivel</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNivelEdit" id="TxtNivelEdit" >
-                        
+                        <input type="text" class="form-control" name="TxtNivelEdit" id="TxtNivelEdit">                        
                     </div>
                     <div class="help-info">Nivel</div>
                 </div>

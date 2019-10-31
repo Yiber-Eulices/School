@@ -143,20 +143,20 @@
 				<!-- Event Item -->
 				<div class="row event_item">
 					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
+						<div class="row d-flex flex-row align-items-end dataTableEvento">
 
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">Enero</div>
+									<div class="event_day"></div>
+									<div class="event_month"></div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Inicio de Clases</a></div>
-									<div class="event_location">Teatro</div>
-									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas similique totam omnis cumque animi, tempora, autem natus obcaecati exercitationem labore illo? Earum quaerat corrupti consectetur inventore amet officia facere mollitia!</p>
+									<div class="event_name"></div>
+									<div class="event_location"></div>
+									<p></p>
 								</div>
 							</div>
 
@@ -251,6 +251,8 @@
 <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/Evento.js"></script>
+<script src="js/Empresa.js"></script>
 
 </body>
 </html>

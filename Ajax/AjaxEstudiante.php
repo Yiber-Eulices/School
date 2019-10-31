@@ -44,12 +44,14 @@
                                 "'.$objADMIN[$i]["Rh"].'",
                                 "'.$objADMIN[$i]["Correo"].'",
                                 "'.$objADMIN[$i]["Telefono"].'",
-                                "'.$objADMIN[$i]["CursoIdCurso"].'",
+                                "'.$objADMIN[$i]["Nivel"].'",
+                                "'.$objADMIN[$i]["NombreCurso"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
                         $oBJEC_JSON .= '[
+                            "",
                             "",
                             "",
                             "",

@@ -118,6 +118,7 @@
                             </li>
                         </ul>
                     </li>
+                    <?php if($_SESSION['UserRol']=="Administrador"){ ?>
                     <li>
                         <a href="Materia.php">
                             <i class="material-icons">rate_review</i>
@@ -172,6 +173,7 @@
                             <span>Clificaciones</span>
                         </a>
                     </li>
+                    <?php } ?>
                     
                 </ul>
             </div>

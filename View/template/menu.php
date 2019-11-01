@@ -170,7 +170,7 @@
                     <li>
                         <a href="Calificacion.php">
                             <i class="material-icons">description</i>
-                            <span>Clificaciones</span>
+                            <span>Calificaciones</span>
                         </a>
                     </li>
                     <?php } ?>

@@ -108,6 +108,7 @@
                     </div>
                     <div class="help-info">Curso</div>
                 </div>
+            </div>
             <div class="modal-footer">
               <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
               <input type="reset"  name="Reset"  class="btn btn-danger">
@@ -122,39 +123,39 @@
     <div class="modal fade" tabindex="-1" role="dialog" id="ModalEdit">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Editar Profesor Curso</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
+            <div class="modal-header">
+                <h5 class="modal-title">Editar Profesor Curso</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
-            <div class="modal-body">
-                <div class="form-group">
-                    <label class="form-label">Profesor</label>
-                    <div class="form-line">
-                        <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
-                            <option value=''>-- Por favor seleccione --</option>
-                        </select>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="form-label">Profesor</label>
+                        <div class="form-line">
+                            <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                            </select>
+                        </div>
+                        <div class="help-info">Profesor</div>
                     </div>
-                    <div class="help-info">Profesor</div>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Curso</label>
-                    <div class="form-line">
-                        <select name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%">
-                            <option value=''>-- Por favor seleccione --</option>
-                        </select>
+                    <div class="form-group">
+                        <label class="form-label">Curso</label>
+                        <div class="form-line">
+                            <select name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                            </select>
+                        </div>
+                        <div class="help-info">Curso</div>
                     </div>
-                    <div class="help-info">Curso</div>
                 </div>
-            </div>
-            <div class="modal-footer">
-              <input type="submit" IdProfesorCurso name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
-              <input type="reset"  name="Reset"  class="btn btn-danger">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </form>
+                <div class="modal-footer">
+                    <input type="submit" IdProfesorCurso name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+                    <input type="reset"  name="Reset"  class="btn btn-danger">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
         </div>
       </div>
     </div>

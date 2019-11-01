@@ -222,9 +222,10 @@ $(".dataTableEstudiante").on("click",".btnUpdate",function(){
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
-            $('#TxtCursoEdit').val(respuesta["Curso"]);
+            $('#TxtCursoEdit option[value='+respuesta["CursoIdCurso"]+']').attr("selected",true);
             $('#TxtTipoDocumentoEdit').select2();
             $('#TxtRhEdit').select2();
+            $('#TxtCursoEdit').select2();
             $("#ModalEdit").modal();
         }
     });

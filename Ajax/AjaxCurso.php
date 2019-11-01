@@ -29,7 +29,7 @@
                                 "'.$objADMIN[$i]["NombreCurso"].'",
                                 "'.$objADMIN[$i]["Anio"].'",
                                 "'.$objADMIN[$i]["Nivel"].'",
-                                "'.$objADMIN[$i]["NombreProfesor"].'",
+                                "'.$objADMIN[$i]["NombreProfesor"].' '.$objADMIN[$i]["Apellido"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

@@ -87,36 +87,25 @@
 	<div class="register">
 
 		<div class="container-fluid">
-			
 			<div class="row row-eq-height">
 				<div class="col-lg-6 nopadding">
-					
-					<!-- Register -->
-
 					<div class="register_section d-flex flex-column align-items-center justify-content-center">
 						<div class="register_content text-center">
 							<h1 class="register_title"><span>MISION</span> </h1>
-							<p class="register_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto unde incidunt commodi explicabo qui nihil quidem iure obcaecati quos minus tempore ipsa possimus enim, nobis omnis suscipit atque dolor fugit!</p><br><br>
+							<p id="Mision" class="register_text"></p><br><br>
 							<h1 class="register_title"><span>VISION</span></h1>
-							<p class="register_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias eius iste asperiores cum harum deserunt sed, eaque necessitatibus ullam, laudantium soluta. Vero obcaecati eos nisi quod a molestiae quibusdam. Rem?</p>
+							<p id="Vision"class="register_text"></p>
 							</div>
 					</div>
-
 				</div>
-
 				<div class="col-lg-6 nopadding">
-					
-					<!-- Search -->
-
 					<div class="search_section d-flex flex-column align-items-center justify-content-center">
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
 						<div class="search_content text-center">
 							<h1 class="search_title">¿QUIENES SOMOS?</h1>
-							<h1 class="register_title"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut omnis eaque tempora facilis officia praesentium culpa magnam dolor. Dolorem inventore fugiat voluptatibus numquam accusantium molestiae quibusdam at repellat id totam!</span></h1>
-							
+							<h1 id="Somos" class="register_title"><span></span></h1>
 						</div> 
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -139,7 +128,6 @@
 			</div>
 			
 			<div class="event_items">
-
 				<!-- Event Item -->
 				<div class="row event_item">
 					<div class="col">
@@ -147,82 +135,21 @@
 
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">Enero</div>
+									<div id="Fecha" class="event_day">DD/MM/AAAA</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Inicio de Clases</a></div>
-									<div class="event_location">Teatro</div>
-									<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas similique totam omnis cumque animi, tempora, autem natus obcaecati exercitationem labore illo? Earum quaerat corrupti consectetur inventore amet officia facere mollitia!</p>
+									<div id="Titulo" class="event_name"></div>
+									<div id="Ubicacion" class="event_location">Cancha principal</div>
+									<p id="Descripcion"></p>
 								</div>
 							</div>
 
 							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image">
-									<img src="images/event_1.jpg" alt="https://unsplash.com/@theunsteady5">
-								</div>
-							</div>
-
-						</div>	
-					</div>
-				</div>
-
-				<!-- Event Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">04</div>
-									<div class="event_month">Febrero</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Izada de bandera-Día Mundial de lucha contra el Cáncer</a></div>
-									<div class="event_location">Cancha principal</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nisi perspiciatis animi eos? Numquam perspiciatis natus, quod, possimus repellat ex labore, sed cum rerum minus quis optio eum fugiat tempore!</p>
-								</div>
-							</div>
-
-							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image">
-									<img src="images/event_2.jpg" alt="https://unsplash.com/@claybanks1989">
-								</div>
-							</div>
-
-						</div>	
-					</div>
-				</div>
-
-				<!-- Event Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">19</div>
-									<div class="event_month">Marzo</div>
-								</div>
-							</div>
-
-							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Izada de bandera en conmemoracion al dia del hombre</a></div>
-									<div class="event_location">Cancha principal</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sit hic, nihil modi quidem officiis assumenda illo voluptate nostrum? Hic earum recusandae corrupti dolorum maxime, cum quo modi praesentium inventore!</p>
-								</div>
-							</div>
-
-							<div class="col-lg-4 order-lg-3 order-1">
-								<div class="event_image">
-									<img src="images/event_3.jpg" alt="https://unsplash.com/@juanmramosjr">
+								<div id="Foto" class="event_image">
+									
 								</div>
 							</div>
 
@@ -251,6 +178,9 @@
 <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/IndexP.js"></script>
+
+<script src="js/Empresa.js"></script>
 
 </body>
 </html>

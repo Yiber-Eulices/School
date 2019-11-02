@@ -108,6 +108,7 @@
                     </div>
                     <div class="help-info">Materia</div>
                 </div>
+            </div>
             <div class="modal-footer">
               <input type="submit" name="Enviar" class="btn btn-primary botonCreate">
               <input type="reset"  name="Reset"  class="btn btn-danger">

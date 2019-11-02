@@ -39,9 +39,9 @@ $(document).ready(function(){
             $("#TxtProfesor").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtProfesorEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
-                    $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                    $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"  "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
             $('#TxtProfesor').change();
@@ -60,9 +60,9 @@ $(document).ready(function(){
             $("#TxtCurso").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtCursoEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
-                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
+                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
                 }                
             }
             $('#TxtCurso').change();

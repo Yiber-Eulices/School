@@ -39,9 +39,9 @@ $(document).ready(function(){
             $("#TxtEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtEstudianteEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $("#TxtEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
-                    $("#TxtEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                    $("#TxtEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
             $('#TxtEstudiante').change();
@@ -60,9 +60,9 @@ $(document).ready(function(){
             $("#TxtAcudiente").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtAcudienteEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
-                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
             $('#TxtAcudiente').change();

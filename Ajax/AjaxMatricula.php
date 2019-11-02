@@ -29,7 +29,7 @@
                                 "'.$objMATR[$i]["Fecha"].'",
                                 "'.$objMATR[$i]["Costo"].'",
                                 "'.$objMATR[$i]["Nivel"].'",
-                                "'.$objMATR[$i]["NombreEstudiante"]." ".$objMATR[$i]["Apellido"].'",
+                                "'.$objMATR[$i]["NombreEstudiante"].' '.$objMATR[$i]["Apellido"].'",
                                 "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }

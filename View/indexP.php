@@ -103,7 +103,7 @@
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
 						<div class="search_content text-center">
 							<h1 class="search_title">¿QUIENES SOMOS?</h1>
-							<h1 id="Somos" class="register_title"><span></span></h1>
+							<h1 class="register_title"><span id="Somos" ></span></h1>
 						</div> 
 					</div>
 				</div>

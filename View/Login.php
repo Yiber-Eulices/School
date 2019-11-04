@@ -66,7 +66,7 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
                             <input type="text" class="form-control" name = "TxtUser" id = "TxtUser" placeholder="Email"  autofocus>

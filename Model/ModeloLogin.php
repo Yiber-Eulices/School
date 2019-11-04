@@ -80,16 +80,18 @@ require_once "Conexion.php";
                 for($i=0;$i < 10;$i++){
                     $key .= $pattern{mt_rand(0,$max)};
                 }
-                $password = password_hash($key, PASSWORD_DEFAULT);
+                $password = password_hash($key,PASSWORD_DEFAULT);
                 $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE ".$rol."  SET Password = :password WHERE Id".$rol."  = :id");
-                $oBJEC_DATA_UPDATE  -> bindParam(":id",$id, PDO::PARAM_INT);
+                $oBJEC_DATA_UPDATE  -> bindParam(":id",$idDB, PDO::PARAM_INT);
                 $oBJEC_DATA_UPDATE  -> bindParam(":password",$password, PDO::PARAM_STR);
-                
+                $oBJEC_DATA_UPDATE -> execute();    
+                $essql = $oBJEC_DATA_UPDATE;            
                 $destinatario = $user;
-                $asunto = "Restablecer contraseña.";
-                $mensaje = "Su nueva Contraseña como ".$rol." es : ( ".$key." ).";
-                mail($destinatario,$asunto,$mensaje);
-                return ($oBJEC_DATA_UPDATE -> execute());
+                $from = "yibercitolopez@hotmail.com";
+                $asunto = "Restablecer contrase&ntilde;a en School Admin.";
+                $mensaje = "Su nueva Contrase&ntilde;a como ".$rol." es : ( ".$key." ).";
+                $headers = "From:" . $from;
+                return (mail($destinatario,$asunto,$mensaje,$headers));
             }else{
                 return "El correo ingresado no es un ".$rol.", es Incorrecto o no existe.";
             }

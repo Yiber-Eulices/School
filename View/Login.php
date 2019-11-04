@@ -40,7 +40,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 </head>
 
-<body class="login-page">
+<body class="login-page bg-red">
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">SCHOOL <b>ADMIN</b></a>
@@ -83,14 +83,14 @@
                     <div class="row">
                         
                         <div class="col-xs-12">
-                            <button class="btn btnLogin bg-color ">INGRESAR</button>
-                            <input class="btn bg-color" onClick="javascript:window.history.back();" type="button" name="Submit" value="ATRÁS" />
+                            <button class="btn btnLogin bg-red">INGRESAR</button>
+                            <input class="btn bg-red" onClick="javascript:window.history.back();" type="button" name="Submit" value="ATRÁS" />
                         </div>
                     </div>
                     <div class="row m-t-15 m-b--20">
                         
                         <div class="col-xs-6 align-right">
-                            <a href="ForgotPassword.php">Olvidó su contraseña?</a>
+                            <a href="ForgotPassword.php" class="col-red">Olvidó su contraseña?</a>
                         </div>
                     </div>
                 </form>

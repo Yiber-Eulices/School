@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 
-                <a class="navbar-brand" href="Index.php">SCHOOL ADMIN</a>
+                <a class="navbar-brand" href="Home.php">SCHOOL ADMIN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -81,7 +81,7 @@
                 <ul class="list">
                     <li class="header">MENÚ DE NAVEGACIÓN</li>
                     <li  class="active">
-                        <a href="Index.php">
+                        <a href="Home.php">
                             <i class="material-icons">home</i>
                             <span>Inicio</span>
                         </a>
@@ -103,8 +103,8 @@
                             <i class="material-icons">accessibility</i>
                             <span>Personal</span>
                         </a>
-                        <ul>
-                            <li class="active">
+                        <ul class="ml-menu">
+                            <li>
                                 <a href="Profesor.php">Profesores</a>
                             </li>
                             <li>

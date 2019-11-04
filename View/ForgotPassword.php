@@ -25,7 +25,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="fp-page">
+<body class="fp-page bg-red">
     <div class="fp-box">
         <div class="logo">
             <a href="javascript:void(0);">SCHOOL <b>ADMIN</b></a>
@@ -47,10 +47,10 @@ Ingrese su dirección de correo electrónico que utilizó para registrarse. Le e
                         </div>
                     </div>
 
-                    <button class="btn btn-block btn-lg bg-color waves-effect" type="submit">REESTABLECER MI CONTRASEÑA</button>
+                    <button class="btn btn-block btn-lg bg-red  waves-effect" type="submit">REESTABLECER MI CONTRASEÑA</button>
 
                     <div class="row m-t-20 m-b--5 align-center">
-                        <a href="Login.php">Ingresar!</a>
+                        <a href="Login.php" class="col-red">Ingresar!</a>
                     </div>
                 </form>
             </div>

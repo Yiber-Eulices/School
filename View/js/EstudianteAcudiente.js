@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaAcudiente",
+        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaEstudiante",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -30,24 +30,24 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxEstudiante.php?a=lista",
+        url:"../Ajax/AjaxAcudiente.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
-            $('#TxtEstudiante').empty();
-            $('#TxtEstudianteEdit').empty();
-            $("#TxtEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
-            $("#TxtEstudianteEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            $('#TxtAcudiente').empty();
+            $('#TxtAcudienteEdit').empty();
+            $("#TxtAcudiente").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtAcudienteEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                    $("#TxtEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                    $("#TxtEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
-            $('#TxtEstudiante').change();
-            $('#TxtEstudianteEdit').change();
-            $("#TxtEstudiante").select2();
-            $("#TxtEstudianteEdit").select2();
+            $('#TxtAcudiente').change();
+            $('#TxtAcudienteEdit').change();
+            $("#TxtAcudiente").select2();
+            $("#TxtAcudienteEdit").select2();
         }
     });
 });
@@ -85,11 +85,12 @@ $(".formCreate").on("click",".botonCreate",function(){
                 if(respuesta = true){
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "AcudienteEstudiante.php";
+                    window.location = "EstudianteAcudiente.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
-                }                
+                }
+                
             }
         });
     }
@@ -121,7 +122,7 @@ $(".dataTableAcudienteEstudiante").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "AcudienteEstudiante.php";
+                        window.location = "EstudianteAcudiente.php";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -145,8 +146,8 @@ $(".dataTableAcudienteEstudiante").on("click",".btnUpdate",function(){
         dataType:"json",
         success : function(respuesta){
             $("#botonEdit").attr("IdAcudienteEstudiante",id);
-            $('#TxtEstudianteEdit option[value="'+respuesta["EstudianteIdEstudiante"]+'"]').attr("selected", true);
-            $("#TxtEstudianteEdit").select2();
+            $('#TxtAcudienteEdit option[value="'+respuesta["AcudienteIdAcudiente"]+'"]').attr("selected", true);
+            $("#TxtAcudienteEdit").select2();
             $("#ModalEdit").modal();
         }
     });
@@ -183,7 +184,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 if(respuesta = true){
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "AcudienteEstudiante.php";
+                    window.location = "EstudianteAcudiente.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

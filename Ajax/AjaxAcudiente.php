@@ -28,7 +28,8 @@
                 "data": [';
                     if (count($objACUDI) >= 1){
                         for ($i=0; $i < count($objACUDI); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button>";
+                            $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
 
@@ -43,7 +44,7 @@
                                 "'.$objACUDI[$i]["Rh"].'",
                                 "'.$objACUDI[$i]["Correo"].'",
                                 "'.$objACUDI[$i]["Telefono"].'",
-                                "'.$btnUpdate.$btnDelete.'"
+                                "'.$btnEstudiante.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
@@ -76,6 +77,10 @@
             $objACUDI = ControladorAcudiente::CtrlEliminar($this->id);
             echo json_encode($objACUDI);
         }
+        public function AjxSesion(){
+          $objADMIN = ControladorAcudiente::CtrlSesion($this->id);
+          echo json_encode($objADMIN);
+      }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
         $image=null;
@@ -163,5 +168,10 @@
         $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxEliminar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'sesion'){
+      $oBJEC_AJAX = new AjaxAcudiente();
+      $oBJEC_AJAX -> id = $_POST["Id"];
+      $oBJEC_AJAX -> AjxSesion();
     }
     

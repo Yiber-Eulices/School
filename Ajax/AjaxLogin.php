@@ -27,6 +27,10 @@
             $objADMIN = ControladorLogin::CtrlEditar($this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
             echo json_encode($objADMIN);  
         }
+        public function RecuperarAjax(){
+            $objLOGINC = ControladorLogin::CtrlRecuperar( $this->rol,$this->user);
+            echo json_encode($objLOGINC);
+        }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'login'){
         $oBJEC_AJAX = new AjaxLogin();
@@ -75,4 +79,10 @@
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
         $oBJEC_AJAX -> AjxEditar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'recuperar'){
+        $oBJEC_AJAX = new AjaxLogin();
+        $oBJEC_AJAX->rol = $_POST["Rol"];
+        $oBJEC_AJAX->user = $_POST["User"];
+        $oBJEC_AJAX -> RecuperarAjax();
     }

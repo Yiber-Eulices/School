@@ -29,7 +29,8 @@
                 "data": [';
                     if (count($objADMIN) >= 1){
                         for ($i=0; $i < count($objADMIN); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
+                            $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
 
@@ -46,7 +47,7 @@
                                 "'.$objADMIN[$i]["Telefono"].'",
                                 "'.$objADMIN[$i]["Nivel"].'",
                                 "'.$objADMIN[$i]["NombreCurso"].'",
-                                "'.$btnUpdate.$btnDelete.'"
+                                "'.$btnAcudiente.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
@@ -79,6 +80,10 @@
         }
         public function AjxEliminar(){
             $objADMIN = ControladorEstudiante::CtrlEliminar($this->id);
+            echo json_encode($objADMIN);
+        }
+        public function AjxSesion(){
+            $objADMIN = ControladorEstudiante::CtrlSesion($this->id);
             echo json_encode($objADMIN);
         }
     }
@@ -170,5 +175,10 @@
         $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxEliminar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'sesion'){
+      $oBJEC_AJAX = new AjaxEstudiante();
+      $oBJEC_AJAX -> id = $_POST["Id"];
+      $oBJEC_AJAX -> AjxSesion();
     }
     

@@ -68,6 +68,40 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListado(){
+          $objPROF = ControladorProfesor::CtrlListar();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objPROF) >= 1){
+                      for ($i=0; $i < count($objPROF); $i++) {
+                          $img = "<img class = 'imgProfile' src ='".$objPROF[$i]["Foto"]."'>";
+
+                          $oBJEC_JSON .= '[
+                              "'.$objPROF[$i]["IdProfesor"].'",
+                              "'.$img.'",
+                              "'.$objPROF[$i]["Nombre"].'",
+                              "'.$objPROF[$i]["Apellido"].'",
+                              "'.$objPROF[$i]["Correo"].'",
+                              "'.$objPROF[$i]["Telefono"].'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+
+      }
         public function AjxBuscar(){
             $objPROF = ControladorProfesor::CtrlBuscar($this->id);
             echo json_encode($objPROF);
@@ -153,6 +187,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> AjxListar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listado'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> AjxListado();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxProfesor();

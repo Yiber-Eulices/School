@@ -43,7 +43,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="Alerta.php">Ver todas las notificaciones</a>
+                                <a href="MisNotificaciones.php">Ver todas las notificaciones</a>
                             </li>
                         </ul>
                     </li>
@@ -88,13 +88,19 @@
                     </li>
                     <?php if($_SESSION['UserRol']=="Acudiente"){ ?>
                         <li>
-                            <a href="Hijos.php">
-                                <i class="material-icons">Personal</i>
+                            <a href="MisHijos.php">
+                                <i class="material-icons">group</i>
                                 <span>Mis Hijos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Grado.php">
+                            <a href="Profesores.php">
+                                <i class="material-icons">group</i>
+                                <span>Profesores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="MisNotificaciones.php">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -103,7 +109,7 @@
                     <?php if($_SESSION['UserRol']=="Administrador"){ ?>
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">accessibility</i>
+                                <i class="material-icons">group</i>
                                 <span>Personal</span>
                             </a>
                             <ul class="ml-menu">
@@ -175,28 +181,34 @@
                                 <span>Calificaciones</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="MisNotificaciones.php">
+                                <i class="material-icons">notifications</i>
+                                <span>Notificaciones</span>
+                            </a>
+                        </li>
                     <?php } ?>                    
                     <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
                         <li>
-                            <a href="Hijos.php">
-                                <i class="material-icons">Personal</i>
+                            <a href="MisPadres.php">
+                                <i class="material-icons">group</i>
                                 <span>Mis Padres</span>
                             </a>
                         </li>
                         <li>
                             <a href="Hijos.php">
-                                <i class="material-icons">Personal</i>
+                                <i class="material-icons">group</i>
                                 <span>Mis Profesores</span>
                             </a>
                         </li>
                         <li>
                             <a href="Hijos.php">
-                                <i class="material-icons">Personal</i>
+                                <i class="material-icons">book</i>
                                 <span>Mis Calificaciones</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Grado.php">
+                            <a href="MisNotificaciones.php">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -204,25 +216,25 @@
                     <?php } ?>
                     <?php if($_SESSION['UserRol']=="Profesor"){ ?>
                         <li>
-                            <a href="Estudiantes.php">
-                                <i class="material-icons">Personal</i>
+                            <a href="Estudiante.php">
+                                <i class="material-icons">group</i>
                                 <span>Estudiantes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Padres de Familia.php">
-                                <i class="material-icons">Personal</i>
+                            <a href="Acudiente.php">
+                                <i class="material-icons">group</i>
                                 <span>Padres de Familia</span>
                             </a>
                         </li>
                         <li>
                             <a href="Hijos.php">
-                                <i class="material-icons">Personal</i>
+                                <i class="material-icons">group</i>
                                 <span>Mis Cursos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Grado.php">
+                            <a href="MisNotificaciones.php">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>

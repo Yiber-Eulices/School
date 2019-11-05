@@ -58,13 +58,18 @@
                                                 </div>
                                                 <div class="form-group from-foto-camara form-float">
                                                     <label class="form-label">Foto</label>
-                                                    <div class="form-line">
-                                                        <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
-                                                        <button type="button" class="btn btnCamara btn-info btn-circle waves-effect waves-circle waves-float">
+                                                    <div class="row">
+                                                        <div class="col-xs-0"></div>
+                                                        
+                                                        <input type="file" class="form-control-file col-xs-8"  name="TxtFotoEdit" id="TxtFotoEdit" hidden>
+                                                        <!--label class="col-xs-4" for="TxtFotoEdit">Seleccionar Archivo</label-->
+                                                        <button type="button" class="btn btnCamara btn-info btn-circle waves-effect waves-circle waves-float col-4">
                                                             <i class="material-icons">camera_alt</i>
-                                                        </button>                                                        
+                                                        </button>  
+                                                        <div id="fotoCamara"><div>
+                                                        <div class="help-info">Foto</div>
                                                     </div>
-                                                    <div class="help-info">Foto</div>
+                                                </div>
                                                 </div>
                                                 <div class="form-group form-float">
                                                     <label class="form-label">Fecha de Nacimiento</label>

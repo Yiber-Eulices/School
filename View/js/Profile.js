@@ -136,5 +136,32 @@ $(document).ready(function(){
             });
         }
     });
+    $(".btnCamara").click(function(){
+        // Configure a few settings and attach camera
+        Webcam.set({
+            width: 320,
+            height: 240,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+        Webcam.attach( '#my_camera' );
+        $("#ModalCamara").modal();
+    });
+    $(".btnCapturarFoto").click(function(){
+        // preload shutter audio clip
+        var shutter = new Audio();
+        shutter.autoplay = true;
+        shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
+        // play sound effect
+        shutter.play();
+    
+        // take snapshot and get image data
+        Webcam.snap( function(data_uri) {
+            // display results in page
+            $(".from-foto-camara").append('<img src="'+data_uri+'"/>');
+        } );
+        Webcam.pause();
+        $("#ModalCamara").modal('toggle');
+    });
     
 });

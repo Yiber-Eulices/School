@@ -56,11 +56,13 @@
                                                     </div>
                                                     <div class="help-info">Apellido</div>
                                                 </div>
-                                                <div class="form-group form-float">
+                                                <div class="form-group from-foto-camara form-float">
                                                     <label class="form-label">Foto</label>
                                                     <div class="form-line">
                                                         <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
-                                                        
+                                                        <button type="button" class="btn btnCamara btn-info btn-circle waves-effect waves-circle waves-float">
+                                                            <i class="material-icons">camera_alt</i>
+                                                        </button>                                                        
                                                     </div>
                                                     <div class="help-info">Foto</div>
                                                 </div>
@@ -143,6 +145,36 @@
                 </div>
             </div>
         </section>
+        <!-- Modal Camera-->
+        <div class="modal fade" id="ModalCamara" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Camara</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- CSS -->
+                <style>
+                #my_camera{
+                    width: 320px;
+                    height: 240px;
+                    border: 1px solid black;
+                }
+                </style>
+
+                <div id="my_camera"style="margin: auto; width: 320px; height: 240px;"><div></div><video autoplay="autoplay" style="width: 320px; height: 240px;"></video></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btnCapturarFoto btn-primary">Capturar</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- End Modal Camera-->
     <script src="js/Profile.js"></script>
 <?php
     include "template/footer.php";

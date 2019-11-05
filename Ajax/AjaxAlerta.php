@@ -69,19 +69,13 @@
                         for ($i=0; $i < count($objADMIN); $i++) {                           
                             $oBJEC_JSON .= '[
                                 "'.$objADMIN[$i]["IdAlerta"].'",
-                                "'.$objADMIN[$i]["RolPersona"].'",
-                                "'.$objADMIN[$i]["IdPersona"].'",
                                 "'.$objADMIN[$i]["Fecha"].'",
                                 "'.$objADMIN[$i]["Titulo"].'",
-                                "'.$objADMIN[$i]["Mensaje"].'",
-                                "'.$objADMIN[$i]["Estado"].'"
+                                "'.$objADMIN[$i]["Mensaje"].'"
                             ],';
                         }
                     }else{
                         $oBJEC_JSON .= '[
-                            "",
-                            "",
-                            "",
                             "",
                             "",
                             "",

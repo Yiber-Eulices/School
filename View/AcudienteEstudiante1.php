@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Acudientes de el Estudiente <b><?php echo $_SESSION['EstudianteNombre'];?></b>
+                                Acudiente-Estudiente
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -34,7 +34,7 @@
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
-                                <span>A&ntilde;adir Acudiente</span>
+                                <span>A&ntilde;adir Acudiente-Estudiante</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
@@ -42,26 +42,16 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Foto</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Tipo de Documento</th>
-                                            <th>Documento</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
+                                            <th>Estudiante</th>
+                                            <th>Acudiente</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Foto</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Tipo de Documento</th>
-                                            <th>Documento</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
+                                        <th>#</th>
+                                            <th>Estudiente</th>
+                                            <th>Acudiente</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
@@ -94,15 +84,22 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">A&ntilde;adir Acudiente</h5>
+                <h5 class="modal-title">A&ntilde;adir Acudiente-Estudiante</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
                 <div class="modal-body">
-                    
-                    <input type="hidden" name="TxtEstudiante" id="TxtEstudiante" value = "<?php echo $_SESSION['EstudianteId'];?>">
+                    <div class="form-group form-float">
+                        <label class="form-label">Estudiante</label>
+                        <div class="form-line">
+                           <select name="TxtEstudiante" id="TxtEstudiante" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
+                        </div>
+                        <div class="help-info">Estudiante</div>
+                    </div>
                 
                     <div class="form-group form-float">
                         <label class="form-label">Acudiente</label>
@@ -131,7 +128,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Acudiente</h5>
+            <h5 class="modal-title">Editar Acudiente-Estudiante</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -139,8 +136,15 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 
-                <input type="hidden" name="TxtEstudianteEdit" id ="TxtEstudianteEdit"value = "<?php echo $_SESSION['EstudianteId'];?>">
-
+                <div class="form-group form-float">
+                    <div class="form-line">
+                          
+                    <select name="TxtEstudianteEdit" id="TxtEstudianteEdit" style ="width: 100%">
+                                <option value=''>-- Por favor seleccione --</option>
+                           </select>
+                    </div>
+                    <div class="help-info">Estudiante</div>
+                </div>
                 <div class="form-group form-float">
                     <div class="form-line">
                     <select name="TxtAcudienteEdit" id="TxtAcudienteEdit" style ="width: 100%">
@@ -161,7 +165,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="js/EstudianteAcudiente.js"></script>
+    <script src="js/AcudienteEstudiante.js"></script>
 <?php
     include "template/footer.php";
 ?>

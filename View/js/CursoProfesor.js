@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableProfesorCurso").DataTable({
-        "ajax":"../Ajax/AjaxProfesorCurso.php?a=listaProfesor",
+        "ajax":"../Ajax/AjaxProfesorCurso.php?a=listaCurso",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -51,24 +51,24 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxCurso.php?a=lista",
+        url:"../Ajax/AjaxProfesor.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
-            $('#TxtCurso').empty();
-            $('#TxtCursoEdit').empty();
-            $("#TxtCurso").append("<option value=''>-- Por favor seleccione --</option>");
-            $("#TxtCursoEdit").append("<option value=''>-- Por favor seleccione --</option>");
+            $('#TxtProfesor').empty();
+            $('#TxtProfesorEdit').empty();
+            $("#TxtProfesor").append("<option value=''>-- Por favor seleccione --</option>");
+            $("#TxtProfesorEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
-            $('#TxtCurso').change();
+            $('#TxtProfesorEdit').change();
             $('#TxtCursoEdit').change();
-            $("#TxtCurso").select2();
-            $("#TxtCursoEdit").select2();
+            $("#TxtProfesor").select2();
+            $("#TxtProfesorEdit").select2();
         }
     });
 });
@@ -108,7 +108,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                 if(respuesta = true){
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "ProfesorCurso.php";
+                    window.location = "CursoProfesor.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -145,7 +145,7 @@ $(".dataTableProfesorCurso").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "ProfesorCurso.php";
+                        window.location = "CursoProfesor.php";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -170,8 +170,8 @@ $(".dataTableProfesorCurso").on("click",".btnUpdate",function(){
         success : function(respuesta){
             $('#TxtMateriaEdit option[value="'+respuesta["MateriaIdMateria"]+'"]').attr("selected", true);
             $("#TxtMateriaEdit").select2();
-            $('#TxtCursoEdit option[value="'+respuesta["CursoIdCurso"]+'"]').attr("selected", true);
-            $("#TxtCursoEdit").select2();
+            $('#TxtProfesorEdit option[value="'+respuesta["ProfesorIdProfesor"]+'"]').attr("selected", true);
+            $("#TxtProfesorEdit").select2();
             $("#botonEdit").attr("IdProfesorCurso",id);
             $("#ModalEdit").modal();
         }
@@ -212,7 +212,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                 if(respuesta = true){
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "ProfesorCurso.php";
+                    window.location = "CursoProfesor.php";
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

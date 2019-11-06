@@ -1,11 +1,11 @@
 <?php
     class ControladorProfesorCurso{
-        public static function CtrlCrear($profesor,$curso){
-            $objCREARM = ModeloProfesorCurso::CrearProfesorCurso($profesor,$curso);
+        public static function CtrlCrear($profesor,$curso,$materia){
+            $objCREARM = ModeloProfesorCurso::CrearProfesorCurso($profesor,$curso,$materia);
             return $objCREARM;
         }
-        public static function CtrlEditar($id,$profesor,$curso){
-            $objEDITM = ModeloProfesorCurso::EditarProfesorCurso($id,$profesor,$curso);
+        public static function CtrlEditar($id,$profesor,$curso,$materia){
+            $objEDITM = ModeloProfesorCurso::EditarProfesorCurso($id,$profesor,$curso,$materia);
             return $objEDITM; 
         }
         public static function CtrlListar(){
@@ -18,7 +18,6 @@
         }
         public static function CtrlEliminar($id){
             $objELIM = ModeloProfesorCurso::EliminarProfesorCurso($id);
-            return $objELIM;
-            
+            return $objELIM;            
         }
     }

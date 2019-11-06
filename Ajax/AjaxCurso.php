@@ -22,6 +22,7 @@
                 "data": [';
                     if (count($objADMIN) >= 1){
                         for ($i=0; $i < count($objADMIN); $i++) {
+                            $btnProfesor = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnProfesor btn-info waves-effect' IdCurso = '".$objADMIN[$i]["IdCurso"]."'><i class='material-icons'>group</i><span>Profesores</span></button>";
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdCurso = '".$objADMIN[$i]["IdCurso"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdCurso = '".$objADMIN[$i]["IdCurso"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
@@ -30,7 +31,7 @@
                                 "'.$objADMIN[$i]["Anio"].'",
                                 "'.$objADMIN[$i]["Nivel"].'",
                                 "'.$objADMIN[$i]["NombreProfesor"].' '.$objADMIN[$i]["Apellido"].'",
-                                "'.$btnUpdate.$btnDelete.'"
+                                "'.$btnProfesor.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
@@ -56,6 +57,10 @@
         }
         public function AjxEliminar(){
             $objADMIN = ControladorCurso::CtrlEliminar($this->id);
+            echo json_encode($objADMIN);
+        }
+        public function AjxSesion(){
+            $objADMIN = ControladorCurso::CtrlSesion($this->id);
             echo json_encode($objADMIN);
         }
     }
@@ -90,5 +95,10 @@
         $oBJEC_AJAX = new AjaxCurso();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxEliminar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'sesion'){
+        $oBJEC_AJAX = new AjaxCurso();
+        $oBJEC_AJAX -> id = $_POST["Id"];
+        $oBJEC_AJAX -> AjxSesion();
     }
     

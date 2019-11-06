@@ -22,4 +22,11 @@
             $objELIM = ModeloProfesor::EliminarProfesor($id);
             return $objELIM;
         }
+        public static function CtrlSesion($id){
+            session_start();
+            $objBUSCM = ModeloProfesor::BuscarProfesor($id);
+            $_SESSION['ProfesorId'] = $objBUSCM["IdProfesor"];
+            $_SESSION['ProfesorNombre'] = $objBUSCM["Nombre"]." ".$objBUSCM["Apellido"];
+            return true;
+        }
     }

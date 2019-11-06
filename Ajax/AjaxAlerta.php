@@ -71,11 +71,13 @@
                                 "'.$objADMIN[$i]["IdAlerta"].'",
                                 "'.$objADMIN[$i]["Fecha"].'",
                                 "'.$objADMIN[$i]["Titulo"].'",
-                                "'.$objADMIN[$i]["Mensaje"].'"
+                                "'.$objADMIN[$i]["Mensaje"].'",
+                                "'.$objADMIN[$i]["Estado"].'"
                             ],';
                         }
                     }else{
                         $oBJEC_JSON .= '[
+                            "",
                             "",
                             "",
                             "",

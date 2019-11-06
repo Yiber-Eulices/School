@@ -16,7 +16,7 @@ $(".btnLogin").click(function(){
             dataType: "json",
             success : function(respuesta){
                 if(respuesta==true){
-                    window.location = "Index.php"; 
+                    window.location = "Home.php"; 
                 }else{
                     var m = respuesta;
                     ValidateCreateUpdate(m);

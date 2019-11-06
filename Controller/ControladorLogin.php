@@ -17,4 +17,8 @@
             $objEDITM = ModeloLogin::EditProfile($rol,$id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$passwordHash,$telefono,$foto,$fechaNacimiento);
             return $objEDITM;
         }
+        public static function CtrlRecuperar($rol,$user){
+            $objLOGINM = ModeloLogin::Recover($rol,$user);
+            return $objLOGINM;
+        }
     }

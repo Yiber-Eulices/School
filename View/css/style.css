@@ -1853,8 +1853,8 @@
   .bg-red .content .number {
     color: #fff !important; }
 
-.bg-color {
-  background-color: #F44336 !important;
+.bg-pink {
+  background-color: #E91E63 !important;
   color: #fff; }
   .bg-pink .content .text,
   .bg-pink .content .number {
@@ -2484,7 +2484,7 @@ section.content {
     top: 6px !important; }
 
 .btn:not(.btn-link):not(.btn-circle) {
-  box-shadow: 0 2px 5px #F44336, 0 2px 10px #F44336;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
@@ -7765,7 +7765,7 @@ fieldset[disabled] .form-control {
 
 /* Login Page ================================== */
 .login-page {
-  background-color: #F44336;
+  background-color: #00BCD4;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7777,7 +7777,7 @@ fieldset[disabled] .form-control {
   .login-page .login-box a {
     font-size: 14px;
     text-decoration: none;
-    color: #F44336; }
+    color: #00BCD4; }
   .login-page .login-box .logo {
     margin-bottom: 20px; }
     .login-page .login-box .logo a {
@@ -7825,7 +7825,7 @@ fieldset[disabled] .form-control {
 
 /* Forgot Password Page ======================== */
 .fp-page {
-  background-color: #F44336;
+  background-color: #00BCD4;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;
@@ -7837,7 +7837,7 @@ fieldset[disabled] .form-control {
   .fp-page .fp-box a {
     font-size: 14px;
     text-decoration: none;
-    color: #F44336; }
+    color: #00BCD4; }
   .fp-page .fp-box .logo {
     margin-bottom: 20px; }
     .fp-page .fp-box .logo a {

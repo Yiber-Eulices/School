@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=lista",
+        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaAcudiente",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -50,27 +50,6 @@ $(document).ready(function(){
             $("#TxtEstudianteEdit").select2();
         }
     });
-    $.ajax({
-        url:"../Ajax/AjaxAcudiente.php?a=lista",
-        method:"GET",
-        dataType: "JSON",
-        success : function(respuesta){
-            $('#TxtAcudiente').empty();
-            $('#TxtAcudienteEdit').empty();
-            $("#TxtAcudiente").append("<option value=''>-- Por favor seleccione --</option>");
-            $("#TxtAcudienteEdit").append("<option value=''>-- Por favor seleccione --</option>");
-            for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                }                
-            }
-            $('#TxtAcudiente').change();
-            $('#TxtAcudienteEdit').change();
-            $("#TxtAcudiente").select2();
-            $("#TxtAcudienteEdit").select2();
-        }
-    });
 });
 function SubmitFunction(){
     return false;
@@ -110,8 +89,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
-                }
-                
+                }                
             }
         });
     }
@@ -167,12 +145,8 @@ $(".dataTableAcudienteEstudiante").on("click",".btnUpdate",function(){
         dataType:"json",
         success : function(respuesta){
             $("#botonEdit").attr("IdAcudienteEstudiante",id);
-            $('#TxtEstudiante option[value="'+respuesta["EstudianteIdEstudiante"]+'"]').attr("selected", true);
-            $("#TxtEstudiante").select2();
-            $('#TxtAcudiente option[value="'+respuesta["AcudienteIdAcudiente"]+'"]').attr("selected", true);
-            $("#TxtAcudiente").select2();
-            $("#TxtEstudienteEdit").focus();
-            $("#TxtAcudienteEdit").focus();
+            $('#TxtEstudianteEdit option[value="'+respuesta["EstudianteIdEstudiante"]+'"]').attr("selected", true);
+            $("#TxtEstudianteEdit").select2();
             $("#ModalEdit").modal();
         }
     });

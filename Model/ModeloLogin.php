@@ -15,8 +15,6 @@ require_once "Conexion.php";
             $correoDB = $oBJEC_LOGIN["Correo"];
             $passwordDB = $oBJEC_LOGIN["Password"];
             $fotoDB = $oBJEC_LOGIN["Foto"];
-            
-
 
             if ($user == $correoDB){
                 if (password_verify($password, $passwordDB)) {
@@ -66,5 +64,37 @@ require_once "Conexion.php";
             $_SESSION['UserCorreo'] = $correo;
             $_SESSION['UserFoto'] = $foto;
             return ($oBJEC_DATA_UPDATE -> execute());
+        }
+        public static function Recover($rol,$user){
+            $sql = "SELECT * FROM ".$rol." WHERE Correo = :correo";
+            $oBJEC_DATA = Conexion::conectar()->prepare($sql);
+            $oBJEC_DATA  -> bindParam(":correo",$user, PDO::PARAM_STR);
+            $oBJEC_DATA -> execute();
+            $oBJEC_LOGIN =  $oBJEC_DATA -> fetch();
+            $idDB = $oBJEC_LOGIN["Id".$rol];
+            $correoDB = $oBJEC_LOGIN["Correo"];
+            if ($user == $correoDB){
+                $key = '';
+                $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+                $max = strlen($pattern)-1;
+                for($i=0;$i < 10;$i++){
+                    $key .= $pattern{mt_rand(0,$max)};
+                }
+                $password = password_hash($key,PASSWORD_DEFAULT);
+                $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE ".$rol."  SET Password = :password WHERE Id".$rol."  = :id");
+                $oBJEC_DATA_UPDATE  -> bindParam(":id",$idDB, PDO::PARAM_INT);
+                $oBJEC_DATA_UPDATE  -> bindParam(":password",$password, PDO::PARAM_STR);
+                $oBJEC_DATA_UPDATE -> execute();    
+                $essql = $oBJEC_DATA_UPDATE;            
+                $destinatario = $user;
+                $from = "yibercitolopez@hotmail.com";
+                $asunto = "Restablecer contrase&ntilde;a en School Admin.";
+                $mensaje = "Su nueva Contrase&ntilde;a como ".$rol." es : ( ".$key." ).";
+                $headers = "From:" . $from;
+                return (mail($destinatario,$asunto,$mensaje,$headers));
+            }else{
+                return "El correo ingresado no es un ".$rol.", es Incorrecto o no existe.";
+            }
+
         }
     }

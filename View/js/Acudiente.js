@@ -307,3 +307,22 @@ $(".formEdit").on("click",".botonEdit",function(){
         });
     }
 }); 
+$(".dataTableAcudiente").on("click",".btnEstudiante",function(){
+    var id = $(this).attr("IdAcudiente");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    $.ajax({
+        url:"../Ajax/AjaxAcudiente.php?a=sesion",
+        method:"POST",
+        data:oBJEC_ADMIN,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success : function(respuesta){
+            if(respuesta = true){
+                window.location = "AcudienteEstudiante.php";
+            }	
+        }
+    });        
+});

@@ -20,4 +20,11 @@
             $objELIM = ModeloCurso::EliminarCurso($id);
             return $objELIM;
         }
+        public static function CtrlSesion($id){
+            session_start();
+            $objBUSCM = ModeloCurso::BuscarCurso($id);
+            $_SESSION['CursoId'] = $objBUSCM["IdCurso"];
+            $_SESSION['CursoNombre'] = $objBUSCM["Nombre"];
+            return true;
+        }
     }

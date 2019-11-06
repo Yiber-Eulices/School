@@ -243,3 +243,22 @@ $(".formEdit").on("click",".botonEdit",function(){
         });
     }
 }); 
+$(".dataTableCurso").on("click",".btnProfesor",function(){
+    var id = $(this).attr("IdCurso");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    $.ajax({
+        url:"../Ajax/AjaxCurso.php?a=sesion",
+        method:"POST",
+        data:oBJEC_ADMIN,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success : function(respuesta){
+            if(respuesta = true){
+                window.location = "CursoProfesor.php";
+            }	
+        }
+    });        
+});

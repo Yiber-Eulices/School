@@ -146,36 +146,30 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Descripción</label>
                     <div class="form-line">
                         <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                        <label class="form-label">Descripción</label>
-                        <input type="text" class="form-control" name="TxtMisionEdit" id="TxtMisionEdit" >
-                        <label class="form-label">Misión</label>
                     </div>
                     <div class="help-info">Descripción</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Ubicación</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" >
-                        <label class="form-label">Ubicación</label>
+                        <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" >                        
                     </div>
                     <div class="help-info">Ubicación</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Correo</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
-                        <label class="form-label">Correo</label>
-                        <input type="text" class="form-control" name="TxtVisionEdit" id="TxtVisionEdit" >
-                        <label class="form-label">Visión</label>
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >                        
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Telefono</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
-                        <label class="form-label">Telefono</label>
-                        <input type="text" class="form-control" name="TxtSomosEdit" id="TxtSomosEdit" >
-                        <label class="form-label">¿Quienes somos?</label>
+                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >                        
                     </div>
                     <div class="help-info">Telefono</div>
                 </div>

@@ -59,8 +59,6 @@
         }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
-       
-        
         $oBJEC_AJAX = new AjaxDirectivo();
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> correo = $_POST["Correo"];

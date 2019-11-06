@@ -30,11 +30,13 @@
                                 "'.$objINFO[$i]["Ubicacion"].'",
                                 "'.$objINFO[$i]["Correo"].'",
                                 "'.$objINFO[$i]["Telefono"].'",
-                                "'."".'"
+                                "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
                         $oBJEC_JSON .= '[
+                            "",
+                            "",
                             "",
                             "",
                             "",

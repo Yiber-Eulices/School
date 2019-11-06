@@ -98,15 +98,16 @@
             <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Estudiante</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
-                        </select>
-                       
+                        </select>                       
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Materia</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateria" id = "TxtIdMateria">
                             <option value="">-- Por favor seleccione la Materia --</option>
@@ -116,6 +117,7 @@
                     <div class="help-info">Materia</div>
                 </div>
                 <div class="form-group form-float">
+                <label class="form-label">Periodo</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo">
                             <option value="">-- Por favor seleccione el Periodo --</option>
@@ -181,15 +183,16 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Estudiante</label>                                    
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
                             <option value="">-- Por favor seleccione el Estudiante --</option>
                         </select>
-                       
                     </div>
                     <div class="help-info">Estudiante</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Materia</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
                             <option value="">-- Por favor seleccione la Materia --</option>
@@ -199,6 +202,7 @@
                     <div class="help-info">Materia</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Periodo</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
                             <option value="">-- Por favor seleccione el Periodo --</option>
@@ -212,30 +216,30 @@
                     <div class="help-info">Periodo</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Nota Acumulativa</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtNotaAcumulativaEdit" id="TxtNotaAcumulativaEdit" >
-                        
                     </div>
                     <div class="help-info">Nota Acumulativa</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Nota Comportamental</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtNotaComportamentalEdit" id="TxtNotaComportamentalEdit" >
-                       
                     </div>
                     <div class="help-info">Nota Comportamental</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Evaluacion</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtEvaluacionEdit" id="TxtEvaluacionEdit" >
-                       
                     </div>
                     <div class="help-info">Evaluacion</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Auto Evaluacion</label>
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtAutoEvaluacionEdit" id="TxtAutoEvaluacionEdit" >
-                      
                     </div>
                     <div class="help-info">Auto Evaluacion</div>
                 </div>

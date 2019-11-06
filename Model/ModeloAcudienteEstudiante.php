@@ -8,7 +8,7 @@
 
             return ($oBJEC_DATA_INSERT -> execute());
         }
-        public static function EditarAcudienteEstudiante($id,$estudiente,$acudiente){
+        public static function EditarAcudienteEstudiante($id,$estudiante,$acudiente){
             $oBJEC_DATA_UPDATE = Conexion::conectar()->prepare("UPDATE acudienteestudiante  SET EstudianteIdEstudiante = :estudiante,AcudienteIdAcudiente=:acudiente WHERE IdAcudienteEstudiante = :id");
             $oBJEC_DATA_UPDATE  -> bindParam(":id",$id, PDO::PARAM_INT);
             $oBJEC_DATA_UPDATE  -> bindParam(":estudiante",$estudiante, PDO::PARAM_STR);
@@ -17,7 +17,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarAcudienteEstudiante(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdAcudienteEstudiante,c.EstudianteIdEstudiante,c.AcudienteIdAcudiente,g.IdEstudiante,g.Nombre,p.IdAcudiente,p.Nombre AS NombreAcudiente FROM acudienteestudiante c INNER JOIN estudiante g ON c.EstudianteIdEstudiante=g.IdEstudiante INNER JOIN acudiente p ON c.AcudienteIdAcudiente=p.IdAcudiente");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT ae.*,e.IdEstudiante,e.Nombre AS NombreEstudiante,e.Apellido AS ApellidoEstudiante,e.TipoDocumento AS TipoDocumentoEstudiante, e.Documento AS DocumentoEstudiante,e.Rh AS RhEstudiante,e.Correo AS CorreoEstudiante,e.Telefono AS TelefonoEstudiante,e.Foto AS FotoEstudiante,e.FechaNacimiento AS FechaNacimientoEstudiante,e.CursoIdCurso,a.IdAcudiente,a.Nombre AS NombreAcudiente,a.Apellido AS ApellidoAcudiente,a.TipoDocumento AS TipoDocumentoAcudiente,a.Documento AS DocumentoAcudiente,a.Rh AS RhAcudiente,a.Correo AS CorreoAcudiente,a.Telefono AS TelefonoAcudiente,a.Foto AS FotoAcudiente,a.FechaNacimiento AS FechaNacimientoAcudiente FROM acudienteestudiante ae INNER JOIN estudiante e ON ae.EstudianteIdEstudiante=e.IdEstudiante INNER JOIN acudiente a ON ae.AcudienteIdAcudiente=a.IdAcudiente");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            

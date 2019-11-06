@@ -68,15 +68,15 @@
         
         $image=null;
 		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
+		  if(!is_dir("../View/eventoPhoto")){
+			$dir = mkdir("../View/eventoPhoto", 0777, true);
 		  }else{
 			$dir=true;
 		  }
 		  if($dir){
 			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
+			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/eventoPhoto/".$filename); //mover el fichero utilizando esta función
+			$image='../View/eventoPhoto/'.$filename;
 			if($muf){
 			  $image_upload=true;
 			}else{
@@ -98,15 +98,15 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
         $image=null;
 		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
+		  if(!is_dir("../View/eventoPhoto")){
+			$dir = mkdir("../View/eventoPhoto", 0777, true);
 		  }else{
 			$dir=true;
 		  }
 		  if($dir){
 			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
+			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/eventoPhoto/".$filename); //mover el fichero utilizando esta función
+			$image='../View/eventoPhoto/'.$filename;
 			if($muf){
 			  $image_upload=true;
 			}else{

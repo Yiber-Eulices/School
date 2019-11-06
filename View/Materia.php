@@ -129,16 +129,16 @@
             <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
             <div class="modal-body">
                 <div class="form-group form-float">
+                    <label class="form-label">Nombre</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
-                        
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >                        
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Descripcion</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
-                       
+                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >                       
                     </div>
                     <div class="help-info">Descripcion</div>
                 </div>

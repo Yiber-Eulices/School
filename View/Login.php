@@ -9,6 +9,10 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Login</title>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -31,9 +35,12 @@
 
     <!--sweetalert-->
     <link href="sweetalert/sweetalert.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 </head>
 
-<body class="login-page">
+<body class="login-page bg-red">
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">SCHOOL <b>ADMIN</b></a>
@@ -48,7 +55,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <select class="form-control show-tick" name = "TxtRol" id = "TxtRol">
+                            <select class="form-control show-tick" style ="width:100%"  name = "TxtRol" id = "TxtRol">
                                 <option value="">-- Por favor seleccione su Rol --</option>
                                 <option value="Estudiante">Estudiante</option>
                                 <option value="Profesor">Profesor</option>
@@ -59,7 +66,7 @@
                     </div>
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
                             <input type="text" class="form-control" name = "TxtUser" id = "TxtUser" placeholder="Email"  autofocus>
@@ -76,23 +83,22 @@
                     <div class="row">
                         
                         <div class="col-xs-12">
-                            <button class="btn btnLogin bg-color ">INGRESAR</button>
-                            <input class="btn bg-color" onClick="javascript:window.history.back();" type="button" name="Submit" value="ATRÁS" />
+                            <button class="btn btnLogin bg-red">INGRESAR</button>
+                            <input class="btn bg-red" onClick="javascript:window.history.back();" type="button" name="Submit" value="ATRÁS" />
                         </div>
                     </div>
                     <div class="row m-t-15 m-b--20">
                         
                         <div class="col-xs-6 align-right">
-                            <a href="ForgotPassword.php">Olvidó su contraseña?</a>
+                            <a href="ForgotPassword.php" class="col-red">Olvidó su contraseña?</a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <!-- Jquery Core Js -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Select2 Plugin Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="plugins/bootstrap/js/bootstrap.js"></script>

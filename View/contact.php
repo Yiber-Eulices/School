@@ -38,62 +38,29 @@
 	<div class="contact" style="margin: auto;">
 		<div class="container">
 			<div class="row">
-			
-
 				<div class="col-lg-12">
 					<div class="about" >
 						<div class="about_title"><center>INFORMACIÓN INSTITUCIONAL</center></div>
-						<p class="about_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, praesentium magni expedita architecto excepturi eius tempore voluptatum nostrum reprehenderit exercitationem. Veritatis possimus dolores pariatur sequi recusandae mollitia culpa repudiandae modi?</p>
-
+						<p id="Informacion" class="about_text"> </p>
 						<div class="contact_info">
 							<ul>
 								<li class="contact_info_item">
 									<div class="contact_info_icon">
 										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									Sogamoso-Boyaca, Sogamoso-Boyaca, Cr 56 Nº 3-13
 								</li>
 								<li class="contact_info_item">
-									<div class="contact_info_icon">
+									<div id="Correo"class="contact_info_icon">
 										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-									<div class="contact_info_icon">
+									</div>
+									<div id="NombreTele" class="contact_info_icon">
 										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									Rector Fransisco Penagos 0034 37483 2445 322
-								</li>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-									<div class="contact_info_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									Coordinador de disciplina 0034 37483 2445 322
-								</li>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-									<div class="contact_info_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									Psicologo 0034 37483 2445 322
-								</li><li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>hello@company.com
-									<div class="contact_info_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									Secretaria 0034 37483 2445 322
 								</li>
 							</ul>
 						</div>
-
 					</div>
 				</div>
-
 			</div>
 
 
@@ -119,6 +86,7 @@
 <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="js/custom.js"></script>
+<script src="js/Contactos.js"></script>
 
 </body>
 </html>

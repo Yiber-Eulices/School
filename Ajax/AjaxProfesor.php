@@ -28,7 +28,8 @@
                 "data": [';
                     if (count($objPROF) >= 1){
                         for ($i=0; $i < count($objPROF); $i++) {
-                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdProfesor = '".$objPROF[$i]["IdProfesor"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnCurso= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCurso btn-info waves-effect' IdProfesor = '".$objPROF[$i]["IdProfesor"]."'><i class='material-icons'>school</i><span>Cursos</span></button>";
+                            $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdProfesor = '".$objPROF[$i]["IdProfesor"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdProfesor = '".$objPROF[$i]["IdProfesor"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objPROF[$i]["Foto"]."'>";
 
@@ -43,7 +44,7 @@
                                 "'.$objPROF[$i]["Rh"].'",
                                 "'.$objPROF[$i]["Correo"].'",
                                 "'.$objPROF[$i]["Telefono"].'",
-                                "'.$btnUpdate.$btnDelete.'"
+                                "'.$btnCurso.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
@@ -68,12 +69,50 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListado(){
+          $objPROF = ControladorProfesor::CtrlListar();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objPROF) >= 1){
+                      for ($i=0; $i < count($objPROF); $i++) {
+                          $img = "<img class = 'imgProfile' src ='".$objPROF[$i]["Foto"]."'>";
+
+                          $oBJEC_JSON .= '[
+                              "'.$objPROF[$i]["IdProfesor"].'",
+                              "'.$img.'",
+                              "'.$objPROF[$i]["Nombre"].'",
+                              "'.$objPROF[$i]["Apellido"].'",
+                              "'.$objPROF[$i]["Correo"].'",
+                              "'.$objPROF[$i]["Telefono"].'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+
+      }
         public function AjxBuscar(){
             $objPROF = ControladorProfesor::CtrlBuscar($this->id);
             echo json_encode($objPROF);
         }
         public function AjxEliminar(){
             $objPROF = ControladorProfesor::CtrlEliminar($this->id);
+            echo json_encode($objPROF);
+        }
+        public function AjxSesion(){
+            $objPROF = ControladorProfesor::CtrlSesion($this->id);
             echo json_encode($objPROF);
         }
     }
@@ -154,6 +193,10 @@
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> AjxListar();
     }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listado'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> AjxListado();
+    }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> id = $_POST["Id"];
@@ -163,5 +206,10 @@
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxEliminar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'sesion'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> id = $_POST["Id"];
+        $oBJEC_AJAX -> AjxSesion();
     }
     

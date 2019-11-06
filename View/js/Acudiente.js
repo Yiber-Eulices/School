@@ -29,6 +29,10 @@ $(document).ready(function(){
             }
         }
     });
+    $('#TxtTipoDocumento').select2();
+    $('#TxtRh').select2();
+    $('#TxtTipoDocumentoEdit').select2();
+    $('#TxtRhEdit').select2();
 });
 function SubmitFunction(){
     return false;
@@ -196,6 +200,8 @@ $(".dataTableAcudiente").on("click",".btnUpdate",function(){
             $("#TxtFechaNacimientoEdit").focus();
             $("#TxtApellidoEdit").focus();
             $("#TxtNombreEdit").focus();
+            $('#TxtTipoDocumentoEdit').select2();
+            $('#TxtRhEdit').select2();
             $("#ModalEdit").modal();
         }
     });
@@ -301,3 +307,22 @@ $(".formEdit").on("click",".botonEdit",function(){
         });
     }
 }); 
+$(".dataTableAcudiente").on("click",".btnEstudiante",function(){
+    var id = $(this).attr("IdAcudiente");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    $.ajax({
+        url:"../Ajax/AjaxAcudiente.php?a=sesion",
+        method:"POST",
+        data:oBJEC_ADMIN,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success : function(respuesta){
+            if(respuesta = true){
+                window.location = "AcudienteEstudiante.php";
+            }	
+        }
+    });        
+});

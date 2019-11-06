@@ -63,9 +63,9 @@ $.ajax({
         $("#TxtProfesor").append("<option value=''>-- Por favor seleccione --</option>");
         $("#TxtProfesorEdit").append("<option value=''>-- Por favor seleccione --</option>");
         for(var i = 0;i<respuesta.data.length;i++){
-            if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
-                $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+"</option>"); 
+            if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
+                $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
             }                
         }
         $('#TxtProfesor').change();
@@ -243,3 +243,22 @@ $(".formEdit").on("click",".botonEdit",function(){
         });
     }
 }); 
+$(".dataTableCurso").on("click",".btnProfesor",function(){
+    var id = $(this).attr("IdCurso");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    $.ajax({
+        url:"../Ajax/AjaxCurso.php?a=sesion",
+        method:"POST",
+        data:oBJEC_ADMIN,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success : function(respuesta){
+            if(respuesta = true){
+                window.location = "CursoProfesor.php";
+            }	
+        }
+    });        
+});

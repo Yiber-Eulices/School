@@ -40,8 +40,8 @@ $(document).ready(function(){
             $("#TxtCursoEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
                 }                
             }
             $('#TxtCurso').change();
@@ -50,8 +50,6 @@ $(document).ready(function(){
             $("#TxtCursoEdit").select2();
         }
     });
-
-
     $('#TxtTipoDocumento').select2();
     $('#TxtRh').select2();
     $('#TxtTipoDocumentoEdit').select2();
@@ -222,9 +220,10 @@ $(".dataTableEstudiante").on("click",".btnUpdate",function(){
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
-            $('#TxtCursoEdit').val(respuesta["Curso"]);
+            $('#TxtCursoEdit option[value='+respuesta["CursoIdCurso"]+']').attr("selected",true);
             $('#TxtTipoDocumentoEdit').select2();
             $('#TxtRhEdit').select2();
+            $('#TxtCursoEdit').select2();
             $("#ModalEdit").modal();
         }
     });
@@ -336,3 +335,22 @@ $(".formEdit").on("click",".botonEdit",function(){
         });
     }
 }); 
+$(".dataTableEstudiante").on("click",".btnAcudiente",function(){
+    var id = $(this).attr("IdEstudiante");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    $.ajax({
+        url:"../Ajax/AjaxEstudiante.php?a=sesion",
+        method:"POST",
+        data:oBJEC_ADMIN,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success : function(respuesta){
+            if(respuesta = true){
+                window.location = "EstudianteAcudiente.php";
+            }	
+        }
+    });        
+});

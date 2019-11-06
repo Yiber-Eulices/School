@@ -22,4 +22,11 @@
             $objELIM = ModeloAcudiente::EliminarAcudiente($id);
             return $objELIM;
         }
+        public static function CtrlSesion($id){
+            session_start();
+            $objBUSCM = ModeloAcudiente::BuscarAcudiente($id);
+            $_SESSION['AcudienteId'] = $objBUSCM["IdAcudiente"];
+            $_SESSION['AcudienteNombre'] = $objBUSCM["Nombre"]." ".$objBUSCM["Apellido"];
+            return true;
+        }
     }

@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 
-                <a class="navbar-brand" href="Index.php">SCHOOL ADMIN</a>
+                <a class="navbar-brand" href="Home.php">SCHOOL ADMIN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -43,7 +43,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="Alerta.php">Ver todas las notificaciones</a>
+                                <a href="MisNotificaciones.php">Ver todas las notificaciones</a>
                             </li>
                         </ul>
                     </li>
@@ -81,97 +81,165 @@
                 <ul class="list">
                     <li class="header">MENÚ DE NAVEGACIÓN</li>
                     <li  class="active">
-                        <a href="Index.php">
+                        <a href="Home.php">
                             <i class="material-icons">home</i>
                             <span>Inicio</span>
                         </a>
                     </li>
-                    <!--li>
-                        <a href="pages/typography.html">
-                            <i class="material-icons">text_fields</i>
-                            <span>Typography</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/helper-classes.html">
-                            <i class="material-icons">layers</i>
-                            <span>Helper Classes</span>
-                        </a>
-                    </li-->
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">accessibility</i>
-                            <span>Personal</span>
-                        </a>
-                        <ul>
-                            <li class="active">
-                                <a href="Profesor.php">Profesores</a>
-                            </li>
-                            <li>
-                                <a href="Estudiante.php">Estudiantes</a>
-                            </li>
-                            <li>
-                                <a href="Acudiente.php">Acudientes</a>
-                            </li>
-                            <li>
-                                <a href="AcudienteEstudiante.php">Acudientes-Estudiante</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="Materia.php">
-                            <i class="material-icons">rate_review</i>
-                            <span>Materias</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Grado.php">
-                            <i class="material-icons">filter_9_plus</i>
-                            <span>Grados</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Curso.php">
-                            <i class="material-icons">domain</i>
-                            <span>Cursos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Matricula.php">
-                            <i class="material-icons">assignment</i>
-                            <span>Matriculas</span>
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="Evento.php">
-                            <i class="material-icons">date_range</i>
-                            <span>Eventos</span>
-                        </a>
-                    </li>  
-                    <li>
-                        <a href="Directivo.php">
-                            <i class="material-icons">supervisor_account</i>
-                            <span>Directivos</span>
-                        </a>
-                    </li>  
-                    <li>
-                        <a href="Empresa.php">
-                            <i class="material-icons">local_library</i>
-                            <span>Objetivos Estrategicos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Informacion.php">
-                          <i class="material-icons">edit</i>
-                            <span>Información</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Calificacion.php">
-                            <i class="material-icons">description</i>
-                            <span>Clificaciones</span>
-                        </a>
-                    </li>
+                    <?php if($_SESSION['UserRol']=="Acudiente"){ ?>
+                        <li>
+                            <a href="MisHijos.php">
+                                <i class="material-icons">group</i>
+                                <span>Mis Hijos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Profesores.php">
+                                <i class="material-icons">group</i>
+                                <span>Profesores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="MisNotificaciones.php">
+                                <i class="material-icons">notifications</i>
+                                <span>Notificaciones</span>
+                            </a>
+                        </li>
+                    <?php } ?>                 
+                    <?php if($_SESSION['UserRol']=="Administrador"){ ?>
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">group</i>
+                                <span>Personal</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="Acudiente.php">Acudientes</a>
+                                </li>
+                                <li>
+                                    <a href="Administrador.php">Administradores</a>
+                                </li>
+                                <li>
+                                    <a href="Estudiante.php">Estudiantes</a>
+                                </li>
+                                <li>
+                                    <a href="Profesor.php">Profesores</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Materia.php">
+                                <i class="material-icons">rate_review</i>
+                                <span>Materias</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Grado.php">
+                                <i class="material-icons">filter_9_plus</i>
+                                <span>Grados</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Curso.php">
+                                <i class="material-icons">domain</i>
+                                <span>Cursos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Matricula.php">
+                                <i class="material-icons">assignment</i>
+                                <span>Matriculas</span>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="Evento.php">
+                                <i class="material-icons">date_range</i>
+                                <span>Eventos</span>
+                            </a>
+                        </li>  
+                        <li>
+                            <a href="Directivo.php">
+                                <i class="material-icons">supervisor_account</i>
+                                <span>Directivos</span>
+                            </a>
+                        </li>  
+                        <li>
+                            <a href="Empresa.php">
+                                <i class="material-icons">local_library</i>
+                                <span>Objetivos Estrategicos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Informacion.php">
+                            <i class="material-icons">edit</i>
+                                <span>Información</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Calificacion.php">
+                                <i class="material-icons">description</i>
+                                <span>Calificaciones</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="MisNotificaciones.php">
+                                <i class="material-icons">notifications</i>
+                                <span>Notificaciones</span>
+                            </a>
+                        </li>
+                    <?php } ?>                    
+                    <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
+                        <li>
+                            <a href="MisPadres.php">
+                                <i class="material-icons">group</i>
+                                <span>Mis Padres</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Hijos.php">
+                                <i class="material-icons">group</i>
+                                <span>Mis Profesores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Hijos.php">
+                                <i class="material-icons">book</i>
+                                <span>Mis Calificaciones</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="MisNotificaciones.php">
+                                <i class="material-icons">notifications</i>
+                                <span>Notificaciones</span>
+                            </a>
+                        </li>
+                    <?php } ?>
+                    <?php if($_SESSION['UserRol']=="Profesor"){ ?>
+                        <li>
+                            <a href="Estudiante.php">
+                                <i class="material-icons">group</i>
+                                <span>Estudiantes</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Acudiente.php">
+                                <i class="material-icons">group</i>
+                                <span>Padres de Familia</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Hijos.php">
+                                <i class="material-icons">group</i>
+                                <span>Mis Cursos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="MisNotificaciones.php">
+                                <i class="material-icons">notifications</i>
+                                <span>Notificaciones</span>
+                            </a>
+                        </li>
+                    <?php } ?>
                     
                 </ul>
             </div>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    var FileCamara = "";
     function SubmitFunctionProfile(){
         return false;
     } 
@@ -90,7 +91,9 @@ $(document).ready(function(){
             var Foto = "";
             var FotoSrc = "";
             if(document.getElementById("TxtFotoEdit").files.length > 0){
-                var Foto = document.getElementById("TxtFotoEdit").files[0];
+                Foto = document.getElementById("TxtFotoEdit").files[0];
+            }else if($('#CamaraFotoSrc').length>0){
+               Foto = FileCamara;
             }else{
                 var FotoSrc = $("#fotoEdit").attr("src");
             }
@@ -135,6 +138,51 @@ $(document).ready(function(){
                 }
             });
         }
+    });
+    $(".btnCamara").click(function(){
+        // Configure a few settings and attach camera
+        Webcam.set({
+            width: 320,
+            height: 240,
+            image_format: 'jpeg',
+            jpeg_quality: 90
+        });
+        Webcam.attach( '#my_camera' );
+        $("#ModalCamara").modal();
+    });
+    $(".btnCapturarFoto").click(function(){
+        // preload shutter audio clip
+        var shutter = new Audio();
+        shutter.autoplay = true;
+        shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
+        // play sound effect
+        shutter.play();
+    
+        // take snapshot and get image data
+        Webcam.snap( function(data_uri) {
+            // display results in page
+            $("#fotoCamara").empty();
+            $("#fotoCamara").html('<img id = "CamaraFotoSrc" src="'+data_uri+'"/>');
+        } );
+        Webcam.reset();
+        async function createFile(){
+            let response = await fetch($("#CamaraFotoSrc").attr("src"));
+            let data = await response.blob();
+            let metadata = {
+                type: 'image/jpeg'
+            };
+            let file = new File([data], "profileImageCamera.jpg", metadata);
+            FileCamara = file;
+        }
+        createFile();
+        $('#TxtFotoEdit').val("");       
+        $("#ModalCamara").modal('toggle');
+    });
+    $('#ModalCamara').on('hidden.bs.modal', function () {
+        Webcam.reset();
+    });
+    $('#TxtFotoEdit').change(function(){
+        $("#fotoCamara").empty();
     });
     
 });

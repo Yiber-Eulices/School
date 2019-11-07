@@ -53,7 +53,7 @@
                             ""
                         ],';
                     }
-                    if($count<=0){
+                    if($count<=0 && count($objAcudienteEstudiante) >= 1){
                         $oBJEC_JSON .= '[
                             "",
                             "",
@@ -108,7 +108,7 @@
                             ""
                         ],';
                     }
-                    if($count<=0){
+                    if($count<=0 && count($objAcudienteEstudiante) >= 1){
                         $oBJEC_JSON .= '[
                             "",
                             "",
@@ -166,7 +166,7 @@
                             ""
                         ],';
                     }
-                    if($count<=0){
+                    if($count<=0 && count($objAcudienteEstudiante) >= 1){
                         $oBJEC_JSON .= '[
                             "",
                             "",
@@ -224,7 +224,7 @@
                             ""
                         ],';
                     }
-                    if($count<=0){
+                    if($count<=0 && count($objAcudienteEstudiante) >= 1){
                         $oBJEC_JSON .= '[
                             "",
                             "",

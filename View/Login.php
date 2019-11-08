@@ -84,7 +84,7 @@
                         
                         <div class="col-xs-12">
                             <button class="btn btnLogin bg-red">INGRESAR</button>
-                            <input class="btn bg-red" onClick="javascript:window.history.back();" type="button" name="Submit" value="ATRÁS" />
+                            <input class="btn bg-red" onclick="location='Index.php'"  type="button" name="Submit" value="ATRÁS" />
                         </div>
                     </div>
                     <div class="row m-t-15 m-b--20">

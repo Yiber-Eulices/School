@@ -69,6 +69,34 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarMisCursos(){
+            $objPROF = ControladorProfesor::CtrlListarMiCurso();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objPROF) >= 1){
+                        for ($i=0; $i < count($objPROF); $i++) {
+                            $oBJEC_JSON .= '[
+                                "'.$objPROF[$i]["IdCurso"].'",
+                                "'.$objPROF[$i]["Nivel"].'",
+                                "'.$objPROF[$i]["NombreCurso"].'",
+                                "'.$objPROF[$i]["NombreMateria"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxListado(){
           $objPROF = ControladorProfesor::CtrlListar();
           $oBJEC_JSON = '{
@@ -211,5 +239,9 @@
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxSesion();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaCursos'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> AjxListarMisCursos();
     }
     

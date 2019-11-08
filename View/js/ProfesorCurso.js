@@ -61,8 +61,8 @@ $(document).ready(function(){
             $("#TxtCursoEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
                 }                
             }
             $('#TxtCurso').change();
@@ -106,9 +106,9 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Almacenados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "ProfesorCurso.php";
+                    var a = "Datos Almacenados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableProfesorCurso").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -143,9 +143,9 @@ $(".dataTableProfesorCurso").on("click",".btnDelete",function(){
                 dataType:"json",
                 success : function(respuesta){
                     if(respuesta = true){
-                        var m = "Datos Eliminados.";
-                        ValidateCreateUpdate(m);
-                        window.location = "ProfesorCurso.php";
+                        var c = "Datos Eliminados.";
+                        ValidateCreateEliminar(c);
+                        $(".dataTableProfesorCurso").DataTable().ajax.reload();
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -210,9 +210,9 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Editados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "ProfesorCurso.php";
+                    var a = "Datos Editados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableProfesorCurso").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

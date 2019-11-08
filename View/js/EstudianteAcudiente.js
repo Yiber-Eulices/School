@@ -83,9 +83,9 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Almacenados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "EstudianteAcudiente.php";
+                    var a = "Datos Almacenados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableAcudienteEstudiante").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -120,9 +120,9 @@ $(".dataTableAcudienteEstudiante").on("click",".btnDelete",function(){
                 dataType:"json",
                 success : function(respuesta){
                     if(respuesta = true){
-                        var m = "Datos Eliminados.";
-                        ValidateCreateUpdate(m);
-                        window.location = "EstudianteAcudiente.php";
+                        var c = "Datos Eliminados.";
+                        ValidateCreateEliminar(c);
+                        $(".dataTableAcudienteEstudiante").DataTable().ajax.reload();
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -182,9 +182,9 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Editados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "EstudianteAcudiente.php";
+                    var a = "Datos Editados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableAcudienteEstudiante").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

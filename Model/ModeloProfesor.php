@@ -32,6 +32,14 @@
 
             return ($oBJEC_DATA_UPDATE -> execute());
         }
+        public static function ListarMicurso(){
+            session_start();
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdCurso,g.Nivel,c.Nombre AS NombreCurso,m.Nombre AS NombreMateria FROM grado g INNER JOIN curso c ON c.GradoIdGrado = g.IdGrado INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE p.IdProfesor=:id");
+            $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["UserId"], PDO::PARAM_INT);
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
         public static function ListarProfesor(){
             $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT * FROM profesor");
             $oBJEC_DATA_LIST -> execute();

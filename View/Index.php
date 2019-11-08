@@ -13,6 +13,9 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css"> 
+<!-- Google Fonts -->
+<link href="css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
+<link href="css/GoogleFontsFamilyIcon.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -49,8 +52,8 @@
 
 			</div>
 
-			<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200">Anterior</span></div>
-			<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200">Siguiente</span></div>
+			<div class="hero_slider_left hero_slider_nav trans_200"><span class="trans_200"><i class="material-icons">navigate_before</i></span></div>
+			<div class="hero_slider_right hero_slider_nav trans_200"><span class="trans_200"><i class="material-icons">navigate_next</i></span></div>
 		</div>
 
 	</div>

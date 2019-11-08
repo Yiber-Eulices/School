@@ -121,9 +121,9 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Almacenados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "Acudiente.php";
+                    var a = "Datos Almacenados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableAcudiente").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -158,9 +158,9 @@ $(".dataTableAcudiente").on("click",".btnDelete",function(){
                 dataType:"json",
                 success : function(respuesta){
                     if(respuesta = true){
-                        var m = "Datos Eliminados.";
-                        ValidateCreateUpdate(m);
-                        window.location = "Acudiente.php";
+                        var c = "Datos Eliminados.";
+                        ValidateCreateEliminar(c);
+                        $(".dataTableAcudiente").DataTable().ajax.reload();
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -295,9 +295,9 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Editados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "Acudiente.php";
+                    var a = "Datos Editados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableAcudiente").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

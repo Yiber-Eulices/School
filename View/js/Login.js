@@ -1,4 +1,5 @@
-$(".btnLogin").click(function(){
+$(document).ready(function(){
+    $(".btnLogin").click(function(){
         var rol = $("#TxtRol").val();
         var user = $("#TxtUser").val();
         var password = $("#TxtPassword").val();
@@ -28,3 +29,4 @@ $(".btnLogin").click(function(){
         return false;
     }
     $("#TxtRol").select2();
+});

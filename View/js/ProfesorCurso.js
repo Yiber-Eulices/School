@@ -106,9 +106,9 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Almacenados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "ProfesorCurso.php";
+                    var a = "Datos Almacenados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableProfesorCurso").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -143,9 +143,9 @@ $(".dataTableProfesorCurso").on("click",".btnDelete",function(){
                 dataType:"json",
                 success : function(respuesta){
                     if(respuesta = true){
-                        var m = "Datos Eliminados.";
-                        ValidateCreateUpdate(m);
-                        window.location = "ProfesorCurso.php";
+                        var c = "Datos Eliminados.";
+                        ValidateCreateEliminar(c);
+                        $(".dataTableProfesorCurso").DataTable().ajax.reload();
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -210,9 +210,9 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Editados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "ProfesorCurso.php";
+                    var a = "Datos Editados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableProfesorCurso").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

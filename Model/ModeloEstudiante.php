@@ -40,6 +40,13 @@
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            
         }
+        public static function ListarProfesor(){
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT p.IdProfesor,p.Nombre AS NombreProfesor,m.Nombre AS NombreMateria FROM profesor p INNER JOIN materia m ON c.GradoIdGrado = g.IdGrado INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE p.IdProfesor=:id");
+            $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["UserId"], PDO::PARAM_INT);
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
         public static function BuscarEstudiante($id){
             $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Estudiante WHERE IdEstudiante = :id");
             $oBJEC_DATA_SEARCH  -> bindParam(":id",$id, PDO::PARAM_INT);

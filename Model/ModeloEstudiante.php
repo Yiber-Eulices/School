@@ -41,7 +41,8 @@
             return $oBJEC_DATA_ARRAY;            
         }
         public static function ListarProfesor(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT p.IdProfesor,p.Nombre AS NombreProfesor,m.Nombre AS NombreMateria FROM profesor p INNER JOIN materia m ON c.GradoIdGrado = g.IdGrado INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE p.IdProfesor=:id");
+            session_start();
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT p.IdProfesor,p.Nombre AS NombreProfesor,P.Apellido,p.Foto,p.Correo,p.Telefono,m.Nombre AS NombreMateria FROM grado g INNER JOIN curso c ON c.GradoIdGrado = g.IdGrado INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor INNER JOIN estudiante e ON e.CursoIdCurso = c.IdCurso WHERE e.IdEstudiante = :id");
             $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["UserId"], PDO::PARAM_INT);
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();

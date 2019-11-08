@@ -48,7 +48,7 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST" onsubmit="return FormSubmit()">
+                <form id="sign_in" method="POST" onsubmit="return false">
                     <div class="msg">Inicie sesión para ingresar</div>
                     <div class="input-group">
                         <span class="input-group-addon">

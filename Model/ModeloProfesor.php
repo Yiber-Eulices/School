@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once "Conexion.php";
     class ModeloProfesor{
         public static function CrearProfesor($nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento){
@@ -34,6 +33,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarMicurso(){
+            session_start();
             $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdCurso,g.Nivel,c.Nombre AS NombreCurso,m.Nombre AS NombreMateria FROM grado g INNER JOIN curso c ON c.GradoIdGrado = g.IdGrado INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE p.IdProfesor=:id");
             $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["UserId"], PDO::PARAM_INT);
             $oBJEC_DATA_LIST -> execute();

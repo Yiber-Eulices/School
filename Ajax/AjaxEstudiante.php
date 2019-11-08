@@ -74,20 +74,78 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarp(){
+          $objADMIN = ControladorEstudiante::CtrlListar();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objADMIN) >= 1){
+                      for ($i=0; $i < count($objADMIN); $i++) {
+                          $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
+                          $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
+
+                          $oBJEC_JSON .= '[
+                              "'.$objADMIN[$i]["IdEstudiante"].'",
+                              "'.$img.'",
+                              "'.$objADMIN[$i]["Nombre"].'",
+                              "'.$objADMIN[$i]["Apellido"].'",
+                              "'.$objADMIN[$i]["TipoDocumento"].'",
+                              "'.$objADMIN[$i]["Documento"].'",
+                              "'.$objADMIN[$i]["FechaNacimiento"].'",
+                              "'.$objADMIN[$i]["Rh"].'",
+                              "'.$objADMIN[$i]["Correo"].'",
+                              "'.$objADMIN[$i]["Telefono"].'",
+                              "'.$objADMIN[$i]["Nivel"].'",
+                              "'.$objADMIN[$i]["NombreCurso"].'",
+                              "'.$btnAcudiente.'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+
+        }
         public function AjxListarProfesor(){
           $objADMIN = ControladorEstudiante::CtrlListarProfesor();
           $oBJEC_JSON = '{
               "data": [';
                   if (count($objADMIN) >= 1){
                       for ($i=0; $i < count($objADMIN); $i++) {
-                          $oBJEC_JSON .= '[
-                              "'.$objADMIN[$i]["IdProfesor"].'",
-                              "'.$objADMIN[$i]["Profesor"].'",
-                              "'.$objADMIN[$i]["Materia"].'"
-                          ],';
+                            $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdProfesor"].'",
+                                "'.$img.'",
+                                "'.$objADMIN[$i]["NombreProfesor"].'",
+                                "'.$objADMIN[$i]["Apellido"].'",
+                                "'.$objADMIN[$i]["Correo"].'",
+                                "'.$objADMIN[$i]["Telefono"].'",
+                                "'.$objADMIN[$i]["NombreMateria"].'"
+                            ],';
                       }
                   }else{
                       $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          "",
+                          "",
                           "",
                           "",
                           ""
@@ -208,7 +266,10 @@
       $oBJEC_AJAX -> AjxSesion();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'listaProfesor'){
-      $oBJEC_AJAX = new AjaxEstudiante();
-      $oBJEC_AJAX -> AjxListarProfesor();
-  }
-    
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> AjxListarProfesor();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listap'){
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> AjxListarp();
+    }

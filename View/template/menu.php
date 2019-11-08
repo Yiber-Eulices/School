@@ -24,7 +24,8 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="Home.php">SCHOOL ADMIN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -251,14 +252,14 @@
             </div>
             <!-- #Menu -->
             <!-- Footer -->
-            <!--<div class="legal">
+            <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2019 - 2020 <a href="javascript:void(0);">School Admin</a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 1.0.5
+                    <b>Version: </b> 1.0.0
                 </div>
-            </div>-->
+            </div>
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->

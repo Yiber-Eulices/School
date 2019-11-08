@@ -74,6 +74,32 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarProfesor(){
+          $objADMIN = ControladorEstudiante::CtrlListarProfesor();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objADMIN) >= 1){
+                      for ($i=0; $i < count($objADMIN); $i++) {
+                          $oBJEC_JSON .= '[
+                              "'.$objADMIN[$i]["IdProfesor"].'",
+                              "'.$objADMIN[$i]["Profesor"].'",
+                              "'.$objADMIN[$i]["Materia"].'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+
+        }
         public function AjxBuscar(){
             $objADMIN = ControladorEstudiante::CtrlBuscar($this->id);
             echo json_encode($objADMIN);
@@ -181,4 +207,8 @@
       $oBJEC_AJAX -> id = $_POST["Id"];
       $oBJEC_AJAX -> AjxSesion();
     }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaProfesor'){
+      $oBJEC_AJAX = new AjaxEstudiante();
+      $oBJEC_AJAX -> AjxListarProfesor();
+  }
     

@@ -133,9 +133,9 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Almacenados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "Calificacion.php";
+                    var a = "Datos Almacenados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableCalificacion").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -170,9 +170,9 @@ $(".dataTableCalificacion").on("click",".btnDelete",function(){
                 dataType:"json",
                 success : function(respuesta){
                     if(respuesta = true){
-                        var m = "Datos Eliminados.";
-                        ValidateCreateUpdate(m);
-                        window.location = "Calificacion.php";
+                        var c = "Datos Eliminados.";
+                        ValidateCreateEliminar(c);
+                        $(".dataTableCalificacion").DataTable().ajax.reload();
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -267,9 +267,9 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
-                    var m = "Datos Editados.";
-                    ValidateCreateUpdate(m);
-                    window.location = "Calificacion.php";
+                    var a = "Datos Editados.";
+                    ValidateCreateExito(a);
+                    $(".dataTableCalificacion").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

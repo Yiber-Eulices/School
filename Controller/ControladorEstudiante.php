@@ -14,6 +14,10 @@
             $objLISTM = ModeloEstudiante::ListarEstudiante();
             return $objLISTM;
         }
+        public static function CtrlListarProfesor(){
+            $objLISTM = ModeloEstudiante::ListarProfesor();
+            return $objLISTM;
+        }
         public static function CtrlBuscar($id){
             $objBUSCM = ModeloEstudiante::BuscarEstudiante($id);
             return $objBUSCM;

@@ -176,12 +176,12 @@
                                 <span>Información</span>
                             </a>
                         </li>
-                        <li>
+                        <!--li>
                             <a href="Calificacion.php">
                                 <i class="material-icons">description</i>
                                 <span>Calificaciones</span>
                             </a>
-                        </li>
+                        </li-->
                         <li>
                             <a href="MisNotificaciones.php">
                                 <i class="material-icons">notifications</i>
@@ -209,7 +209,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisCalificaciones.php">
                                 <i class="material-icons">book</i>
                                 <span>Mis Calificaciones</span>
                             </a>

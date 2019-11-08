@@ -101,6 +101,80 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarEstudiante(){
+            $objADMIN = ControladorCalificacion::CtrlListarEstudiante();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdCalificacion = '".$objADMIN[$i]["IdCalificacion"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdCalificacion = '".$objADMIN[$i]["IdCalificacion"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
+                            
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdCalificacion"].'",
+                                "'.$objADMIN[$i]["Periodo"].'",                                
+                                "'.$objADMIN[$i]["NotaAcumulativa"].'",
+                                "'.$objADMIN[$i]["NotaComportamental"].'",
+                                "'.$objADMIN[$i]["Evaluacion"].'",
+                                "'.$objADMIN[$i]["AutoEvaluacion"].'",
+                                "'.$objADMIN[$i]["Promedio"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
+        public function AjxListarAcudiente(){
+            $objADMIN = ControladorCalificacion::CtrlListarAcudiente();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdCalificacion = '".$objADMIN[$i]["IdCalificacion"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdCalificacion = '".$objADMIN[$i]["IdCalificacion"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
+                            
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdCalificacion"].'",
+                                "'.$objADMIN[$i]["Periodo"].'",                                
+                                "'.$objADMIN[$i]["NotaAcumulativa"].'",
+                                "'.$objADMIN[$i]["NotaComportamental"].'",
+                                "'.$objADMIN[$i]["Evaluacion"].'",
+                                "'.$objADMIN[$i]["AutoEvaluacion"].'",
+                                "'.$objADMIN[$i]["Promedio"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxBuscar(){
             $objADMIN = ControladorCalificacion::CtrlBuscar($this->id);
             echo json_encode($objADMIN);
@@ -140,6 +214,14 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'listaprofesor'){
         $oBJEC_AJAX = new AjaxCalificacion();
         $oBJEC_AJAX -> AjxListarProfesor();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaestudiante'){
+        $oBJEC_AJAX = new AjaxCalificacion();
+        $oBJEC_AJAX -> AjxListarEstudiante();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaacudiente'){
+        $oBJEC_AJAX = new AjaxCalificacion();
+        $oBJEC_AJAX -> AjxListarAcudiente();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxCalificacion();

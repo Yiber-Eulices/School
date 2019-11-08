@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableCurso").DataTable({
-        "ajax":"../Ajax/AjaxProfesor.php?a=listaCursos",
+    $(".dataTableEstudiante").DataTable({
+        "ajax":"../Ajax/AjaxEstudiante.php?a=listapce",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -29,12 +29,13 @@ $(document).ready(function(){
             }
         }
     });
-    $(".dataTableCurso").on("click",".btnEstudiante",function(){
-        var id = $(this).attr("IdProfesorCurso");
+    
+    $(".dataTableEstudiante").on("click",".btnCalificacion",function(){
+        var id = $(this).attr("IdEstudiante");
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
         $.ajax({
-            url:"../Ajax/AjaxProfesor.php?a=sessionCursoEstudiante",
+            url:"../Ajax/AjaxEstudiante.php?a=sesion",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -43,7 +44,7 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "CursoEstudiantes.php";
+                    window.location = "Calificaciones.php";
                 }	
             }
         });        

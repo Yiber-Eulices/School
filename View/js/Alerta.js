@@ -93,6 +93,8 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
+                    $("#ModalCreate").modal('toggle');
+                    $('form').trigger("reset");
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
                     window.location = "Alerta.php";
@@ -224,6 +226,8 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
+                    $("#ModalEdit").modal('toggle');
+                    $('form').trigger("reset");
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
                     window.location = "Alerta.php";

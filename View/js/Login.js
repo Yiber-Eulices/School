@@ -28,5 +28,4 @@ $(document).ready(function(){
     function FormSubmit(){
         return false;
     }
-    $("#TxtRol").select2();
 });

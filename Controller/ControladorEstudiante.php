@@ -14,6 +14,14 @@
             $objLISTM = ModeloEstudiante::ListarEstudiante();
             return $objLISTM;
         }
+        public static function CtrlListarMisMaterias(){
+            $objLISTM = ModeloEstudiante::ListarMiMaterias();
+            return $objLISTM;
+        }
+        public static function CtrlListarMisMateriasAcudiente(){
+            $objLISTM = ModeloEstudiante::ListarMiMateriasAcudiente();
+            return $objLISTM;
+        }
         public static function CtrlListarProfesor(){
             $objLISTM = ModeloEstudiante::ListarProfesor();
             return $objLISTM;
@@ -31,6 +39,21 @@
             $objBUSCM = ModeloEstudiante::BuscarEstudiante($id);
             $_SESSION['EstudianteId'] = $objBUSCM["IdEstudiante"];
             $_SESSION['EstudianteNombre'] = $objBUSCM["Nombre"]." ".$objBUSCM["Apellido"];
+            return true;
+        }
+        public static function CtrlSessionCursoEstudiante($id){
+            session_start();
+            $objBUSCMPC = ModeloProfesorCurso::BuscarProfesorCurso($id);
+            $objBUSCMM = ModeloMateria::BuscarMateria($objBUSCMPC["MateriaIdMateria"]);
+            $objBUSCMC = ModeloCurso::BuscarCurso($objBUSCMPC["CursoIdCurso"]);
+            $objBUSCMG = ModeloGrado::BuscarGrado($objBUSCMC["GradoIdGrado"]);
+            $_SESSION['CalificarProfesorCursoId'] = $objBUSCMPC["IdProfesorCurso"];
+            $_SESSION['CalificarMateriaId'] = $objBUSCMM["IdMateria"];
+            $_SESSION['CalificarMateriaNombre'] = $objBUSCMM["Nombre"];
+            $_SESSION['CalificarCursoId'] = $objBUSCMC["IdCurso"];
+            $_SESSION['CalificarCursoNombre'] = $objBUSCMC["Nombre"];
+            $_SESSION['CalificarGradoId'] = $objBUSCMG["IdGrado"];
+            $_SESSION['CalificarGradoNombre'] = $objBUSCMG["Nivel"];
             return true;
         }
     }

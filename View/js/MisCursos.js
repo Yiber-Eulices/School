@@ -29,4 +29,23 @@ $(document).ready(function(){
             }
         }
     });
+    $(".dataTableCurso").on("click",".btnEstudiante",function(){
+        var id = $(this).attr("IdProfesorCurso");
+        var oBJEC_ADMIN = new FormData();
+        oBJEC_ADMIN.append("Id", id); 
+        $.ajax({
+            url:"../Ajax/AjaxProfesor.php?a=sessionCursoEstudiante",
+            method:"POST",
+            data:oBJEC_ADMIN,
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success : function(respuesta){
+                if(respuesta = true){
+                    window.location = "CursoEstudiantes.php";
+                }	
+            }
+        });        
+    });
 });

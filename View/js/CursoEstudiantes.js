@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaAcudienteHijo",
+    $(".dataTableEstudiante").DataTable({
+        "ajax":"../Ajax/AjaxEstudiante.php?a=listapce",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -29,7 +29,8 @@ $(document).ready(function(){
             }
         }
     });
-    $(".dataTableAcudienteEstudiante").on("click",".btnCalificacion",function(){
+    
+    $(".dataTableEstudiante").on("click",".btnCalificacion",function(){
         var id = $(this).attr("IdEstudiante");
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
@@ -43,7 +44,7 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "CalificacionHijo.php";
+                    window.location = "Calificaciones.php";
                 }	
             }
         });        

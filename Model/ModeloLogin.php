@@ -73,6 +73,7 @@ require_once "Conexion.php";
             $oBJEC_LOGIN =  $oBJEC_DATA -> fetch();
             $idDB = $oBJEC_LOGIN["Id".$rol];
             $correoDB = $oBJEC_LOGIN["Correo"];
+            $telefonoDB = $oBJEC_LOGIN["Telefono"];
             if ($user == $correoDB){
                 $key = '';
                 $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
@@ -85,12 +86,34 @@ require_once "Conexion.php";
                 $oBJEC_DATA_UPDATE  -> bindParam(":id",$idDB, PDO::PARAM_INT);
                 $oBJEC_DATA_UPDATE  -> bindParam(":password",$password, PDO::PARAM_STR);
                 $oBJEC_DATA_UPDATE -> execute();    
-                $essql = $oBJEC_DATA_UPDATE;            
+                $essql = $oBJEC_DATA_UPDATE; 
+                /*Mensaje Email*/           
                 $destinatario = $user;
                 $from = "yibercitolopez@hotmail.com";
                 $asunto = "Restablecer contrase&ntilde;a en School Admin.";
                 $mensaje = "Su nueva Contrase&ntilde;a como ".$rol." es : ( ".$key." ).";
                 $headers = "From:" . $from;
+                /*Mensaje SMS*/ 
+                $request = [ 
+                    "api_key" => "88d9e978596e56402700fc866c4e4533",
+                    "messages" => [ 
+                       [
+                          "from" => "REMITENTE",
+                          "to" => "57".$telefonoDB,
+                          "text" => $mensaje
+                       ]
+                    ]
+                ];
+                $headersms = array('Content-Type: application/json');
+                $ch = curl_init('https://api.gateway360.com/api/3.0/sms/send');
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headersms);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($request));
+                $result = curl_exec($ch);
+                if (curl_errno($ch) != 0 ){
+                    die("curl error: ".curl_errno($ch));
+                }
                 return (mail($destinatario,$asunto,$mensaje,$headers));
             }else{
                 return "El correo ingresado no es un ".$rol.", es Incorrecto o no existe.";

@@ -19,7 +19,7 @@
             return ($oBJEC_DATA_UPDATE -> execute());
         }
         public static function ListarProfesorCurso(){
-            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdProfesorCurso,c.CursoIdCurso,c.ProfesorIdProfesor,g.IdCurso,g.Nombre,p.IdProfesor,p.Nombre AS NombreProfesor,p.Apellido,m.Nombre AS NombreMateria FROM profesorcurso c INNER JOIN curso g ON c.CursoIdCurso=g.IdCurso INNER JOIN profesor p ON c.ProfesorIdProfesor=p.IdProfesor INNER JOIN materia m ON m.IdMateria = c.MateriaIdMateria");
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdProfesorCurso,c.CursoIdCurso,c.ProfesorIdProfesor,g.IdCurso,g.Nombre,p.IdProfesor,p.Nombre AS NombreProfesor,p.Apellido,m.Nombre AS NombreMateria,gd.Nivel FROM profesorcurso c INNER JOIN curso g ON c.CursoIdCurso=g.IdCurso INNER JOIN profesor p ON c.ProfesorIdProfesor=p.IdProfesor INNER JOIN materia m ON m.IdMateria = c.MateriaIdMateria INNER JOIN grado gd ON gd.IdGrado = g.GradoIdGrado");
             $oBJEC_DATA_LIST -> execute();
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
             return $oBJEC_DATA_ARRAY;            

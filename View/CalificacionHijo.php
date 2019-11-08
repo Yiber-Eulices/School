@@ -16,7 +16,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Mis Cursos
+                                Calificaciones de mi Hijo <b><?php echo($_SESSION["EstudianteNombre"]);?></b>, seleccione la Asignatura.
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -38,17 +38,23 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Grado</th>
-                                            <th>Curso</th>
+                                            <th>Foto</th>
+                                            <th>Profesor</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Materia</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Grado</th>
-                                            <th>Curso</th>
+                                        <th>#</th>
+                                            <th>Foto</th>
+                                            <th>Profesor</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Materia</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -76,7 +82,7 @@
             <!-- #END# Basic Examples -->
         </div>
     </section>
-    <script src="js/MisCursos.js"></script>
+    <script src="js/CalificacionHijo.js"></script>
 <?php
     include "template/footer.php";
 ?>

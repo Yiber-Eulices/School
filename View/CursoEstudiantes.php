@@ -3,20 +3,14 @@
     include "template/menu.php";
 ?>
 <section class="content">
-        <div class="container-fluid">
-          <div class="block-header">
-                <h2>
-                    
-                SCHOOL ADMIN
-                </h2>
-            </div>
+        <div class="container-fluid">           
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Mis Cursos
+                                Estudiantes que Pertenecen al Curso <b><?php echo($_SESSION["CalificarGradoNombre"]." ".$_SESSION["CalificarCursoNombre"]);?></b>, y que les dicto la Asignatura <b><?php echo($_SESSION["CalificarMateriaNombre"]);?></b>.
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -32,32 +26,47 @@
                             </ul>
                         </div>
                         <div class="body">
-                            <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableCurso table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableEstudiante table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Foto</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Tipo de Documento</th>
+                                            <th>Documento</th>
+                                            <th>Fecha de Nacimiento</th>
+                                            <th>Rh</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Grado</th>
                                             <th>Curso</th>
-                                            <th>Materia</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
+                                        <th>#</th>
+                                            <th>Foto</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Tipo de Documento</th>
+                                            <th>Documento</th>
+                                            <th>Fecha de Nacimiento</th>
+                                            <th>Rh</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
                                             <th>Grado</th>
                                             <th>Curso</th>
-                                            <th>Materia</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
                                 </table>
                                 <style>
                                     .imgProfile{
-                                        height : 100px;
-                                        width : 100px;
+                                        height : 50px;
+                                        width : 50px;
                                         border-radius : 50px;
                                     }
                                     .imgProfileEdit{
@@ -74,9 +83,10 @@
                 </div>
             </div>
             <!-- #END# Basic Examples -->
+            
         </div>
     </section>
-    <script src="js/MisCursos.js"></script>
+    <script src="js/CursoEstudiantes.js"></script>
 <?php
     include "template/footer.php";
 ?>

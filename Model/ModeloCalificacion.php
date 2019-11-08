@@ -32,6 +32,15 @@
             $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST->fetchAll();
             return $oBJEC_DATA_ARRAY;            
         }
+        public static function ListarCalificacionProfesor(){
+            session_start();
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT c.IdCalificacion,c.Periodo,c.NotaAcumulativa,c.NotaComportamental,c.Evaluacion,c.AutoEvaluacion,( (c.NotaAcumulativa*0.6)+(c.NotaComportamental*0.2)+(c.Evaluacion*0.1)+(c.AutoEvaluacion*0.1)) AS Promedio FROM Calificacion c INNER JOIN profesorcurso pc ON c.MateriaIdMateria = pc.IdProfesorCurso INNER JOIN curso cr ON pc.CursoIdCurso = cr.IdCurso INNER JOIN estudiante e ON cr.IdCurso = e.CursoIdCurso WHERE e.IdEstudiante = :id AND IdProfesorCurso =:idProfesorCurso");
+            $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["EstudianteId"], PDO::PARAM_INT);
+            $oBJEC_DATA_LIST  -> bindParam(":idProfesorCurso",$_SESSION["CalificarProfesorCursoId"], PDO::PARAM_INT);
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST->fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
         public static function BuscarCalificacion($id){
             $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Calificacion WHERE IdCalificacion = :id");
             $oBJEC_DATA_SEARCH  -> bindParam(":id",$id, PDO::PARAM_INT);

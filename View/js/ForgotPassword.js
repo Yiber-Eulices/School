@@ -27,4 +27,3 @@ $(".btnRecuperar").click(function(){
 function FormSubmit(){
     return false;
 }
-$("#TxtRol").select2();

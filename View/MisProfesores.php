@@ -38,15 +38,23 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Profesor</th>
-                                            <th>Materia</th>
+                                            <th>Foto</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
+                                            <th>Materia Dictada</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Profesor</th>
-                                            <th>Materia</th>
+                                        <th>#</th>
+                                            <th>Foto</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
+                                            <th>Materia Dictada</th>
                                         </tr>
                                     </tfoot>                                    
                                 </table>

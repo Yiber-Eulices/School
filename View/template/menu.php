@@ -187,6 +187,12 @@
                                 <span>Notificaciones</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="Notificacion.php">
+                                <i class="material-icons">person notifications_active</i>
+                                <span>Notificar a una Persona</span>
+                            </a>
+                        </li>
                     <?php } ?>                    
                     <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
                         <li>
@@ -216,13 +222,13 @@
                     <?php } ?>
                     <?php if($_SESSION['UserRol']=="Profesor"){ ?>
                         <li>
-                            <a href="Estudiante.php">
+                            <a href="Estudiantes.php">
                                 <i class="material-icons">group</i>
                                 <span>Estudiantes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Acudiente.php">
+                            <a href="Acudientes.php">
                                 <i class="material-icons">group</i>
                                 <span>Padres de Familia</span>
                             </a>

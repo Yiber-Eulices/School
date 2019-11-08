@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Profesores
+                                Notificaciones
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -28,7 +28,7 @@
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
                                 <i class="material-icons">add</i>
-                                <span>A&ntilde;adir Alerta</span>
+                                <span>A&ntilde;adir Notificacion</span>
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
@@ -86,7 +86,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">A&ntilde;adir Alerta</h5>
+            <h5 class="modal-title">A&ntilde;adir Notificacion</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -163,7 +163,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Alerta</h5>
+            <h5 class="modal-title">Editar Notificacion</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

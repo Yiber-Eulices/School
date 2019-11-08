@@ -97,7 +97,7 @@ $(".formCreate").on("click",".botonCreate",function(){
                     $('form').trigger("reset");
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Alerta.php";
+                    $(".dataTableAlerta").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateCreateUpdate(m);
@@ -134,7 +134,7 @@ $(".dataTableAlerta").on("click",".btnDelete",function(){
                     if(respuesta = true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Alerta.php";
+                        $(".dataTableAlerta").DataTable().ajax.reload();
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
                         ValidateCreateUpdate(m);
@@ -230,7 +230,7 @@ $(".formEdit").on("click",".botonEdit",function(){
                     $('form').trigger("reset");
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
-                    window.location = "Alerta.php";
+                    $(".dataTableAlerta").DataTable().ajax.reload();
                 }else if(respuesta = false){
                     var m = "¡¡¡Datos No Editados.!!!";
                     ValidateCreateUpdate(m);

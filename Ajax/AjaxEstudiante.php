@@ -1,6 +1,10 @@
 <?php
     require_once "../Controller/ControladorEstudiante.php";
     require_once "../Model/ModeloEstudiante.php";
+    require_once "../Model/ModeloProfesorCurso.php";
+    require_once "../Model/ModeloCurso.php";
+    require_once "../Model/ModeloGrado.php";
+    require_once "../Model/ModeloMateria.php";
     class AjaxEstudiante{
         public $id;
         public $nombre;
@@ -57,6 +61,82 @@
                             "",
                             "",
                             "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
+        public function AjxListarMimateria(){
+            $objADMIN = ControladorEstudiante::CtrlListarMisMaterias();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
+                            $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button>";
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdProfesorCurso"].'",
+                                "'.$img.'",
+                                "'.$objADMIN[$i]["NombreProfesor"].'",
+                                "'.$objADMIN[$i]["Apellido"].'",
+                                "'.$objADMIN[$i]["Correo"].'",
+                                "'.$objADMIN[$i]["Telefono"].'",
+                                "'.$objADMIN[$i]["NombreMateria"].'",
+                                "'.$btnCalificacion.'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
+        public function AjxListarMimateriaAcudiente(){
+            $objADMIN = ControladorEstudiante::CtrlListarMisMateriasAcudiente();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
+                            $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button>";
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdProfesorCurso"].'",
+                                "'.$img.'",
+                                "'.$objADMIN[$i]["NombreProfesor"].'",
+                                "'.$objADMIN[$i]["Apellido"].'",
+                                "'.$objADMIN[$i]["Correo"].'",
+                                "'.$objADMIN[$i]["Telefono"].'",
+                                "'.$objADMIN[$i]["NombreMateria"].'",
+                                "'.$btnCalificacion.'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
                             "",
                             "",
                             "",
@@ -194,7 +274,8 @@
                 echo $oBJEC_JSON;
   
           }
-        public function AjxListarProfesor(){
+        
+          public function AjxListarProfesor(){
           $objADMIN = ControladorEstudiante::CtrlListarProfesor();
           $oBJEC_JSON = '{
               "data": [';
@@ -240,6 +321,10 @@
         public function AjxSesion(){
             $objADMIN = ControladorEstudiante::CtrlSesion($this->id);
             echo json_encode($objADMIN);
+        }
+        public function AjxSessionCursoEstudiante(){
+            $objPROF = ControladorEstudiante::CtrlSessionCursoEstudiante($this->id);
+            echo json_encode($objPROF);
         }
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
@@ -321,6 +406,14 @@
         $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> AjxListar();
     }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listamimateria'){
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> AjxListarMimateria();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listamimateriaAcudiente'){
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> AjxListarMimateriaAcudiente();
+    }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> id = $_POST["Id"];
@@ -347,4 +440,9 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'listapce'){
         $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> AjxListarpcursoest();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'sessionCursoEstudiante'){
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> id = $_POST["Id"];
+        $oBJEC_AJAX -> AjxSessionCursoEstudiante();
     }

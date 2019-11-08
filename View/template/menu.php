@@ -24,7 +24,8 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="Home.php">SCHOOL ADMIN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -187,6 +188,12 @@
                                 <span>Notificaciones</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="Notificacion.php">
+                                <i class="material-icons">person notifications_active</i>
+                                <span>Notificar a una Persona</span>
+                            </a>
+                        </li>
                     <?php } ?>                    
                     <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
                         <li>
@@ -196,7 +203,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisProfesores.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Profesores</span>
                             </a>
@@ -216,19 +223,19 @@
                     <?php } ?>
                     <?php if($_SESSION['UserRol']=="Profesor"){ ?>
                         <li>
-                            <a href="Estudiante.php">
+                            <a href="Estudiantes.php">
                                 <i class="material-icons">group</i>
                                 <span>Estudiantes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Acudiente.php">
+                            <a href="Acudientes.php">
                                 <i class="material-icons">group</i>
                                 <span>Padres de Familia</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisCursos.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Cursos</span>
                             </a>
@@ -245,14 +252,14 @@
             </div>
             <!-- #Menu -->
             <!-- Footer -->
-            <!--<div class="legal">
+            <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2019 - 2020 <a href="javascript:void(0);">School Admin</a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 1.0.5
+                    <b>Version: </b> 1.0.0
                 </div>
-            </div>-->
+            </div>
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->

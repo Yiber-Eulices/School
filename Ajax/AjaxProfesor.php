@@ -1,6 +1,10 @@
 <?php
     require_once "../Controller/ControladorProfesor.php";
     require_once "../Model/ModeloProfesor.php";
+    require_once "../Model/ModeloProfesorCurso.php";
+    require_once "../Model/ModeloCurso.php";
+    require_once "../Model/ModeloGrado.php";
+    require_once "../Model/ModeloMateria.php";
     class AjaxProfesor{
         public $id;
         public $nombre;
@@ -69,6 +73,37 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarMisCursos(){
+            $objPROF = ControladorProfesor::CtrlListarMiCurso();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objPROF) >= 1){
+                        for ($i=0; $i < count($objPROF); $i++) {
+                            $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdProfesorCurso = '".$objPROF[$i]["IdProfesorCurso"]."'><i class='material-icons'>school</i><span>Estudiantes</span></button>";
+                            $oBJEC_JSON .= '[
+                                "'.$objPROF[$i]["IdCurso"].'",
+                                "'.$objPROF[$i]["Nivel"].'",
+                                "'.$objPROF[$i]["NombreCurso"].'",
+                                "'.$objPROF[$i]["NombreMateria"].'",
+                                "'.$btnEstudiante.'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxListado(){
           $objPROF = ControladorProfesor::CtrlListar();
           $oBJEC_JSON = '{
@@ -109,6 +144,10 @@
         }
         public function AjxEliminar(){
             $objPROF = ControladorProfesor::CtrlEliminar($this->id);
+            echo json_encode($objPROF);
+        }
+        public function AjxSessionCursoEstudiante(){
+            $objPROF = ControladorProfesor::CtrlSessionCursoEstudiante($this->id);
             echo json_encode($objPROF);
         }
         public function AjxSesion(){
@@ -211,5 +250,14 @@
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> AjxSesion();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaCursos'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> AjxListarMisCursos();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'sessionCursoEstudiante'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> id = $_POST["Id"];
+        $oBJEC_AJAX -> AjxSessionCursoEstudiante();
     }
     

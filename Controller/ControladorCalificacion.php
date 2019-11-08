@@ -12,6 +12,10 @@
             $objLISTM = ModeloCalificacion::ListarCalificacion();
             return $objLISTM;
         }
+        public static function CtrlListarProfesor(){
+            $objLISTM = ModeloCalificacion::ListarCalificacionProfesor();
+            return $objLISTM;
+        }
         public static function CtrlBuscar($id){
             $objBUSCM = ModeloCalificacion::BuscarCalificacion($id);
             return $objBUSCM;

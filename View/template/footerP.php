@@ -28,7 +28,7 @@
 						<div class="footer_column_title">Menu</div>
 						<div class="footer_column_content">
 							<ul>
-								<li class="footer_list_item"><a href="indexP.php">Inicio</a></li>
+								<li class="footer_list_item"><a href="Index.php">Inicio</a></li>
 								<li class="footer_list_item"><a href="contact.php">Contactos</a></li>
 								<li class="footer_list_item"><a href="Login.php">Iniciar sesion</a></li>
 							</ul>
@@ -48,19 +48,19 @@
 									<div class="footer_contact_icon">
 										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									<p id = "DireccionF">Sogamoso-Boyaca, Cr 56 Nº 3-13</p>
+									<b id = "DireccionF">Sogamoso-Boyaca, Cr 56 Nº 3-13</b>
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
 										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									<p id = "TelefonoF">57+ 3203289787</p>
+									57+ <b id = "TelefonoF">3203289787</b>
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
 										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									<p id = "CorreoF">SchoolAdmin@Gmail.com</p>
+									<b id = "CorreoF">SchoolAdmin@Gmail.com</b>
 								</li>
 							</ul>
 						</div>
@@ -74,8 +74,8 @@
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
 				<div class="footer_copyright">
 					<span>
-SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="indexP.php" target="_blank">School Admin</a>
-</span>
+						SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="Index.php" target="_blank">School Admin</a>
+					</span>
 				</div>
 				<div class="footer_social ml-sm-auto">
 					<ul class="menu_social">

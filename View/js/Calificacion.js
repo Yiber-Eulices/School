@@ -133,6 +133,8 @@ $(".formCreate").on("click",".botonCreate",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
+                    $("#ModalCreate").modal('toggle');
+                    $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableCalificacion").DataTable().ajax.reload();
@@ -267,6 +269,8 @@ $(".formEdit").on("click",".botonEdit",function(){
             dataType:"json",
             success:function(respuesta){
                 if(respuesta = true){
+                    $("#ModalEdit").modal('toggle');
+                    $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableCalificacion").DataTable().ajax.reload();

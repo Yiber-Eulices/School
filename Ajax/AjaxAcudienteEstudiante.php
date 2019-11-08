@@ -73,6 +73,60 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarEstudiantep(){
+            session_start();
+            $objAcudienteEstudiante = ControladorAcudienteEstudiante::CtrlListar();
+            $count = 0;
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objAcudienteEstudiante) >= 1){
+                        for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
+                            if($objAcudienteEstudiante[$i]["EstudianteIdEstudiante"]==$_SESSION['EstudianteId']){
+                                $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
+                                $oBJEC_JSON .= '[
+                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$img.'",
+                                    "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
+                                    "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
+                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"].'",
+                                    "'.$objAcudienteEstudiante[$i]["DocumentoAcudiente"].'",
+                                    "'.$objAcudienteEstudiante[$i]["CorreoAcudiente"].'",
+                                    "'.$objAcudienteEstudiante[$i]["TelefonoAcudiente"].'"
+                                ],';
+                                $count++;
+                            }
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    if($count<=0 && count($objAcudienteEstudiante) >= 1){
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxListarEstudiantePadres(){
             session_start();
             $objAcudienteEstudiante = ControladorAcudienteEstudiante::CtrlListar();
@@ -186,6 +240,60 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarAcudientep(){
+            session_start();
+            $objAcudienteEstudiante = ControladorAcudienteEstudiante::CtrlListar();
+            $count = 0;
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objAcudienteEstudiante) >= 1){
+                        for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
+                            if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['AcudienteId']){
+                                $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
+                                $oBJEC_JSON .= '[
+                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$img.'",
+                                    "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["DocumentoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["CorreoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["TelefonoEstudiante"].'"
+                                ],';
+                                $count++;
+                            }
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    if($count<=0 && count($objAcudienteEstudiante) >= 1){
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxListarAcudienteHijos(){
             session_start();
             $objAcudienteEstudiante = ControladorAcudienteEstudiante::CtrlListar();
@@ -270,6 +378,10 @@
         $oBJEC_AJAX = new AjaxAcudienteEstudiante();
         $oBJEC_AJAX -> AjxListarEstudiante();
     }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaEstudiantep'){
+        $oBJEC_AJAX = new AjaxAcudienteEstudiante();
+        $oBJEC_AJAX -> AjxListarEstudiantep();
+    }
     if(isset($_GET["a"]) && $_GET["a"] == 'listaEstudiantePadre'){
         $oBJEC_AJAX = new AjaxAcudienteEstudiante();
         $oBJEC_AJAX -> AjxListarEstudiantePadres();
@@ -277,6 +389,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'listaAcudiente'){
         $oBJEC_AJAX = new AjaxAcudienteEstudiante();
         $oBJEC_AJAX -> AjxListarAcudiente();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaAcudientep'){
+        $oBJEC_AJAX = new AjaxAcudienteEstudiante();
+        $oBJEC_AJAX -> AjxListarAcudientep();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'listaAcudienteHijo'){
         $oBJEC_AJAX = new AjaxAcudienteEstudiante();

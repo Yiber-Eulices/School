@@ -69,6 +69,51 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarp(){
+          $objACUDI = ControladorAcudiente::CtrlListar();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objACUDI) >= 1){
+                      for ($i=0; $i < count($objACUDI); $i++) {
+                          $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button>";
+                          $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
+
+                          $oBJEC_JSON .= '[
+                              "'.$objACUDI[$i]["IdAcudiente"].'",
+                              "'.$img.'",
+                              "'.$objACUDI[$i]["Nombre"].'",
+                              "'.$objACUDI[$i]["Apellido"].'",
+                              "'.$objACUDI[$i]["TipoDocumento"].'",
+                              "'.$objACUDI[$i]["Documento"].'",
+                              "'.$objACUDI[$i]["FechaNacimiento"].'",
+                              "'.$objACUDI[$i]["Rh"].'",
+                              "'.$objACUDI[$i]["Correo"].'",
+                              "'.$objACUDI[$i]["Telefono"].'",
+                              "'.$btnEstudiante.'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+
+        }
         public function AjxBuscar(){
             $objACUDI = ControladorAcudiente::CtrlBuscar($this->id);
             echo json_encode($objACUDI);
@@ -159,6 +204,10 @@
         $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> AjxListar();
     }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listap'){
+      $oBJEC_AJAX = new AjaxAcudiente();
+      $oBJEC_AJAX -> AjxListarp();
+  }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];

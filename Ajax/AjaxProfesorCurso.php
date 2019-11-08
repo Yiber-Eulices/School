@@ -44,7 +44,7 @@
                             ""
                         ],';
                     }
-                    if($count<=0){
+                    if($count<=0 && count($objPROFCU) >= 1){
                         $oBJEC_JSON .= '[
                             "",
                             "",
@@ -87,7 +87,7 @@
                             ""
                         ],';
                     }
-                    if($count<=0){
+                    if($count<=0 && count($objPROFCU) >= 1){
                         $oBJEC_JSON .= '[
                             "",
                             "",

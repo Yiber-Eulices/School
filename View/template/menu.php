@@ -187,6 +187,12 @@
                                 <span>Notificaciones</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="Notificacion.php">
+                                <i class="material-icons">person notifications_active</i>
+                                <span>Notificar a una Persona</span>
+                            </a>
+                        </li>
                     <?php } ?>                    
                     <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
                         <li>
@@ -196,7 +202,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisProfesores.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Profesores</span>
                             </a>
@@ -216,19 +222,19 @@
                     <?php } ?>
                     <?php if($_SESSION['UserRol']=="Profesor"){ ?>
                         <li>
-                            <a href="Estudiante.php">
+                            <a href="Estudiantes.php">
                                 <i class="material-icons">group</i>
                                 <span>Estudiantes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Acudiente.php">
+                            <a href="Acudientes.php">
                                 <i class="material-icons">group</i>
                                 <span>Padres de Familia</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisCursos.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Cursos</span>
                             </a>

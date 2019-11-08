@@ -14,6 +14,10 @@
             $objLISTM = ModeloProfesor::ListarProfesor();
             return $objLISTM;
         }
+        public static function CtrlListarMiCurso(){
+            $objLISTM = ModeloProfesor::ListarMicurso();
+            return $objLISTM;
+        }
         public static function CtrlBuscar($id){
             $objBUSCM = ModeloProfesor::BuscarProfesor($id);
             return $objBUSCM;

@@ -53,7 +53,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtFecha').val().length == 0){
-        var m = "Por favor ingrese la Fecha de el Alerta.";
+        var m = "Por favor ingrese la Fecha de la Notificacion.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTitulo').val().length == 0){
@@ -182,7 +182,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtFechaEdit').val().length == 0){
-        var m = "Por favor ingrese la Fecha de el Alerta.";
+        var m = "Por favor ingrese la Fecha de la Notificacion.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTituloEdit').val().length == 0){

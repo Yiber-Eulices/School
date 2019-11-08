@@ -196,7 +196,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisProfesores.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Profesores</span>
                             </a>
@@ -228,7 +228,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Hijos.php">
+                            <a href="MisCursos.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Cursos</span>
                             </a>

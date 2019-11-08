@@ -28,7 +28,7 @@
 						<div class="footer_column_title">Menu</div>
 						<div class="footer_column_content">
 							<ul>
-								<li class="footer_list_item"><a href="indexP.php">Inicio</a></li>
+								<li class="footer_list_item"><a href="index.php">Inicio</a></li>
 								<li class="footer_list_item"><a href="contact.php">Contactos</a></li>
 								<li class="footer_list_item"><a href="Login.php">Iniciar sesion</a></li>
 							</ul>
@@ -74,7 +74,7 @@
 			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
 				<div class="footer_copyright">
 					<span>
-SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="indexP.php" target="_blank">School Admin</a>
+SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="index.php" target="_blank">School Admin</a>
 </span>
 				</div>
 				<div class="footer_social ml-sm-auto">

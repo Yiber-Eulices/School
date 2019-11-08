@@ -41,6 +41,7 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Materia</th>
                                             <th>Acciones</th>
@@ -49,6 +50,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>#</th>
+                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Materia</th>
                                             <th>Acciones</th>

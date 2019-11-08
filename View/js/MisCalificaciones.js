@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaAcudienteHijo",
+    $(".dataTableCurso").DataTable({
+        "ajax":"../Ajax/AjaxEstudiante.php?a=listamimateria",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -29,12 +29,12 @@ $(document).ready(function(){
             }
         }
     });
-    $(".dataTableAcudienteEstudiante").on("click",".btnCalificacion",function(){
-        var id = $(this).attr("IdEstudiante");
+    $(".dataTableCurso").on("click",".btnCalificacion",function(){
+        var id = $(this).attr("IdProfesorCurso");
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=sesion",
+            url:"../Ajax/AjaxEstudiante.php?a=sessionCursoEstudiante",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -43,7 +43,7 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "CalificacionHijo.php";
+                    window.location = "MiCalificacionMateria.php";
                 }	
             }
         });        

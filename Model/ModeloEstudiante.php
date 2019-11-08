@@ -60,4 +60,20 @@
             $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);
             return $oBJEC_DATA_DELETE -> execute();
         }
+        public static function ListarMiMaterias(){
+            session_start();
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT pc.IdProfesorCurso,p.Nombre AS NombreProfesor,p.Apellido,p.Correo,p.Telefono,p.Foto,m.Nombre AS NombreMateria FROM estudiante e INNER JOIN curso c ON c.IdCurso = e.CursoIdCurso INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE e.IdEstudiante=:id");
+            $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["UserId"], PDO::PARAM_INT);
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
+        public static function ListarMiMateriasAcudiente(){
+            session_start();
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT pc.IdProfesorCurso,p.Nombre AS NombreProfesor,p.Apellido,p.Correo,p.Telefono,p.Foto,m.Nombre AS NombreMateria FROM estudiante e INNER JOIN curso c ON c.IdCurso = e.CursoIdCurso INNER JOIN profesorcurso pc ON pc.CursoIdCurso = c.IdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE e.IdEstudiante=:id");
+            $oBJEC_DATA_LIST  -> bindParam(":id",$_SESSION["EstudianteId"], PDO::PARAM_INT);
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST-> fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
     }

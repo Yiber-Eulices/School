@@ -187,6 +187,12 @@
                                 <span>Notificaciones</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="Notificacion.php">
+                                <i class="material-icons">person notifications_active</i>
+                                <span>Notificar a una Persona</span>
+                            </a>
+                        </li>
                     <?php } ?>                    
                     <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
                         <li>

@@ -14,7 +14,7 @@
 			<nav class="main_nav_container">
 				<div class="main_nav">
 					<ul class="main_nav_list">
-						<li class="main_nav_item"><a href="index.php">Inicio</a></li>
+						<li class="main_nav_item"><a href="Index.php">Inicio</a></li>
 						<li class="main_nav_item"><a href="contact.php">Contacto</a></li>
 						<li class="main_nav_item"><a href="Login.php">Iniciar Sesión</a></li>
 					</ul>

@@ -27,21 +27,21 @@
                                         <img src="images/image-gallery/10.jpg" />
                                         <div class="carousel-caption">
                                             <h3>¿QUIENES SOMOS?</h3>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quae exercitationem reiciendis quasi dolorem temporibus fugiat id voluptatem, aut ducimus reprehenderit, veniam provident alias laboriosam. Ab consectetur corporis inventore ad.Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                            <p id ="Somos">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quae exercitationem reiciendis quasi dolorem temporibus fugiat id voluptatem, aut ducimus reprehenderit, veniam provident alias laboriosam. Ab consectetur corporis inventore ad.Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <img src="images/image-gallery/12.jpg" />
                                         <div class="carousel-caption">
                                             <h3>MISIÓN</h3>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quae exercitationem reiciendis quasi dolorem temporibus fugiat id voluptatem, aut ducimus reprehenderit, veniam provident alias laboriosam. Ab consectetur corporis inventore ad.Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                            <p id = "Mision">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quae exercitationem reiciendis quasi dolorem temporibus fugiat id voluptatem, aut ducimus reprehenderit, veniam provident alias laboriosam. Ab consectetur corporis inventore ad.Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <img src="images/image-gallery/19.jpg" />
                                         <div class="carousel-caption">
                                             <h3>VISIÓN</h3>
-                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quae exercitationem reiciendis quasi dolorem temporibus fugiat id voluptatem, aut ducimus reprehenderit, veniam provident alias laboriosam. Ab consectetur corporis inventore ad.Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                            <p id = "Vision">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum quae exercitationem reiciendis quasi dolorem temporibus fugiat id voluptatem, aut ducimus reprehenderit, veniam provident alias laboriosam. Ab consectetur corporis inventore ad.Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -62,6 +62,7 @@
             </div>
         </div>
     </section>
+    <script src="js/Home.js"></script>
 <?php
     include "template/footer.php";
 ?>

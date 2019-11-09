@@ -136,17 +136,6 @@
                     </div>
                     <div class="help-info">Mensaje</div>
                 </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtEstado" id = "TxtEstado">
-                            <option value="">-- Por favor seleccione el Estado --</option>
-                            <option value="Visto">Visto</option>
-                            <option value="Sin Ver">Sin Ver</option>
-                        </select>
-                        <label class="form-label">Estado</label>
-                    </div>
-                    <div class="help-info">Estado</div>
-                </div>
             </div>
             <div class="modal-footer">
               <input type="submit" name="Enviar" class="btn btn-primary botonCreate">

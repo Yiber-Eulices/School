@@ -54,7 +54,7 @@
 									<div class="footer_contact_icon">
 										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									57+ <b id = "TelefonoF">3203289787</b>
+									+57 <b id = "TelefonoF">3203289787</b>
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">

@@ -167,7 +167,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         var Descripcion = $('#TxtDescripcionEdit').val();
         var Ubicacion = $('#TxtUbicacionEdit').val();
         var Correo = $('#TxtCorreoEdit').val();
-        var Correo = $('#TxtTelefonoEdit').val();
+        var Telefono = $('#TxtTelefonoEdit').val();
         var oBJEC_INFO = new FormData();
         oBJEC_INFO.append("Id", Id); 
         oBJEC_INFO.append("Descripcion", Descripcion); 

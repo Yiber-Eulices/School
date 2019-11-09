@@ -64,17 +64,13 @@ $(".formCreate").on("click",".botonCreate",function(){
         var m = "Por favor ingrese el Mensaje.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtEstado').val().length == 0){
-        var m = "Por favor seleccione el Estado de el Mensaje.";
-        ValidateCreateUpdate(m);
-        return false;
     }else{
         var RolPersona = $('#TxtRolPersona').val();
         var IdPersona = $('#TxtIdPersona').val();
         var Fecha = $('#TxtFecha').val();
         var Titulo = $('#TxtTitulo').val();
         var Mensaje = $('#TxtMensaje').val();
-        var Estado = $('#TxtEstado').val();
+        var Estado = "Sin Ver";
         var oBJEC_ALERT = new FormData();
         oBJEC_ALERT.append("RolPersona", RolPersona); 
         oBJEC_ALERT.append("IdPersona", IdPersona); 

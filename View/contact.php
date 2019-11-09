@@ -39,25 +39,42 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="about" >
-						<div class="about_title"><center>INFORMACIÓN INSTITUCIONAL</center></div>
+					<div class="about aboutinfo" >
+						<div class="about_title"><center>Directivos</center></div>
 						<p id="Informacion" class="about_text"> </p>
 						<div class="contact_info">
-							<ul>
-								<li class="contact_info_item">
-									<div class="contact_info_icon">
-										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-								</li>
-								<li class="contact_info_item">
-									<div id="Correo"class="contact_info_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-									<div id="NombreTele" class="contact_info_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
-									</div>
-								</li>
-							</ul>
+						<table class="table">
+							<thead>
+								<tr>
+								<th scope="col">#</th>
+								<th scope="col">Nombre</th>
+								<th scope="col">Correo</th>
+								<th scope="col">Telefono</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12">
+					<div class="about" >
+						<div class="about_title"><center>Directivos</center></div>
+						<p id="Informacion" class="about_text"> </p>
+						<div class="contact_info">
+						<table class="table">
+							<thead>
+								<tr>
+								<th scope="col">#</th>
+								<th scope="col">Nombre</th>
+								<th scope="col">Correo</th>
+								<th scope="col">Telefono</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
 						</div>
 					</div>
 				</div>

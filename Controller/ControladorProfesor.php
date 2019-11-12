@@ -18,6 +18,10 @@
             $objLISTM = ModeloProfesor::ListarMicurso();
             return $objLISTM;
         }
+        public static function CtrlListarMiCursoDirector(){
+            $objLISTM = ModeloProfesor::ListarMicursoDirector();
+            return $objLISTM;
+        }
         public static function CtrlBuscar($id){
             $objBUSCM = ModeloProfesor::BuscarProfesor($id);
             return $objBUSCM;

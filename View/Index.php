@@ -61,21 +61,18 @@
 	<div class="hero_boxes">
 		<div class="hero_boxes_inner">
 			<div class="container">
-				<div class="row">
-
-					
-
+				<div class="row">				
 					<div class="col-lg-4 hero_box_col" style="margin: auto;">
+						<a href="Login.php" class="hero_box_link">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
 							<img src="images/books.svg"  alt="">
 							<div class="hero_box_content">
 								<h2 class="hero_box_title">Iniciar Sesión</h2>
-								<a href="Login.php" class="hero_box_link">Click aquí para iniciar sesión</a>
+								<a href="Login.php" class="link-color-login">Click aquí para iniciar sesión</a>
 							</div>
 						</div>
+						</a>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
@@ -95,9 +92,9 @@
 					<div class="register_section d-flex flex-column align-items-center justify-content-center">
 						<div class="register_content text-center">
 							<h1 class="register_title"><span>MISION</span> </h1>
-							<p id="Mision" class="register_text"></p><br><br>
+							<h2 id="Mision" class="register_text" style ="text-align: justify;"></h2><br><br>
 							<h1 class="register_title"><span>VISION</span></h1>
-							<p id="Vision"class="register_text"></p>
+							<h2 id="Vision"class="register_text" style ="text-align: justify;"></h2>
 							</div>
 					</div>
 				</div>
@@ -106,7 +103,7 @@
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
 						<div class="search_content text-center">
 							<h1 class="search_title">¿QUIENES SOMOS?</h1>
-							<h1 class="register_title"><span id="Somos" ></span></h1>
+							<h2 class="register_title"  style ="text-align: justify;"><span id="Somos"></span></h2>
 						</div> 
 					</div>
 				</div>

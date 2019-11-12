@@ -23,7 +23,7 @@
 		</div>
 		<div class="header_side d-flex flex-row justify-content-center align-items-center">
 			<img src="images/phone-call.svg" alt="">
-			<span>+57 3203289787</span>
+			<span>+57 <b id="telefonomenu">3203289787</b></span>
 		</div>
 
 		<!-- Hamburger -->
@@ -44,6 +44,11 @@
 				<!-- Menu Social -->
 				
 				<div class="menu_social_container menu_mm">
+					<ul class="menu_list menu_mm">
+						<li class="menu_item menu_mm"><a href="Index.php">Inicio</a></li>
+						<li class="menu_item menu_mm"><a href="contact.php">Contacto</a></li>
+						<li class="menu_item menu_mm"><a href="Login.php">Iniciar Sesión</a></li>
+					</ul>
 					<ul class="menu_social menu_mm">
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-pinterest"></i></a></li>
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>

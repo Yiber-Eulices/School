@@ -48,4 +48,23 @@ $(document).ready(function(){
             }
         });        
     });
+    $(".dataTableAcudienteEstudiante").on("click",".btnBoletin",function(){
+        var id = $(this).attr("IdEstudiante");
+        var oBJEC_ADMIN = new FormData();
+        oBJEC_ADMIN.append("Id", id); 
+        $.ajax({
+            url:"../Ajax/AjaxEstudiante.php?a=sesion",
+            method:"POST",
+            data:oBJEC_ADMIN,
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success : function(respuesta){
+                if(respuesta = true){
+                    window.location = "HijoBoletin.php";
+                }	
+            }
+        });        
+    });
 });

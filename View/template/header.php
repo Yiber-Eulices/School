@@ -1,8 +1,13 @@
-<?php session_start();
-if(!isset($_SESSION['UserRol'])){
-    header("Location: Login.php");
-}
-
+<?php 
+    session_start();
+    include("LogoutTime.php");
+    if(!isset($_SESSION['UserRol'])){
+        header("Location: Login.php");
+    }else if(isLoginSessionExpired()) {
+        header("Location: Login.php");
+    }else{
+        $_SESSION['TimeSession'] = time();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +54,8 @@ if(!isset($_SESSION['UserRol'])){
     <!-- Wait Me Css -->
     <link href="plugins/waitme/waitMe.css" rel="stylesheet" />
 
-    <!-- Bootstrap Select2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+    <!-- Bootstrap Select Css -->
+    <link href="plugins/Select2/select2.min.css" rel="stylesheet"/>
 
     <!-- Custom Css -->
     <link href="css/style.css" rel="stylesheet">

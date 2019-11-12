@@ -71,4 +71,13 @@
             $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);
             return $oBJEC_DATA_DELETE -> execute();
         }
+        public static function ListarCalificacionBoletin($id,$periodo){
+            $oBJEC_DATA_LIST = Conexion::conectar()->prepare("SELECT p.*,m.Nombre AS NombreMateria ,m.Descripcion,c.IdCalificacion,c.Periodo,c.NotaAcumulativa,c.NotaComportamental,c.Evaluacion,c.AutoEvaluacion,( (c.NotaAcumulativa*0.6)+(c.NotaComportamental*0.2)+(c.Evaluacion*0.1)+(c.AutoEvaluacion*0.1)) AS Promedio FROM Calificacion c INNER JOIN profesorcurso pc ON c.MateriaIdMateria = pc.IdProfesorCurso INNER JOIN curso cr ON pc.CursoIdCurso = cr.IdCurso INNER JOIN estudiante e ON cr.IdCurso = e.CursoIdCurso INNER JOIN materia m ON m.IdMateria = pc.MateriaIdMateria INNER JOIN profesor p ON p.IdProfesor = pc.ProfesorIdProfesor WHERE e.IdEstudiante = :id AND c.Periodo = :periodo");
+            $oBJEC_DATA_LIST  -> bindParam(":id",$id, PDO::PARAM_INT);
+            $oBJEC_DATA_LIST  -> bindParam(":periodo",$periodo, PDO::PARAM_INT);
+            $oBJEC_DATA_LIST -> execute();
+            $oBJEC_DATA_ARRAY =  $oBJEC_DATA_LIST->fetchAll();
+            return $oBJEC_DATA_ARRAY;            
+        }
+        
     }

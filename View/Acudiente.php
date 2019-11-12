@@ -2,7 +2,7 @@
     include "template/header.php";
     include "template/menu.php";
 ?>
-<section class="content">
+    <section class="content">
         <div class="container-fluid">
             <div class="block-header">
                 <h2>

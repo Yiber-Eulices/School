@@ -215,6 +215,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="MisBoletines.php">
+                                <i class="material-icons">print</i>
+                                <span>Mis Bolet&iacute;nes</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="MisNotificaciones.php">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
@@ -238,6 +244,12 @@
                             <a href="MisCursos.php">
                                 <i class="material-icons">group</i>
                                 <span>Mis Cursos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="MisCursosDirector.php">
+                                <i class="material-icons">group</i>
+                                <span>Mis Cursos como Director</span>
                             </a>
                         </li>
                         <li>

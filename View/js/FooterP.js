@@ -11,6 +11,7 @@ $(document).ready(function(){
                     $("#CorreoF").empty();
                     $("#DireccionF").html(respuesta.data[i][2]);
                     $("#TelefonoF").html(respuesta.data[i][4]);
+                    $("#telefonomenu").html(respuesta.data[i][4]);
                     $("#CorreoF").html(respuesta.data[i][3]);
                 }                
             }

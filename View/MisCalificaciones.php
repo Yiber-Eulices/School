@@ -5,8 +5,7 @@
 <section class="content">
         <div class="container-fluid">
           <div class="block-header">
-                <h2>
-                    
+                <h2>                    
                 SCHOOL ADMIN
                 </h2>
             </div>

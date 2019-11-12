@@ -132,7 +132,7 @@
                 <div class="form-group form-float">
                     <div class="form-line">
                         <textarea name="TxtMensaje" id="TxtMensaje" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
-                         <label class="form-label">Mensaje</label>
+                        <label class="form-label">Mensaje</label>
                     </div>
                     <div class="help-info">Mensaje</div>
                 </div>

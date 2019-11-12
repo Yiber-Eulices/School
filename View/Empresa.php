@@ -94,21 +94,21 @@
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtMision" id="TxtMision" >
+                        <textarea name="TxtMision" id="TxtMision" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                         <label class="form-label">Misión</label>
                     </div>
                     <div class="help-info">Misión</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtVision" id="TxtVision" >
+                        <textarea name="TxtVision" id="TxtVision" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                         <label class="form-label">Visión</label>
                     </div>
                     <div class="help-info">Visión</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtSomos" id="TxtSomos" >
+                        <textarea name="TxtSomos" id="TxtSomos" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                         <label class="form-label">¿Quienes somos?</label>
                     </div>
                     <div class="help-info">¿Quienes somos?</div>
@@ -139,21 +139,21 @@
                 <div class="form-group form-float">
                     <label class="form-label">Misión</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtMisionEdit" id="TxtMisionEdit" >
+                        <textarea name="TxtMisionEdit" id="TxtMisionEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                     </div>
                     <div class="help-info">Misión</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Visión</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtVisionEdit" id="TxtVisionEdit" >
+                        <textarea name="TxtVisionEdit" id="TxtVisionEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                     </div>
                     <div class="help-info">Visión</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">¿Quienes somos?</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtSomosEdit" id="TxtSomosEdit" >
+                        <textarea name="TxtSomosEdit" id="TxtSomosEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                     </div>
                     <div class="help-info">¿Quienes somos?</div>
                 </div>

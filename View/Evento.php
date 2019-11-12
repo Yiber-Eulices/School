@@ -45,19 +45,19 @@
                                             <th>Foto</th>
                                             <th>Fecha</th>
                                             <th>Titulo</th>
-                                            <th>Titulo</th>
+                                            <th>Descripcion</th>
                                             <th>Lugar</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>#</th>
-                                        <th>Foto</th>
+                                            <th>#</th>
+                                            <th>Foto</th>
                                             <th>Fecha</th>
                                             <th>Titulo</th>
-                                            <th>Lugar</th>
                                             <th>Descripcion</th>
+                                            <th>Lugar</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
@@ -113,7 +113,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtDescripcion" id="TxtDescripcion" >
+                        <textarea name="TxtDescripcion" id="TxtDescripcion" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                         <label class="form-label">Descripcion</label>
                     </div>
                     <div class="help-info">Descripcion</div>
@@ -176,7 +176,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Descripcion</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtDescripcionEdit" id="TxtDescripcionEdit" >
+                        <textarea name="TxtDescripcionEdit" id="TxtDescripcionEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
                     </div>
                     <div class="help-info">Descripcion</div>
                 </div>

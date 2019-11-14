@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableCalificacion").DataTable({
-        "ajax":"../Ajax/AjaxCalificacion.php?a=lista",
+        "ajax":"Ajax/AjaxCalificacion.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxEstudiante.php?a=lista",
+        url:"Ajax/AjaxEstudiante.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -51,7 +51,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxMateria.php?a=lista",
+        url:"Ajax/AjaxMateria.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -124,7 +124,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_CALFIC.append("Evaluacion", Evaluacion);
         oBJEC_CALFIC.append("AutoEvaluacion", AutoEvaluacion);    
         $.ajax({
-            url:"../Ajax/AjaxCalificacion.php?a=crear",
+            url:"Ajax/AjaxCalificacion.php?a=crear",
             method:"POST",
             data:oBJEC_CALFIC,
             cache:false,
@@ -163,7 +163,7 @@ $(".dataTableCalificacion").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxCalificacion.php?a=eliminar",
+                url:"Ajax/AjaxCalificacion.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_CALFIC,
                 cache:false,
@@ -189,7 +189,7 @@ $(".dataTableCalificacion").on("click",".btnUpdate",function(){
     var oBJEC_CALFIC = new FormData();
     oBJEC_CALFIC.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxCalificacion.php?a=buscar",
+        url:"Ajax/AjaxCalificacion.php?a=buscar",
         method:"POST",
         data:oBJEC_CALFIC,
         cache:false,
@@ -260,7 +260,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_CALFIC.append("Evaluacion", Evaluacion);
         oBJEC_CALFIC.append("AutoEvaluacion", AutoEvaluacion); 
         $.ajax({
-            url:"../Ajax/AjaxCalificacion.php?a=editar",
+            url:"Ajax/AjaxCalificacion.php?a=editar",
             method:"POST",
             data:oBJEC_CALFIC,
             cache:false,

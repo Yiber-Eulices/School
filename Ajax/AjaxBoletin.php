@@ -93,6 +93,6 @@ $pdf->Ln(30);
 $pdf->Cell(126.6,10,utf8_decode("Director de Curso : ".$objPROF["Nombre"]." ".$objPROF["Apellido"]),1,0,"J",0);
 $pdf->Cell(126.6,10,utf8_decode("Correo : ".$objPROF["Correo"]),1,0,"J",0);
 $pdf->Cell(126.6,10,"Telefono : ".$objPROF["Telefono"],1,true,"J",0);
-$ruta = '../View/PdfBoletin/Boletin.pdf';
-$pdf->Output($ruta,'F');
+$ruta = 'View/PdfBoletin/Boletin.pdf';
+$pdf->Output('../'.$ruta,'F');
 echo json_encode($ruta);

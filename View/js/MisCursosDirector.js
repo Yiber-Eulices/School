@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableCurso").DataTable({
-        "ajax":"../Ajax/AjaxProfesor.php?a=listaCursosDirector",
+        "ajax":"Ajax/AjaxProfesor.php?a=listaCursosDirector",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
         $.ajax({
-            url:"../Ajax/AjaxCurso.php?a=sesion",
+            url:"Ajax/AjaxCurso.php?a=sesion",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -43,7 +43,7 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "CursoEstudiantesDirector.php";
+                    window.location = "CursoEstudianteDirector";
                 }	
             }
         });        

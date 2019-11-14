@@ -6,7 +6,7 @@ $(document).ready(function(){
         oBJEC_ADMIN.append("Periodo", periodo);
         oBJEC_ADMIN.append("Id", id);
         $.ajax({
-            url:"../Ajax/AjaxBoletin.php",
+            url:"Ajax/AjaxBoletin.php",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -34,7 +34,7 @@ $(document).ready(function(){
     oBJEC_ADMIN.append("Periodo", periodo);
     oBJEC_ADMIN.append("Id", id);
     $.ajax({
-        url:"../Ajax/AjaxBoletin.php",
+        url:"Ajax/AjaxBoletin.php",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,

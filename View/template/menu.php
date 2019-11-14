@@ -26,7 +26,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="Home.php">SCHOOL ADMIN</a>
+                <a class="navbar-brand" href="Home">SCHOOL ADMIN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -44,7 +44,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="MisNotificaciones.php">Ver todas las notificaciones</a>
+                                <a href="MisNotificaciones">Ver todas las notificaciones</a>
                             </li>
                         </ul>
                     </li>
@@ -69,9 +69,9 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="Perfil.php"><i class="material-icons">person</i>Perfil</a></li>
+                            <li><a href="Perfil"><i class="material-icons">person</i>Perfil</a></li>
                             
-                            <li><a href="Login.php"><i class="material-icons">input</i>Cerrar Sesión</a></li>
+                            <li><a href="Login"><i class="material-icons">input</i>Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,26 +82,26 @@
                 <ul class="list">
                     <li class="header">MENÚ DE NAVEGACIÓN</li>
                     <li  class="active">
-                        <a href="Home.php">
+                        <a href="Home">
                             <i class="material-icons">home</i>
                             <span>Inicio</span>
                         </a>
                     </li>
                     <?php if($_SESSION['UserRol']=="Acudiente"){ ?>
                         <li>
-                            <a href="MisHijos.php">
+                            <a href="Estudiante">
                                 <i class="material-icons">group</i>
                                 <span>Mis Hijos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Profesores.php">
+                            <a href="Profesor">
                                 <i class="material-icons">group</i>
                                 <span>Profesores</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisNotificaciones.php">
+                            <a href="MisNotificaciones">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -115,63 +115,63 @@
                             </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="Acudiente.php">Acudientes</a>
+                                    <a href="Acudiente">Acudientes</a>
                                 </li>
                                 <li>
-                                    <a href="Administrador.php">Administradores</a>
+                                    <a href="Administrador">Administradores</a>
                                 </li>
                                 <li>
-                                    <a href="Estudiante.php">Estudiantes</a>
+                                    <a href="Estudiante">Estudiantes</a>
                                 </li>
                                 <li>
-                                    <a href="Profesor.php">Profesores</a>
+                                    <a href="Profesor">Profesores</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="Materia.php">
+                            <a href="Materia">
                                 <i class="material-icons">rate_review</i>
                                 <span>Materias</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Grado.php">
+                            <a href="Grado">
                                 <i class="material-icons">filter_9_plus</i>
                                 <span>Grados</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Curso.php">
+                            <a href="Curso">
                                 <i class="material-icons">domain</i>
                                 <span>Cursos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Matricula.php">
+                            <a href="Matricula">
                                 <i class="material-icons">assignment</i>
-                                <span>Matriculas</span>
+                                <span>Matrículas</span>
                             </a>
                         </li> 
                         <li>
-                            <a href="Evento.php">
+                            <a href="Evento">
                                 <i class="material-icons">date_range</i>
                                 <span>Eventos</span>
                             </a>
                         </li>  
                         <li>
-                            <a href="Directivo.php">
+                            <a href="Directivo">
                                 <i class="material-icons">supervisor_account</i>
                                 <span>Directivos</span>
                             </a>
                         </li>  
                         <li>
-                            <a href="Empresa.php">
+                            <a href="Empresa">
                                 <i class="material-icons">local_library</i>
-                                <span>Objetivos Estrategicos</span>
+                                <span>Objetivos Estratégicos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Informacion.php">
+                            <a href="Informacion">
                             <i class="material-icons">edit</i>
                                 <span>Información</span>
                             </a>
@@ -183,13 +183,13 @@
                             </a>
                         </li-->
                         <li>
-                            <a href="MisNotificaciones.php">
+                            <a href="MisNotificaciones">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Notificacion.php">
+                            <a href="Notificacion">
                                 <i class="material-icons">person notifications_active</i>
                                 <span>Notificar a una Persona</span>
                             </a>
@@ -197,31 +197,31 @@
                     <?php } ?>                    
                     <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
                         <li>
-                            <a href="MisPadres.php">
+                            <a href="Acudiente">
                                 <i class="material-icons">group</i>
                                 <span>Mis Padres</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisProfesores.php">
+                            <a href="Profesor">
                                 <i class="material-icons">group</i>
                                 <span>Mis Profesores</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisCalificaciones.php">
+                            <a href="Materia">
                                 <i class="material-icons">book</i>
                                 <span>Mis Calificaciones</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisBoletines.php">
+                            <a href="Boletin">
                                 <i class="material-icons">print</i>
                                 <span>Mis Bolet&iacute;nes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisNotificaciones.php">
+                            <a href="MisNotificaciones">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -229,31 +229,31 @@
                     <?php } ?>
                     <?php if($_SESSION['UserRol']=="Profesor"){ ?>
                         <li>
-                            <a href="Estudiantes.php">
+                            <a href="Estudiante">
                                 <i class="material-icons">group</i>
                                 <span>Estudiantes</span>
                             </a>
                         </li>
                         <li>
-                            <a href="Acudientes.php">
+                            <a href="Acudiente">
                                 <i class="material-icons">group</i>
                                 <span>Padres de Familia</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisCursos.php">
+                            <a href="Curso">
                                 <i class="material-icons">group</i>
                                 <span>Mis Cursos</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisCursosDirector.php">
+                            <a href="CursoDirector">
                                 <i class="material-icons">group</i>
                                 <span>Mis Cursos como Director</span>
                             </a>
                         </li>
                         <li>
-                            <a href="MisNotificaciones.php">
+                            <a href="MisNotificaciones">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>

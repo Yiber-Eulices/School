@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableEvento").DataTable({
-        "ajax":"../Ajax/AjaxEvento.php?a=lista",
+        "ajax":"Ajax/AjaxEvento.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -78,7 +78,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_EVEN.append("Lugar", Lugar);
     
         $.ajax({
-            url:"../Ajax/AjaxEvento.php?a=crear",
+            url:"Ajax/AjaxEvento.php?a=crear",
             method:"POST",
             data:oBJEC_EVEN,
             cache:false,
@@ -117,7 +117,7 @@ $(".dataTableEvento").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxEvento.php?a=eliminar",
+                url:"Ajax/AjaxEvento.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_EVEN,
                 cache:false,
@@ -143,7 +143,7 @@ $(".dataTableEvento").on("click",".btnUpdate",function(){
     var oBJEC_EVEN = new FormData();
     oBJEC_EVEN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxEvento.php?a=buscar",
+        url:"Ajax/AjaxEvento.php?a=buscar",
         method:"POST",
         data:oBJEC_EVEN,
         cache:false,
@@ -215,7 +215,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_EVEN.append("Lugar", Lugar); 
     
         $.ajax({
-            url:"../Ajax/AjaxEvento.php?a=editar",
+            url:"Ajax/AjaxEvento.php?a=editar",
             method:"POST",
             data:oBJEC_EVEN,
             cache:false,

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAcudiente").DataTable({
-        "ajax":"../Ajax/AjaxAcudiente.php?a=listap",
+        "ajax":"Ajax/AjaxAcudiente.php?a=listap",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
         $.ajax({
-            url:"../Ajax/AjaxAcudiente.php?a=sesion",
+            url:"Ajax/AjaxAcudiente.php?a=sesion",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -43,7 +43,7 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "AcudienteEstudiantes.php";
+                    window.location = "AcudienteEstudiante";
                 }	
             }
         });        

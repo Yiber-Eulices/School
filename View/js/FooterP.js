@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url:"../Ajax/AjaxInformacion.php?a=lista",
+        url:"Ajax/AjaxInformacion.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){          

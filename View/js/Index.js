@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url:"../Ajax/AjaxEvento.php?a=lista",
+        url:"Ajax/AjaxEvento.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -13,7 +13,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxEmpresa.php?a=lista",
+        url:"Ajax/AjaxEmpresa.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){          

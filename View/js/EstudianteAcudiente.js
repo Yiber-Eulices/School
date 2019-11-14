@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaEstudiante",
+        "ajax":"Ajax/AjaxAcudienteEstudiante.php?a=listaEstudiante",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxAcudiente.php?a=lista",
+        url:"Ajax/AjaxAcudiente.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -74,7 +74,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ACUES.append("AcudienteIdAcudiente", Acudiente); 
     
         $.ajax({
-            url:"../Ajax/AjaxAcudienteEstudiante.php?a=crear",
+            url:"Ajax/AjaxAcudienteEstudiante.php?a=crear",
             method:"POST",
             data:oBJEC_ACUES,
             cache:false,
@@ -113,7 +113,7 @@ $(".dataTableAcudienteEstudiante").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxAcudienteEstudiante.php?a=eliminar",
+                url:"Ajax/AjaxAcudienteEstudiante.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ACUES,
                 cache:false,
@@ -139,7 +139,7 @@ $(".dataTableAcudienteEstudiante").on("click",".btnUpdate",function(){
     var oBJEC_ACUES = new FormData();
     oBJEC_ACUES.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxAcudienteEstudiante.php?a=buscar",
+        url:"Ajax/AjaxAcudienteEstudiante.php?a=buscar",
         method:"POST",
         data:oBJEC_ACUES,
         cache:false,
@@ -175,7 +175,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ACUES.append("AcudienteIdAcudiente", Acudiente);
     
         $.ajax({
-            url:"../Ajax/AjaxAcudienteEstudiante.php?a=editar",
+            url:"Ajax/AjaxAcudienteEstudiante.php?a=editar",
             method:"POST",
             data:oBJEC_ACUES,
             cache:false,

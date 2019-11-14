@@ -1,12 +1,9 @@
 <?php 
-    session_start();
-    include("LogoutTime.php");
+    include("View/EveryBody/LogoutTime.php");
     if(!isset($_SESSION['UserRol'])){
-        header("Location: Login.php");
+        header("Location: Login");
     }else if(isLoginSessionExpired()) {
-        header("Location: Login.php");
-    }else{
-        $_SESSION['TimeSession'] = time();
+        header("Location: Login");
     }
 ?>
 
@@ -20,51 +17,51 @@
     <title>School</title>
     
     <!-- Jquery Core Js -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="View/plugins/jquery/jquery.min.js"></script>
     
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
-    <link href="css/GoogleFontsFamilyIcon.css" rel="stylesheet" type="text/css">
+    <link href="View/css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
+    <link href="View/css/GoogleFontsFamilyIcon.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="View/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="View/plugins/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="View/plugins/animate-css/animate.css" rel="stylesheet" />
     
     <!-- JQuery DataTable Css -->
     <!--link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet"-->
-    <link rel="stylesheet" type="text/css" media="screen"href="DataTable/datatables.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="DataTable/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="DataTable/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="DataTable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap4.min.css">
 
     <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="View/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
     <!-- Bootstrap DatePicker Css -->
-    <link href="plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="View/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
 
     <!-- Wait Me Css -->
-    <link href="plugins/waitme/waitMe.css" rel="stylesheet" />
+    <link href="View/plugins/waitme/waitMe.css" rel="stylesheet" />
 
     <!-- Bootstrap Select Css -->
-    <link href="plugins/Select2/select2.min.css" rel="stylesheet"/>
+    <link href="View/plugins/Select2/select2.min.css" rel="stylesheet"/>
 
     <!-- Custom Css -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="View/css/style.css" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="css/themes/all-themes.css" rel="stylesheet" />
+    <link href="View/css/themes/all-themes.css" rel="stylesheet" />
 
     <!--sweetalert-->
-    <link href="sweetalert/sweetalert.min.css" rel="stylesheet" />
+    <link href="View/sweetalert/sweetalert.min.css" rel="stylesheet" />
     
     
 </head>

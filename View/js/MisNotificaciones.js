@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAlerta").DataTable({
-        "ajax":"../Ajax/AjaxAlerta.php?a=milista",
+        "ajax":"Ajax/AjaxAlerta.php?a=milista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,

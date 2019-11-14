@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableMateria").DataTable({
-        "ajax":"../Ajax/AjaxMateria.php?a=lista",
+        "ajax":"Ajax/AjaxMateria.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -52,7 +52,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ADMIN.append("Descripcion", Descripcion); 
         
         $.ajax({
-            url:"../Ajax/AjaxMateria.php?a=crear",
+            url:"Ajax/AjaxMateria.php?a=crear",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -91,7 +91,7 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxMateria.php?a=eliminar",
+                url:"Ajax/AjaxMateria.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ADMIN,
                 cache:false,
@@ -117,7 +117,7 @@ $(".dataTableMateria").on("click",".btnUpdate",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxMateria.php?a=buscar",
+        url:"Ajax/AjaxMateria.php?a=buscar",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -156,7 +156,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ADMIN.append("Descripcion", Descripcion); 
        
         $.ajax({
-            url:"../Ajax/AjaxMateria.php?a=editar",
+            url:"Ajax/AjaxMateria.php?a=editar",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,

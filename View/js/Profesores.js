@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableProfesor").DataTable({
-        "ajax":"../Ajax/AjaxProfesor.php?a=listado",
+        "ajax":"Ajax/AjaxProfesor.php?a=listado",
         "deferRender":true,
         "retrieve":true,
         "processing":true,

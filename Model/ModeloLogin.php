@@ -26,6 +26,7 @@ require_once "Conexion.php";
                     $_SESSION['UserApellido'] = $apellidoDB;
                     $_SESSION['UserCorreo'] = $correoDB;
                     $_SESSION['UserFoto'] = $fotoDB;
+                    $_SESSION['TimeSession'] = time(); 
                     return true;
                 }else{
                     return "La contraseña ingresada es Incorrecta";

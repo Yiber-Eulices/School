@@ -24,6 +24,10 @@
             $objLISTM = ModeloCalificacion::ListarCalificacionAcudiente();
             return $objLISTM;
         }
+        public static function CtrlListarBoletin($id,$periodo){
+            $objLISTM = ModeloCalificacion::ListarCalificacionBoletin($id,$periodo);
+            return $objLISTM;
+        }
         public static function CtrlBuscar($id){
             $objBUSCM = ModeloCalificacion::BuscarCalificacion($id);
             return $objBUSCM;

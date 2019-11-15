@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxAcudienteEstudiante.php?a=listaAcudienteHijo",
+        "ajax":"Ajax/AjaxAcudienteEstudiante.php?a=listaAcudienteHijo",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=sesion",
+            url:"Ajax/AjaxEstudiante.php?a=sesion",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -43,7 +43,26 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "CalificacionHijo.php";
+                    window.location = "Materia";
+                }	
+            }
+        });        
+    });
+    $(".dataTableAcudienteEstudiante").on("click",".btnBoletin",function(){
+        var id = $(this).attr("IdEstudiante");
+        var oBJEC_ADMIN = new FormData();
+        oBJEC_ADMIN.append("Id", id); 
+        $.ajax({
+            url:"Ajax/AjaxEstudiante.php?a=sesion",
+            method:"POST",
+            data:oBJEC_ADMIN,
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success : function(respuesta){
+                if(respuesta = true){
+                    window.location = "Boletin";
                 }	
             }
         });        

@@ -128,8 +128,8 @@
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Fecha de Nacimiento</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
+                    <div class="form-line" id="bs_datepicker_container">
+                        <input type="text" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
                        
                     </div>
                     <div class="help-info">Fecha de Nacimiento</div>
@@ -242,8 +242,8 @@
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Fecha de Nacimiento</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" >
+                    <div class="form-line" id="bs_datepicker_container">
+                        <input type="text" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" >
                     </div>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>

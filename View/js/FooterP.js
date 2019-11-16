@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url:"../Ajax/AjaxInformacion.php?a=lista",
+        url:"Ajax/AjaxInformacion.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){          
@@ -11,6 +11,7 @@ $(document).ready(function(){
                     $("#CorreoF").empty();
                     $("#DireccionF").html(respuesta.data[i][2]);
                     $("#TelefonoF").html(respuesta.data[i][4]);
+                    $("#telefonomenu").html(respuesta.data[i][4]);
                     $("#CorreoF").html(respuesta.data[i][3]);
                 }                
             }

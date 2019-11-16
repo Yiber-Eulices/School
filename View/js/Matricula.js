@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     $(".dataTableMatricula").DataTable({
-        "ajax":"../Ajax/AjaxMatricula.php?a=lista",
+        "ajax":"Ajax/AjaxMatricula.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -31,7 +31,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxGrado.php?a=lista",
+        url:"Ajax/AjaxGrado.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -52,7 +52,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxEstudiante.php?a=lista",
+        url:"Ajax/AjaxEstudiante.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -105,7 +105,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_Matricula.append("Estudiante", Estudiante); 
     
         $.ajax({
-            url:"../Ajax/AjaxMatricula.php?a=crear",
+            url:"Ajax/AjaxMatricula.php?a=crear",
             method:"POST",
             data:oBJEC_Matricula,
             cache:false,
@@ -144,7 +144,7 @@ $(".dataTableMatricula").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxMatricula.php?a=eliminar",
+                url:"Ajax/AjaxMatricula.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_Matricula,
                 cache:false,
@@ -170,7 +170,7 @@ $(".dataTableMatricula").on("click",".btnUpdate",function(){
     var oBJEC_Matricula = new FormData();
     oBJEC_Matricula.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxMatricula.php?a=buscar",
+        url:"Ajax/AjaxMatricula.php?a=buscar",
         method:"POST",
         data:oBJEC_Matricula,
         cache:false,
@@ -219,7 +219,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_Matricula.append("Estudiante", Estudiante); 
     
         $.ajax({
-            url:"../Ajax/AjaxMatricula.php?a=editar",
+            url:"Ajax/AjaxMatricula.php?a=editar",
             method:"POST",
             data:oBJEC_Matricula,
             cache:false,

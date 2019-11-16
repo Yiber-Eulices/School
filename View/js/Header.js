@@ -2,7 +2,7 @@ $(document).ready(function(){
     var code = "";
     var count = 0;
     $.ajax({
-        url:"../Ajax/AjaxAlerta.php?a=milista",
+        url:"Ajax/AjaxAlerta.php?a=milista",
         method:"GET",
         dataType:"json",
         success:function(respuesta){
@@ -38,7 +38,7 @@ $(document).ready(function(){
         oBJEC_ALERT.append("Estado", Estado);
     
         $.ajax({
-            url:"../Ajax/AjaxAlerta.php?a=editarEstado",
+            url:"Ajax/AjaxAlerta.php?a=editarEstado",
             method:"POST",
             data:oBJEC_ALERT,
             cache:false,
@@ -48,4 +48,36 @@ $(document).ready(function(){
             success:function(respuesta){}
         });
     });
+    $(document).click(function(){
+        $.ajax({
+            url:"View/EveryBody/LogoutTime.php?a=reload",
+            method:"GET",
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success:function(respuesta){
+                if(respuesta){
+                    window.location = "Login"; 
+                }
+            }
+        });
+    });
+    function verifLogin(){
+        $.ajax({
+            url:"View/EveryBody/LogoutTime.php?a=verif",
+            method:"GET",
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success:function(respuesta){
+                if(respuesta){
+                    window.location = "Login"; 
+                }
+            }
+        });
+    }
+    setInterval(verifLogin, 3000);
+   
 });

@@ -5,7 +5,7 @@ $(".btnRecuperar").click(function(){
     objeto.append("Rol",rol);
     objeto.append("User",user);
     $.ajax({
-        url:"../Ajax/AjaxLogin.php?a=recuperar",
+        url:"Ajax/AjaxLogin.php?a=recuperar",
         method:"POST",
         data:objeto,
         cache:false,
@@ -16,7 +16,7 @@ $(".btnRecuperar").click(function(){
             if(respuesta==true){
                 var m = "Por favor revise su correo Electronico";
                 ValidateCreateUpdate(m);
-                window.location = "Login.php"; 
+                window.location = "Login"; 
             }else{
                 var m = respuesta;
                 ValidateCreateUpdate(m);

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableCurso").DataTable({
-        "ajax":"../Ajax/AjaxEstudiante.php?a=listamimateriaAcudiente",
+        "ajax":"Ajax/AjaxEstudiante.php?a=listamimateriaAcudiente",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var oBJEC_ADMIN = new FormData();
         oBJEC_ADMIN.append("Id", id); 
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=sessionCursoEstudiante",
+            url:"Ajax/AjaxEstudiante.php?a=sessionCursoEstudiante",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -43,7 +43,7 @@ $(document).ready(function(){
             dataType:"json",
             success : function(respuesta){
                 if(respuesta = true){
-                    window.location = "CalificacionHijoMateria.php";
+                    window.location = "Calificacion";
                 }	
             }
         });        

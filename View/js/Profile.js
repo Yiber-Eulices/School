@@ -18,7 +18,7 @@ $(document).ready(function(){
         } 
     });
     $.ajax({
-        url:"../Ajax/AjaxLogin.php?a=profile",
+        url:"Ajax/AjaxLogin.php?a=profile",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -118,7 +118,7 @@ $(document).ready(function(){
             oBJEC_ADMIN.append("Telefono", Telefono); 
         
             $.ajax({
-                url:"../Ajax/AjaxLogin.php?a=edit",
+                url:"Ajax/AjaxLogin.php?a=edit",
                 method:"POST",
                 data:oBJEC_ADMIN,
                 cache:false,
@@ -145,7 +145,8 @@ $(document).ready(function(){
             width: 320,
             height: 240,
             image_format: 'jpeg',
-            jpeg_quality: 90
+            jpeg_quality: 90,
+            force_flash: true
         });
         Webcam.attach( '#my_camera' );
         $("#ModalCamara").modal();

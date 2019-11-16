@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAlerta").DataTable({
-        "ajax":"../Ajax/AjaxAlerta.php?a=lista",
+        "ajax":"Ajax/AjaxAlerta.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -64,17 +64,13 @@ $(".formCreate").on("click",".botonCreate",function(){
         var m = "Por favor ingrese el Mensaje.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtEstado').val().length == 0){
-        var m = "Por favor seleccione el Estado de el Mensaje.";
-        ValidateCreateUpdate(m);
-        return false;
     }else{
         var RolPersona = $('#TxtRolPersona').val();
         var IdPersona = $('#TxtIdPersona').val();
         var Fecha = $('#TxtFecha').val();
         var Titulo = $('#TxtTitulo').val();
         var Mensaje = $('#TxtMensaje').val();
-        var Estado = $('#TxtEstado').val();
+        var Estado = "Sin Ver";
         var oBJEC_ALERT = new FormData();
         oBJEC_ALERT.append("RolPersona", RolPersona); 
         oBJEC_ALERT.append("IdPersona", IdPersona); 
@@ -84,7 +80,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ALERT.append("Estado", Estado);
     
         $.ajax({
-            url:"../Ajax/AjaxAlerta.php?a=crear",
+            url:"Ajax/AjaxAlerta.php?a=crear",
             method:"POST",
             data:oBJEC_ALERT,
             cache:false,
@@ -123,7 +119,7 @@ $(".dataTableAlerta").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxAlerta.php?a=eliminar",
+                url:"Ajax/AjaxAlerta.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ALERT,
                 cache:false,
@@ -149,7 +145,7 @@ $(".dataTableAlerta").on("click",".btnUpdate",function(){
     var oBJEC_ALERT = new FormData();
     oBJEC_ALERT.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxAlerta.php?a=buscar",
+        url:"Ajax/AjaxAlerta.php?a=buscar",
         method:"POST",
         data:oBJEC_ALERT,
         cache:false,
@@ -217,7 +213,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ALERT.append("Estado", Estado);
     
         $.ajax({
-            url:"../Ajax/AjaxAlerta.php?a=editar",
+            url:"Ajax/AjaxAlerta.php?a=editar",
             method:"POST",
             data:oBJEC_ALERT,
             cache:false,
@@ -244,7 +240,7 @@ $(".formEdit").on("click",".botonEdit",function(){
 function SearchPersona(){
     if($("#TxtRolPersona").val().length>0){
         $.ajax({
-            url:"../Ajax/Ajax"+$("#TxtRolPersona").val()+".php?a=lista",
+            url:"Ajax/Ajax"+$("#TxtRolPersona").val()+".php?a=lista",
             method:"GET",
             dataType: "JSON",
             success : function(respuesta){

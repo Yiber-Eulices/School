@@ -16,7 +16,7 @@
 						<!-- Logo -->
 						<div class="logo_container">
 							<div class="logo">
-								<img src="images/logo.png" alt="">
+								<img src="View/images/logo.png" alt="">
 								<span>School Admin</span>
 							</div>
 						</div>
@@ -25,12 +25,12 @@
 					<!-- Footer Column - Menu -->
 
 					<div class="col-lg-3 footer_col">
-						<div class="footer_column_title">Menu</div>
+						<div class="footer_column_title">Men&uacute;</div>
 						<div class="footer_column_content">
 							<ul>
-								<li class="footer_list_item"><a href="Index.php">Inicio</a></li>
-								<li class="footer_list_item"><a href="contact.php">Contactos</a></li>
-								<li class="footer_list_item"><a href="Login.php">Iniciar sesion</a></li>
+								<li class="footer_list_item"><a href="/School/">Inicio</a></li>
+								<li class="footer_list_item"><a href="Contacto">Contactos</a></li>
+								<li class="footer_list_item"><a href="Login">Iniciar sesi&oacute;n</a></li>
 							</ul>
 						</div>
 					</div>
@@ -46,19 +46,19 @@
 							<ul>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="View/images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									<b id = "DireccionF">Sogamoso-Boyaca, Cr 56 Nº 3-13</b>
+									<b id = "DireccionF">Sogamoso-Boyac&aacute;, Cr 56 Nº 3-13</b>
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="View/images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
-									57+ <b id = "TelefonoF">3203289787</b>
+									+57 <b id = "TelefonoF">3203289787</b>
 								</li>
 								<li class="footer_contact_item">
 									<div class="footer_contact_icon">
-										<img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+										<img src="View/images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
 									</div>
 									<b id = "CorreoF">SchoolAdmin@Gmail.com</b>
 								</li>
@@ -77,31 +77,22 @@
 						SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script> <i class="fa fa-heart" aria-hidden="true"></i> by <a href="Index.php" target="_blank">School Admin</a>
 					</span>
 				</div>
-				<div class="footer_social ml-sm-auto">
-					<ul class="menu_social">
-						<li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-					</ul>
-				</div>
 			</div>
 
 		</div>
 		
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="styles/bootstrap4/popper.js"></script>
-	<script src="styles/bootstrap4/bootstrap.min.js"></script>
-	<script src="plugins/greensock/TweenMax.min.js"></script>
-	<script src="plugins/greensock/TimelineMax.min.js"></script>
-	<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-	<script src="plugins/greensock/animation.gsap.min.js"></script>
-	<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-	<script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
-	<script src="plugins/easing/easing.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/FooterP.js"></script>
+	<script src="View/js/jquery-3.2.1.min.js"></script>
+	<script src="View/styles/bootstrap4/popper.js"></script>
+	<script src="View/styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="View/plugins/greensock/TweenMax.min.js"></script>
+	<script src="View/plugins/greensock/TimelineMax.min.js"></script>
+	<script src="View/plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="View/plugins/greensock/animation.gsap.min.js"></script>
+	<script src="View/plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="View/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="View/plugins/scrollTo/jquery.scrollTo.min.js"></script>
+	<script src="View/plugins/easing/easing.js"></script>
+	<script src="View/js/custom.js"></script>
+	<script src="View/js/FooterP.js"></script>
     </footer>
     

@@ -8,7 +8,7 @@ $(document).ready(function(){
         objeto.append("User",user);
         objeto.append("Paswword",password);
         $.ajax({
-            url:"../Ajax/AjaxLogin.php?a=login",
+            url:"Ajax/AjaxLogin.php?a=login",
             method:"POST",
             data:objeto,
             cache:false,
@@ -17,7 +17,7 @@ $(document).ready(function(){
             dataType: "json",
             success : function(respuesta){
                 if(respuesta==true){
-                    window.location = "Home.php"; 
+                    window.location = "Home"; 
                 }else{
                     var m = respuesta;
                     ValidateCreateUpdate(m);

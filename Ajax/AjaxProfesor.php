@@ -104,6 +104,35 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarMisCursosDirector(){
+            $objPROF = ControladorProfesor::CtrlListarMiCursoDirector();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objPROF) >= 1){
+                        for ($i=0; $i < count($objPROF); $i++) {
+                            $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdCurso = '".$objPROF[$i]["IdCurso"]."'><i class='material-icons'>school</i><span>Estudiantes</span></button>";
+                            $oBJEC_JSON .= '[
+                                "'.$objPROF[$i]["IdCurso"].'",
+                                "'.$objPROF[$i]["Nivel"].'",
+                                "'.$objPROF[$i]["NombreCurso"].'",
+                                "'.$btnEstudiante.'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxListado(){
           $objPROF = ControladorProfesor::CtrlListar();
           $oBJEC_JSON = '{
@@ -254,6 +283,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'listaCursos'){
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> AjxListarMisCursos();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaCursosDirector'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> AjxListarMisCursosDirector();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'sessionCursoEstudiante'){
         $oBJEC_AJAX = new AjaxProfesor();

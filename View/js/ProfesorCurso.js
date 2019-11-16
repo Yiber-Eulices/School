@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableProfesorCurso").DataTable({
-        "ajax":"../Ajax/AjaxProfesorCurso.php?a=listaProfesor",
+        "ajax":"Ajax/AjaxProfesorCurso.php?a=listaProfesor",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxMateria.php?a=lista",
+        url:"Ajax/AjaxMateria.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -51,7 +51,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxCurso.php?a=lista",
+        url:"Ajax/AjaxCurso.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -97,7 +97,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_PROFCU.append("Curso", Curso);
         oBJEC_PROFCU.append("Materia", Materia);    
         $.ajax({
-            url:"../Ajax/AjaxProfesorCurso.php?a=crear",
+            url:"Ajax/AjaxProfesorCurso.php?a=crear",
             method:"POST",
             data:oBJEC_PROFCU,
             cache:false,
@@ -136,7 +136,7 @@ $(".dataTableProfesorCurso").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxProfesorCurso.php?a=eliminar",
+                url:"Ajax/AjaxProfesorCurso.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_PROFCU,
                 cache:false,
@@ -162,7 +162,7 @@ $(".dataTableProfesorCurso").on("click",".btnUpdate",function(){
     var oBJEC_PROFCU = new FormData();
     oBJEC_PROFCU.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxProfesorCurso.php?a=buscar",
+        url:"Ajax/AjaxProfesorCurso.php?a=buscar",
         method:"POST",
         data:oBJEC_PROFCU,
         cache:false,
@@ -203,7 +203,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_PROFCU.append("Curso", Curso);
         oBJEC_PROFCU.append("Materia", Materia); 
         $.ajax({
-            url:"../Ajax/AjaxProfesorCurso.php?a=editar",
+            url:"Ajax/AjaxProfesorCurso.php?a=editar",
             method:"POST",
             data:oBJEC_PROFCU,
             cache:false,

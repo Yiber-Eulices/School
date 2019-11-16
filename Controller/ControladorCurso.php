@@ -23,8 +23,10 @@
         public static function CtrlSesion($id){
             session_start();
             $objBUSCM = ModeloCurso::BuscarCurso($id);
+            $objGRADO = ControladorGrado::CtrlBuscar($objBUSCM["GradoIdGrado"]);
             $_SESSION['CursoId'] = $objBUSCM["IdCurso"];
             $_SESSION['CursoNombre'] = $objBUSCM["Nombre"];
+            $_SESSION['GradoNombre'] = $objGRADO["Nivel"];
             return true;
         }
     }

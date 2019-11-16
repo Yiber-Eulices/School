@@ -1,2 +1,5 @@
-ErrorDocument 404 http://localhost/school/View/Error404.php
-ErrorDocument 500 http://localhost/school/View/Error500.php
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^([-a-zA-Z0-9]+)$ index.php?url=$1

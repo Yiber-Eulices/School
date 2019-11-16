@@ -1,36 +1,36 @@
 <!-- Jquery Core Js -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="View/plugins/jquery/jquery.min.js"></script>
 
 <!-- Bootstrap Core Js -->
-<script src="plugins/bootstrap/js/bootstrap.js"></script>
+<script src="View/plugins/bootstrap/js/bootstrap.js"></script>
 
-<!-- Select2 Plugin Js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
+<!-- Select Plugin Js -->
+<script src="View/plugins/Select2/select2.min.js"></script>
 
 <!-- Slimscroll Plugin Js -->
-<script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+<script src="View/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
 <!-- Waves Effect Plugin Js -->
-<script src="plugins/node-waves/waves.js"></script>
+<script src="View/plugins/node-waves/waves.js"></script>
 
 <!-- Autosize Plugin Js -->
-<script src="plugins/autosize/autosize.js"></script>
+<script src="View/plugins/autosize/autosize.js"></script>
 
 <!-- Moment Plugin Js -->
-<script src="plugins/momentjs/moment.js"></script>
+<script src="View/plugins/momentjs/moment.js"></script>
 
 <!-- Bootstrap Material Datetime Picker Plugin Js -->
-<script src="plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+<script src="View/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
 <!-- Bootstrap Datepicker Plugin Js -->
-<script src="plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="View/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <!-- Custom Js -->
-<script src="js/admin.js"></script>
-<script src="js/pages/forms/basic-form-elements.js"></script>
+<script src="View/js/admin.js"></script>
+<script src="View/js/pages/forms/basic-form-elements.js"></script>
 
 <!-- Demo Js -->
-<script src="js/demo.js"></script>
+<script src="View/js/demo.js"></script>
 
 <!-- Jquery DataTable Plugin Js -->
 <!--script src="plugins/jquery-datatable/jquery.dataTables.js"></script>
@@ -42,21 +42,21 @@
 <script src="plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
 <script src="plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 <script src="plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script-->
-<script src="DataTable/datatables.min.js"></script>
-<script src="DataTable/responsive.bootstrap.min.js"></script>
-<script src="DataTable/dataTables.responsive.min.js"></script>
-<script src="DataTable/responsive.bootstrap4.min.js"></script>
+<script src="View/DataTable/datatables.min.js"></script>
+<script src="View/DataTable/responsive.bootstrap.min.js"></script>
+<script src="View/DataTable/dataTables.responsive.min.js"></script>
+<script src="View/DataTable/responsive.bootstrap4.min.js"></script>
 
 <!--script src="js/pages/tables/jquery-datatable.js"></script-->
 
 <!--sweetalert-->
-<script src="sweetalert/sweetalert.min.js"></script>
-<script src="sweetalert/mensajesweetalert.js"></script>
+<script src="View/sweetalert/sweetalert.min.js"></script>
+<script src="View/sweetalert/mensajesweetalert.js"></script>
 
-<script src="js/Header.js"></script>
+<script src="View/js/Header.js"></script>
 
 <!--WebCam-->
-<script type="text/javascript" src="plugins/webcam/webcam.min.js"></script>
+<script type="text/javascript" src="View/plugins/webcam/webcam.min.js"></script>
 
 <!-- Smartsupp Live Chat script -->
 <script type="text/javascript">

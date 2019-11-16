@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableProfesor").DataTable({
-        "ajax":"../Ajax/AjaxProfesor.php?a=lista",
+        "ajax":"Ajax/AjaxProfesor.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -112,7 +112,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_PROF.append("Telefono", Telefono);
         
         $.ajax({
-            url:"../Ajax/AjaxProfesor.php?a=crear",
+            url:"Ajax/AjaxProfesor.php?a=crear",
             method:"POST",
             data:oBJEC_PROF,
             cache:false,
@@ -151,7 +151,7 @@ $(".dataTableProfesor").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxProfesor.php?a=eliminar",
+                url:"Ajax/AjaxProfesor.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_PROF,
                 cache:false,
@@ -177,7 +177,7 @@ $(".dataTableProfesor").on("click",".btnUpdate",function(){
     var oBJEC_PROF = new FormData();
     oBJEC_PROF.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxProfesor.php?a=buscar",
+        url:"Ajax/AjaxProfesor.php?a=buscar",
         method:"POST",
         data:oBJEC_PROF,
         cache:false,
@@ -281,7 +281,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_PROF.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxProfesor.php?a=editar",
+            url:"Ajax/AjaxProfesor.php?a=editar",
             method:"POST",
             data:oBJEC_PROF,
             cache:false,
@@ -309,7 +309,7 @@ $(".dataTableProfesor").on("click",".btnCurso",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxProfesor.php?a=sesion",
+        url:"Ajax/AjaxProfesor.php?a=sesion",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -318,7 +318,7 @@ $(".dataTableProfesor").on("click",".btnCurso",function(){
         dataType:"json",
         success : function(respuesta){
             if(respuesta = true){
-                window.location = "ProfesorCurso.php";
+                window.location = "ProfesorCurso";
             }	
         }
     });        

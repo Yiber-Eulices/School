@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableEstudiante").DataTable({
-        "ajax":"../Ajax/AjaxEstudiante.php?a=lista",
+        "ajax":"Ajax/AjaxEstudiante.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -30,7 +30,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"../Ajax/AjaxCurso.php?a=lista",
+        url:"Ajax/AjaxCurso.php?a=lista",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -139,7 +139,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ADMIN.append("Curso", Curso); 
     
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=crear",
+            url:"Ajax/AjaxEstudiante.php?a=crear",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -178,7 +178,7 @@ $(".dataTableEstudiante").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxEstudiante.php?a=eliminar",
+                url:"Ajax/AjaxEstudiante.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ADMIN,
                 cache:false,
@@ -204,7 +204,7 @@ $(".dataTableEstudiante").on("click",".btnUpdate",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxEstudiante.php?a=buscar",
+        url:"Ajax/AjaxEstudiante.php?a=buscar",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -316,7 +316,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ADMIN.append("Curso", Curso); 
     
         $.ajax({
-            url:"../Ajax/AjaxEstudiante.php?a=editar",
+            url:"Ajax/AjaxEstudiante.php?a=editar",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -344,7 +344,7 @@ $(".dataTableEstudiante").on("click",".btnAcudiente",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxEstudiante.php?a=sesion",
+        url:"Ajax/AjaxEstudiante.php?a=sesion",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -353,7 +353,7 @@ $(".dataTableEstudiante").on("click",".btnAcudiente",function(){
         dataType:"json",
         success : function(respuesta){
             if(respuesta = true){
-                window.location = "EstudianteAcudiente.php";
+                window.location = "EstudianteAcudiente";
             }	
         }
     });        

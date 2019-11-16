@@ -304,6 +304,7 @@
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['UserId']){
                                 $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-primary waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>book</i><span>Calificaciones</span></button></div>";
+                                $btnBoletin = "<button type='button' style='width: auto;' class='btn btnBoletin btn-success waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
                                 $oBJEC_JSON .= '[
                                     "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
@@ -314,7 +315,7 @@
                                     "'.$objAcudienteEstudiante[$i]["DocumentoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoEstudiante"].'",
-                                    "'.$btnCalificacion.'"
+                                    "'.$btnCalificacion.$btnBoletin.'"
                                 ],';
                                 $count++;
                             }

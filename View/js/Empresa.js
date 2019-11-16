@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableEmpresa").DataTable({
-        "ajax":"../Ajax/AjaxEmpresa.php?a=lista",
+        "ajax":"Ajax/AjaxEmpresa.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -56,7 +56,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ADMIN.append("Somos", Somos); 
         
         $.ajax({
-            url:"../Ajax/AjaxEmpresa.php?a=crear",
+            url:"Ajax/AjaxEmpresa.php?a=crear",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -95,7 +95,7 @@ $(".dataTableEmpresa").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxEmpresa.php?a=eliminar",
+                url:"Ajax/AjaxEmpresa.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ADMIN,
                 cache:false,
@@ -121,7 +121,7 @@ $(".dataTableEmpresa").on("click",".btnUpdate",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxEmpresa.php?a=buscar",
+        url:"Ajax/AjaxEmpresa.php?a=buscar",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -163,7 +163,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ADMIN.append("Somos", Somos); 
        
         $.ajax({
-            url:"../Ajax/AjaxEmpresa.php?a=editar",
+            url:"Ajax/AjaxEmpresa.php?a=editar",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,

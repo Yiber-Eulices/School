@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAdministrador").DataTable({
-        "ajax":"../Ajax/AjaxAdministrador.php?a=lista",
+        "ajax":"Ajax/AjaxAdministrador.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -112,7 +112,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ADMIN.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxAdministrador.php?a=crear",
+            url:"Ajax/AjaxAdministrador.php?a=crear",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,
@@ -151,7 +151,7 @@ $(".dataTableAdministrador").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxAdministrador.php?a=eliminar",
+                url:"Ajax/AjaxAdministrador.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ADMIN,
                 cache:false,
@@ -177,7 +177,7 @@ $(".dataTableAdministrador").on("click",".btnUpdate",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxAdministrador.php?a=buscar",
+        url:"Ajax/AjaxAdministrador.php?a=buscar",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -281,7 +281,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ADMIN.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxAdministrador.php?a=editar",
+            url:"Ajax/AjaxAdministrador.php?a=editar",
             method:"POST",
             data:oBJEC_ADMIN,
             cache:false,

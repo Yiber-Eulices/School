@@ -78,6 +78,77 @@
                 echo $oBJEC_JSON;
 
         }
+        public function AjxListarCursoDirector(){
+            session_start();
+            $count = 0;
+            $objADMIN = ControladorEstudiante::CtrlListar();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            if($objADMIN[$i]["CursoIdCurso"]==$_SESSION['CursoId']){
+                                $btnBoletin = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnBoletin btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
+                                $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
+
+                                $oBJEC_JSON .= '[
+                                    "'.$objADMIN[$i]["IdEstudiante"].'",
+                                    "'.$img.'",
+                                    "'.$objADMIN[$i]["Nombre"].'",
+                                    "'.$objADMIN[$i]["Apellido"].'",
+                                    "'.$objADMIN[$i]["TipoDocumento"].'",
+                                    "'.$objADMIN[$i]["Documento"].'",
+                                    "'.$objADMIN[$i]["FechaNacimiento"].'",
+                                    "'.$objADMIN[$i]["Rh"].'",
+                                    "'.$objADMIN[$i]["Correo"].'",
+                                    "'.$objADMIN[$i]["Telefono"].'",
+                                    "'.$objADMIN[$i]["Nivel"].'",
+                                    "'.$objADMIN[$i]["NombreCurso"].'",
+                                    "'.$btnBoletin.'"
+                                ],';
+                                $count++;
+                            }
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    if($count<=0 && count($objADMIN)>0){
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+
+                echo $oBJEC_JSON;
+
+        }
         public function AjxListarMimateria(){
             $objADMIN = ControladorEstudiante::CtrlListarMisMaterias();
             $oBJEC_JSON = '{
@@ -405,6 +476,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> AjxListar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaCursoDirector'){
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> AjxListarCursoDirector();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'listamimateria'){
         $oBJEC_AJAX = new AjaxEstudiante();

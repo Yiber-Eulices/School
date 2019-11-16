@@ -1,6 +1,8 @@
 <?php
     require_once "../Controller/ControladorCurso.php";
     require_once "../Model/ModeloCurso.php";
+    require_once "../Controller/ControladorGrado.php";
+    require_once "../Model/ModeloGrado.php";
     class AjaxCurso{
         public $id;
         public $nombre;

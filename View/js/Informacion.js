@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableInformacion").DataTable({
-        "ajax":"../Ajax/AjaxInformacion.php?a=lista",
+        "ajax":"Ajax/AjaxInformacion.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -62,7 +62,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_INFO.append("Telefono", Telefono); 
         
         $.ajax({
-            url:"../Ajax/AjaxInformacion.php?a=crear",
+            url:"Ajax/AjaxInformacion.php?a=crear",
             method:"POST",
             data:oBJEC_INFO,
             cache:false,
@@ -101,7 +101,7 @@ $(".dataTableInformacion").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxInformacion.php?a=eliminar",
+                url:"Ajax/AjaxInformacion.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_INFO,
                 cache:false,
@@ -127,7 +127,7 @@ $(".dataTableInformacion").on("click",".btnUpdate",function(){
     var oBJEC_INFO = new FormData();
     oBJEC_INFO.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxInformacion.php?a=buscar",
+        url:"Ajax/AjaxInformacion.php?a=buscar",
         method:"POST",
         data:oBJEC_INFO,
         cache:false,
@@ -176,7 +176,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_INFO.append("Telefono", Telefono); 
        
         $.ajax({
-            url:"../Ajax/AjaxInformacion.php?a=editar",
+            url:"Ajax/AjaxInformacion.php?a=editar",
             method:"POST",
             data:oBJEC_INFO,
             cache:false,

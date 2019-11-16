@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableAcudiente").DataTable({
-        "ajax":"../Ajax/AjaxAcudiente.php?a=lista",
+        "ajax":"Ajax/AjaxAcudiente.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -112,7 +112,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_ACUDI.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxAcudiente.php?a=crear",
+            url:"Ajax/AjaxAcudiente.php?a=crear",
             method:"POST",
             data:oBJEC_ACUDI,
             cache:false,
@@ -151,7 +151,7 @@ $(".dataTableAcudiente").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxAcudiente.php?a=eliminar",
+                url:"Ajax/AjaxAcudiente.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_ACUDI,
                 cache:false,
@@ -177,7 +177,7 @@ $(".dataTableAcudiente").on("click",".btnUpdate",function(){
     var oBJEC_ACUDI = new FormData();
     oBJEC_ACUDI.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxAcudiente.php?a=buscar",
+        url:"Ajax/AjaxAcudiente.php?a=buscar",
         method:"POST",
         data:oBJEC_ACUDI,
         cache:false,
@@ -288,7 +288,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_ACUDI.append("Telefono", Telefono); 
     
         $.ajax({
-            url:"../Ajax/AjaxAcudiente.php?a=editar",
+            url:"Ajax/AjaxAcudiente.php?a=editar",
             method:"POST",
             data:oBJEC_ACUDI,
             cache:false,
@@ -316,7 +316,7 @@ $(".dataTableAcudiente").on("click",".btnEstudiante",function(){
     var oBJEC_ADMIN = new FormData();
     oBJEC_ADMIN.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxAcudiente.php?a=sesion",
+        url:"Ajax/AjaxAcudiente.php?a=sesion",
         method:"POST",
         data:oBJEC_ADMIN,
         cache:false,
@@ -325,7 +325,7 @@ $(".dataTableAcudiente").on("click",".btnEstudiante",function(){
         dataType:"json",
         success : function(respuesta){
             if(respuesta = true){
-                window.location = "AcudienteEstudiante.php";
+                window.location = "AcudienteEstudiante";
             }	
         }
     });        

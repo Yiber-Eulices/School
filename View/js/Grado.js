@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableGrado").DataTable({
-        "ajax":"../Ajax/AjaxGrado.php?a=lista",
+        "ajax":"Ajax/AjaxGrado.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -46,7 +46,7 @@ $(".formCreate").on("click",".botonCreate",function(){
         oBJEC_GRADO.append("Nivel", Nivel); 
     
         $.ajax({
-            url:"../Ajax/AjaxGrado.php?a=crear",
+            url:"Ajax/AjaxGrado.php?a=crear",
             method:"POST",
             data:oBJEC_GRADO,
             cache:false,
@@ -85,7 +85,7 @@ $(".dataTableGrado").on("click",".btnDelete",function(){
     }).then((result) => {
         if (result.value) {
             $.ajax({
-                url:"../Ajax/AjaxGrado.php?a=eliminar",
+                url:"Ajax/AjaxGrado.php?a=eliminar",
                 method:"POST",
                 data:oBJEC_GRADO,
                 cache:false,
@@ -111,7 +111,7 @@ $(".dataTableGrado").on("click",".btnUpdate",function(){
     var oBJEC_GRADO = new FormData();
     oBJEC_GRADO.append("Id", id); 
     $.ajax({
-        url:"../Ajax/AjaxGrado.php?a=buscar",
+        url:"Ajax/AjaxGrado.php?a=buscar",
         method:"POST",
         data:oBJEC_GRADO,
         cache:false,
@@ -141,7 +141,7 @@ $(".formEdit").on("click",".botonEdit",function(){
         oBJEC_GRADO.append("Nivel", Nivel); 
     
         $.ajax({
-            url:"../Ajax/AjaxGrado.php?a=editar",
+            url:"Ajax/AjaxGrado.php?a=editar",
             method:"POST",
             data:oBJEC_GRADO,
             cache:false,

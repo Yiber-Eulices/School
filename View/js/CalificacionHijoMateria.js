@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableCalificacion").DataTable({
-        "ajax":"../Ajax/AjaxCalificacion.php?a=listaacudiente",
+        "ajax":"Ajax/AjaxCalificacion.php?a=listaacudiente",
         "deferRender":true,
         "retrieve":true,
         "processing":true,

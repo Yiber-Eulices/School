@@ -40,8 +40,8 @@ $(document).ready(function(){
             $("#TxtAcudienteEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
             $('#TxtAcudiente').change();
@@ -51,10 +51,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     var fileName = "";
     var ext = "";
    
@@ -96,6 +93,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableAcudienteEstudiante").on("click",".btnDelete",function(){
     var id = $(this).attr("IdAcudienteEstudiante");
@@ -154,7 +152,7 @@ $(".dataTableAcudienteEstudiante").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     var fileName = "";
     var ext = "";
     if($('#TxtEstudianteEdit').val().length == 0){
@@ -197,4 +195,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

@@ -95,12 +95,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Estudiante</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudiante" id = "TxtIdEstudiante">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudiante" id = "TxtIdEstudiante" required>
                             <option value="">-- Por favor seleccione el Estudiante --</option>
                         </select>                       
                     </div>
@@ -109,7 +109,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Materia</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateria" id = "TxtIdMateria">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateria" id = "TxtIdMateria" required>
                             <option value="">-- Por favor seleccione la Materia --</option>
                         </select>
                         
@@ -119,7 +119,7 @@
                 <div class="form-group form-float">
                 <label class="form-label">Periodo</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo" required>
                             <option value="">-- Por favor seleccione el Periodo --</option>
                             <option value="1">1er Periodo</option>
                             <option value="2">2do Periodo</option>
@@ -132,28 +132,28 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaAcumulativa" id="TxtNotaAcumulativa" >
+                        <input type="number" class="form-control" name="TxtNotaAcumulativa" id="TxtNotaAcumulativa" required>
                         <label class="form-label">Nota Acumulativa</label>
                     </div>
                     <div class="help-info">Nota Acumulativa</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaComportamental" id="TxtNotaComportamental" >
+                        <input type="number" class="form-control" name="TxtNotaComportamental" id="TxtNotaComportamental" required>
                         <label class="form-label">Nota Comportamental</label>
                     </div>
                     <div class="help-info">Nota Comportamental</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtEvaluacion" id="TxtEvaluacion" >
+                        <input type="number" class="form-control" name="TxtEvaluacion" id="TxtEvaluacion" required>
                         <label class="form-label">Evaluacion</label>
                     </div>
                     <div class="help-info">Evaluacion</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAutoEvaluacion" id="TxtAutoEvaluacion" >
+                        <input type="number" class="form-control" name="TxtAutoEvaluacion" id="TxtAutoEvaluacion" required>
                         <label class="form-label">Auto Evaluacion</label>
                     </div>
                     <div class="help-info">Auto Evaluacion</div>
@@ -180,12 +180,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Estudiante</label>                                    
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit" required>
                             <option value="">-- Por favor seleccione el Estudiante --</option>
                         </select>
                     </div>
@@ -194,7 +194,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Materia</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit" required>
                             <option value="">-- Por favor seleccione la Materia --</option>
                         </select>
                        
@@ -204,7 +204,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Periodo</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit" required>
                             <option value="">-- Por favor seleccione el Periodo --</option>
                             <option value="1">1er Periodo</option>
                             <option value="2">2do Periodo</option>
@@ -218,35 +218,35 @@
                 <div class="form-group form-float">
                     <label class="form-label">Nota Acumulativa</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaAcumulativaEdit" id="TxtNotaAcumulativaEdit" >
+                        <input type="number" class="form-control" name="TxtNotaAcumulativaEdit" id="TxtNotaAcumulativaEdit" required>
                     </div>
                     <div class="help-info">Nota Acumulativa</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Nota Comportamental</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaComportamentalEdit" id="TxtNotaComportamentalEdit" >
+                        <input type="number" class="form-control" name="TxtNotaComportamentalEdit" id="TxtNotaComportamentalEdit" required>
                     </div>
                     <div class="help-info">Nota Comportamental</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Evaluacion</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtEvaluacionEdit" id="TxtEvaluacionEdit" >
+                        <input type="number" class="form-control" name="TxtEvaluacionEdit" id="TxtEvaluacionEdit" required>
                     </div>
                     <div class="help-info">Evaluacion</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Auto Evaluacion</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAutoEvaluacionEdit" id="TxtAutoEvaluacionEdit" >
+                        <input type="number" class="form-control" name="TxtAutoEvaluacionEdit" id="TxtAutoEvaluacionEdit" required>
                     </div>
                     <div class="help-info">Auto Evaluacion</div>
                 </div>
                 
             </div>
             <div class="modal-footer">
-              <input type="submit" IdCalificacion name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdCalificacion name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit" required>
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>

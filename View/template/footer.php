@@ -16,6 +16,11 @@
 <!-- Autosize Plugin Js -->
 <script src="View/plugins/autosize/autosize.js"></script>
 
+<!-- Jquery Validation Plugin Css -->
+<script src="View/plugins/jquery-validation/jquery.validate.js"></script>
+
+<script src="View/js/pages/forms/form-validation.js"></script>
+
 <!-- Moment Plugin Js -->
 <script src="View/plugins/momentjs/moment.js"></script>
 
@@ -28,6 +33,7 @@
 <!-- Custom Js -->
 <script src="View/js/admin.js"></script>
 <script src="View/js/pages/forms/basic-form-elements.js"></script>
+
 
 <!-- Demo Js -->
 <script src="View/js/demo.js"></script>

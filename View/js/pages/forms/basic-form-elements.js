@@ -28,6 +28,11 @@ $(function () {
         container: '#bs_datepicker_container'
     });
 
+    $('#bs_datepicker_container_edit input').datepicker({
+        autoclose: true,
+        container: '#bs_datepicker_container_edit'
+    });
+
     $('#bs_datepicker_component_container').datepicker({
         autoclose: true,
         container: '#bs_datepicker_component_container'

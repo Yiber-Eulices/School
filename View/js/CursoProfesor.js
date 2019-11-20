@@ -40,8 +40,8 @@ $(document).ready(function(){
             $("#TxtMateriaEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtMateria").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>");
-                    $("#TxtMateriaEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>");
+                    $("#TxtMateria").append("<option value='"+respuesta.data[i][4]+"'>"+respuesta.data[i][1]+"</option>");
+                    $("#TxtMateriaEdit").append("<option value='"+respuesta.data[i][4]+"'>"+respuesta.data[i][1]+"</option>");
                 }                
             }
             $('#TxtMateria').change();
@@ -61,8 +61,8 @@ $(document).ready(function(){
             $("#TxtProfesorEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                    $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtProfesor").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                    $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
                 }                
             }
             $('#TxtProfesorEdit').change();
@@ -72,10 +72,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     if($('#TxtProfesor').val().length == 0){
         var m = "Por favor seleccione el profesor para asignar a curso.";
         ValidateCreateUpdate(m);
@@ -119,6 +116,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableProfesorCurso").on("click",".btnDelete",function(){
     var id = $(this).attr("IdProfesorCurso");
@@ -179,7 +177,7 @@ $(".dataTableProfesorCurso").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     if($('#TxtProfesorEdit').val().length == 0){
         var m = "Por favor seleccione el Profesor para asignar a un curso";
         ValidateCreateUpdate(m);
@@ -224,4 +222,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

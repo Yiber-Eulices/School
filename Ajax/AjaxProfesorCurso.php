@@ -23,12 +23,13 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objPROFCU) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objPROFCU); $i++) {
                             if($objPROFCU[$i]["IdProfesor"]==$_SESSION["ProfesorId"]){
                                 $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdProfesorCurso = '".$objPROFCU[$i]["IdProfesorCurso"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdProfesorCurso = '".$objPROFCU[$i]["IdProfesorCurso"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objPROFCU[$i]["IdProfesorCurso"].'",
+                                    "'.$enum++.'",
                                     "'.$objPROFCU[$i]["Nivel"].'",
                                     "'.$objPROFCU[$i]["Nombre"].'",
                                     "'.$objPROFCU[$i]["NombreMateria"].'",
@@ -69,12 +70,13 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objPROFCU) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objPROFCU); $i++) {
                             if($objPROFCU[$i]["IdCurso"]==$_SESSION["CursoId"]){
                                 $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdProfesorCurso = '".$objPROFCU[$i]["IdProfesorCurso"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdProfesorCurso = '".$objPROFCU[$i]["IdProfesorCurso"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objPROFCU[$i]["IdProfesorCurso"].'",
+                                    "'.$enum++.'",
                                     "'.$objPROFCU[$i]["NombreProfesor"]." ".$objPROFCU[$i]["Apellido"].'",
                                     "'.$objPROFCU[$i]["NombreMateria"].'",
                                     "'.$btnUpdate.$btnDelete.'"

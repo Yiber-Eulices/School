@@ -2,12 +2,12 @@
     session_destroy();
 ?>    
 <!DOCTYPE html>
-<html>
+<html  lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Login</title>
+    <title>School Admin</title>
 
     <!-- Jquery Core Js -->
     <script src="View/plugins/jquery/jquery.min.js"></script>
@@ -42,18 +42,22 @@
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">SCHOOL <b>ADMIN</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <small>
+                <span>
+                    SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script>
+                </span>
+            </small>
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST" onsubmit="return false">
+                <form id="sign_in" method="POST">
                     <div class="msg">Inicie sesión para ingresar</div>
                     <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <select class="form-control show-tick" style ="width:100%"  name = "TxtRol" id = "TxtRol">
+                            <select class="form-control show-tick" style ="width:100%"  name = "TxtRol" id = "TxtRol" required>
                                 <option value="">-- Por favor seleccione su Rol --</option>
                                 <option value="Estudiante">Estudiante</option>
                                 <option value="Profesor">Profesor</option>
@@ -67,7 +71,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name = "TxtUser" id = "TxtUser" placeholder="Email"  autofocus>
+                            <input type="text" class="form-control" name = "TxtUser" id = "TxtUser" placeholder="Email"  autofocus required>
                         </div>
                     </div>
                     <div class="input-group">
@@ -75,7 +79,13 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name = "TxtPassword" id = "TxtPassword" placeholder="Contraseña" >
+                            <input type="password" class="form-control" name = "TxtPassword" id = "TxtPassword" placeholder="Contraseña" required>
+                        </div>
+                    </div>
+                    <div class ="row clearfix demo-icon-container">
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
+                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                            <div class="demo-google-material-icon"> <i class="material-icons iconovisibipass">visibility</i><span class="icon-name nameiconpass">Ver Contrase&ntilde;a.</span></div>
                         </div>
                     </div>
                     <div class="row">

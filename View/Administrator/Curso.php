@@ -93,18 +93,18 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" >
+                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" required>
                         <label class="form-label">Nombre</label>
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAnio" id="TxtAnio" >
+                        <input type="number" class="form-control" name="TxtAnio" id="TxtAnio" required>
                         <label class="form-label">Año</label>
                     </div>
                     <div class="help-info">Año</div>
@@ -112,7 +112,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Grado</label>
                     <div class="form-line">
-                        <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
+                        <select name="TxtGrado" id="TxtGrado" style ="width: 100%" required>
                             <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -121,7 +121,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Profesor</label>
                     <div class="form-line">
-                        <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%">
+                        <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%" required>
                             <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -148,26 +148,26 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Nombre</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >                        
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" required>                        
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Año</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtAnioEdit" id="TxtAnioEdit" >
+                        <input type="text" class="form-control" name="TxtAnioEdit" id="TxtAnioEdit" required>
                     </div>
                     <div class="help-info">Año</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Grado</label>
                     <div class="form-line">
-                         <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
+                         <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>   
@@ -176,7 +176,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Profesor</label>
                     <div class="form-line">
-                         <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%">
+                         <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>   

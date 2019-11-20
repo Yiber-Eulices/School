@@ -91,21 +91,21 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 
-                <input type = "hidden" name = "TxtIdEstudiante" id = "TxtIdEstudiante" value = "<?php echo($_SESSION["EstudianteId"]);?>">
-                <input type="hidden" name = "TxtIdMateria" id = "TxtIdMateria" value="<?php echo($_SESSION["CalificarProfesorCursoId"]);?>">
+                <input type = "hidden" name = "TxtIdEstudiante" id = "TxtIdEstudiante" value = "<?php echo($_SESSION["EstudianteId"]);?>" required>
+                <input type="hidden" name = "TxtIdMateria" id = "TxtIdMateria" value="<?php echo($_SESSION["CalificarProfesorCursoId"]);?>" required>
 
                 <div class="form-group form-float">
                 <label class="form-label">Periodo</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo" required>
                             <option value="">-- Por favor seleccione el Periodo --</option>
-                            <option value="1">1er Periodo</option>
-                            <option value="2">2do Periodo</option>
-                            <option value="3">3er Periodo</option>
-                            <option value="4">4to Periodo</option>
+                            <option value="1">Primer Periodo</option>
+                            <option value="2">Segundo Periodo</option>
+                            <option value="3">Tercer Periodo</option>
+                            <option value="4">Cuarto Periodo</option>
                         </select>
                         
                     </div>
@@ -113,28 +113,28 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaAcumulativa" id="TxtNotaAcumulativa" >
+                        <input type="number" class="form-control" name="TxtNotaAcumulativa" id="TxtNotaAcumulativa" required>
                         <label class="form-label">Nota Acumulativa</label>
                     </div>
                     <div class="help-info">Nota Acumulativa</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaComportamental" id="TxtNotaComportamental" >
+                        <input type="number" class="form-control" name="TxtNotaComportamental" id="TxtNotaComportamental" required>
                         <label class="form-label">Nota Comportamental</label>
                     </div>
                     <div class="help-info">Nota Comportamental</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtEvaluacion" id="TxtEvaluacion" >
+                        <input type="number" class="form-control" name="TxtEvaluacion" id="TxtEvaluacion" required>
                         <label class="form-label">Evaluacion</label>
                     </div>
                     <div class="help-info">Evaluacion</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAutoEvaluacion" id="TxtAutoEvaluacion" >
+                        <input type="number" class="form-control" name="TxtAutoEvaluacion" id="TxtAutoEvaluacion" required>
                         <label class="form-label">Auto Evaluacion</label>
                     </div>
                     <div class="help-info">Auto Evaluacion</div>
@@ -161,21 +161,21 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
 
-                <input type = "hidden" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit" value = "<?php echo($_SESSION["EstudianteId"]);?>">
-                <input type="hidden" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit" value="<?php echo($_SESSION["CalificarProfesorCursoId"]);?>">
+                <input type = "hidden" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit" value = "<?php echo($_SESSION["EstudianteId"]);?>" required>
+                <input type="hidden" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit" value="<?php echo($_SESSION["CalificarProfesorCursoId"]);?>" required>
 
                 <div class="form-group form-float">
                     <label class="form-label">Periodo</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit" required>
                             <option value="">-- Por favor seleccione el Periodo --</option>
-                            <option value="1">1er Periodo</option>
-                            <option value="2">2do Periodo</option>
-                            <option value="3">3er Periodo</option>
-                            <option value="4">4to Periodo</option>
+                            <option value="1">Primer Periodo</option>
+                            <option value="2">Segundo Periodo</option>
+                            <option value="3">Tercer Periodo</option>
+                            <option value="4">Cuarto Periodo</option>
                         </select>
                         
                     </div>
@@ -184,28 +184,28 @@
                 <div class="form-group form-float">
                     <label class="form-label">Nota Acumulativa</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaAcumulativaEdit" id="TxtNotaAcumulativaEdit" >
+                        <input type="number" class="form-control" name="TxtNotaAcumulativaEdit" id="TxtNotaAcumulativaEdit" required>
                     </div>
                     <div class="help-info">Nota Acumulativa</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Nota Comportamental</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtNotaComportamentalEdit" id="TxtNotaComportamentalEdit" >
+                        <input type="number" class="form-control" name="TxtNotaComportamentalEdit" id="TxtNotaComportamentalEdit" required>
                     </div>
                     <div class="help-info">Nota Comportamental</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Evaluacion</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtEvaluacionEdit" id="TxtEvaluacionEdit" >
+                        <input type="number" class="form-control" name="TxtEvaluacionEdit" id="TxtEvaluacionEdit" required>
                     </div>
                     <div class="help-info">Evaluacion</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Auto Evaluacion</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAutoEvaluacionEdit" id="TxtAutoEvaluacionEdit" >
+                        <input type="number" class="form-control" name="TxtAutoEvaluacionEdit" id="TxtAutoEvaluacionEdit" required>
                     </div>
                     <div class="help-info">Auto Evaluacion</div>
                 </div>

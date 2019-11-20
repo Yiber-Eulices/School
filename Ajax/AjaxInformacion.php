@@ -21,11 +21,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objINFO) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objINFO); $i++) {
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdInformacion = '".$objINFO[$i]["IdInformacion"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdInformacion = '".$objINFO[$i]["IdInformacion"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
-                                "'.$objINFO[$i]["IdInformacion"].'",
+                                "'.$enum++.'",
                                 "'.$objINFO[$i]["Descripcion"].'",
                                 "'.$objINFO[$i]["Ubicacion"].'",
                                 "'.$objINFO[$i]["Correo"].'",

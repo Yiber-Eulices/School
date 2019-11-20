@@ -30,10 +30,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     if($('#TxtMision').val().length == 0){
         var m = "Por favor ingrese la misión del colegio.";
         ValidateCreateUpdate(m);
@@ -78,6 +75,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableEmpresa").on("click",".btnDelete",function(){
     var id = $(this).attr("IdEmpresa");
@@ -137,7 +135,7 @@ $(".dataTableEmpresa").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     
     if($('#TxtMisionEdit').val().length == 0){
         var m = "Por favor ingrese la misión del colegio."
@@ -185,4 +183,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

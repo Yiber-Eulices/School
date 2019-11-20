@@ -21,13 +21,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objAcudienteEstudiante) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["EstudianteIdEstudiante"]==$_SESSION['EstudianteId']){
                                 $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
@@ -80,11 +81,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objAcudienteEstudiante) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["EstudianteIdEstudiante"]==$_SESSION['EstudianteId']){
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
@@ -134,11 +136,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objAcudienteEstudiante) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["EstudianteIdEstudiante"]==$_SESSION['UserId']){
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
@@ -188,13 +191,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objAcudienteEstudiante) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['AcudienteId']){
                                 $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",
@@ -247,11 +251,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objAcudienteEstudiante) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['AcudienteId']){
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",
@@ -301,13 +306,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objAcudienteEstudiante) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['UserId']){
                                 $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-primary waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>book</i><span>Calificaciones</span></button></div>";
                                 $btnBoletin = "<button type='button' style='width: auto;' class='btn btnBoletin btn-success waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
                                 $oBJEC_JSON .= '[
-                                    "'.$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",

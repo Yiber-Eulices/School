@@ -30,10 +30,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     if($('#TxtDescripcion').val().length == 0){
         var m = "Por favor ingrese la descripción de la información.";
         ValidateCreateUpdate(m);
@@ -84,6 +81,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableInformacion").on("click",".btnDelete",function(){
     var id = $(this).attr("IdInformacion");
@@ -144,7 +142,7 @@ $(".dataTableInformacion").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
 
     if($('#TxtDescripcionEdit').val().length == 0){
         var m = "Por favor ingrese la descripcion de la información."
@@ -198,4 +196,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

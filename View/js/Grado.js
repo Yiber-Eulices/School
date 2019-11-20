@@ -30,10 +30,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     var fileName = "";
     var ext = "";
      if($('#TxtNivel').val().length == 0){
@@ -68,6 +65,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableGrado").on("click",".btnDelete",function(){
     var id = $(this).attr("IdGrado");
@@ -126,7 +124,7 @@ $(".dataTableGrado").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     var fileName = "";
     var ext = "";
     if($('#TxtNivelEdit').val().length == 0){
@@ -163,4 +161,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

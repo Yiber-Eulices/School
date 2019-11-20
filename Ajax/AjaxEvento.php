@@ -22,13 +22,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objEVEN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objEVEN); $i++) {
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEvento = '".$objEVEN[$i]["IdEvento"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdEvento = '".$objEVEN[$i]["IdEvento"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objEVEN[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objEVEN[$i]["IdEvento"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objEVEN[$i]["Fecha"].'",
                                 "'.$objEVEN[$i]["Titulo"].'",
@@ -67,66 +68,66 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
         
         $image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/eventoPhoto")){
-			$dir = mkdir("../View/eventoPhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/eventoPhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/eventoPhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
-		  //var_dump($_FILES["image"]); 
-          //die();
+      if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
+        if(!is_dir("../View/eventoPhoto")){
+        $dir = mkdir("../View/eventoPhoto", 0777, true);
+        }else{
+        $dir=true;
         }
-        $oBJEC_AJAX = new AjaxEvento();
-        $oBJEC_AJAX -> fecha = $_POST["Fecha"];
-        $oBJEC_AJAX -> titulo = $_POST["Titulo"];
-        $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
-        $oBJEC_AJAX -> lugar = $_POST["Lugar"];
-        $oBJEC_AJAX -> foto = $image;
-        $oBJEC_AJAX -> AjxCrear();
+        if($dir){
+        $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
+        $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/eventoPhoto/".$filename); //mover el fichero utilizando esta función
+        $image='View/eventoPhoto/'.$filename;
+        if($muf){
+          $image_upload=true;
+        }else{
+          $image_upload=false;
+          $error["image"]= "La imagen no se ha subido";
+        }
+        }
+        //var_dump($_FILES["image"]); 
+            //die();
+          }
+          $oBJEC_AJAX = new AjaxEvento();
+          $oBJEC_AJAX -> fecha = $_POST["Fecha"];
+          $oBJEC_AJAX -> titulo = $_POST["Titulo"];
+          $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
+          $oBJEC_AJAX -> lugar = $_POST["Lugar"];
+          $oBJEC_AJAX -> foto = $image;
+          $oBJEC_AJAX -> AjxCrear();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
         $image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/eventoPhoto")){
-			$dir = mkdir("../View/eventoPhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/eventoPhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/eventoPhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
-		  //var_dump($_FILES["image"]);
-          //die();
+      if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
+        if(!is_dir("../View/eventoPhoto")){
+        $dir = mkdir("../View/eventoPhoto", 0777, true);
         }else{
-            $image = $_POST["FotoSrc"];
+        $dir=true;
         }
-        $oBJEC_AJAX = new AjaxEvento();
-        $oBJEC_AJAX -> id = $_POST["Id"];
-        $oBJEC_AJAX -> fecha = $_POST["Fecha"];
-        $oBJEC_AJAX -> titulo = $_POST["Titulo"];
-        $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
-        $oBJEC_AJAX -> lugar = $_POST["Lugar"];
-        $oBJEC_AJAX -> foto = $image;
-        $oBJEC_AJAX -> AjxEditar();
+        if($dir){
+        $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
+        $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/eventoPhoto/".$filename); //mover el fichero utilizando esta función
+        $image='View/eventoPhoto/'.$filename;
+        if($muf){
+          $image_upload=true;
+        }else{
+          $image_upload=false;
+          $error["image"]= "La imagen no se ha subido";
+        }
+        }
+        //var_dump($_FILES["image"]);
+            //die();
+          }else{
+              $image = $_POST["FotoSrc"];
+          }
+          $oBJEC_AJAX = new AjaxEvento();
+          $oBJEC_AJAX -> id = $_POST["Id"];
+          $oBJEC_AJAX -> fecha = $_POST["Fecha"];
+          $oBJEC_AJAX -> titulo = $_POST["Titulo"];
+          $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
+          $oBJEC_AJAX -> lugar = $_POST["Lugar"];
+          $oBJEC_AJAX -> foto = $image;
+          $oBJEC_AJAX -> AjxEditar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxEvento();

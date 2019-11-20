@@ -27,6 +27,7 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objACUDI) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objACUDI); $i++) {
                             $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button>";
                             $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
@@ -34,7 +35,7 @@
                             $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objACUDI[$i]["IdAcudiente"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objACUDI[$i]["Nombre"].'",
                                 "'.$objACUDI[$i]["Apellido"].'",
@@ -44,7 +45,8 @@
                                 "'.$objACUDI[$i]["Rh"].'",
                                 "'.$objACUDI[$i]["Correo"].'",
                                 "'.$objACUDI[$i]["Telefono"].'",
-                                "'.$btnEstudiante.$btnUpdate.$btnDelete.'"
+                                "'.$btnEstudiante.$btnUpdate.$btnDelete.'",
+                                "'.$objACUDI[$i]["IdAcudiente"].'"
                             ],';
                         }
                     }else{
@@ -74,12 +76,13 @@
           $oBJEC_JSON = '{
               "data": [';
                   if (count($objACUDI) >= 1){
+                      $enum=1;
                       for ($i=0; $i < count($objACUDI); $i++) {
                           $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button>";
                           $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
 
                           $oBJEC_JSON .= '[
-                              "'.$objACUDI[$i]["IdAcudiente"].'",
+                              "'.$enum++.'",
                               "'.$img.'",
                               "'.$objACUDI[$i]["Nombre"].'",
                               "'.$objACUDI[$i]["Apellido"].'",
@@ -129,26 +132,26 @@
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
         $image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
+		  if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
+        if(!is_dir("../View/profilePhoto")){
+          $dir = mkdir("../View/profilePhoto", 0777, true);
+        }else{
+          $dir=true;
+        }
+        if($dir){
+          $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
+          $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
+          $image='View/profilePhoto/'.$filename;
+          if($muf){
+            $image_upload=true;
+          }else{
+            $image_upload=false;
+            $error["image"]= "La imagen no se ha subido";
+          }
+		    }
 		  //var_dump($_FILES["image"]); 
           //die();
-        }
+      }
         $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> nombre = $_POST["Nombre"];
         $oBJEC_AJAX -> apellido = $_POST["Apellido"];
@@ -164,24 +167,24 @@
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
         $image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
-		  //var_dump($_FILES["image"]);
+        if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
+          if(!is_dir("../View/profilePhoto")){
+            $dir = mkdir("../View/profilePhoto", 0777, true);
+          }else{
+            $dir=true;
+          }
+          if($dir){
+            $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
+            $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
+            $image='View/profilePhoto/'.$filename;
+            if($muf){
+              $image_upload=true;
+            }else{
+              $image_upload=false;
+              $error["image"]= "La imagen no se ha subido";
+            }
+          }
+		    //var_dump($_FILES["image"]);
           //die();
         }else{
             $image = $_POST["FotoSrc"];

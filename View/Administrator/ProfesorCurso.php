@@ -90,14 +90,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
-                <input type="hidden" name="TxtProfesor" id="TxtProfesor" value="<?php echo $_SESSION['ProfesorId'];?>">
+                <input type="hidden" name="TxtProfesor" id="TxtProfesor" value="<?php echo $_SESSION['ProfesorId'];?>" required>
 
                 <div class="form-group form-float">
                     <label class="form-label">Curso</label>
                     <div class="form-line">
-                        <select name="TxtCurso" id="TxtCurso" style ="width: 100%">
+                        <select name="TxtCurso" id="TxtCurso" style ="width: 100%" required>
                             <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -106,7 +106,7 @@
                 <div class="form-group form-float">
                         <label class="form-label">Materia</label>
                         <div class="form-line">
-                            <select name="TxtMateria" id="TxtMateria" style ="width: 100%">
+                            <select name="TxtMateria" id="TxtMateria" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                             </select>
                         </div>
@@ -133,14 +133,14 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
                 <div class="modal-body">
-                    <input type="hidden" name="TxtProfesorEdit" id="TxtProfesorEdit" value="<?php echo $_SESSION['ProfesorId'];?>">
+                    <input type="hidden" name="TxtProfesorEdit" id="TxtProfesorEdit" value="<?php echo $_SESSION['ProfesorId'];?>" required>
 
                     <div class="form-group">
                         <label class="form-label">Curso</label>
                         <div class="form-line">
-                            <select name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%">
+                            <select name="TxtCursoEdit" id="TxtCursoEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                             </select>
                         </div>
@@ -149,7 +149,7 @@
                     <div class="form-group">
                         <label class="form-label">Materia</label>
                         <div class="form-line">
-                            <select name="TxtMateriaEdit" id="TxtMateriaEdit" style ="width: 100%">
+                            <select name="TxtMateriaEdit" id="TxtMateriaEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                             </select>
                         </div>

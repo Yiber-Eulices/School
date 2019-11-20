@@ -41,8 +41,8 @@ $(document).ready(function(){
             $("#TxtGradoEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtGrado").append("<option value='"+respuesta.data[i][3]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][3]+"'>"+respuesta.data[i][1]+"</option>"); 
                 }                
             }
             $('#TxtGrado').change();
@@ -62,8 +62,8 @@ $(document).ready(function(){
             $("#TxtIdEstudianteEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
-                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
+                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][13]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
+                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][13]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
                 }                
             }
             $('#TxtIdEstudiante').change();
@@ -73,10 +73,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     if($('#TxtFechaMatricula').val().length == 0){
         var m = "Por favor ingrese la fecha de la matricula.";
         ValidateCreateUpdate(m);
@@ -94,7 +91,8 @@ $(".formCreate").on("click",".botonCreate",function(){
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Fecha = $('#TxtFechaMatricula').val();
+        from = $('#TxtFechaMatricula').val().split("/");
+        var Fecha = from[2]+'/'+from[0]+'/'+from[1];
         var Costo = $('#TxtCosto').val();
         var Grado = $('#TxtGrado').val();
         var Estudiante = $('#TxtIdEstudiante').val();
@@ -127,6 +125,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableMatricula").on("click",".btnDelete",function(){
     var id = $(this).attr("IdMatricula");
@@ -179,15 +178,18 @@ $(".dataTableMatricula").on("click",".btnUpdate",function(){
         dataType:"json",
         success : function(respuesta){
             $("#botonEdit").attr("IdMatricula",id);
-            $('#TxtFechaMatriculaEdit').val(respuesta["Fecha"]);
+            from = respuesta["Fecha"].split("-");
+            $('#TxtFechaMatriculaEdit').val(from[1]+'/'+from[2]+'/'+from[0]);
             $('#TxtCostoEdit').val(respuesta["Costo"]);
-            $('#TxtGradoEdit').val(respuesta["GradoIdGrado"]);
-            $('#TxtIdEstudianteEdit').val(respuesta["EstudianteIdEstudiante"]);
+            $("#TxtGradoEdit option[value='"+respuesta["GradoIdGrado"]+"']").attr("selected",true);
+            $('#TxtGradoEdit').select2();
+            $("#TxtIdEstudianteEdit option[value='"+respuesta["EstudianteIdEstudiante"]+"']").attr("selected",true);
+            $('#TxtIdEstudianteEdit').select2();
             $("#ModalEdit").modal();
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     
     if($('#TxtFechaMatriculaEdit').val().length == 0){
         var m = "Por favor ingrese la fecha de la matricula.";
@@ -207,7 +209,8 @@ $(".formEdit").on("click",".botonEdit",function(){
         return false;
     }else{
         var Id = $("#botonEdit").attr("IdMatricula");
-        var Fecha = $('#TxtFechaMatriculaEdit').val();
+        from = $('#TxtFechaMatriculaEdit').val().split("/");
+        var Fecha = from[2]+'/'+from[0]+'/'+from[1];
         var Costo = $('#TxtCostoEdit').val();
         var Grado = $('#TxtGradoEdit').val();
         var Estudiante = $('#TxtIdEstudianteEdit').val();
@@ -241,4 +244,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

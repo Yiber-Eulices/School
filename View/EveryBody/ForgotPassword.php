@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html  lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Forgot Password | Bootstrap Based Admin Template - Material Design</title>
+    <title>School Admin</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -39,11 +39,15 @@
     <div class="fp-box">
         <div class="logo">
             <a href="javascript:void(0);">SCHOOL <b>ADMIN</b></a>
-            <small>Admin BootStrap Based - Material Design</small>
+            <small>
+                <span>
+                    SchoolAdmin &copy;<script>document.write(new Date().getFullYear());</script>
+                </span>
+            </small>
         </div>
         <div class="card">
             <div class="body">
-                <form id="forgot_password" method="POST" onsubmit="return FormSubmit()">
+                <form id="forgot_password" method="POST">
                     <div class="msg">                        
                         Ingrese su Rol y dirección de correo electrónico que utilizó para registrarse. Le enviaremos un correo electrónico con su nueva contraseña.
                     </div>
@@ -52,7 +56,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <select class="form-control show-tick" style ="width:100%"  name = "TxtRol" id = "TxtRol">
+                            <select class="form-control show-tick" style ="width:100%"  name = "TxtRol" id = "TxtRol" required>
                                 <option value="">-- Por favor seleccione su Rol --</option>
                                 <option value="Estudiante">Estudiante</option>
                                 <option value="Profesor">Profesor</option>
@@ -66,7 +70,7 @@
                             <i class="material-icons">email</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name = "TxtUser" id = "TxtUser" placeholder="Email"  autofocus>
+                            <input type="text" class="form-control" name = "TxtUser" id = "TxtUser" placeholder="Email"  autofocus required>
                         </div>
                     </div>
 

@@ -1,6 +1,14 @@
 <?php
     require_once "../Controller/ControladorAlerta.php";
     require_once "../Model/ModeloAlerta.php";
+    require_once "../Controller/ControladorProfesor.php";
+    require_once "../Model/ModeloProfesor.php";
+    require_once "../Controller/ControladorEstudiante.php";
+    require_once "../Model/ModeloEstudiante.php";
+    require_once "../Controller/ControladorAdministrador.php";
+    require_once "../Model/ModeloAdministrador.php";
+    require_once "../Controller/ControladorAcudiente.php";
+    require_once "../Model/ModeloAcudiente.php";
     class AjaxAlerta{
         public $id;
         public $rolPersona;
@@ -27,14 +35,24 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAlerta = '".$objADMIN[$i]["IdAlerta"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAlerta = '".$objADMIN[$i]["IdAlerta"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
-                            
+                            $objPERS = "";
+                            if($objADMIN[$i]["RolPersona"]=="Estudiante"){
+                                $objPERS =ControladorEstudiante::CtrlBuscar($objADMIN[$i]["IdPersona"]);
+                            }else if($objADMIN[$i]["RolPersona"]=="Profesor"){
+                                $objPERS =ControladorProfesor::CtrlBuscar($objADMIN[$i]["IdPersona"]);
+                            }else if($objADMIN[$i]["RolPersona"]=="Acudiente"){
+                                $objPERS =ControladorAcudiente::CtrlBuscar($objADMIN[$i]["IdPersona"]);
+                            }if($objADMIN[$i]["RolPersona"]=="Administrador"){
+                                $objPERS =ControladorAdministrador::CtrlBuscar($objADMIN[$i]["IdPersona"]);
+                            }
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdAlerta"].'",
+                                "'.$enum++.'",
                                 "'.$objADMIN[$i]["RolPersona"].'",
-                                "'.$objADMIN[$i]["IdPersona"].'",
+                                "'.$objPERS["Nombre"]." ".$objPERS["Apellido"].'",
                                 "'.$objADMIN[$i]["Fecha"].'",
                                 "'.$objADMIN[$i]["Titulo"].'",
                                 "'.$objADMIN[$i]["Mensaje"].'",
@@ -66,9 +84,10 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {                           
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdAlerta"].'",
+                                "'.$enum++.'",
                                 "'.$objADMIN[$i]["Fecha"].'",
                                 "'.$objADMIN[$i]["Titulo"].'",
                                 "'.$objADMIN[$i]["Mensaje"].'",

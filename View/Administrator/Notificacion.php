@@ -37,7 +37,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Rol</th>
-                                            <th>IdPersona</th>
+                                            <th>Nombre</th>
                                             <th>Fecha</th>
                                             <th>Título</th>
                                             <th>Mensaje</th>
@@ -49,7 +49,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Rol</th>
-                                            <th>IdPersona</th>
+                                            <th>Nombre</th>
                                             <th>Fecha</th>
                                             <th>Título</th>
                                             <th>Mensaje</th>
@@ -91,12 +91,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST" >
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Rol</label>
                     <div class="form-line">
-                        <select class="form-control show-tick TxtRolPersona" style ="width:100%" name = "TxtRolPersona" id = "TxtRolPersona">
+                        <select class="form-control show-tick TxtRolPersona" style ="width:100%" name = "TxtRolPersona" id = "TxtRolPersona" required>
                             <option value="">-- Por favor seleccione el Rol --</option>
                             <option value="Estudiante">Estudiante</option>
                             <option value="Profesor">Profesor</option>
@@ -109,22 +109,15 @@
                 <div class="form-group form-float">
                     <label class="form-label">Persona</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersona" id = "TxtIdPersona">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersona" id = "TxtIdPersona" required>
                             <option value="">-- Por favor seleccione la Persona --</option>
                         </select>
                     </div>
                     <div class="help-info">Persona</div>
                 </div>
                 <div class="form-group form-float">
-                    <label class="form-label">Fecha</label>
                     <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >
-                    </div>
-                    <div class="help-info">Fecha</div>
-                </div>
-                <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTitulo" id="TxtTitulo" >
+                        <input type="text" class="form-control" name="TxtTitulo" id="TxtTitulo" required>
                         <label class="form-label">Título</label>
                     </div>
                     <div class="help-info">Título</div>
@@ -157,12 +150,12 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Rol</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtRolPersonaEdit" id = "TxtRolPersonaEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtRolPersonaEdit" id = "TxtRolPersonaEdit" required>
                             <option value="">-- Por favor seleccione el Rol --</option>
                             <option value="Estudiante">Estudiante</option>
                             <option value="Profesor">Profesor</option>
@@ -175,7 +168,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Persona</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdPersonaEdit" id = "TxtIdPersonaEdit" required>
                             <option value="">-- Por favor seleccione la Persona --</option>
                         </select>
                     </div>
@@ -183,15 +176,15 @@
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Fecha</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >
+                    <div class="form-line" id="bs_datepicker_container_edit">
+                        <input type="text" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" placeholder = "Mes/Dia/A&ntilde;o" required>
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Título</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >
+                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" required>
                     </div>
                     <div class="help-info">Título</div>
                 </div>
@@ -205,7 +198,7 @@
                 <div class="form-group form-float">                    
                     <label class="form-label">Estado</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtEstadoEdit" id = "TxtEstadoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtEstadoEdit" id = "TxtEstadoEdit" required>
                             <option value="">-- Por favor seleccione el Estado --</option>
                             <option value="Visto">Visto</option>
                             <option value="Sin Ver">Sin Ver</option>

@@ -19,11 +19,11 @@ $(document).ready(function(){
         dataType: "JSON",
         success : function(respuesta){
             $('.table').empty();
-            $('.table').append("<thead><th scope='col'>Nombre</th><th scope='col'>Correo</th><th scope='col'>Telefono</th></tr></thead>");
+            $('.table').append("<thead><th scope='col'>Nombre</th><th scope='col'>Cargo</th><th scope='col'>Correo</th><th scope='col'>Telefono</th></tr></thead>");
             $('.table').append("<tbody>");                
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                    $('.table').append("<tr><td>"+respuesta.data[i][1]+"</td><td>"+respuesta.data[i][2]+"</td><td>"+respuesta.data[i][3]+"</td></tr>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][3].length > 0){
+                    $('.table').append("<tr><td>"+respuesta.data[i][1]+"</td><td>"+respuesta.data[i][2]+"</td><td>"+respuesta.data[i][3]+"</td><td>"+respuesta.data[i][4]+"</td></tr>"); 
                 }                
             }
             $('.table').append("</tbody>");  

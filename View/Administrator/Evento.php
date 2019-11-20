@@ -95,18 +95,18 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Fecha</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFecha" id="TxtFecha" >                        
+                    <div class="form-line" id="bs_datepicker_container">
+                        <input type="text" class="form-control" name="TxtFecha" id="TxtFecha" placeholder = "Mes/Dia/A&ntilde;o" required>                        
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTitulo" id="TxtTitulo" >
+                        <input type="text" class="form-control" name="TxtTitulo" id="TxtTitulo" required>
                         <label class="form-label">T&iacute;tulo</label>
                     </div>
                     <div class="help-info">T&iacute;tulo</div>
@@ -121,13 +121,13 @@
                 <div class="form-group form-float">
                     <label class="form-label">Foto</label>
                     <div class="form-line">
-                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >                        
+                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" required>                        
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtLugar" id="TxtLugar" >
+                        <input type="text" class="form-control" name="TxtLugar" id="TxtLugar" required>
                         <label class="form-label">Lugar</label>
                     </div>
                     <div class="help-info">Lugar</div>
@@ -153,15 +153,15 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Fecha</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" >                        
+                    <div class="form-line" id="bs_datepicker_container_edit">
+                        <input type="text" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" placeholder = "Mes/Dia/A&ntilde;o" required>                        
                     </div>
                     <div class="help-info">Fecha</div>
                 </div>
@@ -169,7 +169,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">T&iacute;tulo</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" >                        
+                        <input type="text" class="form-control" name="TxtTituloEdit" id="TxtTituloEdit" required>                        
                     </div>
                     <div class="help-info">T&iacute;tulo</div>
                 </div>
@@ -190,9 +190,10 @@
                 <div class="form-group form-float">
                     <label class="form-label">Lugar</label>   
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtLugarEdit" id="TxtLugarEdit" >                       
+                        <input type="text" class="form-control" name="TxtLugarEdit" id="TxtLugarEdit" required>                       
                     </div>
                     <div class="help-info">Lugar</div>
+                </div>
             </div>
             <div class="modal-footer">
               <input type="submit" IdEvento name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">

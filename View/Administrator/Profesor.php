@@ -103,18 +103,18 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" >
+                        <input type="text" class="form-control" name="TxtNombre" id="TxtNombre" required>
                         <label class="form-label">Nombre</label>
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtApellido" id="TxtApellido" >
+                        <input type="text" class="form-control" name="TxtApellido" id="TxtApellido" required>
                         <label class="form-label">Apellido</label>
                     </div>
                     <div class="help-info">Apellido</div>
@@ -122,22 +122,21 @@
                 <div class="form-group form-float">
                     <label class="form-label">Foto</label>
                     <div class="form-line">
-                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" >
+                        <input type="file" class="form-control" name="TxtFoto" id="TxtFoto" required>
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Fecha de Nacimiento</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" >
-                       
-                    </div>
+                    <div class="form-line"  id="bs_datepicker_container">
+                        <input type="text" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" placeholder = "Mes/Dia/A&ntilde;o" required>
+                     </div>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Tipo de Documento</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumento" id = "TxtTipoDocumento">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumento" id = "TxtTipoDocumento" required>
                             <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                             <option value="CC">Cédula de Ciudadanía</option>
                             <option value="TI">Tarjeta de Identidad</option>
@@ -149,7 +148,7 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtDocumento" id="TxtDocumento" >
+                        <input type="number" class="form-control" name="TxtDocumento" id="TxtDocumento" required>
                         <label class="form-label">Documento</label>
                     </div>
                     <div class="help-info">Documento</div>
@@ -157,7 +156,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Rh</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtRh" id = "TxtRh">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtRh" id = "TxtRh" required>
                             <option value="">-- Por favor seleccione su Rh --</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -173,21 +172,27 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" >
+                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" required>
                         <label class="form-label">Correo</label>
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="password" class="form-control" name="TxtPassword" id="TxtPassword" >
+                        <input type="password" class="form-control" name="TxtPassword" id="TxtPassword" required>
                         <label class="form-label">Contrase&ntilde;a</label>
                     </div>
                     <div class="help-info">Contrase&ntilde;a</div>
                 </div>
+                <div class ="row clearfix demo-icon-container">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"></div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="demo-google-material-icon"> <i class="material-icons iconovisibipass">visibility</i><span class="icon-name nameiconpass">Ver Contrase&ntilde;a.</span></div>
+                    </div>
+                </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtTelefono" id="TxtTelefono" >
+                        <input type="number" class="form-control" name="TxtTelefono" id="TxtTelefono" required>
                         <label class="form-label">Tel&eacute;fono</label>
                     </div>
                     <div class="help-info">Tel&eacute;fono</div>
@@ -213,7 +218,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group">
                     <img class = "imgProfileEdit" id = "imgProfileEdit" src="">
@@ -221,14 +226,14 @@
                 <div class="form-group form-float">
                     <label class="form-label">Nombre</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" >
+                        <input type="text" class="form-control" name="TxtNombreEdit" id="TxtNombreEdit" required>
                     </div>
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Apellido</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtApellidoEdit" id="TxtApellidoEdit" >
+                        <input type="text" class="form-control" name="TxtApellidoEdit" id="TxtApellidoEdit" required>
                     </div>    
                     <div class="help-info">Apellido</div>
                 </div>
@@ -236,21 +241,21 @@
                 <div class="form-group form-float">
                     <label class="form-label">Foto</label>
                     <div class="form-line">
-                        <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit" >
+                        <input type="file" class="form-control" name="TxtFotoEdit" id="TxtFotoEdit">
                     </div>
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Fecha de Nacimiento</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" >
+                    <div class="form-line"  id="bs_datepicker_container_edit">
+                        <input type="text" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" placeholder = "Mes/Dia/A&ntilde;o" required>
                     </div>
                     <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Tipo de Documento</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit" required>
                             <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                             <option value="CC">Cédula de Ciudadanía</option>
                             <option value="TI">Tarjeta de Identidad</option>
@@ -263,14 +268,14 @@
                 <div class="form-group form-float">
                     <label class="form-label">Documento</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtDocumentoEdit" id="TxtDocumentoEdit" >
+                        <input type="number" class="form-control" name="TxtDocumentoEdit" id="TxtDocumentoEdit" required>
                     </div>
                     <div class="help-info">Documento</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Rh</label>
                     <div class="form-line">
-                        <select class="form-control show-tick" style ="width:100%" name = "TxtRhEdit" id = "TxtRhEdit">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtRhEdit" id = "TxtRhEdit" required>
                             <option value="">-- Por favor seleccione su Rh --</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -287,21 +292,27 @@
                 <div class="form-group form-float">
                     <label class="form-label">Correo</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" required>
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Contrase&ntilde;a</label>
                     <div class="form-line">
-                        <input type="password" class="form-control" name="TxtPasswordEdit" id="TxtPasswordEdit" >
+                        <input type="password" class="form-control" name="TxtPasswordEdit" id="TxtPasswordEdit" required>
                     </div>
                     <div class="help-info">Contrase&ntilde;a</div>
+                </div>
+                <div class ="row clearfix demo-icon-container">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"></div>
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="demo-google-material-icon"> <i class="material-icons iconovisibipassedit">visibility</i><span class="icon-name nameiconpassedit">Ver Contrase&ntilde;a.</span></div>
+                    </div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Tel&eacute;fono</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >
+                        <input type="number" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" required>
                     </div>
                     <div class="help-info">Tel&eacute;fono</div>
                 </div>

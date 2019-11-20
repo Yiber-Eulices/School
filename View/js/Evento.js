@@ -30,10 +30,7 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     var fileName = "";
     var ext = "";
     if(document.getElementById("TxtFoto").files.length > 0){
@@ -65,7 +62,8 @@ $(".formCreate").on("click",".botonCreate",function(){
         ValidateCreateUpdate(m);
         return false;
     }else{
-        var Fecha = $('#TxtFecha').val();
+        from = $('#TxtFecha').val().split("/");
+        var Fecha = from[2]+'/'+from[0]+'/'+from[1];
         var Titulo = $('#TxtTitulo').val();
         var Descripcion = $('#TxtDescripcion').val();
         var Foto = document.getElementById("TxtFoto").files[0];
@@ -100,6 +98,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableEvento").on("click",".btnDelete",function(){
     var id = $(this).attr("IdEvento");
@@ -153,7 +152,8 @@ $(".dataTableEvento").on("click",".btnUpdate",function(){
         success : function(respuesta){
             $("#botonEdit").attr("IdEvento",id);
             $("#imgProfileEdit").attr("src",respuesta["Foto"]);
-            $('#TxtFechaEdit').val(respuesta["Fecha"]);
+            from = respuesta["Fecha"].split("-");
+            $('#TxtFechaEdit').val(from[1]+'/'+from[2]+'/'+from[0]);
             $('#TxtTituloEdit').val(respuesta["Titulo"]);
             $('#TxtLugarEdit').val(respuesta["Lugar"]);
             $('#TxtDescripcionEdit').val(respuesta["Descripcion"]);
@@ -165,7 +165,7 @@ $(".dataTableEvento").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     var fileName = "";
     var ext = "";
     if(document.getElementById("TxtFotoEdit").files.length > 0){
@@ -194,7 +194,8 @@ $(".formEdit").on("click",".botonEdit",function(){
         return false;
     }else{
         var Id = $("#botonEdit").attr("IdEvento");
-        var Fecha = $('#TxtFechaEdit').val();
+        from = $('#TxtFechaEdit').val().split("/");
+        var Fecha = from[2]+'/'+from[0]+'/'+from[1];
         var Titulo = $('#TxtTituloEdit').val();
         var Foto = "";
         var FotoSrc = "";
@@ -237,4 +238,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

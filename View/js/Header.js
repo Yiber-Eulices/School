@@ -13,9 +13,11 @@ $(document).ready(function(){
                         $("#TitleModalAlert").html(respuesta.data[i][2]);
                         $("#TextModalAlert").html(respuesta.data[i][3]);
                         $("#ModalAlerta").modal();
-                    }                   
+                    } 
+                    count++;             
                     code = ""; 
-                    code = "<li><a href='javascript:void(0);'>";
+                    code = "<li><a href='javascript:void(0);' class=' waves-effect waves-block'>";
+                    code += "<div class='icon-circle bg-red'><i class='material-icons'>notifications</i><span class='label-count'>"+count+"</span></div>";
                     code += "<div class='menu-info'>";
                     code += "<h4>"+respuesta.data[i][2]+"</h4>";
                     code += "<p><i class='material-icons'>access_time</i>"+respuesta.data[i][1]+"";
@@ -23,9 +25,8 @@ $(document).ready(function(){
                     code += "</div>";
                     code += "</a>";
                     code += "</li>";
-                    count++;
-                    $(".menu").append(code);
-                    $(".label-count").html(count);
+                    $(".menuNotifications").append(code);
+                    $(".label-countt").html(count);
                 }                
             }
         }

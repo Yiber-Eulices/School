@@ -30,15 +30,16 @@ $(document).ready(function(){
         }
     });
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     var fileName = "";
     var ext = "";
    
     if($('#TxtNombre').val().length == 0){
         var m = "Por favor ingrese el Nombre de el Directivo.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtCargo').val().length == 0){
+        var m = "Por favor ingrese el Cargo de el Directivo.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtCorreo').val().length == 0){
@@ -51,10 +52,12 @@ $(".formCreate").on("click",".botonCreate",function(){
         return false;
     }else{
         var Nombre = $('#TxtNombre').val();
+        var Cargo = $('#TxtCargo').val();
         var Correo = $('#TxtCorreo').val();
         var Telefono = $('#TxtTelefono').val();
         var oBJEC_DIREC = new FormData();
         oBJEC_DIREC.append("Nombre", Nombre); 
+        oBJEC_DIREC.append("Cargo", Cargo); 
         oBJEC_DIREC.append("Correo", Correo);  
         oBJEC_DIREC.append("Telefono", Telefono); 
     
@@ -81,6 +84,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableDirectivo").on("click",".btnDelete",function(){
     var id = $(this).attr("IdDirectivo");
@@ -134,6 +138,7 @@ $(".dataTableDirectivo").on("click",".btnUpdate",function(){
         success : function(respuesta){
             $("#botonEdit").attr("IdDirectivo",id);
             $('#TxtNombreEdit').val(respuesta["Nombre"]);
+            $('#TxtCargoEdit').val(respuesta["Cargo"]);
             $('#TxtCorreoEdit').val(respuesta["Correo"]);
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);
             $("#TxtTelefonoEdit").focus();
@@ -143,12 +148,16 @@ $(".dataTableDirectivo").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     var fileName = "";
     var ext = "";
    
     if($('#TxtNombreEdit').val().length == 0){
         var m = "Por favor ingrese el Apellido de el Directivo."
+        ValidateCreateUpdate(m);
+        return false;
+    }else if($('#TxtCargoEdit').val().length == 0){
+        var m = "Por favor ingrese el Cargo de el Directivo.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtCorreoEdit').val().length == 0){
@@ -162,11 +171,13 @@ $(".formEdit").on("click",".botonEdit",function(){
     }else{
         var Id = $("#botonEdit").attr("IdDirectivo");
         var Nombre = $('#TxtNombreEdit').val();
+        var Cargo = $('#TxtCargoEdit').val();
         var Correo = $('#TxtCorreoEdit').val();
         var Telefono = $('#TxtTelefonoEdit').val();
         var oBJEC_DIREC = new FormData();
         oBJEC_DIREC.append("Id", Id); 
         oBJEC_DIREC.append("Nombre", Nombre);
+        oBJEC_DIREC.append("Cargo", Cargo);
         oBJEC_DIREC.append("Correo", Correo); 
         oBJEC_DIREC.append("Telefono", Telefono); 
     
@@ -193,4 +204,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

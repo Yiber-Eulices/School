@@ -34,10 +34,8 @@ $(document).ready(function(){
     $('#TxtTipoDocumentoEdit').select2();
     $('#TxtRhEdit').select2();
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
+    var fechaActual = new Date();
     var fileName = "";
     var ext = "";
     if(document.getElementById("TxtFoto").files.length > 0){
@@ -62,6 +60,10 @@ $(".formCreate").on("click",".botonCreate",function(){
         return false;
     }else if($('#TxtFechaNacimiento').val().length == 0){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Profesor.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<=18 ){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Profesor mayor de 18 Años.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTipoDocumento').val().length == 0){
@@ -92,7 +94,8 @@ $(".formCreate").on("click",".botonCreate",function(){
         var Nombre = $('#TxtNombre').val();
         var Apellido = $('#TxtApellido').val();
         var Foto = document.getElementById("TxtFoto").files[0];
-        var FechaNacimiento = $('#TxtFechaNacimiento').val();
+        from = $('#TxtFechaNacimiento').val().split("/");
+        var FechaNacimiento = from[2]+'/'+from[0]+'/'+from[1];
         var TipoDocumento = $('#TxtTipoDocumento').val();
         var Documento = $('#TxtDocumento').val();
         var Rh = $('#TxtRh').val();
@@ -134,6 +137,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableProfesor").on("click",".btnDelete",function(){
     var id = $(this).attr("IdProfesor");
@@ -189,7 +193,8 @@ $(".dataTableProfesor").on("click",".btnUpdate",function(){
             $("#imgProfileEdit").attr("src",respuesta["Foto"]);
             $('#TxtNombreEdit').val(respuesta["Nombre"]);
             $('#TxtApellidoEdit').val(respuesta["Apellido"]);
-            $('#TxtFechaNacimientoEdit').val(respuesta["FechaNacimiento"]);
+            from = respuesta["FechaNacimiento"].split("-");
+            $('#TxtFechaNacimientoEdit').val(from[1]+'/'+from[2]+'/'+from[0]);
             $("#TxtTipoDocumentoEdit option[value='"+respuesta["TipoDocumento"]+"']").attr("selected",true);
             $('#TxtDocumentoEdit').val(respuesta["Documento"]);
             $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
@@ -201,7 +206,8 @@ $(".dataTableProfesor").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
+    var fechaActual = new Date();
     var fileName = "";
     var ext = "";
     if(document.getElementById("TxtFotoEdit").files.length > 0){
@@ -222,6 +228,10 @@ $(".formEdit").on("click",".botonEdit",function(){
         return false;
     }else if($('#TxtFechaNacimientoEdit').val().length == 0){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Profesor.";
+        ValidateCreateUpdate(m);
+        return false;
+    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=18 ){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Profesor mayor de 18 Años.";
         ValidateCreateUpdate(m);
         return false;
     }else if($('#TxtTipoDocumentoEdit').val().length == 0){
@@ -259,7 +269,8 @@ $(".formEdit").on("click",".botonEdit",function(){
         }else{
             var FotoSrc = $("#imgProfileEdit").attr("src");
         }
-        var FechaNacimiento = $('#TxtFechaNacimientoEdit').val();
+        from = $('#TxtFechaNacimientoEdit').val().split("/");
+        var FechaNacimiento = from[2]+'/'+from[0]+'/'+from[1];
         var TipoDocumento = $('#TxtTipoDocumentoEdit').val();
         var Documento = $('#TxtDocumentoEdit').val();
         var Rh = $('#TxtRhEdit').val();
@@ -303,6 +314,7 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableProfesor").on("click",".btnCurso",function(){
     var id = $(this).attr("IdProfesor");
@@ -322,4 +334,26 @@ $(".dataTableProfesor").on("click",".btnCurso",function(){
             }	
         }
     });        
+});
+$(".iconovisibipassedit").click(function(){
+    if($(this).html()=='visibility'){
+        $(this).html('visibility_off');
+        $("#TxtPasswordEdit").attr("type","text");
+        $(".nameiconpassedit").html("Ocultar Contrase&ntilde;a.")
+    }else if($(this).html()=='visibility_off'){
+        $(this).html('visibility');
+        $("#TxtPasswordEdit").attr("type","password");
+        $(".nameiconpassedit").html("Ver Contrase&ntilde;a.")
+    }
+});
+$(".iconovisibipass").click(function(){
+    if($(this).html()=='visibility'){
+        $(this).html('visibility_off');
+        $("#TxtPassword").attr("type","text");
+        $(".nameiconpass").html("Ocultar Contrase&ntilde;a.")
+    }else if($(this).html()=='visibility_off'){
+        $(this).html('visibility');
+        $("#TxtPassword").attr("type","password");
+        $(".nameiconpass").html("Ver Contrase&ntilde;a.")
+    }
 });

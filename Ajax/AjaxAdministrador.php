@@ -27,13 +27,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAdministrador = '".$objADMIN[$i]["IdAdministrador"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAdministrador = '".$objADMIN[$i]["IdAdministrador"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdAdministrador"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["Nombre"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
@@ -43,7 +44,8 @@
                                 "'.$objADMIN[$i]["Rh"].'",
                                 "'.$objADMIN[$i]["Correo"].'",
                                 "'.$objADMIN[$i]["Telefono"].'",
-                                "'.$btnUpdate.$btnDelete.'"
+                                "'.$btnUpdate.$btnDelete.'",
+                                "'.$objADMIN[$i]["IdAdministrador"].'"
                             ],';
                         }
                     }else{
@@ -88,7 +90,7 @@
 		  if($dir){
 			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
 			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
+			$image='View/profilePhoto/'.$filename;
 			if($muf){
 			  $image_upload=true;
 			}else{
@@ -123,7 +125,7 @@
 		  if($dir){
         $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
         $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-        $image='../View/profilePhoto/'.$filename;
+        $image='View/profilePhoto/'.$filename;
         if($muf){
           $image_upload=true;
         }else{

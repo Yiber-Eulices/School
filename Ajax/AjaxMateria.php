@@ -19,14 +19,16 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdMateria = '".$objADMIN[$i]["IdMateria"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdMateria = '".$objADMIN[$i]["IdMateria"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdMateria"].'",
+                                "'.$enum++.'",
                                 "'.$objADMIN[$i]["Nombre"].'",
                                 "'.$objADMIN[$i]["Descripcion"].'",
-                                "'.$btnUpdate.$btnDelete.'"
+                                "'.$btnUpdate.$btnDelete.'",
+                                "'.$objADMIN[$i]["IdMateria"].'"
                             ],';
                         }
                     }else{

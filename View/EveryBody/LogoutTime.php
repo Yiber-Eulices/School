@@ -1,6 +1,6 @@
 <?php
 function isLoginSessionExpired() {
-	$time_duration = 120;//2 minutos
+	$time_duration = 300;//2 minutos
 	$current_time = time(); 
 	if( isset($_SESSION['TimeSession']) ){  
 		if(  (time() - $_SESSION['TimeSession']) > $time_duration ){ 
@@ -14,7 +14,7 @@ function isLoginSessionExpired() {
     }
 }
 function isLoginSessionExpiredVerif() {
-	$time_duration = 120;//2 minutos
+	$time_duration = 300;//2 minutos
 	$current_time = time(); 
 	if( isset($_SESSION['TimeSession']) ){  
 		if(  (time() - $_SESSION['TimeSession']) > $time_duration ){ 

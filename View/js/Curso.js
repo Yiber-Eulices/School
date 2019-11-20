@@ -42,8 +42,8 @@ $.ajax({
         $("#TxtGradoEdit").append("<option value=''>-- Por favor seleccione --</option>");
         for(var i = 0;i<respuesta.data.length;i++){
             if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
-                $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                $("#TxtGrado").append("<option value='"+respuesta.data[i][3]+"'>"+respuesta.data[i][1]+"</option>"); 
+                $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][3]+"'>"+respuesta.data[i][1]+"</option>"); 
             }                
         }
         $('#TxtGrado').change();
@@ -64,8 +64,8 @@ $.ajax({
         $("#TxtProfesorEdit").append("<option value=''>-- Por favor seleccione --</option>");
         for(var i = 0;i<respuesta.data.length;i++){
             if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                $("#TxtProfesor").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                $("#TxtProfesor").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                $("#TxtProfesorEdit").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
             }                
         }
         $('#TxtProfesor').change();
@@ -74,11 +74,7 @@ $.ajax({
         $("#TxtProfesorEdit").select2();
     }
 });
-
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     if($('#TxtNombre').val().length == 0){
         var m = "Por favor ingrese el Nombre del Curso.";
         ValidateCreateUpdate(m);
@@ -128,6 +124,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableCurso").on("click",".btnDelete",function(){
     var id = $(this).attr("IdCurso");
@@ -190,7 +187,7 @@ $(".dataTableCurso").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     var fileName = "";
     var ext = "";
     
@@ -246,6 +243,7 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 
 $(".dataTableCurso").on("click",".btnProfesor",function(){
     var id = $(this).attr("IdCurso");

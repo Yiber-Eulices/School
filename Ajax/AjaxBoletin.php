@@ -66,7 +66,7 @@ foreach ($Lista as $key => $ListaDatos){
     $pdf->Cell(25,10, $ListaDatos["NotaComportamental"],1,0,"C",0);
     $pdf->Cell(25,10, $ListaDatos["Evaluacion"],1,0,"C",0);
     $pdf->Cell(25,10, $ListaDatos["AutoEvaluacion"],1,0,"C",0);
-    $pdf->Cell(60,10, $ListaDatos["Promedio"],1,0,"C",0);
+    $pdf->Cell(60,10, round($ListaDatos["Promedio"],1),1,0,"C",0);
     if($desempeno > 0 && $desempeno < 3){
         $pdf->Cell(60,10,"BAJO",1,0,"C",0);
     }else if($desempeno >= 3 && $desempeno < 4){
@@ -74,7 +74,7 @@ foreach ($Lista as $key => $ListaDatos){
     }else if($desempeno >= 4 && $desempeno <= 5){
         $pdf->Cell(60,10,"ALTO",1,0,"C",0);
     }
-    $pdf->Cell(60,10, $ListaDatos["Promedio"],1,true,"C",0);
+    $pdf->Cell(60,10, round($ListaDatos["Promedio"],1),1,true,"C",0);
     $pdf->Cell(126.6,10,utf8_decode("Profesor : ". $ListaDatos["Nombre"]." ".$ListaDatos["Apellido"]),1,0,"J",0);
     $pdf->Cell(126.6,10,utf8_decode("Correo : ". $ListaDatos["Correo"]),1,0,"J",0);
     $pdf->Cell(126.6,10,utf8_decode("Telefono : ". $ListaDatos["Telefono"]),1,true,"J",0);
@@ -88,7 +88,7 @@ if($count>0){
 }else{
     $promedioFinal =0;
 }
-$pdf->Cell(60,10,"Promedio : ".$promedioFinal,1,true,"J",0);
+$pdf->Cell(60,10,"Promedio : ".round($promedioFinal,1),1,true,"J",0);
 $pdf->Ln(30);
 $pdf->Cell(126.6,10,utf8_decode("Director de Curso : ".$objPROF["Nombre"]." ".$objPROF["Apellido"]),1,0,"J",0);
 $pdf->Cell(126.6,10,utf8_decode("Correo : ".$objPROF["Correo"]),1,0,"J",0);

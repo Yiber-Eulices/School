@@ -99,15 +99,15 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
                 <div class="modal-body">
                     
-                    <input type="hidden" name="TxtEstudiante" id="TxtEstudiante" value = "<?php echo $_SESSION['EstudianteId'];?>">
+                    <input type="hidden" name="TxtEstudiante" id="TxtEstudiante" value = "<?php echo $_SESSION['EstudianteId'];?>" required>
                 
                     <div class="form-group form-float">
                         <label class="form-label">Acudiente</label>
                         <div class="form-line">
-                            <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%">
+                            <select name="TxtAcudiente" id="TxtAcudiente" style ="width: 100%" required>
                                     <option value=''>-- Por favor seleccione --</option>
                             </select>                           
                         </div>
@@ -136,14 +136,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 
-                <input type="hidden" name="TxtEstudianteEdit" id ="TxtEstudianteEdit"value = "<?php echo $_SESSION['EstudianteId'];?>">
+                <input type="hidden" name="TxtEstudianteEdit" id ="TxtEstudianteEdit"value = "<?php echo $_SESSION['EstudianteId'];?>" required>
 
                 <div class="form-group form-float">
                     <div class="form-line">
-                    <select name="TxtAcudienteEdit" id="TxtAcudienteEdit" style ="width: 100%">
+                    <select name="TxtAcudienteEdit" id="TxtAcudienteEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
                         

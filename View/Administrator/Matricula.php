@@ -92,19 +92,19 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Fecha de Matr&iacute;cula</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaMatricula" id="TxtFechaMatricula" >
+                    <div class="form-line" id="bs_datepicker_container">
+                        <input type="text" class="form-control" name="TxtFechaMatricula" id="TxtFechaMatricula" placeholder = "Mes/Dia/A&ntilde;o" required>
                         
                     </div>
                     <div class="help-info">Fecha de Matr&iacute;cula</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtCosto" id="TxtCosto" >
+                        <input type="number" class="form-control" name="TxtCosto" id="TxtCosto" required>
                         <label class="form-label">Costo</label>
                     </div>
                     <div class="help-info">Costo</div>
@@ -112,7 +112,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Grado</label>
                     <div class="form-line">
-                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%">
+                    <select name="TxtGrado" id="TxtGrado" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                            </select>
                     </div>
@@ -121,7 +121,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Estudiante</label>
                     <div class="form-line">
-                        <select name="TxtIdEstudiante" id="TxtIdEstudiante" style ="width: 100%">
+                        <select name="TxtIdEstudiante" id="TxtIdEstudiante" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -148,26 +148,26 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Fecha de Matr&iacute;cula</label>
-                    <div class="form-line">
-                        <input type="date" class="form-control" name="TxtFechaMatriculaEdit" id="TxtFechaMatriculaEdit" >
+                    <div class="form-line" id="bs_datepicker_container_edit">
+                        <input type="text" class="form-control" name="TxtFechaMatriculaEdit" id="TxtFechaMatriculaEdit" placeholder = "Mes/Dia/A&ntilde;o" required>
                     </div>       
                     <div class="help-info">Fecha de Matr&iacute;cula</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Costo</label>
                     <div class="form-line">
-                        <input type="number" class="form-control" name="TxtCostoEdit" id="TxtCostoEdit" >
+                        <input type="number" class="form-control" name="TxtCostoEdit" id="TxtCostoEdit" required>
                     </div>
                     <div class="help-info">Costo</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Grado</label>
                     <div class="form-line">
-                        <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%">
+                        <select name="TxtGradoEdit" id="TxtGradoEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
@@ -176,7 +176,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Estudiante</label>
                     <div class="form-line">
-                        <select name="TxtIdEstudianteEdit" id="TxtIdEstudianteEdit" style ="width: 100%">
+                        <select name="TxtIdEstudianteEdit" id="TxtIdEstudianteEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>

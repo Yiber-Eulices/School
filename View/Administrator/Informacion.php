@@ -92,7 +92,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formCreate" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <div class="form-line">
@@ -103,21 +103,21 @@
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtUbicacion" id="TxtUbicacion" >
+                        <input type="text" class="form-control" name="TxtUbicacion" id="TxtUbicacion" required>
                         <label class="form-label">Ubicación</label>
                     </div>
                     <div class="help-info">Ubicación</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" >
+                        <input type="text" class="form-control" name="TxtCorreo" id="TxtCorreo" required>
                         <label class="form-label">Correo</label>
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTelefono" id="TxtTelefono" >
+                        <input type="text" class="form-control" name="TxtTelefono" id="TxtTelefono" required>
                         <label class="form-label">Teléfono</label>
                     </div>
                     <div class="help-info">Teléfono</div>
@@ -143,7 +143,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-            <form id="form_advanced_validation" class="formEdit" method="POST" onsubmit="return SubmitFunction()">
+            <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
                 <div class="form-group form-float">
                     <label class="form-label">Descripción</label>
@@ -155,21 +155,21 @@
                 <div class="form-group form-float">
                     <label class="form-label">Ubicación</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" >                        
+                        <input type="text" class="form-control" name="TxtUbicacionEdit" id="TxtUbicacionEdit" required>                        
                     </div>
                     <div class="help-info">Ubicación</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Correo</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" >                        
+                        <input type="text" class="form-control" name="TxtCorreoEdit" id="TxtCorreoEdit" required>                        
                     </div>
                     <div class="help-info">Correo</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Teléfono</label>
                     <div class="form-line">
-                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" >                        
+                        <input type="text" class="form-control" name="TxtTelefonoEdit" id="TxtTelefonoEdit" required>                        
                     </div>
                     <div class="help-info">Teléfono</div>
                 </div>

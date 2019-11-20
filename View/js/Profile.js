@@ -28,7 +28,12 @@ $(document).ready(function(){
             $("#h3Nombre").html(respuesta["Nombre"]);
             $('#TxtApellidoEdit').val(respuesta["Apellido"]);
             $("#pApellido").html(respuesta["Apellido"]);
-            $('#TxtFechaNacimientoEdit').val(respuesta["FechaNacimiento"]);
+            from = respuesta["FechaNacimiento"].split("-");
+            $('#TxtFechaNacimientoEdit').val(from[1]+'/'+from[2]+'/'+from[0]);
+            $('#bs_datepicker_container input').datepicker({
+                autoclose: true,
+                container: '#bs_datepicker_container'
+            });
             $("#TxtTipoDocumentoEdit option[value='"+respuesta["TipoDocumento"]+"']").attr("selected",true);
             $("#TxtTipoDocumentoEdit").select2();
             $('#TxtDocumentoEdit').val(respuesta["Documento"]);
@@ -38,7 +43,8 @@ $(document).ready(function(){
             $('#TxtTelefonoEdit').val(respuesta["Telefono"]);        
         }
     });
-    $(".formEdit").on("click",".botonEdit",function(){
+    $(".formEdit").on('submit', function(){
+        var fechaActual = new Date();
         var fileName = "";
         var ext = "";
         if(document.getElementById("TxtFotoEdit").files.length > 0){
@@ -59,6 +65,14 @@ $(document).ready(function(){
             return false;
         }else if($('#TxtFechaNacimientoEdit').val().length == 0){
             var m = "Por favor ingrese la Fecha de Nacimiento.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($("#pRol").html()!="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=18 ){
+            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 18 Años.";
+            ValidateCreateUpdate(m);
+            return false;
+        }else if($("#pRol").html()=="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=5 ){
+            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 5 Años.";
             ValidateCreateUpdate(m);
             return false;
         }else if($('#TxtTipoDocumentoEdit').val().length == 0){
@@ -97,7 +111,8 @@ $(document).ready(function(){
             }else{
                 var FotoSrc = $("#fotoEdit").attr("src");
             }
-            var FechaNacimiento = $('#TxtFechaNacimientoEdit').val();
+            from = $('#TxtFechaNacimientoEdit').val().split("/");
+            var FechaNacimiento = from[2]+'/'+from[0]+'/'+from[1];
             var TipoDocumento = $('#TxtTipoDocumentoEdit').val();
             var Documento = $('#TxtDocumentoEdit').val();
             var Rh = $('#TxtRhEdit').val();
@@ -129,7 +144,7 @@ $(document).ready(function(){
                     if(respuesta = true){
                         var m = "Datos Editados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Perfil.php";
+                        window.location = "Perfil";
                     }else if(respuesta = false){
                         var m = "¡¡¡Datos No Editados.!!!";
                         ValidateCreateUpdate(m);
@@ -138,6 +153,7 @@ $(document).ready(function(){
                 }
             });
         }
+        return false;
     });
     $(".btnCamara").click(function(){
         // Configure a few settings and attach camera
@@ -184,6 +200,17 @@ $(document).ready(function(){
     });
     $('#TxtFotoEdit').change(function(){
         $("#fotoCamara").empty();
+    });
+    $(".iconovisibipassedit").click(function(){
+        if($(this).html()=='visibility'){
+            $(this).html('visibility_off');
+            $("#TxtPasswordEdit").attr("type","text");
+            $(".nameiconpassedit").html("Ocultar Contrase&ntilde;a.")
+        }else if($(this).html()=='visibility_off'){
+            $(this).html('visibility');
+            $("#TxtPasswordEdit").attr("type","password");
+            $(".nameiconpassedit").html("Ver Contrase&ntilde;a.")
+        }
     });
     
 });

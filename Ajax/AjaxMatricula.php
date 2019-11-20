@@ -21,11 +21,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objMATR) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objMATR); $i++) {
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdMatricula ='".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdMatricula = '".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
-                                "'.$objMATR[$i]["IdMatricula"].'",
+                                "'.$enum++.'",
                                 "'.$objMATR[$i]["Fecha"].'",
                                 "'.$objMATR[$i]["Costo"].'",
                                 "'.$objMATR[$i]["Nivel"].'",

@@ -74,10 +74,7 @@ $(document).ready(function(){
     $("#TxtPeriodo").select2();
     $("#TxtPeriodoEdit").select2();
 });
-function SubmitFunction(){
-    return false;
-}
-$(".formCreate").on("click",".botonCreate",function(){
+$(".formCreate").on('submit', function(){
     
     if($('#TxtIdEstudiante').val().length == 0){
         var m = "Por favor seleccione el Estudiante.";
@@ -146,6 +143,7 @@ $(".formCreate").on("click",".botonCreate",function(){
             }
         });
     }
+    return false;
 });
 $(".dataTableCalificacion").on("click",".btnDelete",function(){
     var id = $(this).attr("IdCalificacion");
@@ -212,7 +210,7 @@ $(".dataTableCalificacion").on("click",".btnUpdate",function(){
         }
     });
 });
-$(".formEdit").on("click",".botonEdit",function(){
+$(".formEdit").on('submit', function(){
     if($('#TxtIdEstudianteEdit').val().length == 0){
         var m = "Por favor seleccione el Estudiante.";
         ValidateCreateUpdate(m);
@@ -282,4 +280,5 @@ $(".formEdit").on("click",".botonEdit",function(){
             }
         });
     }
+    return false;
 }); 

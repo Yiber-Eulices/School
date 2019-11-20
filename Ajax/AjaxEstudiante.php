@@ -32,6 +32,7 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
                             $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
@@ -39,7 +40,7 @@
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
 
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdEstudiante"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["Nombre"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
@@ -51,7 +52,8 @@
                                 "'.$objADMIN[$i]["Telefono"].'",
                                 "'.$objADMIN[$i]["Nivel"].'",
                                 "'.$objADMIN[$i]["NombreCurso"].'",
-                                "'.$btnAcudiente.$btnUpdate.$btnDelete.'"
+                                "'.$btnAcudiente.$btnUpdate.$btnDelete.'",
+                                "'.$objADMIN[$i]["IdEstudiante"].'"
                             ],';
                         }
                     }else{
@@ -85,13 +87,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             if($objADMIN[$i]["CursoIdCurso"]==$_SESSION['CursoId']){
                                 $btnBoletin = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnBoletin btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
 
                                 $oBJEC_JSON .= '[
-                                    "'.$objADMIN[$i]["IdEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objADMIN[$i]["Nombre"].'",
                                     "'.$objADMIN[$i]["Apellido"].'",
@@ -154,11 +157,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                             $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button>";
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdProfesorCurso"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["NombreProfesor"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
@@ -192,11 +196,12 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                             $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button>";
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdProfesorCurso"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["NombreProfesor"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
@@ -230,12 +235,13 @@
           $oBJEC_JSON = '{
               "data": [';
                   if (count($objADMIN) >= 1){
+                    $enum=1;
                       for ($i=0; $i < count($objADMIN); $i++) {
                           $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
                           $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
 
                           $oBJEC_JSON .= '[
-                              "'.$objADMIN[$i]["IdEstudiante"].'",
+                              "'.$enum++.'",
                               "'.$img.'",
                               "'.$objADMIN[$i]["Nombre"].'",
                               "'.$objADMIN[$i]["Apellido"].'",
@@ -281,13 +287,14 @@
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objADMIN) >= 1){
+                        $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             if($objADMIN[$i]["CursoIdCurso"]==$_SESSION["CalificarCursoId"]){
                                 $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>list</i><span>Calificaciones</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
     
                                 $oBJEC_JSON .= '[
-                                    "'.$objADMIN[$i]["IdEstudiante"].'",
+                                    "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objADMIN[$i]["Nombre"].'",
                                     "'.$objADMIN[$i]["Apellido"].'",
@@ -346,15 +353,16 @@
   
           }
         
-          public function AjxListarProfesor(){
+        public function AjxListarProfesor(){
           $objADMIN = ControladorEstudiante::CtrlListarProfesor();
           $oBJEC_JSON = '{
               "data": [';
                   if (count($objADMIN) >= 1){
+                    $enum=1;
                       for ($i=0; $i < count($objADMIN); $i++) {
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                             $oBJEC_JSON .= '[
-                                "'.$objADMIN[$i]["IdProfesor"].'",
+                                "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["NombreProfesor"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
@@ -409,7 +417,7 @@
 		  if($dir){
 			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
 			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
+			$image='View/profilePhoto/'.$filename;
 			if($muf){
 			  $image_upload=true;
 			}else{
@@ -445,7 +453,7 @@
 		  if($dir){
 			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
 			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='../View/profilePhoto/'.$filename;
+			$image='View/profilePhoto/'.$filename;
 			if($muf){
 			  $image_upload=true;
 			}else{

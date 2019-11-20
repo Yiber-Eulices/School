@@ -35,12 +35,12 @@
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">notifications</i>
-                            <span class="label-count">0</span>
+                            <span class="label-count label-countt">0</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">NOTIFICACIONES</li>
                             <li class="body">
-                                <ul class="menu">
+                                <ul class="menu menuNotifications">
                                 </ul>
                             </li>
                             <li class="footer">
@@ -258,8 +258,7 @@
                                 <span>Notificaciones</span>
                             </a>
                         </li>
-                    <?php } ?>
-                    
+                    <?php } ?>                    
                 </ul>
             </div>
             <!-- #Menu -->

@@ -68,7 +68,7 @@
             
         </div>
     </section>
-    <script src="View/js/MisNotificaciones.js"></script>
+    <script src="View/js/EveryBody/MiNotificacion.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

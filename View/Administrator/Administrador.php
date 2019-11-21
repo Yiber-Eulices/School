@@ -324,7 +324,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Administrador.js"></script>
+    <script src="View/js/Administrator/Administrador.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

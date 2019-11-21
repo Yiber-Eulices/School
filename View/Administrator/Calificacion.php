@@ -255,7 +255,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="js/Calificacion.js"></script>
+    <script src="js/Administrator/Calificacion.js"></script>
 <?php
     include "template/footer.php";
 ?>

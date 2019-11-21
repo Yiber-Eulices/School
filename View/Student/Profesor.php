@@ -80,7 +80,7 @@
             <!-- #END# Basic Examples -->
         </div>
     </section>
-    <script src="View/js/MisProfesores.js"></script>
+    <script src="View/js/Student/Profesor.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

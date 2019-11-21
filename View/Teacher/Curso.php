@@ -76,7 +76,7 @@
             <!-- #END# Basic Examples -->
         </div>
     </section>
-    <script src="View/js/MisCursos.js"></script>
+    <script src="View/js/Teacher/Curso.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

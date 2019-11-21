@@ -78,7 +78,7 @@
             
         </div>
     </section>
-    <script src="View/js/Profesores.js"></script>
+    <script src="View/js/Parent/Profesor.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

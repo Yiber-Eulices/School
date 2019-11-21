@@ -1,5 +1,5 @@
 <?php
-    include "View/template/headerP.php";
+    include "View/template/HeaderP.php";
 ?>
 	
 	<!-- Home -->
@@ -37,10 +37,10 @@
 	</div>
 
 	<?php
-    include "View/template/footerP.php";
+    include "View/template/FooterP.php";
 	?>
 </div>
-<script src="View/js/Contactos.js"></script>
+<script src="View/js/EveryBody/Contacto.js"></script>
 
 </body>
 </html>

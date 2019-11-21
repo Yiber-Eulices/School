@@ -217,7 +217,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Alerta.js"></script>
+    <script src="View/js/Administrator/Notificacion.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

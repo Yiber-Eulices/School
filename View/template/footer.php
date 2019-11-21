@@ -59,7 +59,7 @@
 <script src="View/sweetalert/sweetalert.min.js"></script>
 <script src="View/sweetalert/mensajesweetalert.js"></script>
 
-<script src="View/js/Header.js"></script>
+<script src="View/js/Template/Header.js"></script>
 
 <!--WebCam-->
 <script type="text/javascript" src="View/plugins/webcam/webcam.min.js"></script>

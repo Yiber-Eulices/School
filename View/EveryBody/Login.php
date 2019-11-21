@@ -13,7 +13,7 @@
     <script src="View/plugins/jquery/jquery.min.js"></script>
 
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="View/images/logo.png" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="View/css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
@@ -31,11 +31,6 @@
     <!-- Custom Css -->
     <link href="View/css/style.css" rel="stylesheet">
 
-    <!--sweetalert-->
-    <link href="View/sweetalert/sweetalert.min.css" rel="stylesheet" />
-
-    <!-- Bootstrap Select2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body class="login-page bg-red">
@@ -105,8 +100,6 @@
             </div>
         </div>
     </div>
-    <!-- Select2 Plugin Js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="View/plugins/bootstrap/js/bootstrap.js"></script>
@@ -125,7 +118,7 @@
     <script src="View/sweetalert/sweetalert.min.js"></script>
     <script src="View/sweetalert/mensajesweetalert.js"></script>
 
-    <script src="View/js/Login.js"></script>
+    <script src="View/js/EveryBody/Login.js"></script>
 </body>
 
 </html>

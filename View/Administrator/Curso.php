@@ -193,7 +193,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Curso.js"></script>
+    <script src="View/js/Administrator/Curso.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

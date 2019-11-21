@@ -183,7 +183,7 @@
         </div>
         </div>
         <!-- End Modal Camera-->
-    <script src="View/js/Profile.js"></script>
+    <script src="View/js/EveryBody/Perfil.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

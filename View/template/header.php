@@ -20,7 +20,7 @@
     <script src="View/plugins/jquery/jquery.min.js"></script>
     
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="View/images/logo.png" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="View/css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
@@ -110,7 +110,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="MisNotificaciones">Ver todas las notificaciones</a>
+                                <a href="MiNotificacion">Ver todas las notificaciones</a>
                             </li>
                         </ul>
                     </li>

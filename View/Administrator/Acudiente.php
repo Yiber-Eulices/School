@@ -327,7 +327,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Acudiente.js"></script>
+    <script src="View/js/Administrator/Acudiente.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

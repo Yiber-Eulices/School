@@ -93,6 +93,6 @@
 	<script src="View/plugins/scrollTo/jquery.scrollTo.min.js"></script>
 	<script src="View/plugins/easing/easing.js"></script>
 	<script src="View/js/custom.js"></script>
-	<script src="View/js/FooterP.js"></script>
+	<script src="View/js/Template/FooterP.js"></script>
     </footer>
     

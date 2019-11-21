@@ -82,7 +82,7 @@
             
         </div>
     </section>
-    <script src="View/js/MisPadres.js"></script>
+    <script src="View/js/Student/Acudiente.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

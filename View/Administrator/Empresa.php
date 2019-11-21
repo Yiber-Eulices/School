@@ -168,7 +168,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Empresa.js"></script>
+    <script src="View/js/Administrator/Empresa.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

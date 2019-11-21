@@ -82,7 +82,7 @@
             <!-- #END# Basic Examples -->
         </div>
     </section>
-    <script src="View/js/CalificacionHijo.js"></script>
+    <script src="View/js/Parent/Materia.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

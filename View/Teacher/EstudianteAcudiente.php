@@ -82,7 +82,7 @@
             
         </div>
     </section>
-    <script src="View/js/EstudianteAcudientes.js"></script>
+    <script src="View/js/Teacher/EstudianteAcudiente.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

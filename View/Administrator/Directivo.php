@@ -193,7 +193,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Directivo.js"></script>
+    <script src="View/js/Administrator/Directivo.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

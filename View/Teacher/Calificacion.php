@@ -221,7 +221,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Calificaciones.js"></script>
+    <script src="View/js/Teacher/Calificacion.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

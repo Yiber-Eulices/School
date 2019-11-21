@@ -74,7 +74,7 @@
             
         </div>
     </section>
-    <script src="View/js/MiCalificacion.js"></script>
+    <script src="View/js/Student/Calificacion.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

@@ -44,7 +44,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="MisNotificaciones">Ver todas las notificaciones</a>
+                                <a href="MiNotificacion">Ver todas las notificaciones</a>
                             </li>
                         </ul>
                     </li>
@@ -101,7 +101,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="MisNotificaciones">
+                            <a href="MiNotificacion">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -183,7 +183,7 @@
                             </a>
                         </li-->
                         <li>
-                            <a href="MisNotificaciones">
+                            <a href="MiNotificacion">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -221,7 +221,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="MisNotificaciones">
+                            <a href="MiNotificacion">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>
@@ -253,7 +253,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="MisNotificaciones">
+                            <a href="MiNotificacion">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>
                             </a>

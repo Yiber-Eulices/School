@@ -81,7 +81,7 @@
             <!-- #END# Basic Examples -->
         </div>
     </section>
-    <script src="View/js/MisCalificaciones.js"></script>
+    <script src="View/js/Student/Materia.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

@@ -84,7 +84,7 @@
             
         </div>
     </section>
-    <script src="View/js/MisHijos.js"></script>
+    <script src="View/js/Parent/Estudiante.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

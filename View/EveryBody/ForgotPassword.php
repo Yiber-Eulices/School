@@ -6,14 +6,14 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>School Admin</title>
     <!-- Favicon-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="View/images/logo.png" type="image/x-icon">
 
     <!-- Jquery Core Js -->
     <script src="View/plugins/jquery/jquery.min.js"></script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="View/css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
+    <link href="View/css/GoogleFontsFamilyIcon.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="View/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -29,9 +29,6 @@
 
     <!--sweetalert-->
     <link href="View/sweetalert/sweetalert.min.css" rel="stylesheet" />
-
-    <!-- Bootstrap Select2 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 
 </head>
 
@@ -84,11 +81,6 @@
         </div>
     </div>
 
-    
-
-    <!-- Select2 Plugin Js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
-
     <!-- Bootstrap Core Js -->
     <script src="View/plugins/bootstrap/js/bootstrap.js"></script>
 
@@ -106,7 +98,7 @@
     <script src="View/sweetalert/sweetalert.min.js"></script>
     <script src="View/sweetalert/mensajesweetalert.js"></script>
 
-    <script src="View/js/ForgotPassword.js"></script>
+    <script src="View/js/EveryBody/ForgotPassword.js"></script>
 </body>
 
 </html>

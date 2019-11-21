@@ -138,7 +138,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Grado.js"></script>
+    <script src="View/js/Administrator/Grado.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

@@ -62,7 +62,7 @@
             </div>
         </div>
     </section>
-    <script src="View/js/Home.js"></script>
+    <script src="View/js/EveryBody/Home.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

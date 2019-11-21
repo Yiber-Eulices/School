@@ -74,7 +74,7 @@
             
         </div>
     </section>
-    <script src="View/js/CalificacionHijoMateria.js"></script>
+    <script src="View/js/Parent/Calificacion.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

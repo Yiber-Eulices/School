@@ -86,7 +86,7 @@
             <!-- #END# Basic Examples -->
         </div>
 </section>
-<script src="View/js/MiBoletin.js"></script>
+<script src="View/js/Student/Boletin.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

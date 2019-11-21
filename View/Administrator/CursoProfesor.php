@@ -165,7 +165,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/CursoProfesor.js"></script>
+    <script src="View/js/Administrator/CursoProfesor.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

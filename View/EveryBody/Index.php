@@ -1,5 +1,5 @@
 <?php
-    include "View/template/headerP.php";
+    include "View/template/HeaderP.php";
 ?>
 	<!-- Home -->
 
@@ -41,12 +41,12 @@
 			<div class="container">
 				<div class="row">				
 					<div class="col-lg-4 hero_box_col" style="margin: auto;">
-						<a href="Login.php" class="hero_box_link">
+						<a href="Login" class="hero_box_link">
 						<div class="hero_box d-flex flex-row align-items-center justify-content-start">
 							<img src="View/images/books.svg"  alt="">
 							<div class="hero_box_content">
 								<h2 class="hero_box_title">Iniciar Sesión</h2>
-								<a href="Login.php" class="link-color-login">Click aquí para iniciar sesión</a>
+								<a href="Login" class="link-color-login">Click aquí para iniciar sesión</a>
 							</div>
 						</div>
 						</a>
@@ -140,9 +140,9 @@
 		</div>
 	</div>
 	<?php
-    include "View/template/footerP.php";
+    include "View/template/FooterP.php";
 	?>
 </div>
-<script src="View/js/Index.js"></script>
+<script src="View/js/EveryBody/Index.js"></script>
 </body>
 </html>

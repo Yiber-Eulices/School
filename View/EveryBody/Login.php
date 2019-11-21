@@ -85,7 +85,7 @@
                     <div class ="row clearfix demo-icon-container">
                         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
                         <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                            <div class="demo-google-material-icon"> <i class="material-icons iconovisibipass">visibility</i><span class="icon-name nameiconpass">Ver Contrase&ntilde;a.</span></div>
+                            <div class="demo-google-material-icon" style="cursor: pointer"> <i class="material-icons iconovisibipass" >visibility</i><span class="icon-name nameiconpass">Ver Contrase&ntilde;a.</span></div>
                         </div>
                     </div>
                     <div class="row">

@@ -205,11 +205,9 @@ $(document).ready(function(){
         if($(this).html()=='visibility'){
             $(this).html('visibility_off');
             $("#TxtPasswordEdit").attr("type","text");
-            $(".nameiconpassedit").html("Ocultar Contrase&ntilde;a.")
         }else if($(this).html()=='visibility_off'){
             $(this).html('visibility');
             $("#TxtPasswordEdit").attr("type","password");
-            $(".nameiconpassedit").html("Ver Contrase&ntilde;a.")
         }
     });
     

@@ -188,9 +188,9 @@
                     <div class="help-info">Contrase&ntilde;a</div>
                 </div>
                 <div class ="row clearfix demo-icon-container">
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"></div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <div class="demo-google-material-icon"> <i class="material-icons iconovisibipass">visibility</i><span class="icon-name nameiconpass">Ver Contrase&ntilde;a.</span></div>
+                    <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11"></div>
+                    <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+                        <div class="demo-google-material-icon" style="cursor: pointer"> <i class="material-icons iconovisibipass">visibility</i><span class="icon-name nameiconpass"></span></div>
                     </div>
                 </div>
                 <div class="form-group form-float">
@@ -323,9 +323,9 @@
                     <div class="help-info">Contrase&ntilde;a</div>
                 </div>
                 <div class ="row clearfix demo-icon-container">
-                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"></div>
-                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                        <div class="demo-google-material-icon"> <i class="material-icons iconovisibipassedit">visibility</i><span class="icon-name nameiconpassedit">Ver Contrase&ntilde;a.</span></div>
+                    <div class="col-xs-9 col-sm-9 col-md-11 col-lg-11"></div>
+                    <div class="col-xs-3 col-sm-3 col-md-1 col-lg-1">
+                        <div class="demo-google-material-icon" style="cursor: pointer"> <i class="material-icons iconovisibipassedit">visibility</i><span class="icon-name nameiconpassedit"></span></div>
                     </div>
                 </div>
                 <div class="form-group form-float">

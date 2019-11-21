@@ -78,7 +78,7 @@
                                         <div class="form-group form-float">
                                             <label class="form-label">Tipo de Documento</label>
                                             <div class="form-line">
-                                                <select class="form-control show-tick" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit" required>
+                                                <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit" required>
                                                     <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                                                     <option value="CC">Cédula de Ciudadanía</option>
                                                     <option value="TI">Tarjeta de Identidad</option>
@@ -98,7 +98,7 @@
                                         <div class="form-group form-float">
                                             <label class="form-label">Rh</label>
                                             <div class="form-line">
-                                                <select class="form-control show-tick" name = "TxtRhEdit" id = "TxtRhEdit" required>
+                                                <select class="form-control show-tick" style ="width:100%" name = "TxtRhEdit" id = "TxtRhEdit" required>
                                                     <option value="">-- Por favor seleccione su Rh --</option>
                                                     <option value="A+">A+</option>
                                                     <option value="A-">A-</option>

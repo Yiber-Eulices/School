@@ -31,8 +31,6 @@ $(document).ready(function(){
     });
 });
 $(".formCreate").on('submit', function(){
-    var fileName = "";
-    var ext = "";
     if($('#TxtNombre').val().length == 0){
         var m = "Por favor ingrese el Nombre de la Materia.";
         ValidateCreateUpdate(m);
@@ -57,15 +55,15 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableMateria").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }
@@ -97,13 +95,13 @@ $(".dataTableMateria").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var c = "Datos Eliminados.";
                         ValidateCreateEliminar(c);
                         $(".dataTableMateria").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -133,9 +131,6 @@ $(".dataTableMateria").on("click",".btnUpdate",function(){
     });
 });
 $(".formEdit").on('submit', function(){
-    var fileName = "";
-    var ext = "";
-    
     if($('#TxtNombreEdit').val().length == 0){
         var m = "Por favor ingrese el Nombre de la Materia."
         ValidateCreateUpdate(m);
@@ -162,15 +157,15 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableMateria").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }

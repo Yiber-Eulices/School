@@ -43,7 +43,7 @@ $(document).ready(function(){
             processData:false,
             dataType:"json",
             success : function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     window.location = "Boletin";
                 }	
             }

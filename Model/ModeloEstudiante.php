@@ -55,6 +55,27 @@
             $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
             return $oBJEC_DATA;     
         }
+        public static function BuscarCorreoEstudiante($correo){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Estudiante WHERE Correo = :correo");
+            $oBJEC_DATA_SEARCH  -> bindParam(":correo",$correo, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarTelefonoEstudiante($telefono){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Estudiante WHERE Telefono = :telefono");
+            $oBJEC_DATA_SEARCH  -> bindParam(":telefono",$telefono, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarDocumentoEstudiante($documento){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Estudiante WHERE Documento = :documento");
+            $oBJEC_DATA_SEARCH  -> bindParam(":documento",$documento, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
         public static function EliminarEstudiante($id){
             $oBJEC_DATA_DELETE = Conexion::conectar()->prepare("DELETE FROM Estudiante WHERE IdEstudiante = :id");
             $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);

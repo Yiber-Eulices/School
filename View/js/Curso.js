@@ -110,15 +110,15 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableCurso").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }
@@ -150,13 +150,13 @@ $(".dataTableCurso").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var c = "Datos Eliminados.";
                         ValidateCreateEliminar(c);
                         $(".dataTableCurso").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -188,9 +188,6 @@ $(".dataTableCurso").on("click",".btnUpdate",function(){
     });
 });
 $(".formEdit").on('submit', function(){
-    var fileName = "";
-    var ext = "";
-    
     if($('#TxtNombreEdit').val().length == 0){
         var m = "Por favor ingrese el Nombre del Curso."
         ValidateCreateUpdate(m);
@@ -229,15 +226,15 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableCurso").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }
@@ -258,7 +255,7 @@ $(".dataTableCurso").on("click",".btnProfesor",function(){
         processData:false,
         dataType:"json",
         success : function(respuesta){
-            if(respuesta = true){
+            if(respuesta == true){
                 window.location = "CursoProfesor";
             }	
         }

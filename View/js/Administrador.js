@@ -56,7 +56,7 @@ $(".formCreate").on('submit', function(){
         return false;
     }else if(ext!='png' && ext!='jpg' && ext!='gif'){
         var m = "El archivo seleccionado no es un archivo de Imagen.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtFechaNacimiento').val().length == 0){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Administrador.";
@@ -64,7 +64,7 @@ $(".formCreate").on('submit', function(){
         return false;
     }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<=18 ){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Administrador mayor de 18 Años.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtTipoDocumento').val().length == 0){
         var m = "Por favor seleccione el Tipo de Documento de el Administrador.";
@@ -123,17 +123,19 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableAdministrador").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
-                }
-                
+                    ValidateError(m);
+                }else{
+                    var m = respuesta;
+                    ValidateError(m);
+                }                
             }
         });
     }
@@ -163,13 +165,13 @@ $(".dataTableAdministrador").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var c = "Datos Eliminados.";
                         ValidateCreateEliminar(c);
                         $(".dataTableAdministrador").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -224,7 +226,7 @@ $(".formEdit").on('submit', function(){
         return false;
     }else if(document.getElementById("TxtFotoEdit").files.length > 0 && ext!='png' && ext!='jpg' && ext!='gif'){
         var m = "El archivo seleccionado no es un archivo de Imagen.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtFechaNacimientoEdit').val().length == 0){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Administrador.";
@@ -232,7 +234,7 @@ $(".formEdit").on('submit', function(){
         return false;
     }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=18 ){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Administrador mayor de 18 Años.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtTipoDocumentoEdit').val().length == 0){
         var m = "Por favor seleccione el Tipo de Documento de el Administrador.";
@@ -300,15 +302,18 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableAdministrador").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
+                }else{
+                    var m = respuesta;
+                    ValidateError(m);
                 }
                 
             }

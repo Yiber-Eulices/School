@@ -33,7 +33,7 @@ $(document).ready(function(){
                         window.location = "Home"; 
                     }else{
                         var m = respuesta;
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }                
                 }
             });

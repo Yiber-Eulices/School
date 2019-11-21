@@ -85,17 +85,16 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var m = "Datos Almacenados.";
                     ValidateCreateUpdate(m);
                     $(".dataTableAlerta").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
-                
             }
         });
     }
@@ -125,13 +124,13 @@ $(".dataTableAlerta").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var m = "Datos Eliminados.";
                         ValidateCreateUpdate(m);
                         $(".dataTableAlerta").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -224,15 +223,15 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var m = "Datos Editados.";
                     ValidateCreateUpdate(m);
                     $(".dataTableAlerta").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }

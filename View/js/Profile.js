@@ -61,7 +61,7 @@ $(document).ready(function(){
             return false;
         }else if(document.getElementById("TxtFotoEdit").files.length > 0 && ext!='png' && ext!='jpg' && ext!='gif'){
             var m = "El archivo seleccionado no es un archivo de Imagen.";
-            ValidateCreateUpdate(m);
+            ValidateError(m);
             return false;
         }else if($('#TxtFechaNacimientoEdit').val().length == 0){
             var m = "Por favor ingrese la Fecha de Nacimiento.";
@@ -69,11 +69,11 @@ $(document).ready(function(){
             return false;
         }else if($("#pRol").html()!="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=18 ){
             var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 18 Años.";
-            ValidateCreateUpdate(m);
+            ValidateError(m);
             return false;
         }else if($("#pRol").html()=="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=5 ){
             var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 5 Años.";
-            ValidateCreateUpdate(m);
+            ValidateError(m);
             return false;
         }else if($('#TxtTipoDocumentoEdit').val().length == 0){
             var m = "Por favor seleccione el Tipo de Documento.";
@@ -141,13 +141,16 @@ $(document).ready(function(){
                 processData:false,
                 dataType:"json",
                 success:function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var m = "Datos Editados.";
                         ValidateCreateUpdate(m);
                         window.location = "Perfil";
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Editados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
+                    }else{
+                        var m = respuesta;
+                        ValidateError(m);
                     }
                     
                 }

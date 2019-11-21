@@ -41,7 +41,7 @@ $(document).ready(function(){
                     }else{
                         $(".btnRecuperar").attr("disabled",false);
                         var m = respuesta;
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }                
                 }
             });

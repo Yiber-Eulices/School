@@ -45,6 +45,27 @@
             $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
             return $oBJEC_DATA;     
         }
+        public static function BuscarCorreoAcudiente($correo){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Acudiente WHERE Correo = :correo");
+            $oBJEC_DATA_SEARCH  -> bindParam(":correo",$correo, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarTelefonoAcudiente($telefono){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Acudiente WHERE Telefono = :telefono");
+            $oBJEC_DATA_SEARCH  -> bindParam(":telefono",$telefono, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarDocumentoAcudiente($documento){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Acudiente WHERE Documento = :documento");
+            $oBJEC_DATA_SEARCH  -> bindParam(":documento",$documento, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
         public static function EliminarAcudiente($id){
             $oBJEC_DATA_DELETE = Conexion::conectar()->prepare("DELETE FROM Acudiente WHERE IdAcudiente = :id");
             $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);

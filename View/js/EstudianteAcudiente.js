@@ -52,9 +52,6 @@ $(document).ready(function(){
     });
 });
 $(".formCreate").on('submit', function(){
-    var fileName = "";
-    var ext = "";
-   
     if($('#TxtEstudiante').val().length == 0){
         var m = "Por favor ingrese el Nombre del Estudiante.";
         ValidateCreateUpdate(m);
@@ -79,15 +76,15 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableAcudienteEstudiante").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }
@@ -119,13 +116,13 @@ $(".dataTableAcudienteEstudiante").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var c = "Datos Eliminados.";
                         ValidateCreateEliminar(c);
                         $(".dataTableAcudienteEstudiante").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -153,8 +150,6 @@ $(".dataTableAcudienteEstudiante").on("click",".btnUpdate",function(){
     });
 });
 $(".formEdit").on('submit', function(){
-    var fileName = "";
-    var ext = "";
     if($('#TxtEstudianteEdit').val().length == 0){
         var m = "Por favor ingrese el nombre del Estudiante."
         ValidateCreateUpdate(m);
@@ -181,15 +176,15 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableAcudienteEstudiante").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }

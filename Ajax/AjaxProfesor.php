@@ -257,7 +257,7 @@
         $oBJEC_AJAX -> rh = $_POST["Rh"];
         $oBJEC_AJAX -> correo = $_POST["Correo"];
         $oBJEC_AJAX -> password = $_POST["Password"];
-        $oBJEC_AJAX -> telefono = $_POST["Id"];
+        $oBJEC_AJAX -> telefono = $_POST["Telefono"];
         $oBJEC_AJAX -> foto = $image;
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
         $oBJEC_AJAX -> AjxEditar();

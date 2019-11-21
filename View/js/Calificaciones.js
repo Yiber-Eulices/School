@@ -50,11 +50,11 @@ $(".formCreate").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtNotaAcumulativa').val())>5){
         var m = "Por favor ingrese la Nota Acumulativa menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtNotaAcumulativa').val())<0){
         var m = "Por favor ingrese la Nota Acumulativa mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtNotaComportamental').val().length == 0){
         var m = "Por favor ingrese la Nota Comportamental.";
@@ -62,11 +62,11 @@ $(".formCreate").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtNotaComportamental').val())>5){
         var m = "Por favor ingrese la Nota Comportamental menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtNotaComportamental').val())<0){
         var m = "Por favor ingrese la Nota Comportamental mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtEvaluacion').val().length == 0){
         var m = "Por favor ingrese la Evaluacion.";
@@ -74,11 +74,11 @@ $(".formCreate").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtEvaluacion').val())>5){
         var m = "Por favor ingrese la Evaluacion menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtEvaluacion').val())<0){
         var m = "Por favor ingrese la Evaluacion mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtAutoEvaluacion').val().length == 0){
         var m = "Por favor ingrese la Auto Evaluacion.";
@@ -86,11 +86,11 @@ $(".formCreate").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtAutoEvaluacion').val())>5){
         var m = "Por favor ingrese la Auto Evaluacion menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtAutoEvaluacion').val())<0){
         var m = "Por favor ingrese la Auto Evaluacion mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else{
         var IdEstudiante = $('#TxtIdEstudiante').val();
@@ -117,15 +117,15 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableCalificacion").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }
@@ -157,13 +157,13 @@ $(".dataTableCalificacion").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var c = "Datos Eliminados.";
                         ValidateCreateEliminar(c);
                         $(".dataTableCalificacion").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -213,11 +213,11 @@ $(".formEdit").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtNotaAcumulativaEdit').val())>5){
         var m = "Por favor ingrese la Nota Acumulativa menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtNotaAcumulativaEdit').val())<0){
         var m = "Por favor ingrese la Nota Acumulativa mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtNotaComportamentalEdit').val().length == 0){
         var m = "Por favor ingrese la Nota Comportamental.";
@@ -225,11 +225,11 @@ $(".formEdit").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtNotaComportamentalEdit').val())>5){
         var m = "Por favor ingrese la Nota Comportamental menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtNotaComportamentalEdit').val())<0){
         var m = "Por favor ingrese la Nota Comportamental mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtEvaluacionEdit').val().length == 0){
         var m = "Por favor ingrese la Evaluacion.";
@@ -237,11 +237,11 @@ $(".formEdit").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtEvaluacionEdit').val())>5){
         var m = "Por favor ingrese la Evaluacion menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtEvaluacionEdit').val())<0){
         var m = "Por favor ingrese la Evaluacion mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if($('#TxtAutoEvaluacionEdit').val().length == 0){
         var m = "Por favor ingrese la Auto Evaluacion.";
@@ -249,11 +249,11 @@ $(".formEdit").on('submit', function(){
         return false;
     }else if(parseFloat($('#TxtAutoEvaluacionEdit').val())>5){
         var m = "Por favor ingrese la Auto Evaluacion menor a 5.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else if(parseFloat($('#TxtAutoEvaluacionEdit').val())<0){
         var m = "Por favor ingrese la Auto Evaluacion mayor a 0.";
-        ValidateCreateUpdate(m);
+        ValidateError(m);
         return false;
     }else{
         var Id = $("#botonEdit").attr("IdCalificacion");
@@ -282,15 +282,15 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableCalificacion").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }

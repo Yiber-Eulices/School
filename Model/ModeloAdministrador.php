@@ -45,6 +45,27 @@
             $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
             return $oBJEC_DATA;     
         }
+        public static function BuscarCorreoAdministrador($correo){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Administrador WHERE Correo = :correo");
+            $oBJEC_DATA_SEARCH  -> bindParam(":correo",$correo, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarTelefonoAdministrador($telefono){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Administrador WHERE Telefono = :telefono");
+            $oBJEC_DATA_SEARCH  -> bindParam(":telefono",$telefono, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarDocumentoAdministrador($documento){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Administrador WHERE Documento = :documento");
+            $oBJEC_DATA_SEARCH  -> bindParam(":documento",$documento, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
         public static function EliminarAdministrador($id){
             $oBJEC_DATA_DELETE = Conexion::conectar()->prepare("DELETE FROM Administrador WHERE IdAdministrador = :id");
             $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);

@@ -31,9 +31,6 @@ $(document).ready(function(){
     });
 });
 $(".formCreate").on('submit', function(){
-    var fileName = "";
-    var ext = "";
-   
     if($('#TxtNombre').val().length == 0){
         var m = "Por favor ingrese el Nombre de el Directivo.";
         ValidateCreateUpdate(m);
@@ -59,8 +56,7 @@ $(".formCreate").on('submit', function(){
         oBJEC_DIREC.append("Nombre", Nombre); 
         oBJEC_DIREC.append("Cargo", Cargo); 
         oBJEC_DIREC.append("Correo", Correo);  
-        oBJEC_DIREC.append("Telefono", Telefono); 
-    
+        oBJEC_DIREC.append("Telefono", Telefono);    
         $.ajax({
             url:"Ajax/AjaxDirectivo.php?a=crear",
             method:"POST",
@@ -70,15 +66,15 @@ $(".formCreate").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Almacenados.";
                     ValidateCreateExito(a);
                     $(".dataTableDirectivo").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }
@@ -110,13 +106,13 @@ $(".dataTableDirectivo").on("click",".btnDelete",function(){
                 processData:false,
                 dataType:"json",
                 success : function(respuesta){
-                    if(respuesta = true){
+                    if(respuesta == true){
                         var c = "Datos Eliminados.";
                         ValidateCreateEliminar(c);
                         $(".dataTableDirectivo").DataTable().ajax.reload();
-                    }else if(respuesta = false){
+                    }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
-                        ValidateCreateUpdate(m);
+                        ValidateError(m);
                     }		
                 }
             });
@@ -149,9 +145,6 @@ $(".dataTableDirectivo").on("click",".btnUpdate",function(){
     });
 });
 $(".formEdit").on('submit', function(){
-    var fileName = "";
-    var ext = "";
-   
     if($('#TxtNombreEdit').val().length == 0){
         var m = "Por favor ingrese el Apellido de el Directivo."
         ValidateCreateUpdate(m);
@@ -190,15 +183,15 @@ $(".formEdit").on('submit', function(){
             processData:false,
             dataType:"json",
             success:function(respuesta){
-                if(respuesta = true){
+                if(respuesta == true){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var a = "Datos Editados.";
                     ValidateCreateExito(a);
                     $(".dataTableDirectivo").DataTable().ajax.reload();
-                }else if(respuesta = false){
+                }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
-                    ValidateCreateUpdate(m);
+                    ValidateError(m);
                 }
                 
             }

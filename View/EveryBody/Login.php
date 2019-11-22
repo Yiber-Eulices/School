@@ -31,6 +31,9 @@
     <!-- Custom Css -->
     <link href="View/css/style.css" rel="stylesheet">
 
+    <!--sweetalert-->
+    <link href="View/sweetalert/sweetalert.min.css" rel="stylesheet" />
+
 </head>
 
 <body class="login-page bg-red">

@@ -5,6 +5,10 @@
             return $objCREARM;
         }
         public static function CtrlEditar($id,$fecha,$titulo,$descripcion,$foto,$lugar){
+            $objBUSCM = ModeloEvento::BuscarEvento($id);
+            if($foto == null || $foto =="null"){
+                $foto = $objBUSCM["Foto"];
+            }
             $objEDITM = ModeloEvento::EditarEvento($id,$fecha,$titulo,$descripcion,$foto,$lugar);
             return $objEDITM;
         }

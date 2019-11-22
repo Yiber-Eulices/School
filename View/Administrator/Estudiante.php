@@ -317,7 +317,7 @@
                 <div class="form-group form-float">
                     <label class="form-label">Contrase&ntilde;a</label>
                     <div class="form-line">
-                        <input type="password" class="form-control" name="TxtPasswordEdit" id="TxtPasswordEdit" required>
+                        <input type="password" class="form-control" name="TxtPasswordEdit" id="TxtPasswordEdit">
                        
                     </div>
                     <div class="help-info">Contrase&ntilde;a</div>

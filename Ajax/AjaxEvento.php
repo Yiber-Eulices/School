@@ -117,9 +117,7 @@
         }
         //var_dump($_FILES["image"]);
             //die();
-          }else{
-              $image = $_POST["FotoSrc"];
-          }
+    }
           $oBJEC_AJAX = new AjaxEvento();
           $oBJEC_AJAX -> id = $_POST["Id"];
           $oBJEC_AJAX -> fecha = $_POST["Fecha"];

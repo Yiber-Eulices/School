@@ -20,18 +20,23 @@
             $id = $_SESSION['UserId'];
             $objBUSCMDOCUMENTO = '';
             $objBUSCMCORREO =  '';
+            $objBUSCM = '';
             if($rol=='Acudiente'){
                 $objBUSCMDOCUMENTO = ModeloAcudiente::BuscarDocumentoAcudiente($documento);
                 $objBUSCMCORREO = ModeloAcudiente::BuscarCorreoAcudiente($correo);
+                $objBUSCM = ModeloAcudiente::BuscarAcudiente($id);
             }else if($rol=='Estudiante'){
                 $objBUSCMDOCUMENTO = ModeloEstudiante::BuscarDocumentoEstudiante($documento);
                 $objBUSCMCORREO = ModeloEstudiante::BuscarCorreoEstudiante($correo);
+                $objBUSCM = ModeloEstudiante::BuscarEstudiante($id);
             }else if($rol=='Profesor'){
                 $objBUSCMDOCUMENTO = ModeloProfesor::BuscarDocumentoProfesor($documento);
                 $objBUSCMCORREO = ModeloProfesor::BuscarCorreoProfesor($correo);
+                $objBUSCM = ModeloProfesor::BuscarProfesor($id);
             }else if($rol=='Administrador'){
                 $objBUSCMDOCUMENTO = ModeloAdministrador::BuscarDocumentoAdministrador($documento);
                 $objBUSCMCORREO = ModeloAdministrador::BuscarCorreoAdministrador($correo);
+                $objBUSCM = ModeloAdministrador::BuscarAdministrador($id);
             }
             if($objBUSCMDOCUMENTO["Id".$rol]!=$id && $documento==$objBUSCMDOCUMENTO["Documento"]){
                 return "El Documento de Identifiacacion Ingresado ya esta Registardo por favor Ingrese otro Documento de Identifiacacion.";
@@ -48,7 +53,15 @@
             if($objVERIFICARTELEFONO != true){
                 return "El Telefono Ingresado no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
             }
-            $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
+            if($foto == null || $foto =="null"){
+                $foto = $objBUSCM["Foto"];
+            }
+            $passwordHash =  "";
+            if($password == null || $password =="null"){
+                $passwordHash = $objBUSCM["Password"];
+            }else{
+                $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
+            }
             $objEDITM = ModeloLogin::EditProfile($rol,$id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$passwordHash,$telefono,$foto,$fechaNacimiento);
             return $objEDITM;
         }

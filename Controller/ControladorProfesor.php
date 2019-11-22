@@ -39,7 +39,16 @@
             if($objVERIFICARTELEFONO != true){
                 return "El Telefono Ingresado no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
             }
-            $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
+            $objBUSCM = ModeloProfesor::BuscarProfesor($id);
+            if($foto == null || $foto =="null"){
+                $foto = $objBUSCM["Foto"];
+            }
+            $passwordHash =  "";
+            if($password == null || $password =="null"){
+                $passwordHash = $objBUSCM["Password"];
+            }else{
+                $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
+            }
             $objEDITM = ModeloProfesor::EditarProfesor($id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$passwordHash,$telefono,$foto,$fechaNacimiento);
             return $objEDITM;
         }

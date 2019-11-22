@@ -186,8 +186,6 @@
           }
 		    //var_dump($_FILES["image"]);
           //die();
-        }else{
-            $image = $_POST["FotoSrc"];
         }
         $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];

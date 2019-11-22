@@ -197,12 +197,9 @@ $(".formEdit").on('submit', function(){
         from = $('#TxtFechaEdit').val().split("/");
         var Fecha = from[2]+'/'+from[0]+'/'+from[1];
         var Titulo = $('#TxtTituloEdit').val();
-        var Foto = "";
-        var FotoSrc = "";
+        var Foto = null;
         if(document.getElementById("TxtFotoEdit").files.length > 0){
             var Foto = document.getElementById("TxtFotoEdit").files[0];
-        }else{
-            var FotoSrc = $("#imgProfileEdit").attr("src");
         }
         var Descripcion = $('#TxtDescripcionEdit').val();
         var Lugar = $('#TxtLugarEdit').val();
@@ -211,7 +208,6 @@ $(".formEdit").on('submit', function(){
         oBJEC_EVEN.append("Fecha", Fecha); 
         oBJEC_EVEN.append("Titulo", Titulo); 
         oBJEC_EVEN.append("Foto", Foto);
-        oBJEC_EVEN.append("FotoSrc", FotoSrc);
         oBJEC_EVEN.append("Descripcion", Descripcion); 
         oBJEC_EVEN.append("Lugar", Lugar); 
     

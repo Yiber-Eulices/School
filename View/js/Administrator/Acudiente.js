@@ -262,10 +262,6 @@ $(".formEdit").on('submit', function(){
         var m = "Por favor ingrese el Correo de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtPasswordEdit').val().length == 0){
-        var m = "Por favor ingrese la Contrasena de el Acudiente.";
-        ValidateCreateUpdate(m);
-        return false;
     }else if($('#TxtTelefonoEdit').val().length == 0){
         var m = "Por favor ingrese el Telefono de Contacto de el Acudiente.";
         ValidateCreateUpdate(m);
@@ -274,12 +270,9 @@ $(".formEdit").on('submit', function(){
         var Id = $("#botonEdit").attr("IdAcudiente");
         var Nombre = $('#TxtNombreEdit').val();
         var Apellido = $('#TxtApellidoEdit').val();
-        var Foto = "";
-        var FotoSrc = "";
+        var Foto = null;
         if(document.getElementById("TxtFotoEdit").files.length > 0){
             var Foto = document.getElementById("TxtFotoEdit").files[0];
-        }else{
-            var FotoSrc = $("#imgProfileEdit").attr("src");
         }
         from = $('#TxtFechaNacimientoEdit').val().split("/");
         var FechaNacimiento = from[2]+'/'+from[0]+'/'+from[1];
@@ -287,14 +280,16 @@ $(".formEdit").on('submit', function(){
         var Documento = $('#TxtDocumentoEdit').val();
         var Rh = $('#TxtRhEdit').val();
         var Correo = $('#TxtCorreoEdit').val();
-        var Password = $('#TxtPasswordEdit').val();
+        var Password = null;
+        if($('#TxtPasswordEdit').val().length > 0){
+            var Password = $('#TxtPasswordEdit').val();
+        }
         var Telefono = $('#TxtTelefonoEdit').val();
         var oBJEC_ACUDI = new FormData();
         oBJEC_ACUDI.append("Id", Id); 
         oBJEC_ACUDI.append("Nombre", Nombre); 
         oBJEC_ACUDI.append("Apellido", Apellido); 
         oBJEC_ACUDI.append("Foto", Foto);
-        oBJEC_ACUDI.append("FotoSrc", FotoSrc);
         oBJEC_ACUDI.append("FechaNacimiento", FechaNacimiento); 
         oBJEC_ACUDI.append("TipoDocumento", TipoDocumento); 
         oBJEC_ACUDI.append("Documento", Documento); 

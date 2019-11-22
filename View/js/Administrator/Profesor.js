@@ -253,10 +253,6 @@ $(".formEdit").on('submit', function(){
         var m = "Por favor ingrese el Correo de el Profesor.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtPasswordEdit').val().length == 0){
-        var m = "Por favor ingrese la Contrasena de el Profesor.";
-        ValidateCreateUpdate(m);
-        return false;
     }else if($('#TxtTelefonoEdit').val().length == 0){
         var m = "Por favor ingrese el Telefono de Contacto de el Profesor.";
         ValidateCreateUpdate(m);
@@ -265,12 +261,9 @@ $(".formEdit").on('submit', function(){
         var Id = $("#botonEdit").attr("IdProfesor");
         var Nombre = $('#TxtNombreEdit').val();
         var Apellido = $('#TxtApellidoEdit').val();
-        var Foto = "";
-        var FotoSrc = "";
+        var Foto = null;
         if(document.getElementById("TxtFotoEdit").files.length > 0){
             var Foto = document.getElementById("TxtFotoEdit").files[0];
-        }else{
-            var FotoSrc = $("#imgProfileEdit").attr("src");
         }
         from = $('#TxtFechaNacimientoEdit').val().split("/");
         var FechaNacimiento = from[2]+'/'+from[0]+'/'+from[1];
@@ -278,14 +271,16 @@ $(".formEdit").on('submit', function(){
         var Documento = $('#TxtDocumentoEdit').val();
         var Rh = $('#TxtRhEdit').val();
         var Correo = $('#TxtCorreoEdit').val();
-        var Password = $('#TxtPasswordEdit').val();
+        var Password = null;
+        if($('#TxtPasswordEdit').val().length > 0){
+            var Password = $('#TxtPasswordEdit').val();
+        }
         var Telefono = $('#TxtTelefonoEdit').val();
         var oBJEC_PROF = new FormData();
         oBJEC_PROF.append("Id", Id); 
         oBJEC_PROF.append("Nombre", Nombre); 
         oBJEC_PROF.append("Apellido", Apellido); 
         oBJEC_PROF.append("Foto", Foto);
-        oBJEC_PROF.append("FotoSrc", FotoSrc);
         oBJEC_PROF.append("FechaNacimiento", FechaNacimiento); 
         oBJEC_PROF.append("TipoDocumento", TipoDocumento); 
         oBJEC_PROF.append("Documento", Documento); 

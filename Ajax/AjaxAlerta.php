@@ -106,7 +106,8 @@
                                 "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objADMIN[$i]["Titulo"].'",
                                 "'.$objADMIN[$i]["Mensaje"].'",
-                                "'.$objADMIN[$i]["Estado"].'"
+                                "'.$objADMIN[$i]["Estado"].'",
+                                "'.$objADMIN[$i]["IdAlerta"].'"
                             ],';
                         }
                     }else{

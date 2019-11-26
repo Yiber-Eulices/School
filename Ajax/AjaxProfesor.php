@@ -40,9 +40,9 @@
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdProfesor = '".$objPROF[$i]["IdProfesor"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objPROF[$i]["Foto"]."'>";
                             $tipDoc = '';
-                            if($objADMIN[$i]["TipoDocumento"]=="CC"){
+                            if($objPROF[$i]["TipoDocumento"]=="CC"){
                                 $tipDoc = 'Cédula de Ciudadanía';
-                            }else if($objADMIN[$i]["TipoDocumento"]=="CE"){
+                            }else if($objPROF[$i]["TipoDocumento"]=="CE"){
                                 $tipDoc = 'Cédula de Extranjería';
                             }
                             $oBJEC_JSON .= '[

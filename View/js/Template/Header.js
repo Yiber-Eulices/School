@@ -9,7 +9,7 @@ $(document).ready(function(){
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){ 
                     if(respuesta.data[i][4]=='Sin Ver'){
-                        $("#ModalAlerta").attr("IdAlerta",respuesta.data[i][0]);
+                        $("#ModalAlerta").attr("IdAlerta",respuesta.data[i][5]);
                         $("#TitleModalAlert").html(respuesta.data[i][2]);
                         $("#TextModalAlert").html(respuesta.data[i][3]);
                         $("#ModalAlerta").modal();

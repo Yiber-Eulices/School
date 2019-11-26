@@ -5,6 +5,7 @@
     require_once "../Model/ModeloCurso.php";
     require_once "../Model/ModeloGrado.php";
     require_once "../Model/ModeloMateria.php";
+    setlocale(LC_ALL,"es-CO.utf8");
     class AjaxEstudiante{
         public $id;
         public $nombre;
@@ -34,25 +35,37 @@
                     if (count($objADMIN) >= 1){
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
+                            list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
                             $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
                             $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
+                            $btnCalificacion = "<button type='button' style='width: auto;' class='btn btnCalificacion btn-primary waves-effect'  IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>book</i><span>Calificaciones</span></button>";
+                            $btnBoletin = "<button type='button' style='width: auto;' class='btn btnBoletin btn-success waves-effect'  IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-
+                            $tipDoc = '';
+                            if($objADMIN[$i]["TipoDocumento"]=="CC"){
+                                $tipDoc = 'Cédula de Ciudadanía';
+                            }else if($objADMIN[$i]["TipoDocumento"]=="CE"){
+                                $tipDoc = 'Cédula de Extranjería';
+                            }else if($objADMIN[$i]["TipoDocumento"]=="TI"){
+                                $tipDoc = 'Tarjeta de Identidad';
+                            }else if($objADMIN[$i]["TipoDocumento"]=="RC"){
+                                $tipDoc = 'Registro Civil';
+                            }
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["Nombre"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
-                                "'.$objADMIN[$i]["TipoDocumento"].'",
+                                "'.$tipDoc.'",
                                 "'.$objADMIN[$i]["Documento"].'",
-                                "'.$objADMIN[$i]["FechaNacimiento"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objADMIN[$i]["Rh"].'",
                                 "'.$objADMIN[$i]["Correo"].'",
                                 "'.$objADMIN[$i]["Telefono"].'",
                                 "'.$objADMIN[$i]["Nivel"].'",
                                 "'.$objADMIN[$i]["NombreCurso"].'",
-                                "'.$btnAcudiente.$btnUpdate.$btnDelete.'",
+                                "'.$btnAcudiente.$btnCalificacion.$btnBoletin.$btnUpdate.$btnDelete.'",
                                 "'.$objADMIN[$i]["IdEstudiante"].'"
                             ],';
                         }
@@ -90,17 +103,27 @@
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             if($objADMIN[$i]["CursoIdCurso"]==$_SESSION['CursoId']){
+                                list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
                                 $btnBoletin = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnBoletin btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-
+                                $tipDoc = '';
+                                if($objADMIN[$i]["TipoDocumento"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objADMIN[$i]["TipoDocumento"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }else if($objADMIN[$i]["TipoDocumento"]=="TI"){
+                                    $tipDoc = 'Tarjeta de Identidad';
+                                }else if($objADMIN[$i]["TipoDocumento"]=="RC"){
+                                    $tipDoc = 'Registro Civil';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objADMIN[$i]["Nombre"].'",
                                     "'.$objADMIN[$i]["Apellido"].'",
-                                    "'.$objADMIN[$i]["TipoDocumento"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objADMIN[$i]["Documento"].'",
-                                    "'.$objADMIN[$i]["FechaNacimiento"].'",
+                                    "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                     "'.$objADMIN[$i]["Rh"].'",
                                     "'.$objADMIN[$i]["Correo"].'",
                                     "'.$objADMIN[$i]["Telefono"].'",
@@ -160,7 +183,7 @@
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-                            $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button>";
+                            $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$img.'",
@@ -199,7 +222,7 @@
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-                            $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button>";
+                            $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdProfesorCurso = '".$objADMIN[$i]["IdProfesorCurso"]."'><i class='material-icons'>list</i><span>Ver Calificaciones</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$img.'",
@@ -237,17 +260,27 @@
                   if (count($objADMIN) >= 1){
                     $enum=1;
                       for ($i=0; $i < count($objADMIN); $i++) {
-                          $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
+                        list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
+                          $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button></div>";
                           $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-
+                          $tipDoc = '';
+                        if($objADMIN[$i]["TipoDocumento"]=="CC"){
+                            $tipDoc = 'Cédula de Ciudadanía';
+                        }else if($objADMIN[$i]["TipoDocumento"]=="CE"){
+                            $tipDoc = 'Cédula de Extranjería';
+                        }else if($objADMIN[$i]["TipoDocumento"]=="TI"){
+                            $tipDoc = 'Tarjeta de Identidad';
+                        }else if($objADMIN[$i]["TipoDocumento"]=="RC"){
+                            $tipDoc = 'Registro Civil';
+                        }
                           $oBJEC_JSON .= '[
                               "'.$enum++.'",
                               "'.$img.'",
                               "'.$objADMIN[$i]["Nombre"].'",
                               "'.$objADMIN[$i]["Apellido"].'",
-                              "'.$objADMIN[$i]["TipoDocumento"].'",
+                              "'.$tipDoc.'",
                               "'.$objADMIN[$i]["Documento"].'",
-                              "'.$objADMIN[$i]["FechaNacimiento"].'",
+                              "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                               "'.$objADMIN[$i]["Rh"].'",
                               "'.$objADMIN[$i]["Correo"].'",
                               "'.$objADMIN[$i]["Telefono"].'",
@@ -290,17 +323,27 @@
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
                             if($objADMIN[$i]["CursoIdCurso"]==$_SESSION["CalificarCursoId"]){
-                                $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>list</i><span>Calificaciones</span></button>";
+                                list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
+                                $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>list</i><span>Calificaciones</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-    
+                                $tipDoc = '';
+                                if($objADMIN[$i]["TipoDocumento"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objADMIN[$i]["TipoDocumento"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }else if($objADMIN[$i]["TipoDocumento"]=="TI"){
+                                    $tipDoc = 'Tarjeta de Identidad';
+                                }else if($objADMIN[$i]["TipoDocumento"]=="RC"){
+                                    $tipDoc = 'Registro Civil';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objADMIN[$i]["Nombre"].'",
                                     "'.$objADMIN[$i]["Apellido"].'",
-                                    "'.$objADMIN[$i]["TipoDocumento"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objADMIN[$i]["Documento"].'",
-                                    "'.$objADMIN[$i]["FechaNacimiento"].'",
+                                    "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                     "'.$objADMIN[$i]["Rh"].'",
                                     "'.$objADMIN[$i]["Correo"].'",
                                     "'.$objADMIN[$i]["Telefono"].'",

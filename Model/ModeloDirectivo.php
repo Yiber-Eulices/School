@@ -38,4 +38,18 @@
             $oBJEC_DATA_DELETE  -> bindParam(":id",$id, PDO::PARAM_INT);
             return $oBJEC_DATA_DELETE -> execute();
         }
+        public static function BuscarCorreoDirectivo($correo){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Directivo WHERE Correo = :correo");
+            $oBJEC_DATA_SEARCH  -> bindParam(":correo",$correo, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
+        public static function BuscarTelefonoDirectivo($telefono){
+            $oBJEC_DATA_SEARCH = Conexion::conectar()->prepare("SELECT * FROM Directivo WHERE Telefono = :telefono");
+            $oBJEC_DATA_SEARCH  -> bindParam(":telefono",$telefono, PDO::PARAM_INT);
+            $oBJEC_DATA_SEARCH -> execute();
+            $oBJEC_DATA =  $oBJEC_DATA_SEARCH -> fetch();
+            return $oBJEC_DATA;     
+        }
     }

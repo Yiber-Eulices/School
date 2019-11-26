@@ -258,6 +258,12 @@
                                 <span>Notificaciones</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="Notificacion">
+                                <i class="material-icons">person notifications_active</i>
+                                <span>Notificar a una Persona</span>
+                            </a>
+                        </li>
                     <?php } ?>                    
                 </ul>
             </div>

@@ -60,8 +60,8 @@
                         <div class="header">
                             <div class="row clearfix">
                                 <div class="col-xs-12 col-sm-6">
-                                    <input type="hidden" name="UserId" id="UserId" value = "<?php echo($_SESSION['UserId']);?>">
-                                    <h2>Mi Boletin de <b id = "NumPeriodo"></b>.</h2>
+                                    <input type="hidden" name="UserId" id="UserId" value = "<?php echo($_SESSION['EstudianteId']);?>">
+                                    <h2>Boletin de <b id = "NumPeriodo"></b> de el Estudiante <b><?php echo($_SESSION['EstudianteNombre']);?></b>.</h2>
                                 </div>
                             </div>
                             
@@ -75,7 +75,7 @@
             <!-- #END# Basic Examples -->
         </div>
 </section>
-<script src="View/js/Student/Boletin.js"></script>
+<script src="View/js/Parent/Boletin.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

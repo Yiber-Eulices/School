@@ -18,18 +18,7 @@
                             <h2>
                                 Profesores
                             </h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            
                         </div>
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
@@ -139,9 +128,7 @@
                         <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumento" id = "TxtTipoDocumento" required>
                             <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                             <option value="CC">Cédula de Ciudadanía</option>
-                            <option value="TI">Tarjeta de Identidad</option>
                             <option value="CE">Cédula de Extranjería</option>
-                            <option value="RC">Registro Civil</option>
                         </select>
                     </div>
                     <div class="help-info">Tipo de Documento</div>
@@ -258,9 +245,7 @@
                         <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit" required>
                             <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                             <option value="CC">Cédula de Ciudadanía</option>
-                            <option value="TI">Tarjeta de Identidad</option>
                             <option value="CE">Cédula de Extranjería</option>
-                            <option value="RC">Registro Civil</option>
                         </select>
                     </div>
                     <div class="help-info">Tipo de Documento</div>

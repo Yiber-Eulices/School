@@ -75,6 +75,9 @@ $(".formCreate").on('submit', function(){
                 }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
                     ValidateError(m);
+                }else{
+                    var m = respuesta;
+                    ValidateError(m);
                 }
                 
             }
@@ -191,6 +194,9 @@ $(".formEdit").on('submit', function(){
                     $(".dataTableDirectivo").DataTable().ajax.reload();
                 }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
+                    ValidateError(m);
+                }else{
+                    var m = respuesta;
                     ValidateError(m);
                 }
                 

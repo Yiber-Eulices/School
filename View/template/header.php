@@ -36,7 +36,6 @@
     <link href="View/plugins/animate-css/animate.css" rel="stylesheet" />
     
     <!-- JQuery DataTable Css -->
-    <!--link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet"-->
     <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/datatables.min.css">
     <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/dataTables.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap.min.css">

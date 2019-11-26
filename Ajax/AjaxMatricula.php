@@ -1,6 +1,7 @@
 <?php
     require_once "../Controller/ControladorMatricula.php";
     require_once "../Model/ModeloMatricula.php";
+    setlocale(LC_ALL,"es-CO.utf8");
     class AjaxMatricula{
         public $id;
         public $fecha;
@@ -23,11 +24,12 @@
                     if (count($objMATR) >= 1){
                         $enum=1;
                         for ($i=0; $i < count($objMATR); $i++) {
+                            list($anio,$mes,$dia) = explode("-",$objMATR[$i]["Fecha"]);
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdMatricula ='".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdMatricula = '".$objMATR[$i]["IdMatricula"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
-                                "'.$objMATR[$i]["Fecha"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objMATR[$i]["Costo"].'",
                                 "'.$objMATR[$i]["Nivel"].'",
                                 "'.$objMATR[$i]["NombreEstudiante"].' '.$objMATR[$i]["Apellido"].'",

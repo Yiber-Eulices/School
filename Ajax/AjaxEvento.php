@@ -1,6 +1,7 @@
 <?php
     require_once "../Controller/ControladorEvento.php";
     require_once "../Model/ModeloEvento.php";
+    setlocale(LC_ALL,"es-CO.utf8");
     class AjaxEvento{
         public $id;
         public $fecha;
@@ -24,6 +25,7 @@
                     if (count($objEVEN) >= 1){
                         $enum=1;
                         for ($i=0; $i < count($objEVEN); $i++) {
+                            list($anio,$mes,$dia) = explode("-",$objEVEN[$i]["Fecha"]);
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdEvento = '".$objEVEN[$i]["IdEvento"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdEvento = '".$objEVEN[$i]["IdEvento"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objEVEN[$i]["Foto"]."'>";
@@ -31,7 +33,7 @@
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$img.'",
-                                "'.$objEVEN[$i]["Fecha"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objEVEN[$i]["Titulo"].'",
                                 "'.$objEVEN[$i]["Descripcion"].'",
                                 "'.$objEVEN[$i]["Lugar"].'",

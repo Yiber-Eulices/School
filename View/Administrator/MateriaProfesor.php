@@ -4,39 +4,48 @@
 ?>
 <section class="content">
         <div class="container-fluid">
+          <div class="block-header">
+                <h2>
+                    
+                SCHOOL ADMIN
+                </h2>
+            </div>
             <!-- Basic Examples -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Calificaciones de el Estudiante <b><?php echo($_SESSION["EstudianteNombre"]);?></b>, en la Asignatura <b><?php echo($_SESSION["CalificarMateriaNombre"]);?></b>.
+                                Calificaciones de el Estudiante <b><?php echo($_SESSION["EstudianteNombre"]);?></b>, seleccione la Asignatura.
                             </h2>
                             
                         </div>
                         <div class="body">
+                            <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableCalificacion table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableCurso table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Periodo</th>
-                                            <th>Nota Acumulativa</th>
-                                            <th>Nota Comportamental</th>
-                                            <th>Evaluacion</th>
-                                            <th>Auto Evaluacion</th>
-                                            <th>Promedio</th>
+                                            <th>Foto</th>
+                                            <th>Profesor</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
+                                            <th>Materia</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Periodo</th>
-                                            <th>Nota Acumulativa</th>
-                                            <th>Nota Comportamental</th>
-                                            <th>Evaluacion</th>
-                                            <th>Auto Evaluacion</th>
-                                            <th>Promedio</th>
+                                        <th>#</th>
+                                            <th>Foto</th>
+                                            <th>Profesor</th>
+                                            <th>Apellido</th>
+                                            <th>Correo</th>
+                                            <th>Telefono</th>
+                                            <th>Materia</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
                                 </table>
@@ -60,10 +69,9 @@
                 </div>
             </div>
             <!-- #END# Basic Examples -->
-            
         </div>
     </section>
-    <script src="View/js/Parent/Calificacion.js"></script>
+    <script src="View/js/Administrator/MateriaProfesor.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

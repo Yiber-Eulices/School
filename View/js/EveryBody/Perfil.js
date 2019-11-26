@@ -17,32 +17,35 @@ $(document).ready(function(){
             e.preventDefault(); 
         } 
     });
-    $.ajax({
-        url:"Ajax/AjaxLogin.php?a=profile",
-        method:"GET",
-        dataType: "JSON",
-        success : function(respuesta){
-            //$("#botonEdit").attr("IdAdministrador",id);
-            $("#fotoEdit").attr("src",respuesta["Foto"]);
-            $('#TxtNombreEdit').val(respuesta["Nombre"]);
-            $("#h3Nombre").html(respuesta["Nombre"]);
-            $('#TxtApellidoEdit').val(respuesta["Apellido"]);
-            $("#pApellido").html(respuesta["Apellido"]);
-            from = respuesta["FechaNacimiento"].split("-");
-            $('#TxtFechaNacimientoEdit').val(from[1]+'/'+from[2]+'/'+from[0]);
-            $('#bs_datepicker_container input').datepicker({
-                autoclose: true,
-                container: '#bs_datepicker_container'
-            });
-            $("#TxtTipoDocumentoEdit option[value='"+respuesta["TipoDocumento"]+"']").attr("selected",true);
-            $("#TxtTipoDocumentoEdit").select2();
-            $('#TxtDocumentoEdit').val(respuesta["Documento"]);
-            $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
-            $("#TxtRhEdit").select2();
-            $('#TxtCorreoEdit').val(respuesta["Correo"]);
-            $('#TxtTelefonoEdit').val(respuesta["Telefono"]);        
-        }
-    });
+    function cargarPerfil(){
+        $.ajax({
+            url:"Ajax/AjaxLogin.php?a=profile",
+            method:"GET",
+            dataType: "JSON",
+            success : function(respuesta){
+                //$("#botonEdit").attr("IdAdministrador",id);
+                $("#fotoEdit").attr("src",respuesta["Foto"]);
+                $('#TxtNombreEdit').val(respuesta["Nombre"]);
+                $("#h3Nombre").html(respuesta["Nombre"]);
+                $('#TxtApellidoEdit').val(respuesta["Apellido"]);
+                $("#pApellido").html(respuesta["Apellido"]);
+                from = respuesta["FechaNacimiento"].split("-");
+                $('#TxtFechaNacimientoEdit').val(from[1]+'/'+from[2]+'/'+from[0]);
+                $('#bs_datepicker_container input').datepicker({
+                    autoclose: true,
+                    container: '#bs_datepicker_container'
+                });
+                $("#TxtTipoDocumentoEdit option[value='"+respuesta["TipoDocumento"]+"']").attr("selected",true);
+                $("#TxtTipoDocumentoEdit").select2();
+                $('#TxtDocumentoEdit').val(respuesta["Documento"]);
+                $("#TxtRhEdit option[value='"+respuesta["Rh"]+"']").attr("selected",true);
+                $("#TxtRhEdit").select2();
+                $('#TxtCorreoEdit').val(respuesta["Correo"]);
+                $('#TxtTelefonoEdit').val(respuesta["Telefono"]);        
+            }
+        });
+    }
+    cargarPerfil();
     $(".formEdit").on('submit', function(){
         var fechaActual = new Date();
         var fileName = "";
@@ -139,7 +142,7 @@ $(document).ready(function(){
                     if(respuesta == true){
                         var m = "Datos Editados.";
                         ValidateCreateUpdate(m);
-                        window.location = "Perfil";
+                        cargarPerfil();
                     }else if(respuesta == false){
                         var m = "¡¡¡Datos No Editados.!!!";
                         ValidateError(m);

@@ -1,6 +1,7 @@
 <?php
     require_once "../Controller/ControladorAdministrador.php";
     require_once "../Model/ModeloAdministrador.php";
+    setlocale(LC_ALL,"es-CO.utf8");
     class AjaxAdministrador{
         public $id;
         public $nombre;
@@ -29,18 +30,24 @@
                     if (count($objADMIN) >= 1){
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
+                            list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAdministrador = '".$objADMIN[$i]["IdAdministrador"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAdministrador = '".$objADMIN[$i]["IdAdministrador"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
-
+                            $tipDoc = '';
+                            if($objADMIN[$i]["TipoDocumento"]=="CC"){
+                              $tipDoc = 'Cédula de Ciudadanía';
+                            }else if($objADMIN[$i]["TipoDocumento"]=="CE"){
+                              $tipDoc = 'Cédula de Extranjería';
+                            }
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objADMIN[$i]["Nombre"].'",
                                 "'.$objADMIN[$i]["Apellido"].'",
-                                "'.$objADMIN[$i]["TipoDocumento"].'",
+                                "'.$tipDoc.'",
                                 "'.$objADMIN[$i]["Documento"].'",
-                                "'.$objADMIN[$i]["FechaNacimiento"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objADMIN[$i]["Rh"].'",
                                 "'.$objADMIN[$i]["Correo"].'",
                                 "'.$objADMIN[$i]["Telefono"].'",

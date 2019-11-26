@@ -9,6 +9,7 @@
     require_once "../Model/ModeloAdministrador.php";
     require_once "../Controller/ControladorAcudiente.php";
     require_once "../Model/ModeloAcudiente.php";
+    setlocale(LC_ALL,"es-CO.utf8");
     class AjaxAlerta{
         public $id;
         public $rolPersona;
@@ -37,6 +38,7 @@
                     if (count($objADMIN) >= 1){
                         $enum=1;
                         for ($i=0; $i < count($objADMIN); $i++) {
+                            list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["Fecha"]);
                             $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAlerta = '".$objADMIN[$i]["IdAlerta"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAlerta = '".$objADMIN[$i]["IdAlerta"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $objPERS = "";
@@ -49,11 +51,23 @@
                             }if($objADMIN[$i]["RolPersona"]=="Administrador"){
                                 $objPERS =ControladorAdministrador::CtrlBuscar($objADMIN[$i]["IdPersona"]);
                             }
+                            $tipDoc = '';
+                            if($objPERS["TipoDocumento"]=="CC"){
+                                $tipDoc = 'Cédula de Ciudadanía';
+                            }else if($objPERS["TipoDocumento"]=="CE"){
+                                $tipDoc = 'Cédula de Extranjería';
+                            }else if($objPERS["TipoDocumento"]=="TI"){
+                                $tipDoc = 'Tarjeta de Identidad';
+                            }else if($objPERS["TipoDocumento"]=="RC"){
+                                $tipDoc = 'Registro Civil';
+                            }
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$objADMIN[$i]["RolPersona"].'",
                                 "'.$objPERS["Nombre"]." ".$objPERS["Apellido"].'",
-                                "'.$objADMIN[$i]["Fecha"].'",
+                                "'.$tipDoc.'",
+                                "'.$objPERS["Documento"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objADMIN[$i]["Titulo"].'",
                                 "'.$objADMIN[$i]["Mensaje"].'",
                                 "'.$objADMIN[$i]["Estado"].'",
@@ -85,10 +99,11 @@
                 "data": [';
                     if (count($objADMIN) >= 1){
                         $enum=1;
-                        for ($i=0; $i < count($objADMIN); $i++) {                           
+                        for ($i=0; $i < count($objADMIN); $i++) {  
+                            list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["Fecha"]);
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
-                                "'.$objADMIN[$i]["Fecha"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objADMIN[$i]["Titulo"].'",
                                 "'.$objADMIN[$i]["Mensaje"].'",
                                 "'.$objADMIN[$i]["Estado"].'"

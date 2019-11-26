@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableCalificacion").DataTable({
-        "ajax":"Ajax/AjaxCalificacion.php?a=listaacudiente",
+    $(".dataTableCurso").DataTable({
+        "ajax":"Ajax/AjaxEstudiante.php?a=listamimateriaAcudiente",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -29,4 +29,23 @@ $(document).ready(function(){
             }
         }
     });
-}); 
+    $(".dataTableCurso").on("click",".btnCalificacion",function(){
+        var id = $(this).attr("IdProfesorCurso");
+        var oBJEC_ADMIN = new FormData();
+        oBJEC_ADMIN.append("Id", id); 
+        $.ajax({
+            url:"Ajax/AjaxEstudiante.php?a=sessionCursoEstudiante",
+            method:"POST",
+            data:oBJEC_ADMIN,
+            cache:false,
+            contentType:false,
+            processData:false,
+            dataType:"json",
+            success : function(respuesta){
+                if(respuesta == true){
+                    window.location = "Calificacion";
+                }	
+            }
+        });        
+    });
+});

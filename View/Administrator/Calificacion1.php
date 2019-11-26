@@ -1,6 +1,6 @@
 <?php
-    include "View/template/header.php";
-    include "View/template/menu.php";
+    include "template/header.php";
+    include "template/menu.php";
 ?>
 <section class="content">
         <div class="container-fluid">
@@ -10,9 +10,8 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Calificaciones del Estudiante <b><?php echo($_SESSION["EstudianteNombre"]);?></b>, en la Asignatura <b><?php echo($_SESSION["CalificarMateriaNombre"]);?></b>.
+                                Calificaciones
                             </h2>
-                            
                         </div>
                         <div class="body">
                             <button type="button" class="btn btn-success waves-effect"  data-toggle="modal" data-target="#ModalCreate">
@@ -25,6 +24,8 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Estudiante</th>
+                                            <th>Materia</th>
                                             <th>Periodo</th>
                                             <th>Nota Acumulativa</th>
                                             <th>Nota Comportamental</th>
@@ -36,7 +37,9 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
+                                        <th>#</th>
+                                            <th>Estudiante</th>
+                                            <th>Materia</th>
                                             <th>Periodo</th>
                                             <th>Nota Acumulativa</th>
                                             <th>Nota Comportamental</th>
@@ -82,19 +85,34 @@
           </div>
             <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
-                
-                <input type = "hidden" name = "TxtIdEstudiante" id = "TxtIdEstudiante" value = "<?php echo($_SESSION["EstudianteId"]);?>" required>
-                <input type="hidden" name = "TxtIdMateria" id = "TxtIdMateria" value="<?php echo($_SESSION["CalificarProfesorCursoId"]);?>" required>
-
+                <div class="form-group form-float">
+                    <label class="form-label">Estudiante</label>
+                    <div class="form-line">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudiante" id = "TxtIdEstudiante" required>
+                            <option value="">-- Por favor seleccione el Estudiante --</option>
+                        </select>                       
+                    </div>
+                    <div class="help-info">Estudiante</div>
+                </div>
+                <div class="form-group form-float">
+                    <label class="form-label">Materia</label>
+                    <div class="form-line">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateria" id = "TxtIdMateria" required>
+                            <option value="">-- Por favor seleccione la Materia --</option>
+                        </select>
+                        
+                    </div>
+                    <div class="help-info">Materia</div>
+                </div>
                 <div class="form-group form-float">
                 <label class="form-label">Periodo</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodo" id = "TxtPeriodo" required>
                             <option value="">-- Por favor seleccione el Periodo --</option>
-                            <option value="1">Primer Periodo</option>
-                            <option value="2">Segundo Periodo</option>
-                            <option value="3">Tercer Periodo</option>
-                            <option value="4">Cuarto Periodo</option>
+                            <option value="1">1er Periodo</option>
+                            <option value="2">2do Periodo</option>
+                            <option value="3">3er Periodo</option>
+                            <option value="4">4to Periodo</option>
                         </select>
                         
                     </div>
@@ -152,19 +170,34 @@
           </div>
             <form id="form_advanced_validation_edit" class="formEdit" method="POST">
             <div class="modal-body">
-
-                <input type = "hidden" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit" value = "<?php echo($_SESSION["EstudianteId"]);?>" required>
-                <input type="hidden" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit" value="<?php echo($_SESSION["CalificarProfesorCursoId"]);?>" required>
-
+                <div class="form-group form-float">
+                    <label class="form-label">Estudiante</label>                                    
+                    <div class="form-line">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdEstudianteEdit" id = "TxtIdEstudianteEdit" required>
+                            <option value="">-- Por favor seleccione el Estudiante --</option>
+                        </select>
+                    </div>
+                    <div class="help-info">Estudiante</div>
+                </div>
+                <div class="form-group form-float">
+                    <label class="form-label">Materia</label>
+                    <div class="form-line">
+                        <select class="form-control show-tick" style ="width:100%" name = "TxtIdMateriaEdit" id = "TxtIdMateriaEdit" required>
+                            <option value="">-- Por favor seleccione la Materia --</option>
+                        </select>
+                       
+                    </div>
+                    <div class="help-info">Materia</div>
+                </div>
                 <div class="form-group form-float">
                     <label class="form-label">Periodo</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtPeriodoEdit" id = "TxtPeriodoEdit" required>
                             <option value="">-- Por favor seleccione el Periodo --</option>
-                            <option value="1">Primer Periodo</option>
-                            <option value="2">Segundo Periodo</option>
-                            <option value="3">Tercer Periodo</option>
-                            <option value="4">Cuarto Periodo</option>
+                            <option value="1">1er Periodo</option>
+                            <option value="2">2do Periodo</option>
+                            <option value="3">3er Periodo</option>
+                            <option value="4">4to Periodo</option>
                         </select>
                         
                     </div>
@@ -201,7 +234,7 @@
                 
             </div>
             <div class="modal-footer">
-              <input type="submit" IdCalificacion name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit">
+              <input type="submit" IdCalificacion name="Enviar" class="btn btn-primary botonEdit" id = "botonEdit" required>
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -210,7 +243,7 @@
       </div>
     </div>
     <!--End Modal Edit -->
-    <script src="View/js/Teacher/Calificacion.js"></script>
+    <script src="js/Administrator/Calificacion.js"></script>
 <?php
-    include "View/template/footer.php";
+    include "template/footer.php";
 ?>

@@ -3,12 +3,14 @@
     require_once "../Model/ModeloAdministrador.php";
     require_once "../Model/ModeloEstudiante.php";
     require_once "../Model/ModeloProfesor.php";
+    require_once "../Model/ModeloDirectivo.php";
     class ControladorVerificar{
         public static function CtrlValidarCorreo($correo){
             $objBUSCMCORREOACUDIENTE = ModeloAcudiente::BuscarCorreoAcudiente($correo);
             $objBUSCMCORREOADMINISTRADOR = ModeloAdministrador::BuscarCorreoAdministrador($correo);
             $objBUSCMCORREOESTUDIANTE = ModeloEstudiante::BuscarCorreoEstudiante($correo);
             $objBUSCMCORREOPROFESOR = ModeloProfesor::BuscarCorreoProfesor($correo);
+            $objBUSCMCORREODIRECTIVO = ModeloDirectivo::BuscarCorreoDirectivo($correo);
             if($correo == $objBUSCMCORREOACUDIENTE["Correo"]){
                 return true;
             }else if($correo == $objBUSCMCORREOADMINISTRADOR["Correo"]){
@@ -16,6 +18,8 @@
             }else if($correo == $objBUSCMCORREOESTUDIANTE["Correo"]){
                 return true;
             }else if($correo == $objBUSCMCORREOPROFESOR["Correo"]){
+                return true;
+            }else if($correo == $objBUSCMCORREODIRECTIVO["Correo"]){
                 return true;
             }else{
                 $apiKey= 'bdf6da844098b58d89a18f9d9cd2a6b4';
@@ -32,6 +36,7 @@
             $objBUSCMTELEFONOADMINISTRADOR = ModeloAdministrador::BuscarTelefonoAdministrador($telefono);
             $objBUSCMTELEFONOESTUDIANTE = ModeloEstudiante::BuscarTelefonoEstudiante($telefono);
             $objBUSCMTELEFONOPROFESOR = ModeloProfesor::BuscarTelefonoProfesor($telefono);
+            $objBUSCMTELEFONODIRECTIVO = ModeloDirectivo::BuscarTelefonoDirectivo($telefono);
             if($telefono == $objBUSCMTELEFONOACUDIENTE["Telefono"]){
                 return true;
             }else if($telefono == $objBUSCMTELEFONOADMINISTRADOR["Telefono"]){
@@ -39,6 +44,8 @@
             }else if($telefono == $objBUSCMTELEFONOESTUDIANTE["Telefono"]){
                 return true;
             }else if($telefono == $objBUSCMTELEFONOPROFESOR["Telefono"]){
+                return true;
+            }else if($telefono == $objBUSCMTELEFONODIRECTIVO["Telefono"]){
                 return true;
             }else{
                 $apiKey= '6d4b5facab5de4f11f9940d003e51033';

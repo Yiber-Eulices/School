@@ -10,7 +10,7 @@
                     <div class="profile-header">&nbsp;</div>
                     <div class="profile-body">
                         <div class="image-area">
-                            <img  id = 'fotoEdit'src="images/user.png" alt="Autobuses AGA - Profile Image" />
+                            <img  id = 'fotoEdit'src="View/images/user.png" alt="Autobuses AGA - Profile Image" />
                             <style>
                                 #fotoEdit{
                                     width: 200px;
@@ -81,9 +81,11 @@
                                                 <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit" required>
                                                     <option value="">-- Por favor seleccione su Tipo de Documento --</option>
                                                     <option value="CC">Cédula de Ciudadanía</option>
-                                                    <option value="TI">Tarjeta de Identidad</option>
                                                     <option value="CE">Cédula de Extranjería</option>
-                                                    <option value="RC">Registro Civil</option>
+                                                    <?php if($_SESSION['UserRol']=="Estudiante"){ ?>
+                                                        <option value="TI">Tarjeta de Identidad</option>
+                                                        <option value="RC">Registro Civil</option>                       
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="help-info">Tipo de Documento</div>

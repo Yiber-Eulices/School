@@ -1,6 +1,7 @@
 <?php
     require_once "../Controller/ControladorAcudiente.php";
     require_once "../Model/ModeloAcudiente.php";
+    setlocale(LC_ALL,"es-CO.utf8");
     class AjaxAcudiente{
         public $id;
         public $nombre;
@@ -29,19 +30,25 @@
                     if (count($objACUDI) >= 1){
                         $enum=1;
                         for ($i=0; $i < count($objACUDI); $i++) {
+                            list($anio,$mes,$dia) = explode("-",$objACUDI[$i]["FechaNacimiento"]);
                             $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button>";
                             $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
-
+                            $tipDoc = '';
+                            if($objACUDI[$i]["TipoDocumento"]=="CC"){
+                              $tipDoc = 'Cédula de Ciudadanía';
+                            }else if($objACUDI[$i]["TipoDocumento"]=="CE"){
+                              $tipDoc = 'Cédula de Extranjería';
+                            }
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$img.'",
                                 "'.$objACUDI[$i]["Nombre"].'",
                                 "'.$objACUDI[$i]["Apellido"].'",
-                                "'.$objACUDI[$i]["TipoDocumento"].'",
+                                "'.$tipDoc.'",
                                 "'.$objACUDI[$i]["Documento"].'",
-                                "'.$objACUDI[$i]["FechaNacimiento"].'",
+                                "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objACUDI[$i]["Rh"].'",
                                 "'.$objACUDI[$i]["Correo"].'",
                                 "'.$objACUDI[$i]["Telefono"].'",
@@ -78,17 +85,23 @@
                   if (count($objACUDI) >= 1){
                       $enum=1;
                       for ($i=0; $i < count($objACUDI); $i++) {
-                          $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button>";
+                          list($anio,$mes,$dia) = explode("-",$objACUDI[$i]["FechaNacimiento"]);
+                          $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdAcudiente = '".$objACUDI[$i]["IdAcudiente"]."'><i class='material-icons'>school</i><span>Hijos</span></button></div>";
                           $img = "<img class = 'imgProfile' src ='".$objACUDI[$i]["Foto"]."'>";
-
+                          $tipDoc = '';
+                          if($objACUDI[$i]["TipoDocumento"]=="CC"){
+                            $tipDoc = 'Cédula de Ciudadanía';
+                          }else if($objACUDI[$i]["TipoDocumento"]=="CE"){
+                            $tipDoc = 'Cédula de Extranjería';
+                          }
                           $oBJEC_JSON .= '[
                               "'.$enum++.'",
                               "'.$img.'",
                               "'.$objACUDI[$i]["Nombre"].'",
                               "'.$objACUDI[$i]["Apellido"].'",
-                              "'.$objACUDI[$i]["TipoDocumento"].'",
+                              "'.$tipDoc.'",
                               "'.$objACUDI[$i]["Documento"].'",
-                              "'.$objACUDI[$i]["FechaNacimiento"].'",
+                              "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                               "'.$objACUDI[$i]["Rh"].'",
                               "'.$objACUDI[$i]["Correo"].'",
                               "'.$objACUDI[$i]["Telefono"].'",

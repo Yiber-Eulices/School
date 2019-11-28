@@ -20,7 +20,7 @@
         }else if(isset($_SESSION['UserRol'])&&$_SESSION['UserRol']=="Profesor"){
             if($_GET["url"] == "Index" || $_GET["url"] == "Contacto" || $_GET["url"] == "Login"|| $_GET["url"] == "ForgotPassword" || $_GET["url"] == "Home" || $_GET["url"] == "MiNotificacion" || $_GET["url"] == "Perfil"){
                 include "View/EveryBody/".$_GET["url"].".php";
-            }else if($_GET["url"] == "Acudiente" || $_GET["url"] == "Estudiante" || $_GET["url"] == "Curso" || $_GET["url"] == "CursoDirector" || $_GET["url"] == "AcudienteEstudiante" || $_GET["url"] == "EstudianteAcudiente" || $_GET["url"] == "CursoEstudianteDirector" || $_GET["url"] == "CursoEstudiante" || $_GET["url"] == "Calificacion" || $_GET["url"] == "Boletin" || $_GET["url"] == "Notificacion"){
+            }else if($_GET["url"] == "Acudiente" || $_GET["url"] == "Estudiante" || $_GET["url"] == "Curso" || $_GET["url"] == "CursoDirector" || $_GET["url"] == "AcudienteEstudiante" || $_GET["url"] == "EstudianteAcudiente" || $_GET["url"] == "CursoEstudianteDirector" || $_GET["url"] == "CursoEstudiante" || $_GET["url"] == "Calificacion" || $_GET["url"] == "Boletin" || $_GET["url"] == "Notificacion" || $_GET["url"] == "Observacion"){
                 include "View/Teacher/".$_GET["url"].".php";
             }else{
                 include "View/EveryBody/Error404.php";

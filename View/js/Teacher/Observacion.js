@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".dataTableEstudiante").DataTable({
-        "ajax":"Ajax/AjaxEstudiante.php?a=listap",
+        "ajax":"Ajax/AjaxEstudiante.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,

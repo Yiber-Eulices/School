@@ -221,6 +221,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="Observacion">
+                                <i class="material-icons">print</i>
+                                <span>Mis Observaciones</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="MiNotificacion">
                                 <i class="material-icons">notifications</i>
                                 <span>Notificaciones</span>

@@ -26,7 +26,7 @@
                             </button>
                             <div class="clearfix"><br><br></div>
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableCurso table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableObservacion table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -35,6 +35,7 @@
                                             <th>Descripcion</th>
                                             <th>Compromiso</th>
                                             <th>Profesor</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -45,6 +46,7 @@
                                             <th>Descripcion</th>
                                             <th>Compromiso</th>
                                             <th>Profesor</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
                                 </table>
@@ -135,6 +137,13 @@
                 <input type="hidden" name="TxtEstudianteEdit" id="TxtEstudianteEdit" value="<?php echo($_SESSION['EstudianteId']);?>">
                 <input type="hidden" name="TxtProfesorEdit" id="TxtProfesorEdit" value="<?php echo($_SESSION['UserId']);?>">
                 <div class="form-group form-float">
+                    <label class="form-label">Fecha</label>
+                    <div class="form-line" id="bs_datepicker_container_edit">
+                        <input type="text" class="form-control" name="TxtFechaEdit" id="TxtFechaEdit" placeholder = "Mes/Dia/A&ntilde;o" required>
+                    </div>
+                    <div class="help-info">Fecha</div>
+                </div>
+                <div class="form-group form-float">
                     <label class="form-label">Gravedad</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtGravedadEdit" id = "TxtGravedadEdit" required>
@@ -146,22 +155,22 @@
                     <div class="help-info">Gravedad</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Descripci&oacute;n</label>
                     <div class="form-line">
                         <textarea name="TxtDescripcionEdit" id="TxtDescripcionEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
-                        <label class="form-label">Descripci&oacute;n</label>
                     </div>
                     <div class="help-info">Descripci&oacute;n</div>
                 </div>
                 <div class="form-group form-float">
+                    <label class="form-label">Compromiso</label>
                     <div class="form-line">
                         <textarea name="TxtCompromisoEdit" id="TxtCompromisoEdit" cols="30" rows="5" class="form-control no-resize" required aria-required="true"></textarea>
-                        <label class="form-label">Compromiso</label>
                     </div>
                     <div class="help-info">Compromiso</div>
                 </div>
             </div>
             <div class="modal-footer">
-              <input type="submit" name="Enviar" class="btn btn-primary botonEdit">
+              <input type="submit" name="Enviar" class="btn btn-primary botonEdit" id ="botonEdit">
               <input type="reset"  name="Reset"  class="btn btn-danger">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>

@@ -21,14 +21,16 @@
         }
         public function AjxListar(){
             $objOBSE = ControladorObservacion::CtrlListar();
+            $enum = 1;
             $oBJEC_JSON = '{
                 "data": [';
                     if (count($objOBSE) >= 1){
                         for ($i=0; $i < count($objOBSE); $i++) {
                             list($anio,$mes,$dia) = explode("-",$objOBSE[$i]["Fecha"]);
-                            $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdObservacion = '".$objOBSE[$i]["IdObservacion"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
+                            $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdObservacion = '".$objOBSE[$i]["IdObservacion"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdObservacion = '".$objOBSE[$i]["IdObservacion"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $oBJEC_JSON .= '[
+                                "'.$enum++.'",
                                 "'.strftime("%A %e de %B de %Y",mktime(0,0,0,$mes,$dia,$anio)).'",
                                 "'.$objOBSE[$i]["Gravedad"].'",
                                 "'.$objOBSE[$i]["Descripcion"].'",
@@ -82,8 +84,8 @@
         $oBJEC_AJAX -> gravedad = $_POST["Gravedad"];
         $oBJEC_AJAX -> descripcion = $_POST["Descripcion"];
         $oBJEC_AJAX -> compromiso = $_POST["Compromiso"];
-        $oBJEC_AJAX -> estudiante = $_POST["EstudianteIdEstudiante"];
-        $oBJEC_AJAX -> profesor = $_POST["ProfesorIdProfesor"];
+        $oBJEC_AJAX -> estudiante = $_POST["Estudiante"];
+        $oBJEC_AJAX -> profesor = $_POST["Profesor"];
         $oBJEC_AJAX -> AjxEditar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){

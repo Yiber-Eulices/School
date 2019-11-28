@@ -427,3 +427,22 @@ $(".dataTableEstudiante").on("click",".btnBoletin",function(){
         }
     });        
 });
+$(".dataTableEstudiante").on("click",".btnObservacion",function(){
+    var id = $(this).attr("IdEstudiante");
+    var oBJEC_ADMIN = new FormData();
+    oBJEC_ADMIN.append("Id", id); 
+    $.ajax({
+        url:"Ajax/AjaxEstudiante.php?a=sesion",
+        method:"POST",
+        data:oBJEC_ADMIN,
+        cache:false,
+        contentType:false,
+        processData:false,
+        dataType:"json",
+        success : function(respuesta){
+            if(respuesta == true){
+                window.location = "Observacion";
+            }	
+        }
+    });        
+});

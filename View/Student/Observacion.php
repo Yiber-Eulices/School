@@ -4,10 +4,9 @@
 ?>
 <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <h2>
-                    SCHOOL ADMIN
-                   
+          <div class="block-header">
+                <h2>                    
+                SCHOOL ADMIN
                 </h2>
             </div>
             <!-- Basic Examples -->
@@ -16,44 +15,38 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Hijos de el Padre de Familia <b><?php echo $_SESSION['AcudienteNombre'];?></b>
+                                Mis Observaciones.
                             </h2>
                             
                         </div>
                         <div class="body">
                             <div class="table-responsive">
-                                <table class="table table-bordered dataTableAcudienteEstudiante table-striped dt-responsive table-hover js-basic-example dataTable">
+                                <table class="table table-bordered dataTableObservacion table-striped dt-responsive table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Foto</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Tipo de Documento</th>
-                                            <th>Documento</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Acciones</th>
+                                            <th>Fecha</th>
+                                            <th>Gravedad</th>
+                                            <th>Descripcion</th>
+                                            <th>Compromiso</th>
+                                            <th>Profesor</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>#</th>
-                                            <th>Foto</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Tipo de Documento</th>
-                                            <th>Documento</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Acciones</th>
+                                            <th>Fecha</th>
+                                            <th>Gravedad</th>
+                                            <th>Descripcion</th>
+                                            <th>Compromiso</th>
+                                            <th>Profesor</th>
                                         </tr>
                                     </tfoot>                                    
                                 </table>
                                 <style>
                                     .imgProfile{
-                                        height : 50px;
-                                        width : 50px;
+                                        height : 100px;
+                                        width : 100px;
                                         border-radius : 50px;
                                     }
                                     .imgProfileEdit{
@@ -70,10 +63,9 @@
                 </div>
             </div>
             <!-- #END# Basic Examples -->
-            
         </div>
     </section>
-    <script src="View/js/Teacher/AcudienteEstudiante.js"></script>
+    <script src="View/js/Student/Observacion.js"></script>
 <?php
     include "View/template/footer.php";
 ?>

@@ -4,7 +4,7 @@
             $objCREARM = ModeloObservacion::CrearObservacion($fecha,$gravedad,$descripcion,$compromiso,$estudiante,$profesor);
             return $objCREARM;
         }
-        public static function CtrlEditar($id,$fecha,$gravedad,$descripcion,$compromiso,$estudiante,$profesor,$password,$telefono,$foto,$fechaNacimiento){
+        public static function CtrlEditar($id,$fecha,$gravedad,$descripcion,$compromiso,$estudiante,$profesor){
             $objEDITM = ModeloObservacion::EditarObservacion($id,$fecha,$gravedad,$descripcion,$compromiso,$estudiante,$profesor);
             return $objEDITM;
         }

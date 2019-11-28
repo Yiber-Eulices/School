@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".dataTableAcudienteEstudiante").DataTable({
-        "ajax":"Ajax/AjaxAcudienteEstudiante.php?a=listaAcudientep",
+    $(".dataTableObservacion").DataTable({
+        "ajax":"Ajax/AjaxObservacion.php?a=lista",
         "deferRender":true,
         "retrieve":true,
         "processing":true,
@@ -28,24 +28,5 @@ $(document).ready(function(){
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
         }
-    });
-    $(".dataTableAcudienteEstudiante").on("click",".btnObservacion",function(){
-        var id = $(this).attr("IdEstudiante");
-        var oBJEC_ADMIN = new FormData();
-        oBJEC_ADMIN.append("Id", id); 
-        $.ajax({
-            url:"Ajax/AjaxEstudiante.php?a=sesion",
-            method:"POST",
-            data:oBJEC_ADMIN,
-            cache:false,
-            contentType:false,
-            processData:false,
-            dataType:"json",
-            success : function(respuesta){
-                if(respuesta == true){
-                    window.location = "Observacion";
-                }	
-            }
-        });        
     });
 });

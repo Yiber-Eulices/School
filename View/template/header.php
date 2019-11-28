@@ -25,6 +25,7 @@
     <!-- Google Fonts -->
     <link href="View/css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
     <link href="View/css/GoogleFontsFamilyIcon.css" rel="stylesheet" type="text/css">
+    <link href="View/css/Importante.css" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="View/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">

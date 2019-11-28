@@ -16,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="View/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="View/styles/responsive.css"> 
 <link rel="stylesheet" type="text/css" href="View/styles/contact_responsive.css">
+<link href="View/css/Importante.css" rel="stylesheet" type="text/css">
 <!-- Google Fonts -->
 <link href="View/css/GoogleFontsFamily.css" rel="stylesheet" type="text/css">
 <link href="View/css/GoogleFontsFamilyIcon.css" rel="stylesheet" type="text/css">

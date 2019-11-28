@@ -97,7 +97,7 @@
                         <li>
                             <a href="Profesor">
                                 <i class="material-icons">group</i>
-                                <span>Profesores</span>
+                                <span>Profesores de la Instituci&oacute;n</span>
                             </a>
                         </li>
                         <li>

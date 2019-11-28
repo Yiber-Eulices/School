@@ -31,15 +31,15 @@
                                         </div>
                                     </div>
                                     <div class="item">
-                                        <img src="View/images/image-gallery/12.jpg" />
-                                        <div class="carousel-caption">
+                                        <img src="View/images/45.jpg" width="100%" height="100%" />
+                                        <div class="carousel-caption imagen">
                                             <h3>MISIÓN</h3>
                                             <p id = "Mision"></p>
                                         </div>
                                     </div>
                                     <div class="item">
                                         <img src="View/images/image-gallery/19.jpg" />
-                                        <div class="carousel-caption">
+                                        <div class="carousel-caption Importante">
                                             <h3>VISIÓN</h3>
                                             <p id = "Vision"></p>
                                         </div>

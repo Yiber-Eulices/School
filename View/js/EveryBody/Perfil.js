@@ -141,8 +141,8 @@ $(document).ready(function(){
                 success:function(respuesta){
                     if(respuesta == true){
                         var m = "Datos Editados.";
-                        ValidateCreateUpdate(m);
-                        cargarPerfil();
+                        ValidateCreateExito(m);
+                        window.location="perfil";
                     }else if(respuesta == false){
                         var m = "¡¡¡Datos No Editados.!!!";
                         ValidateError(m);

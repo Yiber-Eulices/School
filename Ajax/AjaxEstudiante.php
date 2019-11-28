@@ -261,7 +261,8 @@
                     $enum=1;
                       for ($i=0; $i < count($objADMIN); $i++) {
                         list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
-                          $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button></div>";
+                        $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
+                        $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button></div>";
                           $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                           $tipDoc = '';
                         if($objADMIN[$i]["TipoDocumento"]=="CC"){
@@ -286,7 +287,7 @@
                               "'.$objADMIN[$i]["Telefono"].'",
                               "'.$objADMIN[$i]["Nivel"].'",
                               "'.$objADMIN[$i]["NombreCurso"].'",
-                              "'.$btnAcudiente.'"
+                              "'.$btnAcudiente.$btnObservacion.'"
                           ],';
                       }
                   }else{

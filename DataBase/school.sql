@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2019 a las 00:26:44
+-- Tiempo de generación: 28-11-2019 a las 03:21:26
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.1.32
 
@@ -47,7 +47,7 @@ CREATE TABLE `acudiente` (
 --
 
 INSERT INTO `acudiente` (`IdAcudiente`, `Nombre`, `Apellido`, `TipoDocumento`, `Documento`, `Rh`, `Correo`, `Password`, `Telefono`, `Foto`, `FechaNacimiento`) VALUES
-(1, 'Laura Catalina', 'Albarracin Perez', 'CC', '145789630', 'B+', 'laura@gmail.com', '$2y$10$j.yE8Le8JbZZ.ACTAM52f.Bomj2zlvgPxtyPpwgmJyc.v/G0oZahi', '1', 'View/profilePhoto/1573256553-dyuiñ.jpg', '2019-11-14'),
+(1, 'Laura Catalina', 'Albarracin Perez', 'CC', '145789630', 'A+', 'yibercitolopez@gmail.com', '$2y$10$Vt4QGaadMjXxT7IICnlIaOUhWF/8YmeERlMsLzE/oPkvSXX0FmbiW', '310573', 'View/profilePhoto/1574358238-descarga (3).jpg', '2000-01-05'),
 (2, 'Mario Andres', 'Gomez Perez', 'CC', '546546789', 'B+', 'Mario@gmail.com', '$2y$10$riBlpJyHCL2gJTVyQjfnhuw5MpJi4PfE/YqfmH50Gi9mfEV6pyfOy', '4567891230', 'View/profilePhoto/1573256662-gikjlk.jpg', '2019-08-15'),
 (3, 'Carlos Alejandro', 'Carvajal Avellaneda', 'CE', '545656567896', 'B+', 'Carlos@gmail.com', '$2y$10$rbF9tlLZ3OKRN/BRWfW8ReYhVE8nRhko7sJ.CBM0ui783LS3W53EO', '1212345645', 'View/profilePhoto/1573256840-hoiiiiiiiiiiiiiiiiiiii.jpg', '1999-05-17'),
 (4, 'Juan Camilo', 'Jaramillo Gonzales', 'CC', '78965412231', 'B+', 'Juan@gmail.com', '$2y$10$u33dHXrDEQJtG1zivEMbkOrxuklY12EaoT/kmq/Gc.mjnurFv8nd.', '85786454', 'View/profilePhoto/1573256940-holiiiiii.jpg', '1980-04-25'),
@@ -61,8 +61,7 @@ INSERT INTO `acudiente` (`IdAcudiente`, `Nombre`, `Apellido`, `TipoDocumento`, `
 (12, 'Andrea', 'Moreno', 'CC', '1002778', 'O+', 'andreaing600@gmail.com', '$2y$10$DS2CgBmLN2Xf2QdRb8dOJOYKJqMqEMiaKAFkaTzxMVGkVBTiAaVoS', '3114569408', 'View/profilePhoto/1573698032-6.jpg', '2019-11-06'),
 (13, 'Fredy', 'Alarcon', 'CC', '234567', 'O+', 'fredy.alarcon@misena.edu.co', '$2y$10$ELnHnoRvRBThX9Agdxl6W.aMZEFiV.LHtDW9p/Fier8Wg0h3IMy/C', '3103246251', 'View/profilePhoto/1573700595-fff.jpg', '2019-11-30'),
 (14, 'tatiana', 'zuluaga', 'CC', '1007391195', 'O+', 'kimzu1112@gmail.com', '$2y$10$rnERppQ6xdU0Zzyw5wXS4uhEY4TJu6fK2hBZNa6CKryyo/mrxWEaq', '3222688948', 'View/profilePhoto/1573703123-images (2).jpg', '2000-07-12'),
-(15, 'nicolle ', 'barinas', 'CC', '1002537625', 'O+', 'nicole.barinas.123@gmail.com', '$2y$10$hubCGMpEjb9IwVnfaE8Mr.AI/09aR2OKgOKTXVcgvRaWD4LW1uAzu', '15', 'View/profilePhoto/1573703963-descarga.jpg', '2000-08-20'),
-(24, 'Yiber Eulices', 'Lopez Choconta', 'CC', '10027', 'A+', 'yelopez24@misena.edu.co', '$2y$10$.53.jja9SlBQSF5fR6cpd.Lvq0v24oqYP5NTZvbGyi1zUBgbJGvv2', '311', 'View/profilePhoto/1574042322-descarga.jpg', '2019-11-13');
+(15, 'nicolle ', 'barinas', 'CC', '1002537625', 'O+', 'nicole.barinas.123@gmail.com', '$2y$10$hubCGMpEjb9IwVnfaE8Mr.AI/09aR2OKgOKTXVcgvRaWD4LW1uAzu', '15', 'View/profilePhoto/1573703963-descarga.jpg', '2000-08-20');
 
 -- --------------------------------------------------------
 
@@ -120,7 +119,7 @@ CREATE TABLE `administrador` (
 --
 
 INSERT INTO `administrador` (`IdAdministrador`, `Nombre`, `Apellido`, `TipoDocumento`, `Documento`, `Rh`, `Correo`, `Password`, `Telefono`, `Foto`, `FechaNacimiento`) VALUES
-(1, 'Yiber Eulices', 'Lopez Choconta', 'RC', '1002772342', 'AB+', 'yelopez24@misena.edu.co', '$2y$10$atmNT6eqMR4i.9MN3nmEAOnhZ8TMQwcju5BasfTdYeXucLd1qn8IK', '3114569408', 'View/profilePhoto/1573162092-profileImageCamera.jpg', '2000-01-13');
+(1, 'Yiber Eulices 1', 'Lopez Choconta', 'RC', '1002772342', 'AB+', 'yelopez24@misena.edu.co', '$2y$10$n7N2Y8FbhTbbsO9/33t6i.qV7LwvEzbdeTePTJXJ3BMV5AN50ANum', '3202590692', 'View/profilePhoto/1573162092-profileImageCamera.jpg', '2000-01-13');
 
 -- --------------------------------------------------------
 
@@ -153,7 +152,8 @@ INSERT INTO `alerta` (`IdAlerta`, `RolPersona`, `IdPersona`, `Fecha`, `Titulo`, 
 (14, 'Administrador', 1, '2019-11-17', 'Llegada Tarde', 'ghgjhkjlk', 'Visto'),
 (15, 'Administrador', 1, '2019-11-17', 'Llegada Tarde', 'tyyy', 'Visto'),
 (16, 'Administrador', 1, '2019-11-17', 'Jaja', 'dzsfdghh', 'Visto'),
-(17, 'Administrador', 1, '2019-11-17', 'hgjklkñ', 'asdfg', 'Visto');
+(17, 'Administrador', 1, '2019-11-17', 'hgjklkñ', 'asdfg', 'Visto'),
+(18, 'Administrador', 1, '2019-11-26', 'Llegada Tarde', 'Muy tarde', 'Visto');
 
 -- --------------------------------------------------------
 
@@ -253,9 +253,9 @@ CREATE TABLE `directivo` (
 INSERT INTO `directivo` (`IdDirectivo`, `Nombre`, `Correo`, `Telefono`, `Cargo`) VALUES
 (1, 'Danna', 'danna@gmail.com', '5678985', 'Coordinador'),
 (2, 'Santiago', 'santiago@gmail.com', '65434', 'Coordinador'),
-(3, 'Esteban ', 'estaban@gmail.com', '7654', ''),
-(4, 'Angie', 'angie@gmail.com', '345678', ''),
-(5, 'Esmeralda', 'esmeralda@gmail.com', '545678', ''),
+(3, 'Esteban ', 'estaban@gmail.com', '7654', 'Secretario'),
+(4, 'Angie', 'angie@gmail.com', '345678', 'Coordinador'),
+(5, 'Esmeralda', 'esmeralda@gmail.com', '545678', 'Secretario'),
 (6, 'Yiber Eulices Lopez Choconta', 'yelopez24@misena.edu.co', '3114569408', 'Rector');
 
 -- --------------------------------------------------------
@@ -305,7 +305,7 @@ CREATE TABLE `estudiante` (
 
 INSERT INTO `estudiante` (`IdEstudiante`, `Nombre`, `Apellido`, `TipoDocumento`, `Documento`, `Rh`, `Correo`, `Password`, `Telefono`, `Foto`, `FechaNacimiento`, `CursoIdCurso`) VALUES
 (1, 'Monica', 'Cabello', 'TI', '6745676', 'B-', 'monica@gmail.com', '$2y$10$zTUqkjFzL98CqDPH1GefO.24PEZhkhxp93cuPkwTKJ0f9Wo7m.oVW', '3125446569', 'View/profilePhoto/1573491398-descarga (4).jpg', '2005-03-17', 13),
-(3, 'Doris Yasmin', 'Lopez Choconta', 'TI', '1002772', 'O-', 'DorisYasmin@school.com.co', '$2y$10$fnl0ZafXeOCaInJpR2YsOOlbU/m78is0nqD4q35tMtaikqeDIZRvq', '3105730264', 'View/profilePhoto/1573258584-rorck.jpg', '2019-11-13', 23),
+(3, 'Doris Yasmin', 'Lopez Choconta', 'TI', '1002772', 'O-', 'DorisYasmin@school.com.co', '$2y$10$uqrQEtRFooPm/lrx30PzhuIJLHWx/p4AiPpogZFkwrpkCc9jtSR5y', '310573', 'View/profilePhoto/1573258584-rorck.jpg', '2000-03-16', 23),
 (4, 'Laura', 'Puerto', 'TI', '3456786', 'B-', 'laura@gmail.com', '$2y$10$4679XD7b/NatlPKHRaYsm.8cnDWF5oNGRMpCbkX/ymKQJLWiAEwsq', '7654', 'View/profilePhoto/1573258595-0.jpg', '2002-06-12', 24),
 (5, 'Richard', 'Perez Florez', 'CC', '7952745514', 'B+', 'rica@gmail.com', '$2y$10$u18.Ow42TYj3Hg5Y4anBmelatkgkQDpsTM0h/e3.LXGRPbcpkpFAa', '789452512', 'View/profilePhoto/1573258635-descarga (7).jpg', '1999-07-15', 23),
 (6, 'Lorena', 'Linarez', 'TI', '345676', 'B+', 'lorena@gmail.com', '$2y$10$YYG4lVqSvOJwJ1B3iiGRYugYbJivdh9ZsGIyu9S/RL4g71G/SJuUS', '45678', 'View/profilePhoto/1573258693-7.jpg', '2010-06-15', 15),
@@ -347,7 +347,7 @@ INSERT INTO `evento` (`IdEvento`, `Fecha`, `Titulo`, `Descripcion`, `Foto`, `Lug
 (7, '2019-09-21', 'DIA DEL AMOR Y AMISTAD', 'El “Día del Amor y la Amistad” se celebra en Colombia el 21 de septiembre de 2019. Tiene lugar todos', 'View/eventoPhoto/1573257540-descarga (4).jpg', 'Coliseo'),
 (8, '2019-05-10', 'DIA DE LA MADRE', 'El Día de la Madre es una festividad que se celebra en honor de las madres en gran parte del mundo, ', 'View/eventoPhoto/1573257636-asi-celebro-hollywood-el-dia-de-la-madre-parte-2-main-1526330125.jpg', 'Sede Principal'),
 (9, '2019-06-21', 'DIA DEL PADRE', 'El Día del Padre es una celebración u homenaje dedicada a los padres. En general, la tradición catól', 'View/eventoPhoto/1573257690-descarga (5).jpg', 'Audio Visuales'),
-(10, '2019-11-07', 'DIA DE LA FAMILIA', 'Desde la más tierna infancia, las familias son fundamentales en la educación de los hijos, así como ', 'View/eventoPhoto/1573257758-descarga (6).jpg', 'Salon Especial 12');
+(10, '2019-11-07', 'DIA DE LA FAMILIA', 'Desde la más tierna infancia, las familias son fundamentales en la educación de los hijos, así como ', 'View/eventoPhoto/1574359695-1573257467-descarga.png', 'Salon Especial 12');
 
 -- --------------------------------------------------------
 
@@ -456,6 +456,22 @@ INSERT INTO `matricula` (`IdMatricula`, `Fecha`, `Costo`, `GradoIdGrado`, `Estud
 (7, '2019-11-19', '72000', 3, 6),
 (8, '2019-11-08', '63000', 1, 1),
 (10, '2019-11-03', '38000', 20, 8);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `observacion`
+--
+
+CREATE TABLE `observacion` (
+  `IdObservacion` int(11) NOT NULL,
+  `Fecha` date NOT NULL,
+  `Gravedad` enum('Leve','Grave') COLLATE utf8_spanish2_ci NOT NULL,
+  `Descripcion` text COLLATE utf8_spanish2_ci NOT NULL,
+  `Compromiso` text COLLATE utf8_spanish2_ci NOT NULL,
+  `EstudianteIdEstudiante` int(11) NOT NULL,
+  `ProfesorIdProfesor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -630,6 +646,14 @@ ALTER TABLE `matricula`
   ADD KEY `fk_Matricula_Estudiante1_idx` (`EstudianteIdEstudiante`);
 
 --
+-- Indices de la tabla `observacion`
+--
+ALTER TABLE `observacion`
+  ADD PRIMARY KEY (`IdObservacion`),
+  ADD KEY `EstudianteIdEstudiante` (`EstudianteIdEstudiante`),
+  ADD KEY `ProfesorIdProfesor` (`ProfesorIdProfesor`);
+
+--
 -- Indices de la tabla `profesor`
 --
 ALTER TABLE `profesor`
@@ -666,13 +690,13 @@ ALTER TABLE `acudienteestudiante`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `IdAdministrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdAdministrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `alerta`
 --
 ALTER TABLE `alerta`
-  MODIFY `IdAlerta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `IdAlerta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `calificacion`
@@ -690,7 +714,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de la tabla `directivo`
 --
 ALTER TABLE `directivo`
-  MODIFY `IdDirectivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `IdDirectivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
@@ -733,6 +757,12 @@ ALTER TABLE `materia`
 --
 ALTER TABLE `matricula`
   MODIFY `IdMatricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `observacion`
+--
+ALTER TABLE `observacion`
+  MODIFY `IdObservacion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `profesor`
@@ -783,6 +813,13 @@ ALTER TABLE `estudiante`
 ALTER TABLE `matricula`
   ADD CONSTRAINT `fk_Matricula_Estudiante1` FOREIGN KEY (`EstudianteIdEstudiante`) REFERENCES `estudiante` (`IdEstudiante`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_Matricula_Grado1` FOREIGN KEY (`GradoIdGrado`) REFERENCES `grado` (`IdGrado`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `observacion`
+--
+ALTER TABLE `observacion`
+  ADD CONSTRAINT `observacion_ibfk_1` FOREIGN KEY (`EstudianteIdEstudiante`) REFERENCES `estudiante` (`IdEstudiante`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `observacion_ibfk_2` FOREIGN KEY (`ProfesorIdProfesor`) REFERENCES `profesor` (`IdProfesor`);
 
 --
 -- Filtros para la tabla `profesorcurso`

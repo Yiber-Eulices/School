@@ -27,7 +27,76 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }
+        },dom: 'Bfrtip',
+        lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 Filas', '25 Filas', '50 Filas', 'Todas las Filas' ]
+        ],
+        buttons: [
+            {
+                extend: 'pageLength',
+                className : "btn btn-primary waves-effect"
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> Imprimir Todo',
+                className : "btn btn-primary waves-effect",
+                footer: true,
+                exportOptions: {
+                    modifier: {
+                        selected: null
+                    }
+                }
+            },{
+                extend: 'copy',
+                text: '<i class="material-icons">content_copy</i> Copiar',
+                className : "btn btn-primary waves-effect",
+                footer: true,
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'csv',
+                text: '<i class="material-icons">save</i> CSV',
+                className : "btn btn-primary waves-effect",
+                footer: true,
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'excel',
+                text: '<i class="material-icons">grid_on</i> Excel',
+                className : "btn btn-primary waves-effect",
+                footer: true,
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'pdf',
+                text: '<i class="material-icons">picture_as_pdf</i> Pdf',
+                className : "btn btn-primary waves-effect",
+                footer: true,
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> Imprimir',
+                className : "btn btn-primary waves-effect",
+                footer: true,
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'colvis',
+                text: '<i class="material-icons">playlist_add_check</i> Seleccionar Columnas',
+                className : "btn btn-primary waves-effect"
+            }
+        ],
+        select: true,
+        columnDefs: [ {
+            targets: -1,
+            visible: false
+        } ]
     });
     $('#TxtTipoDocumento').select2();
     $('#TxtRh').select2();

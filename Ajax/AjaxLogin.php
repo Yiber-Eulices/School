@@ -1,6 +1,9 @@
 <?php
     require_once "../Controller/ControladorLogin.php";
-    require_once "../Model/ModeloLogin.php";
+    require_once "../Model/ModeloLogin.php";     
+    require_once "../Model/PHPMailer/PHPMailer.php";
+    require_once "../Model/PHPMailer/Exception.php";
+    require_once "../Model/PHPMailer/SMTP.php";
 
     class AjaxLogin{
         public $rol;
@@ -54,7 +57,7 @@
 		  if($dir){
         $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
         $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-        $image='../View/profilePhoto/'.$filename;
+        $image='View/profilePhoto/'.$filename;
         if($muf){
           $image_upload=true;
         }else{

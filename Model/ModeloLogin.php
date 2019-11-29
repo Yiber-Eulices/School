@@ -87,21 +87,16 @@ require_once "Conexion.php";
                 $oBJEC_DATA_UPDATE  -> bindParam(":id",$idDB, PDO::PARAM_INT);
                 $oBJEC_DATA_UPDATE  -> bindParam(":password",$password, PDO::PARAM_STR);
                 $oBJEC_DATA_UPDATE -> execute();    
-                $essql = $oBJEC_DATA_UPDATE; 
-                /*Mensaje Email*/           
-                $destinatario = $user;
-                $from = "yibercitolopez@hotmail.com";
-                $asunto = "Restablecer contrase&ntilde;a en School Admin.";
-                $mensaje = "Su nueva Contrase&ntilde;a como ".$rol." es : ( ".$key." ).";
-                $headers = "From:" . $from;
-                /*Mensaje SMS*/ 
+                $essql = $oBJEC_DATA_UPDATE;
+                /*Mensaje SMS*/
+                $mensajeSMS = "Su nueva Contraseña como ".$rol." es : ( ".$key." ).";
                 $request = [ 
                     "api_key" => "88d9e978596e56402700fc866c4e4533",
                     "messages" => [ 
                        [
                           "from" => "REMITENTE",
                           "to" => "57".$telefonoDB,
-                          "text" => $mensaje
+                          "text" => $mensajeSMS
                        ]
                     ]
                 ];
@@ -115,7 +110,33 @@ require_once "Conexion.php";
                 if (curl_errno($ch) != 0 ){
                     die("curl error: ".curl_errno($ch));
                 }
-                return (mail($destinatario,$asunto,$mensaje,$headers));
+                /*Mensaje Email*/           
+                $destinatario = $user;
+                $from = "yibercitolopez@hotmail.com";
+                $pass = "13012001yiber";
+                $asunto = utf8_decode("Restablecer contraseña en School Admin.");
+                $mensaje = utf8_decode("Su nueva Contraseña como <b>".$rol."</b> es : ( <b>".$key."</b> ).");                 
+                $mail = new PHPMailer();
+                try {
+                    $mail->SMTPDebug = 0;
+                    $mail->isSMTP();
+                    $mail->Host       = 'smtp.live.com';
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = $from;
+                    $mail->Password   = $pass;
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                    $mail->Port       = 587; 
+                    $mail->setFrom($from, 'School Admin');
+                    $mail->addAddress($destinatario);  
+                    $mail->isHTML(true); 
+                    $mail->Subject = $asunto;
+                    $mail->Body    = $mensaje;
+                    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                    $mail->send();
+                    return (true);
+                } catch (Exception $e) {
+                    return "El mensaje no pudo ser enviado. Error de correo : {$mail->ErrorInfo}";
+                }
             }else{
                 return "El correo ingresado no es un ".$rol.", es Incorrecto o no existe.";
             }

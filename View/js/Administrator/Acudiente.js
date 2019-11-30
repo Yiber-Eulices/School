@@ -4,6 +4,8 @@ $(document).ready(function(){
         "deferRender":true,
         "retrieve":true,
         "processing":true,
+        "pagingType": "full_numbers",
+        "lengthMenu": [[10, 25, 50 , 100], [10, 25, 50 , 100]],
         "language":{
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -27,41 +29,33 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        },dom: 'Bfrtip',
-        lengthMenu: [
-            [ 10, 25, 50, -1 ],
-            [ '10 Filas', '25 Filas', '50 Filas', 'Todas las Filas' ]
-        ],
+        },dom: "<'row'<'col-sm-12 col-md-3'l><'col-sm-12 col-md-6'B><'col-sm-12 col-md-1'f>><'row'<'col-sm-12 col-md-12'rt>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
         buttons: [
             {
-                extend: 'pageLength',
-                className : 'btn btn-danger waves-effect',
-                text:'<i class="material-icons">visibility</i> Mostrar MENU registros'
-            },{
                 extend: 'excel',
-                text: '<i class="material-icons">grid_on</i> Excel',
-                className : 'btn bg-warning  waves-effect',
+                text: '<i class="material-icons">grid_on</i> <span>Excel</span>',
+                className : 'btn bg-teal  waves-effect',
                 exportOptions: {
                     columns: ':visible'
                 }
             },{
                 extend: 'print',
-                text: '<i class="material-icons">print</i> Imprimir',                
-                className : 'btn btn-danger waves-effect',
+                text: '<i class="material-icons">print</i> <span>Imprimir</span>',                
+                className : 'btn bg-green  waves-effect',
                 orientation: 'landscape',
                 exportOptions: {
                     columns: ':visible'
                 }
             },{
                 extend: 'colvis',
-                className : 'btn bg-warning waves-effect',
-                text: '<i class="material-icons">playlist_add_check</i> Seleccionar Columnas'
+                className : 'btn bg-light-green waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> <span>Seleccionar Columnas</span>'
             }
         ],
         select: true,
         columnDefs: [ {
             targets: -1,
-            visible: false
+            visible: true
         } ]
     });
     $('#TxtTipoDocumento').select2();

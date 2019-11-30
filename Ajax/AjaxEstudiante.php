@@ -105,7 +105,7 @@
                         for ($i=0; $i < count($objADMIN); $i++) {
                             if($objADMIN[$i]["CursoIdCurso"]==$_SESSION['CursoId']){
                                 list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
-                                $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button></div>";
+                                $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button></div>";
                                 $btnBoletin = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnBoletin btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                                 $tipDoc = '';
@@ -264,7 +264,7 @@
                       for ($i=0; $i < count($objADMIN); $i++) {
                         list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
                         $btnAcudiente = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnAcudiente btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Acudientes</span></button>";
-                        $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button></div>";
+                        $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button></div>";
                           $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                           $tipDoc = '';
                         if($objADMIN[$i]["TipoDocumento"]=="CC"){
@@ -327,7 +327,7 @@
                         for ($i=0; $i < count($objADMIN); $i++) {
                             if($objADMIN[$i]["CursoIdCurso"]==$_SESSION["CalificarCursoId"]){
                                 list($anio,$mes,$dia) = explode("-",$objADMIN[$i]["FechaNacimiento"]);
-                                $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button></div>";
+                                $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button></div>";
                                 $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-info waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>list</i><span>Calificaciones</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                                 $tipDoc = '';

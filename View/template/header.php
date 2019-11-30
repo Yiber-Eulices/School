@@ -18,6 +18,15 @@
     
     <!-- Jquery Core Js -->
     <script src="View/plugins/jquery/jquery.min.js"></script>
+
+    <!-- JQuery DataTable Css -->
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/buttons.bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/buttons.bootstrap4.css">
     
     <!-- Favicon-->
     <link rel="icon" href="View/images/logo.png" type="image/x-icon">
@@ -36,13 +45,6 @@
     <!-- Animation Css -->
     <link href="View/plugins/animate-css/animate.css" rel="stylesheet" />
     
-    <!-- JQuery DataTable Css -->
-    <!--link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/datatables.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/dataTables.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" media="screen"href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css"-->
-
     <!-- Bootstrap Material Datetime Picker Css -->
     <link href="View/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 

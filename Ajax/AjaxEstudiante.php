@@ -41,7 +41,7 @@
                             $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                             $btnCalificacion = "<button type='button' style='width: auto;' class='btn btnCalificacion btn-primary waves-effect'  IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>book</i><span>Calificaciones</span></button>";
                             $btnBoletin = "<button type='button' style='width: auto;' class='btn btnBoletin btn-success waves-effect'  IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
-                            $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-orange waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button>";
+                            $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objADMIN[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button>";
                             $img = "<img class = 'imgProfile' src ='".$objADMIN[$i]["Foto"]."'>";
                             $tipDoc = '';
                             if($objADMIN[$i]["TipoDocumento"]=="CC"){

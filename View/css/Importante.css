@@ -17,6 +17,22 @@
 .descripcion{
     color: black !important;
     font-size: 20px !important;
-    
-
+}
+*::selection{
+    background:#f44336!important;
+    color:white!important;
+}
+#InformacionC{
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    text-justify: inter-word;
+}
+#DIreccionC{
+    font-size: 15px;
+    color: black;
+}
+#TablaC{
+    font-size: 15px;
+    color: black;
 }

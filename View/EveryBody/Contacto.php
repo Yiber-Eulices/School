@@ -24,10 +24,11 @@
 				</div>
 				<div class="col-lg-12">
 					<div class="about" >
+						<br><br>
 						<div class="about_title"><center>Directivos</center></div>
-						<p id="Informacion" class="about_text"> </p>
+						<p id="InformacionC" class="about_text"> </p>
 						<div class="contact_info">
-						<table class="table">
+						<table id="TablaC" class="table">
 						</table>
 						</div>
 					</div>

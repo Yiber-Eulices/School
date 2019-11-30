@@ -49,7 +49,7 @@
 	</div>
 	<div class="header_side d-flex flex-row justify-content-center align-items-center">
 		<img src="View/images/phone-call.svg" alt="">
-		<span>+57 <b id="telefonomenu">3203289787</b></span>
+		<span>+57 <b id="telefonomenu"></b></span>
 	</div>
 
 	<!-- Hamburger -->

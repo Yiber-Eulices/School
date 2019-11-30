@@ -190,7 +190,7 @@
                         </li>
                         <li>
                             <a href="Notificacion">
-                                <i class="material-icons">person notifications_active</i>
+                                <i class="material-icons">notifications_active</i>
                                 <span>Notificar a una Persona</span>
                             </a>
                         </li>

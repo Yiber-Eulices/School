@@ -27,7 +27,42 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }
+        },dom: 'Bfrtip',
+        lengthMenu: [
+            [ 10, 25, 50, -1 ],
+            [ '10 Filas', '25 Filas', '50 Filas', 'Todas las Filas' ]
+        ],
+        buttons: [
+            {
+                extend: 'pageLength',
+                className : 'btn btn-danger waves-effect',
+                text:'<i class="material-icons">visibility</i> Mostrar MENU registros'
+            },{
+                extend: 'excel',
+                text: '<i class="material-icons">grid_on</i> Excel',
+                className : 'btn bg-warning  waves-effect',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> Imprimir',                
+                className : 'btn btn-danger waves-effect',
+                orientation: 'landscape',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'colvis',
+                className : 'btn bg-warning waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> Seleccionar Columnas'
+            }
+        ],
+        select: true,
+        columnDefs: [ {
+            targets: -1,
+            visible: false
+        } ]
     });
     $('#TxtTipoDocumento').select2();
     $('#TxtRh').select2();

@@ -143,6 +143,7 @@ $(document).ready(function(){
                         var m = "Datos Editados.";
                         ValidateCreateExito(m);
                         window.location="Perfil";
+                        
                     }else if(respuesta == false){
                         var m = "¡¡¡Datos No Editados.!!!";
                         ValidateError(m);

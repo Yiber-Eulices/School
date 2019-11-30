@@ -26,7 +26,23 @@ $(document).ready(function(){
             "oAria": {
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            }
+            },dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'print',
+                    text: 'Print all',
+                    exportOptions: {
+                        modifier: {
+                            selected: null
+                        }
+                    }
+                },
+                {
+                    extend: 'print',
+                    text: 'Print selected'
+                }
+            ],
+            select: true
         }
     });
     $.ajax({

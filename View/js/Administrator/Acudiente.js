@@ -35,61 +35,27 @@ $(document).ready(function(){
         buttons: [
             {
                 extend: 'pageLength',
-                className : "btn btn-primary waves-effect"
-            },{
-                extend: 'print',
-                text: '<i class="material-icons">print</i> Imprimir Todo',
-                className : "btn btn-primary waves-effect",
-                footer: true,
-                exportOptions: {
-                    modifier: {
-                        selected: null
-                    }
-                }
-            },{
-                extend: 'copy',
-                text: '<i class="material-icons">content_copy</i> Copiar',
-                className : "btn btn-primary waves-effect",
-                footer: true,
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },{
-                extend: 'csv',
-                text: '<i class="material-icons">save</i> CSV',
-                className : "btn btn-primary waves-effect",
-                footer: true,
-                exportOptions: {
-                    columns: ':visible'
-                }
+                className : 'btn btn-danger waves-effect',
+                text:'<i class="material-icons">visibility</i> Mostrar MENU registros'
             },{
                 extend: 'excel',
                 text: '<i class="material-icons">grid_on</i> Excel',
-                className : "btn btn-primary waves-effect",
-                footer: true,
-                exportOptions: {
-                    columns: ':visible'
-                }
-            },{
-                extend: 'pdf',
-                text: '<i class="material-icons">picture_as_pdf</i> Pdf',
-                className : "btn btn-primary waves-effect",
-                footer: true,
+                className : 'btn bg-warning  waves-effect',
                 exportOptions: {
                     columns: ':visible'
                 }
             },{
                 extend: 'print',
-                text: '<i class="material-icons">print</i> Imprimir',
-                className : "btn btn-primary waves-effect",
-                footer: true,
+                text: '<i class="material-icons">print</i> Imprimir',                
+                className : 'btn btn-danger waves-effect',
+                orientation: 'landscape',
                 exportOptions: {
                     columns: ':visible'
                 }
             },{
                 extend: 'colvis',
-                text: '<i class="material-icons">playlist_add_check</i> Seleccionar Columnas',
-                className : "btn btn-primary waves-effect"
+                className : 'btn bg-warning waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> Seleccionar Columnas'
             }
         ],
         select: true,

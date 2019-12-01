@@ -27,7 +27,6 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -35,7 +34,6 @@
                                     <tfoot>
                                         <tr>
                                             <th>#</th>
-                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>

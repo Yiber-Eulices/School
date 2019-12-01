@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Profesores que dictan clases el curso <b><?php echo $_SESSION['CursoNombre'];?></b>.
+                                Profesores que dictan clases el curso <b><?php echo $_SESSION['GradoNombre']." ".$_SESSION['CursoNombre'];?></b>.
                             </h2>
                         </div>
                         <div class="body">

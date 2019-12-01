@@ -23,6 +23,31 @@
             $objADMIN = ControladorAdministrador::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
             echo json_encode($objADMIN);  
         }
+        public function AjxListarSelect(){
+          $objADMIN = ControladorAdministrador::CtrlListar();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objADMIN) >= 1){
+                      for ($i=0; $i < count($objADMIN); $i++) {
+                          $oBJEC_JSON .= '[
+                              "'.$objADMIN[$i]["IdAdministrador"].'",
+                              "'.$objADMIN[$i]["Nombre"].'",
+                              "'.$objADMIN[$i]["Apellido"].'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+        }
         public function AjxListar(){
             $objADMIN = ControladorAdministrador::CtrlListar();
             $oBJEC_JSON = '{
@@ -88,38 +113,38 @@
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'crear'){
         $image=null;
-		if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
-		  if(!is_dir("../View/profilePhoto")){
-			$dir = mkdir("../View/profilePhoto", 0777, true);
-		  }else{
-			$dir=true;
-		  }
-		  if($dir){
-			$filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
-			$muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
-			$image='View/profilePhoto/'.$filename;
-			if($muf){
-			  $image_upload=true;
-			}else{
-			  $image_upload=false;
-			  $error["image"]= "La imagen no se ha subido";
-			}
-		  }
-		  //var_dump($_FILES["image"]);
-          //die();
+      if(isset($_FILES["Foto"]) && !empty($_FILES["Foto"]["tmp_name"])){
+        if(!is_dir("../View/profilePhoto")){
+        $dir = mkdir("../View/profilePhoto", 0777, true);
+        }else{
+        $dir=true;
         }
-        $oBJEC_AJAX = new AjaxAdministrador();
-        $oBJEC_AJAX -> nombre = $_POST["Nombre"];
-        $oBJEC_AJAX -> apellido = $_POST["Apellido"];
-        $oBJEC_AJAX -> tipoDocumento = $_POST["TipoDocumento"];
-        $oBJEC_AJAX -> documento = $_POST["Documento"];
-        $oBJEC_AJAX -> rh = $_POST["Rh"];
-        $oBJEC_AJAX -> correo = $_POST["Correo"];
-        $oBJEC_AJAX -> password = $_POST["Password"];
-        $oBJEC_AJAX -> telefono = $_POST["Telefono"];
-        $oBJEC_AJAX -> foto = $image;
-        $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
-        $oBJEC_AJAX -> AjxCrear();
+        if($dir){
+        $filename= time()."-".$_FILES["Foto"]["name"]; //concatenar función tiempo con el nombre de imagen
+        $muf=move_uploaded_file($_FILES["Foto"]["tmp_name"], "../View/profilePhoto/".$filename); //mover el fichero utilizando esta función
+        $image='View/profilePhoto/'.$filename;
+        if($muf){
+          $image_upload=true;
+        }else{
+          $image_upload=false;
+          $error["image"]= "La imagen no se ha subido";
+        }
+        }
+        //var_dump($_FILES["image"]);
+            //die();
+          }
+          $oBJEC_AJAX = new AjaxAdministrador();
+          $oBJEC_AJAX -> nombre = $_POST["Nombre"];
+          $oBJEC_AJAX -> apellido = $_POST["Apellido"];
+          $oBJEC_AJAX -> tipoDocumento = $_POST["TipoDocumento"];
+          $oBJEC_AJAX -> documento = $_POST["Documento"];
+          $oBJEC_AJAX -> rh = $_POST["Rh"];
+          $oBJEC_AJAX -> correo = $_POST["Correo"];
+          $oBJEC_AJAX -> password = $_POST["Password"];
+          $oBJEC_AJAX -> telefono = $_POST["Telefono"];
+          $oBJEC_AJAX -> foto = $image;
+          $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
+          $oBJEC_AJAX -> AjxCrear();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'editar'){
         $image=null;
@@ -157,9 +182,13 @@
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
         $oBJEC_AJAX -> AjxEditar();
     }
-    if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaSelect'){
         $oBJEC_AJAX = new AjaxAdministrador();
-        $oBJEC_AJAX -> AjxListar();
+        $oBJEC_AJAX -> AjxListarSelect();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
+      $oBJEC_AJAX = new AjaxAdministrador();
+      $oBJEC_AJAX -> AjxListar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxAdministrador();

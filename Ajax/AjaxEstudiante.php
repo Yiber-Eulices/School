@@ -28,6 +28,30 @@
             $objADMIN = ControladorEstudiante::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento,$this->Curso);
             echo json_encode($objADMIN);  //lo esta retornando en false.
         }
+        public function AjxListarSelect(){
+            $objADMIN = ControladorEstudiante::CtrlListar();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdEstudiante"].'",
+                                "'.$objADMIN[$i]["Nombre"].'",
+                                "'.$objADMIN[$i]["Apellido"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+                echo $oBJEC_JSON;
+        }
         public function AjxListar(){
             $objADMIN = ControladorEstudiante::CtrlListar();
             $oBJEC_JSON = '{
@@ -64,10 +88,8 @@
                                 "'.$objADMIN[$i]["Rh"].'",
                                 "'.$objADMIN[$i]["Correo"].'",
                                 "'.$objADMIN[$i]["Telefono"].'",
-                                "'.$objADMIN[$i]["Nivel"].'",
-                                "'.$objADMIN[$i]["NombreCurso"].'",
-                                "'.$btnAcudiente.$btnCalificacion.$btnBoletin.$btnObservacion.$btnUpdate.$btnDelete.'",
-                                "'.$objADMIN[$i]["IdEstudiante"].'"
+                                "'.$objADMIN[$i]["Nivel"]." ".$objADMIN[$i]["NombreCurso"].'",
+                                "'.$btnAcudiente.$btnCalificacion.$btnBoletin.$btnObservacion.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
@@ -129,8 +151,7 @@
                                     "'.$objADMIN[$i]["Rh"].'",
                                     "'.$objADMIN[$i]["Correo"].'",
                                     "'.$objADMIN[$i]["Telefono"].'",
-                                    "'.$objADMIN[$i]["Nivel"].'",
-                                    "'.$objADMIN[$i]["NombreCurso"].'",
+                                    "'.$objADMIN[$i]["Nivel"]." ".$objADMIN[$i]["NombreCurso"].'",
                                     "'.$btnBoletin.$btnObservacion.'"
                                 ],';
                                 $count++;
@@ -287,8 +308,7 @@
                               "'.$objADMIN[$i]["Rh"].'",
                               "'.$objADMIN[$i]["Correo"].'",
                               "'.$objADMIN[$i]["Telefono"].'",
-                              "'.$objADMIN[$i]["Nivel"].'",
-                              "'.$objADMIN[$i]["NombreCurso"].'",
+                              "'.$objADMIN[$i]["Nivel"]." ".$objADMIN[$i]["NombreCurso"].'",
                               "'.$btnAcudiente.$btnObservacion.'"
                           ],';
                       }
@@ -351,8 +371,7 @@
                                     "'.$objADMIN[$i]["Rh"].'",
                                     "'.$objADMIN[$i]["Correo"].'",
                                     "'.$objADMIN[$i]["Telefono"].'",
-                                    "'.$objADMIN[$i]["Nivel"].'",
-                                    "'.$objADMIN[$i]["NombreCurso"].'",
+                                    "'.$objADMIN[$i]["Nivel"]." ".$objADMIN[$i]["NombreCurso"].'",
                                     "'.$btnCalificacion.$btnObservacion.'"
                                 ],';
                                 $count++;
@@ -529,6 +548,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxEstudiante();
         $oBJEC_AJAX -> AjxListar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaSelect'){
+        $oBJEC_AJAX = new AjaxEstudiante();
+        $oBJEC_AJAX -> AjxListarSelect();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'listaCursoDirector'){
         $oBJEC_AJAX = new AjaxEstudiante();

@@ -30,8 +30,7 @@
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdProfesorCurso = '".$objPROFCU[$i]["IdProfesorCurso"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
-                                    "'.$objPROFCU[$i]["Nivel"].'",
-                                    "'.$objPROFCU[$i]["Nombre"].'",
+                                    "'.$objPROFCU[$i]["Nivel"]." ".$objPROFCU[$i]["Nombre"].'",
                                     "'.$objPROFCU[$i]["NombreMateria"].'",
                                     "'.$btnUpdate.$btnDelete.'"
                                 ],';
@@ -43,13 +42,11 @@
                             "",
                             "",
                             "",
-                            "",
                             ""
                         ],';
                     }
                     if($count<=0 && count($objPROFCU) >= 1){
                         $oBJEC_JSON .= '[
-                            "",
                             "",
                             "",
                             "",

@@ -4,6 +4,8 @@ $(document).ready(function(){
         "deferRender":true,
         "retrieve":true,
         "processing":true,
+        "pagingType": "full_numbers",
+        "lengthMenu": [[10, 25, 50 , 100], [10, 25, 50 , 100]],
         "language":{
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -26,27 +28,38 @@ $(document).ready(function(){
             "oAria": {
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-            },dom: 'Bfrtip',
-            buttons: [
-                {
-                    extend: 'print',
-                    text: 'Print all',
-                    exportOptions: {
-                        modifier: {
-                            selected: null
-                        }
-                    }
-                },
-                {
-                    extend: 'print',
-                    text: 'Print selected'
+            }
+        },dom: "<'row'<'col-sm-12 col-md-3'l><'col-sm-12 col-md-6'B><'col-sm-12 col-md-1'f>><'row'<'col-sm-12 col-md-12'rt>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        buttons: [
+            {
+                extend: 'excel',
+                text: '<i class="material-icons">grid_on</i> <span>Excel</span>',
+                className : 'btn bg-teal  waves-effect',
+                exportOptions: {
+                    columns: ':visible'
                 }
-            ],
-            select: true
-        }
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> <span>Imprimir</span>',                
+                className : 'btn bg-green  waves-effect',
+                orientation: 'landscape',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'colvis',
+                className : 'btn bg-light-green waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> <span>Seleccionar Columnas</span>'
+            }
+        ],
+        select: true,
+        columnDefs: [ {
+            targets: -1,
+            visible: true
+        } ]
     });
     $.ajax({
-        url:"Ajax/AjaxCurso.php?a=lista",
+        url:"Ajax/AjaxCurso.php?a=listaSelect",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -55,9 +68,9 @@ $(document).ready(function(){
             $("#TxtCurso").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtCursoEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtCurso").append("<option value='"+respuesta.data[i][6]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][6]+"'>"+respuesta.data[i][3]+" "+respuesta.data[i][1]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length && respuesta.data[i][2].length > 0){
+                    $("#TxtCurso").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>"); 
+                    $("#TxtCursoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>"); 
                 }                
             }
             $('#TxtCurso').change();
@@ -99,10 +112,6 @@ $(".formCreate").on('submit', function(){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante.";
         ValidateCreateUpdate(m);
         return false;
-    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<=5 ){
-        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 5 Años.";
-        ValidateError(m);
-        return false;
     }else if($('#TxtTipoDocumento').val().length == 0){
         var m = "Por favor seleccione el Tipo de Documento de el Estudiante.";
         ValidateCreateUpdate(m);
@@ -110,6 +119,22 @@ $(".formCreate").on('submit', function(){
     }else if($('#TxtDocumento').val().length == 0){
         var m = "Por favor ingrese el Documento de Identificacion de el Estudiante.";
         ValidateCreateUpdate(m);
+        return false;
+    }else if( ($('#TxtTipoDocumento').val()=="RC") && ((fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<5 || (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])>7) ){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 5 Años y menor de 8 Años .";
+        ValidateError(m);
+        return false;
+    }else if( ($('#TxtTipoDocumento').val()=="TI") && ((fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<8 || (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])>18) ){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 8 Años y menor de 18 Años .";
+        ValidateError(m);
+        return false;
+    }else if( $('#TxtTipoDocumento').val()=="CC" && (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<18){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 18 Años.";
+        ValidateError(m);
+        return false;
+    }else if( $('#TxtTipoDocumento').val()=="CE" && (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<18){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 18 Años.";
+        ValidateError(m);
         return false;
     }else if($('#TxtRh').val().length == 0){
         var m = "Por favor seleccione el Rh de el Estudiante.";
@@ -278,10 +303,6 @@ $(".formEdit").on('submit', function(){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante.";
         ValidateCreateUpdate(m);
         return false;
-    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=5 ){
-        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 5 Años.";
-        ValidateError(m);
-        return false;
     }else if($('#TxtTipoDocumentoEdit').val().length == 0){
         var m = "Por favor seleccione el Tipo de Documento de el Estudiante.";
         ValidateCreateUpdate(m);
@@ -289,6 +310,22 @@ $(".formEdit").on('submit', function(){
     }else if($('#TxtDocumentoEdit').val().length == 0){
         var m = "Por favor ingrese el Documento de Identificacion de el Estudiante.";
         ValidateCreateUpdate(m);
+        return false;
+    }else if( ($('#TxtTipoDocumentoEdit').val()=="RC") && ((fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<5 || (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])>7 )){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 5 Años y menor de 8 Años .";
+        ValidateError(m);
+        return false;
+    }else if( ($('#TxtTipoDocumentoEdit').val()=="TI") && ((fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<8 || (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])>18) ){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 8 Años y menor de 18 Años .";
+        ValidateError(m);
+        return false;
+    }else if( $('#TxtTipoDocumentoEdit').val()=="CC" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<18){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 18 Años.";
+        ValidateError(m);
+        return false;
+    }else if( $('#TxtTipoDocumentoEdit').val()=="CE" && (fechaActual.getFullYear()-$('#TxtFeTxtFechaNacimientoEditchaNacimiento').val().split("/")[2])<18){
+        var m = "Por favor ingrese la Fecha de Nacimiento de el Estudiante mayor de 18 Años.";
+        ValidateError(m);
         return false;
     }else if($('#TxtRhEdit').val().length == 0){
         var m = "Por favor seleccione el Rh de el Estudiante.";

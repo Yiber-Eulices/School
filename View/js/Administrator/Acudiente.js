@@ -91,7 +91,7 @@ $(".formCreate").on('submit', function(){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
-    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<=18 ){
+    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimiento').val().split("/")[2])<18 ){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Acudiente mayor de 18 Años.";
         ValidateError(m);
         return false;
@@ -271,7 +271,7 @@ $(".formEdit").on('submit', function(){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Acudiente.";
         ValidateCreateUpdate(m);
         return false;
-    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=18 ){
+    }else if( (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<18 ){
         var m = "Por favor ingrese la Fecha de Nacimiento de el Acudiente mayor de 18 Años.";
         ValidateError(m);
         return false;

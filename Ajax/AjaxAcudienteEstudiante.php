@@ -27,12 +27,18 @@
                                 $btnUpdate = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
+                                $tipDoc = '';
+                                if($objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
-                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objAcudienteEstudiante[$i]["DocumentoAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoAcudiente"].'",
@@ -85,12 +91,18 @@
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["EstudianteIdEstudiante"]==$_SESSION['EstudianteId']){
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
+                                $tipDoc = '';
+                                if($objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
-                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objAcudienteEstudiante[$i]["DocumentoAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoAcudiente"].'"
@@ -140,12 +152,18 @@
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["EstudianteIdEstudiante"]==$_SESSION['UserId']){
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoAcudiente"]."'>";
+                                $tipDoc = '';
+                                if($objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoAcudiente"].'",
-                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoAcudiente"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objAcudienteEstudiante[$i]["DocumentoAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoAcudiente"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoAcudiente"].'"
@@ -198,15 +216,26 @@
                                 $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
+                                $tipDoc = '';
+                                if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="TI"){
+                                    $tipDoc = 'Tarjeta de Identidad';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="RC"){
+                                    $tipDoc = 'Registro Civil';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",
-                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objAcudienteEstudiante[$i]["DocumentoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["Nivel"]." ".$objAcudienteEstudiante[$i]["NombreCurso"].'",
                                     "'.$btnObservacion.$btnUpdate.$btnDelete.'"
                                 ],';
                                 $count++;
@@ -222,11 +251,13 @@
                             "",
                             "",
                             "",
+                            "",
                             ""
                         ],';
                     }
                     if($count<=0 && count($objAcudienteEstudiante) >= 1){
                         $oBJEC_JSON .= '[
+                            "",
                             "",
                             "",
                             "",
@@ -257,15 +288,26 @@
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['AcudienteId']){
                                 $btnObservacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
+                                $tipDoc = '';
+                                if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="TI"){
+                                    $tipDoc = 'Tarjeta de Identidad';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="RC"){
+                                    $tipDoc = 'Registro Civil';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",
-                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objAcudienteEstudiante[$i]["DocumentoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["Nivel"]." ".$objAcudienteEstudiante[$i]["NombreCurso"].'",
                                     "'.$btnObservacion.'"
                                 ],';
                                 $count++;
@@ -318,15 +360,26 @@
                                 $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-primary waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>book</i><span>Calificaciones</span></button>";
                                 $btnBoletin = "<button type='button' style='width: auto;' class='btn btnBoletin btn-success waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
+                                $tipDoc = '';
+                                if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CC"){
+                                    $tipDoc = 'Cédula de Ciudadanía';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CE"){
+                                    $tipDoc = 'Cédula de Extranjería';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="TI"){
+                                    $tipDoc = 'Tarjeta de Identidad';
+                                }else if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="RC"){
+                                    $tipDoc = 'Registro Civil';
+                                }
                                 $oBJEC_JSON .= '[
                                     "'.$enum++.'",
                                     "'.$img.'",
                                     "'.$objAcudienteEstudiante[$i]["NombreEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["ApellidoEstudiante"].'",
-                                    "'.$objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"].'",
+                                    "'.$tipDoc.'",
                                     "'.$objAcudienteEstudiante[$i]["DocumentoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["CorreoEstudiante"].'",
                                     "'.$objAcudienteEstudiante[$i]["TelefonoEstudiante"].'",
+                                    "'.$objAcudienteEstudiante[$i]["Nivel"]." ".$objAcudienteEstudiante[$i]["NombreCurso"].'",
                                     "'.$btnCalificacion.$btnBoletin.$btnObservacion.'"
                                 ],';
                                 $count++;

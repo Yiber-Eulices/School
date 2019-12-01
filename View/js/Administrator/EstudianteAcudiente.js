@@ -4,6 +4,8 @@ $(document).ready(function(){
         "deferRender":true,
         "retrieve":true,
         "processing":true,
+        "pagingType": "full_numbers",
+        "lengthMenu": [[10, 25, 50 , 100], [10, 25, 50 , 100]],
         "language":{
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -27,10 +29,37 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }
+        },dom: "<'row'<'col-sm-12 col-md-3'l><'col-sm-12 col-md-6'B><'col-sm-12 col-md-1'f>><'row'<'col-sm-12 col-md-12'rt>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        buttons: [
+            {
+                extend: 'excel',
+                text: '<i class="material-icons">grid_on</i> <span>Excel</span>',
+                className : 'btn bg-teal  waves-effect',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> <span>Imprimir</span>',                
+                className : 'btn bg-green  waves-effect',
+                orientation: 'landscape',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'colvis',
+                className : 'btn bg-light-green waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> <span>Seleccionar Columnas</span>'
+            }
+        ],
+        select: true,
+        columnDefs: [ {
+            targets: -1,
+            visible: true
+        } ]
     });
     $.ajax({
-        url:"Ajax/AjaxAcudiente.php?a=lista",
+        url:"Ajax/AjaxAcudiente.php?a=listaSelect",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -39,9 +68,9 @@ $(document).ready(function(){
             $("#TxtAcudiente").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtAcudienteEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
-                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>"); 
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtAcudiente").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>"); 
+                    $("#TxtAcudienteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>"); 
                 }                
             }
             $('#TxtAcudiente').change();

@@ -39,7 +39,7 @@ $pdf->SetFont('Arial','',16);
 $pdf->Cell(190,10,"Estudiante : ". utf8_decode($objESTUD["Nombre"])." ".utf8_decode($objESTUD["Apellido"]),1,0,"J",0);
 $pdf->Cell(190,10,"Curso : ". utf8_decode($objGRADO["Nivel"])." ".utf8_decode($objCURSO["Nombre"]),1,1,"J",0);
 $pdf->Cell(190,10,"Periodo : ". utf8_decode($periodoPdf),1,0,"J",0);
-$pdf->Cell(190,10,utf8_decode("Año : ".date("Y")),1,1,"J",0);
+$pdf->Cell(190,10,utf8_decode("Año : ".$objCURSO["Anio"]),1,1,"J",0);
 // Salto de línea
 $pdf->Ln(5);
 $pdf->Cell(100);

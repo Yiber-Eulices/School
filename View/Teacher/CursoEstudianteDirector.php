@@ -29,7 +29,6 @@
                                             <th>Rh</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
-                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>
@@ -46,7 +45,6 @@
                                             <th>Rh</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
-                                            <th>Grado</th>
                                             <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>

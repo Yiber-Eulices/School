@@ -37,6 +37,7 @@
                                             <th>Documento</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
+                                            <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -50,6 +51,7 @@
                                             <th>Documento</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
+                                            <th>Curso</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    

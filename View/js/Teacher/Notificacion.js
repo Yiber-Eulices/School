@@ -4,6 +4,8 @@ $(document).ready(function(){
         "deferRender":true,
         "retrieve":true,
         "processing":true,
+        "pagingType": "full_numbers",
+        "lengthMenu": [[10, 25, 50 , 100], [10, 25, 50 , 100]],
         "language":{
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -27,7 +29,34 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }
+        },dom: "<'row'<'col-sm-12 col-md-3'l><'col-sm-12 col-md-6'B><'col-sm-12 col-md-1'f>><'row'<'col-sm-12 col-md-12'rt>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        buttons: [
+            {
+                extend: 'excel',
+                text: '<i class="material-icons">grid_on</i> <span>Excel</span>',
+                className : 'btn bg-teal  waves-effect',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> <span>Imprimir</span>',                
+                className : 'btn bg-green  waves-effect',
+                orientation: 'landscape',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'colvis',
+                className : 'btn bg-light-green waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> <span>Seleccionar Columnas</span>'
+            }
+        ],
+        select: true,
+        columnDefs: [ {
+            targets: -1,
+            visible: true
+        } ]
     });
     $('#TxtRolPersona').select2();
     $('#TxtRolPersonaEdit').select2();
@@ -89,7 +118,7 @@ $(".formCreate").on('submit', function(){
                     $("#ModalCreate").modal('toggle');
                     $('form').trigger("reset");
                     var m = "Datos Almacenados.";
-                    ValidateCreateUpdate(m);
+                    ValidateCreateExito(m);
                     $(".dataTableAlerta").DataTable().ajax.reload();
                 }else if(respuesta == false){
                     var m = "¡¡¡Datos No Almacenados.!!!";
@@ -126,7 +155,7 @@ $(".dataTableAlerta").on("click",".btnDelete",function(){
                 success : function(respuesta){
                     if(respuesta == true){
                         var m = "Datos Eliminados.";
-                        ValidateCreateUpdate(m);
+                        ValidateCreateEliminar(m);
                         $(".dataTableAlerta").DataTable().ajax.reload();
                     }else if(respuesta == false){
                         var m = "¡¡¡Datos No Eliminados.!!!";
@@ -227,7 +256,7 @@ $(".formEdit").on('submit', function(){
                     $("#ModalEdit").modal('toggle');
                     $('form').trigger("reset");
                     var m = "Datos Editados.";
-                    ValidateCreateUpdate(m);
+                    ValidateCreateExito(m);
                     $(".dataTableAlerta").DataTable().ajax.reload();
                 }else if(respuesta == false){
                     var m = "¡¡¡Datos No Editados.!!!";
@@ -243,7 +272,7 @@ $(".formEdit").on('submit', function(){
 function SearchPersona(){
     if($("#TxtRolPersona").val().length>0){
         $.ajax({
-            url:"Ajax/Ajax"+$("#TxtRolPersona").val()+".php?a=lista",
+            url:"Ajax/Ajax"+$("#TxtRolPersona").val()+".php?a=listaSelect",
             method:"GET",
             dataType: "JSON",
             success : function(respuesta){
@@ -251,11 +280,7 @@ function SearchPersona(){
                 $("#TxtIdPersona").append("<option value=''>-- Por favor seleccione la Persona --</option>");
                 for(var i = 0;i<respuesta.data.length;i++){
                     if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                        if($("#TxtRolPersona").val()!='Estudiante'){
-                            $("#TxtIdPersona").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
-                        }else{
-                            $("#TxtIdPersona").append("<option value='"+respuesta.data[i][13]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
-                        }
+                        $("#TxtIdPersona").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>");
                     }                
                 }
                 $('#TxtIdPersona').change();
@@ -272,7 +297,7 @@ function SearchPersona(){
 function SearchPersonaEdit(){
     if($("#TxtRolPersonaEdit").val().length>0){
         $.ajax({
-            url:"Ajax/Ajax"+$("#TxtRolPersonaEdit").val()+".php?a=lista",
+            url:"Ajax/Ajax"+$("#TxtRolPersonaEdit").val()+".php?a=listaSelect",
             method:"GET",
             dataType: "JSON",
             success : function(respuesta){
@@ -280,11 +305,7 @@ function SearchPersonaEdit(){
                 $("#TxtIdPersonaEdit").append("<option value=''>-- Por favor seleccione la Persona --</option>");
                 for(var i = 0;i<respuesta.data.length;i++){
                     if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0){
-                        if($("#TxtRolPersonaEdit").val()!='Estudiante'){
-                            $("#TxtIdPersonaEdit").append("<option value='"+respuesta.data[i][11]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
-                        }else{
-                            $("#TxtIdPersonaEdit").append("<option value='"+respuesta.data[i][13]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
-                        }
+                            $("#TxtIdPersonaEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>");
                     }                
                 }
                 $('#TxtIdPersonaEdit').change();

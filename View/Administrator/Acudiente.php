@@ -115,13 +115,6 @@
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
-                    <label class="form-label">Fecha de Nacimiento</label>
-                    <div class="form-line" id="bs_datepicker_container">
-                        <input type="text" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" placeholder = "Mes/Dia/A&ntilde;o" required>
-                    </div>
-                    <div class="help-info">Fecha de Nacimiento</div>
-                </div>
-                <div class="form-group form-float">
                     <label class="form-label">Tipo de Documento</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumento" id = "TxtTipoDocumento" required>
@@ -138,6 +131,13 @@
                         <label class="form-label">Documento</label>
                     </div>
                     <div class="help-info">Documento</div>
+                </div>
+                <div class="form-group form-float">
+                    <label class="form-label">Fecha de Nacimiento</label>
+                    <div class="form-line" id="bs_datepicker_container">
+                        <input type="text" class="form-control" name="TxtFechaNacimiento" id="TxtFechaNacimiento" placeholder = "Mes/Dia/A&ntilde;o" required>
+                    </div>
+                    <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Rh</label>
@@ -232,13 +232,6 @@
                     <div class="help-info">Foto</div>
                 </div>
                 <div class="form-group form-float">
-                    <label class="form-label">Fecha de Nacimiento</label>
-                    <div class="form-line" id="bs_datepicker_container_edit">
-                        <input type="text" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" placeholder = "Mes/Dia/A&ntilde;o" required>
-                    </div>
-                    <div class="help-info">Fecha de Nacimiento</div>
-                </div>
-                <div class="form-group form-float">
                     <label class="form-label">Tipo de Documento</label>
                     <div class="form-line">
                         <select class="form-control show-tick" style ="width:100%" name = "TxtTipoDocumentoEdit" id = "TxtTipoDocumentoEdit" required>
@@ -255,6 +248,13 @@
                         <input type="number" class="form-control" name="TxtDocumentoEdit" id="TxtDocumentoEdit" required>
                     </div>
                     <div class="help-info">Documento</div>
+                </div>
+                <div class="form-group form-float">
+                    <label class="form-label">Fecha de Nacimiento</label>
+                    <div class="form-line" id="bs_datepicker_container_edit">
+                        <input type="text" class="form-control" name="TxtFechaNacimientoEdit" id="TxtFechaNacimientoEdit" placeholder = "Mes/Dia/A&ntilde;o" required>
+                    </div>
+                    <div class="help-info">Fecha de Nacimiento</div>
                 </div>
                 <div class="form-group form-float">
                     <label class="form-label">Rh</label>

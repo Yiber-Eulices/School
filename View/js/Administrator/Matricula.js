@@ -5,6 +5,8 @@ $(document).ready(function(){
         "deferRender":true,
         "retrieve":true,
         "processing":true,
+        "pagingType": "full_numbers",
+        "lengthMenu": [[10, 25, 50 , 100], [10, 25, 50 , 100]],
         "language":{
             "sProcessing":     "Procesando...",
             "sLengthMenu":     "Mostrar _MENU_ registros",
@@ -28,10 +30,37 @@ $(document).ready(function(){
                 "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
                 "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }
-        }
+        },dom: "<'row'<'col-sm-12 col-md-3'l><'col-sm-12 col-md-6'B><'col-sm-12 col-md-1'f>><'row'<'col-sm-12 col-md-12'rt>><'row'<'col-sm-12 col-md-6'i><'col-sm-12 col-md-6'p>>",
+        buttons: [
+            {
+                extend: 'excel',
+                text: '<i class="material-icons">grid_on</i> <span>Excel</span>',
+                className : 'btn bg-teal  waves-effect',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'print',
+                text: '<i class="material-icons">print</i> <span>Imprimir</span>',                
+                className : 'btn bg-green  waves-effect',
+                orientation: 'landscape',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },{
+                extend: 'colvis',
+                className : 'btn bg-light-green waves-effect',
+                text: '<i class="material-icons">playlist_add_check</i> <span>Seleccionar Columnas</span>'
+            }
+        ],
+        select: true,
+        columnDefs: [ {
+            targets: -1,
+            visible: true
+        } ]
     });
     $.ajax({
-        url:"Ajax/AjaxGrado.php?a=lista",
+        url:"Ajax/AjaxGrado.php?a=listaSelect",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -41,8 +70,8 @@ $(document).ready(function(){
             $("#TxtGradoEdit").append("<option value=''>-- Por favor seleccione --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
                 if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0){
-                    $("#TxtGrado").append("<option value='"+respuesta.data[i][3]+"'>"+respuesta.data[i][1]+"</option>"); 
-                    $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][3]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtGrado").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
+                    $("#TxtGradoEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+"</option>"); 
                 }                
             }
             $('#TxtGrado').change();
@@ -52,7 +81,7 @@ $(document).ready(function(){
         }
     });
     $.ajax({
-        url:"Ajax/AjaxEstudiante.php?a=lista",
+        url:"Ajax/AjaxEstudiante.php?a=listaSelect",
         method:"GET",
         dataType: "JSON",
         success : function(respuesta){
@@ -61,9 +90,9 @@ $(document).ready(function(){
             $("#TxtIdEstudiante").append("<option value=''>-- Por favor seleccione --</option>");
             $("#TxtIdEstudianteEdit").append("<option value=''>-- Por favor seleccione la Materia --</option>");
             for(var i = 0;i<respuesta.data.length;i++){
-                if (respuesta.data[i][0].length > 0 && respuesta.data[i][2].length > 0 && respuesta.data[i][3].length > 0){
-                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][13]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
-                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][13]+"'>"+respuesta.data[i][2]+" "+respuesta.data[i][3]+"</option>");
+                if (respuesta.data[i][0].length > 0 && respuesta.data[i][1].length > 0 && respuesta.data[i][2].length > 0){
+                    $("#TxtIdEstudiante").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>");
+                    $("#TxtIdEstudianteEdit").append("<option value='"+respuesta.data[i][0]+"'>"+respuesta.data[i][1]+" "+respuesta.data[i][2]+"</option>");
                 }                
             }
             $('#TxtIdEstudiante').change();
@@ -74,11 +103,12 @@ $(document).ready(function(){
     });
 });
 $(".formCreate").on('submit', function(){
-    if($('#TxtFechaMatricula').val().length == 0){
+    var fechaActual = new Date();
+    /*if($('#TxtFechaMatricula').val().length == 0){
         var m = "Por favor ingrese la fecha de la matricula.";
         ValidateCreateUpdate(m);
         return false;
-    }else if($('#TxtCosto').val().length == 0){
+    }else */if($('#TxtCosto').val().length == 0){
         var m = "Por favor ingrese el costo de la matricula.";
         ValidateCreateUpdate(m);
         return false;
@@ -91,8 +121,9 @@ $(".formCreate").on('submit', function(){
         ValidateCreateUpdate(m);
         return false;
     }else{
-        from = $('#TxtFechaMatricula').val().split("/");
-        var Fecha = from[2]+'/'+from[0]+'/'+from[1];
+        /*from = $('#TxtFechaMatricula').val().split("/");
+        var Fecha = from[2]+'/'+from[0]+'/'+from[1];*/
+        var Fecha = fechaActual.getFullYear()+'/'+parseInt(fechaActual.getMonth()+1) +'/'+fechaActual.getDate();
         var Costo = $('#TxtCosto').val();
         var Grado = $('#TxtGrado').val();
         var Estudiante = $('#TxtIdEstudiante').val();

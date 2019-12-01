@@ -70,12 +70,8 @@ $(document).ready(function(){
             var m = "Por favor ingrese la Fecha de Nacimiento.";
             ValidateCreateUpdate(m);
             return false;
-        }else if($("#pRol").html()!="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=18 ){
+        }else if($("#pRol").html()!="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<18 ){
             var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 18 Años.";
-            ValidateError(m);
-            return false;
-        }else if($("#pRol").html()=="Estudiante" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<=5 ){
-            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 5 Años.";
             ValidateError(m);
             return false;
         }else if($('#TxtTipoDocumentoEdit').val().length == 0){
@@ -85,6 +81,22 @@ $(document).ready(function(){
         }else if($('#TxtDocumentoEdit').val().length == 0){
             var m = "Por favor ingrese el Documento de Identificacion.";
             ValidateCreateUpdate(m);
+            return false;
+        }else if( ($('#TxtTipoDocumentoEdit').val()=="RC" && $("#pRol").html()=="Estudiante") && ((fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<5 || (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])>7 )){
+            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 5 Años y menor de 8 Años .";
+            ValidateError(m);
+            return false;
+        }else if( ($('#TxtTipoDocumentoEdit').val()=="TI" && $("#pRol").html()=="Estudiante") && ((fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<8 || (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])>18) ){
+            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 8 Años y menor de 18 Años .";
+            ValidateError(m);
+            return false;
+        }else if($("#pRol").html()=="Estudiante" && $('#TxtTipoDocumentoEdit').val()=="CC" && (fechaActual.getFullYear()-$('#TxtFechaNacimientoEdit').val().split("/")[2])<18){
+            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 18 Años.";
+            ValidateError(m);
+            return false;
+        }else if( $("#pRol").html()=="Estudiante" && $('#TxtTipoDocumentoEdit').val()=="CE" && (fechaActual.getFullYear()-$('#TxtFeTxtFechaNacimientoEditchaNacimiento').val().split("/")[2])<18){
+            var m = "Por favor ingrese la Fecha de Nacimiento de el "+$("#pRol").html()+" mayor de 18 Años.";
+            ValidateError(m);
             return false;
         }else if($('#TxtRhEdit').val().length == 0){
             var m = "Por favor seleccione el Rh.";

@@ -30,20 +30,18 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Nombre</th>
+                                            <th>Curso</th>
                                             <th>Año</th>
-                                            <th>Grado</th>
-                                            <th>Profesor</th>
+                                            <th>Director de Curso</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                         <th>#</th>
-                                            <th>Nombre</th>
+                                            <th>Curso</th>
                                             <th>Año</th>
-                                            <th>Grado</th>
-                                            <th>Profesor</th>
+                                            <th>Director de Curso</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>                                    
@@ -91,13 +89,6 @@
                     <div class="help-info">Nombre</div>
                 </div>
                 <div class="form-group form-float">
-                    <div class="form-line">
-                        <input type="number" class="form-control" name="TxtAnio" id="TxtAnio" required>
-                        <label class="form-label">Año</label>
-                    </div>
-                    <div class="help-info">Año</div>
-                </div>
-                <div class="form-group form-float">
                     <label class="form-label">Grado</label>
                     <div class="form-line">
                         <select name="TxtGrado" id="TxtGrado" style ="width: 100%" required>
@@ -107,13 +98,13 @@
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group form-float">
-                    <label class="form-label">Profesor</label>
+                    <label class="form-label">Director de Curso</label>
                     <div class="form-line">
                         <select name="TxtProfesor" id="TxtProfesor" style ="width: 100%" required>
                             <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>
-                    <div class="help-info">Profesor</div>
+                    <div class="help-info">Director de Curso</div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -162,13 +153,13 @@
                     <div class="help-info">Grado</div>
                 </div>
                 <div class="form-group form-float">
-                    <label class="form-label">Profesor</label>
+                    <label class="form-label">Director de Curso</label>
                     <div class="form-line">
                          <select name="TxtProfesorEdit" id="TxtProfesorEdit" style ="width: 100%" required>
                                 <option value=''>-- Por favor seleccione --</option>
                         </select>
                     </div>   
-                    <div class="help-info">Profesor</div>
+                    <div class="help-info">Director de Curso</div>
                 </div>
             </div>
             <div class="modal-footer">

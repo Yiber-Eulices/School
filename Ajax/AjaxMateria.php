@@ -14,6 +14,28 @@
             $objADMIN = ControladorMateria::CtrlEditar( $this->id,$this->nombre,$this->descripcion);
             echo json_encode($objADMIN);  //lo esta retornando en false.
         }
+        public function AjxListarSelect(){
+            $objADMIN = ControladorMateria::CtrlListar();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objADMIN) >= 1){
+                        for ($i=0; $i < count($objADMIN); $i++) {
+                            $oBJEC_JSON .= '[
+                                "'.$objADMIN[$i]["IdMateria"].'",
+                                "'.$objADMIN[$i]["Nombre"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+                echo $oBJEC_JSON;
+        }
         public function AjxListar(){
             $objADMIN = ControladorMateria::CtrlListar();
             $oBJEC_JSON = '{
@@ -72,6 +94,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxMateria();
         $oBJEC_AJAX -> AjxListar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaSelect'){
+        $oBJEC_AJAX = new AjaxMateria();
+        $oBJEC_AJAX -> AjxListarSelect();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxMateria();

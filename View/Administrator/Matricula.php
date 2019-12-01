@@ -83,14 +83,14 @@
           </div>
             <form id="form_advanced_validation" class="formCreate" method="POST">
             <div class="modal-body">
-                <div class="form-group form-float">
+                <!--div class="form-group form-float">
                     <label class="form-label">Fecha de Matr&iacute;cula</label>
                     <div class="form-line" id="bs_datepicker_container">
                         <input type="text" class="form-control" name="TxtFechaMatricula" id="TxtFechaMatricula" placeholder = "Mes/Dia/A&ntilde;o" required>
                         
                     </div>
                     <div class="help-info">Fecha de Matr&iacute;cula</div>
-                </div>
+                </div-->
                 <div class="form-group form-float">
                     <div class="form-line">
                         <input type="number" class="form-control" name="TxtCosto" id="TxtCosto" required>

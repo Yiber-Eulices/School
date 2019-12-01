@@ -27,6 +27,30 @@
             $objPROF = ControladorProfesor::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
             echo json_encode($objPROF);  
         }
+        public function AjxListarSelect(){
+            $objPROF = ControladorProfesor::CtrlListar();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objPROF) >= 1){
+                        for ($i=0; $i < count($objPROF); $i++) {
+                            $oBJEC_JSON .= '[
+                                "'.$objPROF[$i]["IdProfesor"].'",
+                                "'.$objPROF[$i]["Nombre"].'",
+                                "'.$objPROF[$i]["Apellido"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+                }';
+                echo $oBJEC_JSON;
+        }
         public function AjxListar(){
             $objPROF = ControladorProfesor::CtrlListar();
             $oBJEC_JSON = '{
@@ -92,8 +116,7 @@
                             $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdProfesorCurso = '".$objPROF[$i]["IdProfesorCurso"]."'><i class='material-icons'>school</i><span>Estudiantes</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
-                                "'.$objPROF[$i]["Nivel"].'",
-                                "'.$objPROF[$i]["NombreCurso"].'",
+                                "'.$objPROF[$i]["Nivel"]." ".$objPROF[$i]["NombreCurso"].'",
                                 "'.$objPROF[$i]["NombreMateria"].'",
                                 "'.$btnEstudiante.'"
                             ],';
@@ -124,8 +147,7 @@
                             $btnEstudiante= "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnEstudiante btn-info waves-effect' IdCurso = '".$objPROF[$i]["IdCurso"]."'><i class='material-icons'>school</i><span>Estudiantes</span></button></div>";
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
-                                "'.$objPROF[$i]["Nivel"].'",
-                                "'.$objPROF[$i]["NombreCurso"].'",
+                                "'.$objPROF[$i]["Nivel"]." ".$objPROF[$i]["NombreCurso"].'",
                                 "'.$btnEstudiante.'"
                             ],';
                         }
@@ -270,6 +292,10 @@
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxProfesor();
         $oBJEC_AJAX -> AjxListar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaSelect'){
+        $oBJEC_AJAX = new AjaxProfesor();
+        $oBJEC_AJAX -> AjxListarSelect();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'listado'){
         $oBJEC_AJAX = new AjaxProfesor();

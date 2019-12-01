@@ -13,6 +13,28 @@
             $objGRADO = ControladorGrado::CtrlEditar( $this->id,$this->nivel);
             echo json_encode($objGRADO);  
         }
+        public function AjxListarSelect(){
+            $objGRADO = ControladorGrado::CtrlListar();
+            $oBJEC_JSON = '{
+                "data": [';
+                    if (count($objGRADO) >= 1){
+                        for ($i=0; $i < count($objGRADO); $i++) {
+                            $oBJEC_JSON .= '[
+                                "'.$objGRADO[$i]["IdGrado"].'",
+                                "'.$objGRADO[$i]["Nivel"].'"
+                            ],';
+                        }
+                    }else{
+                        $oBJEC_JSON .= '[
+                            "",
+                            ""
+                        ],';
+                    }
+                    $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                    $oBJEC_JSON .=']
+            }';
+            echo $oBJEC_JSON;
+        }
         public function AjxListar(){
             $objGRADO = ControladorGrado::CtrlListar();
             $oBJEC_JSON = '{
@@ -26,8 +48,7 @@
                             $oBJEC_JSON .= '[
                                 "'.$enum++.'",
                                 "'.$objGRADO[$i]["Nivel"].'",
-                                "'.$btnUpdate.$btnDelete.'",
-                                "'.$objGRADO[$i]["IdGrado"].'"
+                                "'.$btnUpdate.$btnDelete.'"
                             ],';
                         }
                     }else{
@@ -63,6 +84,10 @@
         $oBJEC_AJAX -> id = $_POST["Id"];
         $oBJEC_AJAX -> nivel = $_POST["Nivel"];
         $oBJEC_AJAX -> AjxEditar();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaSelect'){
+        $oBJEC_AJAX = new AjaxGrado();
+        $oBJEC_AJAX -> AjxListarSelect();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
         $oBJEC_AJAX = new AjaxGrado();

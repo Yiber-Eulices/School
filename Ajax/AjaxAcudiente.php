@@ -23,6 +23,32 @@
             $objACUDI = ControladorAcudiente::CtrlEditar( $this->id,$this->nombre,$this->apellido,$this->tipoDocumento,$this->documento,$this->rh,$this->correo,$this->password,$this->telefono,$this->foto,$this->fechaNacimiento);
             echo json_encode($objACUDI);  
         }
+        public function AjxListarSelect(){
+          $objACUDI = ControladorAcudiente::CtrlListar();
+          $oBJEC_JSON = '{
+              "data": [';
+                  if (count($objACUDI) >= 1){
+                      for ($i=0; $i < count($objACUDI); $i++) {
+                          $oBJEC_JSON .= '[
+                              "'.$objACUDI[$i]["IdAcudiente"].'",
+                              "'.$objACUDI[$i]["Nombre"].'",
+                              "'.$objACUDI[$i]["Apellido"].'"
+                          ],';
+                      }
+                  }else{
+                      $oBJEC_JSON .= '[
+                          "",
+                          "",
+                          ""
+                      ],';
+                  }
+                  $oBJEC_JSON = substr($oBJEC_JSON,0,-1);
+                  $oBJEC_JSON .=']
+              }';
+
+              echo $oBJEC_JSON;
+
+        }
         public function AjxListar(){
             $objACUDI = ControladorAcudiente::CtrlListar();
             $oBJEC_JSON = '{
@@ -214,14 +240,18 @@
         $oBJEC_AJAX -> fechaNacimiento = $_POST["FechaNacimiento"];
         $oBJEC_AJAX -> AjxEditar();
     }
-    if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
+    if(isset($_GET["a"]) && $_GET["a"] == 'listaSelect'){
         $oBJEC_AJAX = new AjaxAcudiente();
-        $oBJEC_AJAX -> AjxListar();
+        $oBJEC_AJAX -> AjxListarSelect();
+    }
+    if(isset($_GET["a"]) && $_GET["a"] == 'lista'){
+      $oBJEC_AJAX = new AjaxAcudiente();
+      $oBJEC_AJAX -> AjxListar();
     }
     if(isset($_GET["a"]) && $_GET["a"] == 'listap'){
       $oBJEC_AJAX = new AjaxAcudiente();
       $oBJEC_AJAX -> AjxListarp();
-  }
+    }
     if(isset($_GET["a"]) && $_GET["a"] == 'buscar'){
         $oBJEC_AJAX = new AjaxAcudiente();
         $oBJEC_AJAX -> id = $_POST["Id"];

@@ -43,7 +43,6 @@
 <script src="View/DataTable/responsive.bootstrap.min.js"></script>
 <script src="View/DataTable/dataTables.responsive.min.js"></script>
 <script src="View/DataTable/responsive.bootstrap4.min.js"></script>
-<!--script type="text/javascript" src="View/DataTable/jquery.dataTables.min.js"></script-->
 <script type="text/javascript" src="View/DataTable/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="View/DataTable/buttons.flash.min.js"></script>
 <script type="text/javascript" src="View/DataTable/jszip.min.js"></script>

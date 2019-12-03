@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/buttons.bootstrap.css">
     <link rel="stylesheet" type="text/css" media="screen"href="View/DataTable/buttons.bootstrap4.css">
+    <link rel="stylesheet" type="text/css" media="screen"href="https://cdn.datatables.net/autofill/2.3.4/css/autoFill.dataTables.min.css">
     
     <!-- Favicon-->
     <link rel="icon" href="View/images/logo.png" type="image/x-icon">

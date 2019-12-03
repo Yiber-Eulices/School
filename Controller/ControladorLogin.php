@@ -39,19 +39,19 @@
                 $objBUSCM = ModeloAdministrador::BuscarAdministrador($id);
             }
             if($objBUSCMDOCUMENTO["Id".$rol]!=$id && $documento==$objBUSCMDOCUMENTO["Documento"]){
-                return "El Documento de Identifiacacion Ingresado ya esta Registardo por favor Ingrese otro Documento de Identifiacacion.";
+                return "El Documento de Identifiacacion Ingresado '"+$documento+"' ya esta Registardo por favor Ingrese otro Documento de Identifiacacion.";
             }
             $objBUSCMCORREO = ModeloEstudiante::BuscarCorreoEstudiante($correo);
             if($objBUSCMCORREO["Id".$rol]!=$id && $correo==$objBUSCMCORREO["Correo"]){
-                return "El Correo Ingresado ya esta Registardo por favor Ingrese otro Correo.";
+                return "El Correo Ingresado '".$correo."' ya esta Registardo por favor Ingrese otro Correo.";
             }
             $objVERIFICARCORREO = ControladorVerificar::CtrlValidarCorreo($correo);
             if($objVERIFICARCORREO != true){
-                return "El Correo Ingresado no Existe, por Favor Ingrese un Correo Electronico Existente.";
+                return "El Correo Ingresado '".$correo."' no Existe, por Favor Ingrese un Correo Electronico Existente.";
             }
             $objVERIFICARTELEFONO = ControladorVerificar::CtrlValidarTelefono($telefono);
             if($objVERIFICARTELEFONO != true){
-                return "El Telefono Ingresado no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
+                return "El Telefono Ingresad '".$telefono."' no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
             }
             if($foto == null || $foto =="null"){
                 $foto = $objBUSCM["Foto"];

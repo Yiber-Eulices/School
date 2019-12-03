@@ -8,15 +8,15 @@
             }
             $objBUSCMCORREO = ModeloAdministrador::BuscarCorreoAdministrador($correo);
             if($correo==$objBUSCMCORREO["Correo"]){
-                return "El Correo Ingresado '"+$correo+"' ya esta Registardo por favor Ingrese otro Correo.";
+                return "El Correo Ingresado '".$correo."' ya esta Registardo por favor Ingrese otro Correo.";
             }
             $objVERIFICARCORREO = ControladorVerificar::CtrlValidarCorreo($correo);
             if($objVERIFICARCORREO != true){
-                return "El Correo Ingresado '"+$correo+"' no Existe, por Favor Ingrese un Correo Electronico Existente.";
+                return "El Correo Ingresado '".$correo."' no Existe, por Favor Ingrese un Correo Electronico Existente.";
             }
             $objVERIFICARTELEFONO = ControladorVerificar::CtrlValidarTelefono($telefono);
             if($objVERIFICARTELEFONO != true){
-                return "El Telefono Ingresado '"+$telefono+"' no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
+                return "El Telefono Ingresado '".$telefono."' no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
             }
             $passwordHash =  password_hash($password, PASSWORD_DEFAULT);
             $objCREARM = ModeloAdministrador::CrearAdministrador($nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$passwordHash,$telefono,$foto,$fechaNacimiento);
@@ -25,19 +25,19 @@
         public static function CtrlEditar($id,$nombre,$apellido,$tipoDocumento,$documento,$rh,$correo,$password,$telefono,$foto,$fechaNacimiento){
             $objBUSCMDOCUMENTO = ModeloAdministrador::BuscarDocumentoAdministrador($documento);
             if($objBUSCMDOCUMENTO["IdAdministrador"]!=$id && $documento==$objBUSCMDOCUMENTO["Documento"]){
-                return "El Documento de Identifiacacion Ingresado '"+$documento+"' ya esta Registardo por favor Ingrese otro Documento de Identifiacacion.";
+                return "El Documento de Identifiacacion Ingresado '".$documento."' ya esta Registardo por favor Ingrese otro Documento de Identifiacacion.";
             }
             $objBUSCMCORREO = ModeloAdministrador::BuscarCorreoAdministrador($correo);
             if($objBUSCMCORREO["IdAdministrador"]!=$id && $correo==$objBUSCMCORREO["Correo"]){
-                return "El Correo Ingresado '"+$correo+"' ya esta Registardo por favor Ingrese otro Correo.";
+                return "El Correo Ingresado '".$correo."' ya esta Registardo por favor Ingrese otro Correo.";
             }
             $objVERIFICARCORREO = ControladorVerificar::CtrlValidarCorreo($correo);
             if($objVERIFICARCORREO != true){
-                return "El Correo Ingresado '"+$correo+"' no Existe, por Favor Ingrese un Correo Electronico Existente.";
+                return "El Correo Ingresado '".$correo."' no Existe, por Favor Ingrese un Correo Electronico Existente.";
             }
             $objVERIFICARTELEFONO = ControladorVerificar::CtrlValidarTelefono($telefono);
             if($objVERIFICARTELEFONO != true){
-                return "El Telefono Ingresado '"+$telefono+"' no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
+                return "El Telefono Ingresado '".$telefono."' no Existe en Colombia, por favor Ingrese un Numero Telefonico Existente.";
             }
             $objBUSCM = ModeloAdministrador::BuscarAdministrador($id);
             if($foto == null || $foto =="null"){

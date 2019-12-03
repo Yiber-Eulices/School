@@ -212,7 +212,7 @@
                         $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['AcudienteId']){
-                                $btnObservacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button>";
+                                $btnObservacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnObservacion btn-info waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>record_voice_over</i><span>Observaciones</span></button>";
                                 $btnUpdate = "<button type='button' style='width: auto;' class='ml-1 btn btnUpdate bg-amber waves-effect' data-target='#ModalEdit' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>edit</i><span>Editar</span></button>";
                                 $btnDelete = "<button type='button' style='width: auto;' class='ml-1 btn btnDelete bg-deep-orange waves-effect' IdAcudienteEstudiante = '".$objAcudienteEstudiante[$i]["IdAcudienteEstudiante"]."'><i class='material-icons'>delete_forever</i><span>Eliminar</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
@@ -286,7 +286,7 @@
                         $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['AcudienteId']){
-                                $btnObservacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button></div>";
+                                $btnObservacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnObservacion btn-info  waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button></div>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
                                 $tipDoc = '';
                                 if($objAcudienteEstudiante[$i]["TipoDocumentoEstudiante"]=="CC"){
@@ -356,7 +356,7 @@
                         $enum=1;
                         for ($i=0; $i < count($objAcudienteEstudiante); $i++) {
                             if($objAcudienteEstudiante[$i]["AcudienteIdAcudiente"]==$_SESSION['UserId']){
-                                $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion bg-deep-purple waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button></div>";
+                                $btnObservacion = "<button type='button' style='width: auto;' class='btn btnObservacion btn-info  waves-effect' IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>receipt</i><span>Observaciones</span></button></div>";
                                 $btnCalificacion = "<div class='icon-and-text-button-demo'><button type='button' style='width: auto;' class='btn btnCalificacion btn-primary waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>book</i><span>Calificaciones</span></button>";
                                 $btnBoletin = "<button type='button' style='width: auto;' class='btn btnBoletin btn-success waves-effect'  IdEstudiante = '".$objAcudienteEstudiante[$i]["IdEstudiante"]."'><i class='material-icons'>picture_as_pdf</i><span>Boletines</span></button>";
                                 $img = "<img class = 'imgProfile' src ='".$objAcudienteEstudiante[$i]["FotoEstudiante"]."'>";
